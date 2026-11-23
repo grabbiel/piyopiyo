@@ -32,6 +32,25 @@ final class CoreTests: XCTestCase {
     let fill = bank.first { $0.format == .fillBlank }!
     XCTAssertEqual(try Scoring.evaluate(fill, answer: [" STACK \n"]).fraction, 1)
   }
+  func testGameSpecIsOptional() throws {
+    let base =
+      #"{"id":"g","format":"game_3d","topic":"t","prompt":"p","options":["A","B"],"correct":["A"],"explanation":"e","sourceId":"s","sourceURL":"","difficulty":"easy""#
+    let plain = try JSONDecoder().decode(Question.self, from: Data((base + "}").utf8))
+    XCTAssertNil(plain.game)
+    let themed = try JSONDecoder().decode(
+      Question.self,
+      from: Data(
+        (base
+          + #","game":{"template":"system_architecture","params":{"roles":{"A":"cylinder","B":"box"},"orbit":true,"lanes":3}}}"#)
+          .utf8))
+    XCTAssertEqual(
+      themed.game,
+      GameSpec(template: "system_architecture", params: .init(roles: ["A": "cylinder", "B": "box"])))
+    let bank = try Question.bundled()
+    XCTAssertEqual(bank.first { $0.id == "falling-complexity" }?.game?.template, "falling_blocks")
+    XCTAssertEqual(
+      bank.first { $0.id == "architecture-3d" }?.game?.params?.roles?["Database"], "cylinder")
+  }
   func testTimerResumeDoesNotResetOrGainTime() async throws {
     let q = try Question.bundled()[0]
     var state = SessionState(owner: "test", mode: .timed, questions: [q])

@@ -33,6 +33,14 @@ public enum QuestionFormat: String, Codable, CaseIterable, Sendable, Identifiabl
     }
   }
 }
+public struct GameSpec: Codable, Sendable, Equatable {
+  public struct Params: Codable, Sendable, Equatable {
+    public var speed: Double?
+    public var roles: [String: String]?
+  }
+  public var template: String
+  public var params: Params?
+}
 public struct Question: Codable, Identifiable, Sendable, Equatable {
   public let id: String
   public let format: QuestionFormat
@@ -54,6 +62,7 @@ public struct Question: Codable, Identifiable, Sendable, Equatable {
   public var dueAt: String?
   public var tolerance: Double?
   public var generation: String?
+  public var game: GameSpec?
   public static func bundled() throws -> [Question] {
     try JSONDecoder().decode(
       [Question].self,
