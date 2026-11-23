@@ -620,7 +620,7 @@ struct RoomContent: View {
           let q = model.questions.first(where: { $0.id == room.questionIds[cursor] })
         {
           Text(q.prompt).font(.title2.bold())
-          Choices(options: q.options, answer: $answer).disabled(submitted || busy)
+          QuestionInput(question: q, answer: $answer).id(q.id).disabled(submitted || busy)
           if submitted {
             Text("Answer recorded").foregroundStyle(T.primary)
             Button("Next question") {
@@ -648,10 +648,11 @@ struct RoomContent: View {
       } else {
         TextField("Your display name", text: $name).textFieldStyle(.roundedBorder)
         HStack {
-          Button("Create live quiz") { perform { try await live.open(mode: "live", auth: auth) } }
-            .buttonStyle(PiyoButton())
+          Button("Create live quiz") {
+            perform { try await live.open(mode: "live", name: name, auth: auth) }
+          }.buttonStyle(PiyoButton())
           Button("Study together") {
-            perform { try await live.open(mode: "collaborative", auth: auth) }
+            perform { try await live.open(mode: "collaborative", name: name, auth: auth) }
           }.buttonStyle(PiyoButton(secondary: true))
         }.disabled(busy)
         VStack(alignment: .leading, spacing: T.md) {

@@ -170,7 +170,12 @@ final class AuthService: NSObject, ObservableObject, ASWebAuthenticationPresenta
     }
     refreshTask = task
     defer { if generation == identity { refreshTask = nil } }
-    return try await task.value
+    do {
+      return try await task.value
+    } catch let error as APIError where error.statusCode == 401 && generation == identity {
+      signOut()
+      throw error
+    }
   }
   func authorizeAppleDeletion(url: URL, expectedState: String) async throws {
     guard url.scheme == "https", url.host == "appleid.apple.com" else { throw APIError(message: "Invalid Apple authorization URL.") }
@@ -383,11 +388,11 @@ struct LiveRoom: Decodable, Identifiable {
     }
     return data
   }
-  func open(mode: String, auth: AuthService) async throws {
+  func open(mode: String, name: String, auth: AuthService) async throws {
     let t = try await auth.validTokens()
     let data = try await operation(
-      "mutation($mode:String!){createRoom(mode:$mode){\(fields)}}", variables: ["mode": mode],
-      token: t.idToken)
+      "mutation($mode:String!,$name:String){createRoom(mode:$mode,name:$name){\(fields)}}",
+      variables: ["mode": mode, "name": name], token: t.idToken)
     try decodeRoom(data, field: "createRoom")
     subscribe(auth: auth)
   }
@@ -480,7 +485,8 @@ struct LiveRoom: Decodable, Identifiable {
                 "id": UUID().uuidString, "type": "start",
                 "payload": ["data": query, "extensions": ["authorization": authorization]],
               ]
-              try await ws.send(.data(JSONSerialization.data(withJSONObject: start)))
+              try await ws.send(
+                .string(String(decoding: JSONSerialization.data(withJSONObject: start), as: UTF8.self)))
               status = "Live updates connected"
             } else if kind == "data" {
               if let payload = envelope?["payload"] as? [String: Any],
@@ -488,7 +494,9 @@ struct LiveRoom: Decodable, Identifiable {
                 let event = values["onAnswer"] as? [String: Any],
                 let answer = event["answer"] as? String
               {
-                contributions.append(answer)
+                contributions.append(
+                  (try? JSONDecoder().decode([String].self, from: Data(answer.utf8)))?.joined(
+                    separator: "\n") ?? answer)
                 contributions = Array(contributions.suffix(30))
               }
               try await refresh(auth: auth)

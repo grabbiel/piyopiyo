@@ -67,10 +67,29 @@ import SwiftUI
   var attempts: [Attempt] { history.flatMap(\.attempts) }
   var todayCount: Int { attempts.filter { Calendar.current.isDateInToday($0.createdAt) }.count }
   var accuracy: Int {
-    attempts.isEmpty
+    let graded = attempts.filter { $0.result.status != "pending_review" }
+    return graded.isEmpty
       ? 0
       : Int(
-        (attempts.reduce(0) { $0 + $1.result.fraction } / Double(attempts.count) * 100).rounded())
+        (graded.reduce(0) { $0 + $1.result.fraction } / Double(graded.count) * 100).rounded())
+  }
+  nonisolated static func missedQuestionIds(_ attempts: [Attempt]) -> Set<String> {
+    let latest = Dictionary(
+      grouping: attempts.filter { $0.result.status != "pending_review" }, by: \.questionId
+    ).compactMapValues { $0.max { $0.createdAt < $1.createdAt } }
+    return Set(latest.values.filter { $0.result.fraction < 1 }.map(\.questionId))
+  }
+  nonisolated static func balancedSample(_ pool: [Question], count: Int) -> [Question] {
+    var buckets = Dictionary(grouping: pool) { "\($0.topic)/\($0.format.rawValue)" }
+      .values.map { $0.shuffled() }.shuffled()
+    var chosen: [Question] = []
+    while chosen.count < count, !buckets.isEmpty {
+      for i in buckets.indices.reversed() where chosen.count < count {
+        chosen.append(buckets[i].removeLast())
+        if buckets[i].isEmpty { buckets.remove(at: i) }
+      }
+    }
+    return chosen.shuffled()
   }
   var streak: Int {
     var count = 0
@@ -139,7 +158,7 @@ import SwiftUI
     defer { busy = false }
     do {
       if let engine, let store { try await store.save(engine.snapshot()) }
-      let missed = Set(attempts.filter { $0.result.fraction < 1 }.map(\.questionId))
+      let missed = Self.missedQuestionIds(attempts)
       var pool =
         exact
         ?? questions.filter {
@@ -149,16 +168,13 @@ import SwiftUI
       if mode == .game2D { pool = pool.filter { $0.format == .game2D } }
       if mode == .game3D { pool = pool.filter { $0.format == .game3D } }
       if mode == .homework { pool = pool.filter { $0.format.isOpen } }
-      if mode == .practice && topic == nil && format == nil && !review && exact == nil {
-        pool = Array(questions.prefix(18))
-      }
       guard !pool.isEmpty else {
         throw APIError(
           message: review
             ? "No missed questions yet. Try a practice session first."
             : "No questions match this selection.")
       }
-      let chosen = Array(pool.shuffled().prefix(10))
+      let chosen = exact == nil ? Self.balancedSample(pool, count: 10) : Array(pool.shuffled().prefix(10))
       let fresh = SessionState(owner: owner, mode: mode, questions: chosen)
       engine = try QuizSession(state: fresh)
       state = fresh

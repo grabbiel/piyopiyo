@@ -25,3 +25,9 @@ test('saved timestamps reject invalid and future dates but retain offline attemp
  assert.equal(clientTimestamp('2026-01-01T10:00:00.123Z'),Date.parse('2026-01-01T10:00:00.123Z'));
  for(const invalid of ['bad',42,'1999-01-01',new Date(Date.now()+600000).toISOString()])assert.throws(()=>clientTimestamp(invalid));
 });
+test('room question sampling draws distinct questions from the whole pool',()=>{
+ const {sample}=require('./index.cjs');const pool=Array.from({length:50},(_,i)=>i);
+ const draws=Array.from({length:20},()=>sample(pool,10));
+ for(const draw of draws){assert.equal(draw.length,10);assert.equal(new Set(draw).size,10);assert.ok(draw.every(x=>pool.includes(x)));}
+ assert.ok(draws.some(draw=>draw.some(x=>x>=10)));assert.deepEqual(sample([1,2],10).sort(),[1,2]);
+});
