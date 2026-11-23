@@ -35,7 +35,7 @@ DISABLE_IAM_POLICY_AUTOPILOT_TELEMETRY=true uvx iam-policy-autopilot@latest gene
   --account 992680757326 --region us-east-1 --pretty
 ```
 
-The saved baseline is audit material only. `infra/policies/github-deploy.json` narrows it to the real stack, CI change sets and deployment prefixes, removes unused S3/KMS/CloudFormation variants, and adds the existing-function permissions CloudFormation needs. The service authorization reference was checked for those Lambda operations. To update delivery access, synthesize `infra/delivery.ts` into a separate output directory, inspect its change set, and deploy with the owner profile.
+The saved baseline is audit material only. `infra/policies/github-deploy.json` narrows it to the real stack, CI change sets and deployment prefixes, removes unused S3/KMS/CloudFormation variants, and adds the existing-function permissions CloudFormation needs. The service authorization reference and the registered `AWS::Lambda::Function` handler schema were checked for those operations, including the handler's code-signing, recursion, runtime-management and scaling configuration reads. Those reads are restricted to the same four functions. To update delivery access, synthesize `infra/delivery.ts` into a separate output directory, inspect its change set, and deploy with the owner profile.
 
 GitHub's [AWS OIDC guide](https://docs.github.com/en/actions/how-tos/secure-your-work/security-harden-deployments/oidc-in-aws) and [immutable-subject reference](https://docs.github.com/en/actions/reference/security/oidc) describe the trust format. Runner/toolchain details come from the [macOS 26 arm64 image](https://github.com/actions/runner-images/blob/main/images/macos/macos-26-arm64-Readme.md).
 
