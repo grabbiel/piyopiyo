@@ -223,22 +223,48 @@ struct NumericQuestion: QuestionRenderable {
     ).accessibilityLabel("Numeric answer")
   }
 }
+enum ComponentRole: Equatable {
+  case client, service, storage, cache, queue, router
+  init(_ label: String) {
+    let name = label.lowercased()
+    func has(_ words: String...) -> Bool { words.contains { name.contains($0) } }
+    if has("queue", "stream", "broker", "topic") {
+      self = .queue
+    } else if has("cache", "cdn") {
+      self = .cache
+    } else if has("database", "storage", "replica", "disk") {
+      self = .storage
+    } else if has("balancer", "gateway", "router", "proxy") {
+      self = .router
+    } else if has("client", "browser", "user") {
+      self = .client
+    } else {
+      self = .service
+    }
+  }
+  var symbol: String {
+    switch self {
+    case .client: "laptopcomputer"
+    case .service: "server.rack"
+    case .storage: "externaldrive"
+    case .cache: "bolt.horizontal.circle"
+    case .queue: "tray.full"
+    case .router: "arrow.triangle.branch"
+    }
+  }
+}
 struct VisualQuestion: QuestionRenderable {
   let question: Question
   @Binding var answer: [String]
   var body: some View {
     VStack(spacing: T.md) {
       LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: T.md) {
-        ForEach(Array(question.options.enumerated()), id: \.offset) { i, label in
+        ForEach(question.options, id: \.self) { label in
           Button {
             answer = [label]
           } label: {
             VStack(spacing: T.sm) {
-              Image(
-                systemName: [
-                  "laptopcomputer", "server.rack", "bolt.horizontal.circle", "externaldrive",
-                ][i % 4]
-              ).font(.largeTitle)
+              Image(systemName: ComponentRole(label).symbol).font(.largeTitle)
               Text(label).font(.headline)
             }.frame(maxWidth: .infinity, minHeight: T.size("buttonHeight") * 2).padding(T.md)
               .background(
@@ -339,20 +365,23 @@ final class FallingScene: SKScene {
     super.init(size: CGSize(width: T.size("gameWidth"), height: T.size("gameHeight")))
     scaleMode = .aspectFit
     backgroundColor = .clear
+    let column = size.width / CGFloat(max(options.count, 1))
+    let width = min(T.size("gameBlockWidth"), column - T.sm)
     for (i, value) in options.enumerated() {
       let block = SKShapeNode(
-        rectOf: CGSize(width: T.size("gameBlockWidth"), height: T.size("gameBlockHeight")),
+        rectOf: CGSize(width: width, height: T.size("gameBlockHeight")),
         cornerRadius: T.button)
       block.fillColor = SKColor(T.softGreen)
       block.strokeColor = SKColor(T.primary)
       block.name = value
-      block.position = CGPoint(x: 80 + i * 140, y: 240)
+      block.position = CGPoint(x: column * (CGFloat(i) + 0.5), y: 240)
       let label = SKLabelNode(text: value)
       label.fontName = "Menlo-Bold"
       label.fontSize = 15
       label.fontColor = block.strokeColor
       label.verticalAlignmentMode = .center
       label.name = value
+      label.setScale(min(1, (width - T.sm) / max(label.frame.width, 1)))
       block.addChild(label)
       addChild(block)
       let down = SKAction.moveBy(x: 0, y: -180, duration: 3 + Double(i) * 0.4)
@@ -401,13 +430,19 @@ struct Game2DQuestion: QuestionRenderable {
   let scene = SCNScene()
   scene.background.contents = SKColor(T.background).cgColor
   for (i, label) in options.enumerated() {
+    let role = ComponentRole(label)
     let shape: SCNGeometry =
-      i == 2
-      ? SCNCylinder(radius: 0.55, height: 1.1)
-      : SCNBox(width: 1, height: 0.8, length: 0.7, chamferRadius: 0.1)
+      switch role {
+      case .storage: SCNCylinder(radius: 0.55, height: 1.1)
+      case .cache: SCNSphere(radius: 0.5)
+      case .queue: SCNCapsule(capRadius: 0.3, height: 1.3)
+      case .router: SCNPyramid(width: 1, height: 0.9, length: 1)
+      case .client, .service: SCNBox(width: 1, height: 0.8, length: 0.7, chamferRadius: 0.1)
+      }
     shape.firstMaterial?.diffuse.contents =
-      i == 2 ? SKColor(T.primary).cgColor : SKColor(T.yellow).cgColor
+      role == .storage ? SKColor(T.primary).cgColor : SKColor(T.yellow).cgColor
     let node = SCNNode(geometry: shape)
+    if role == .queue { node.eulerAngles.z = .pi / 2 }
     node.position = SCNVector3(Float(i % 2) * 2 - 1, 0, Float(i / 2) * 2 - 1)
     node.name = label
     scene.rootNode.addChildNode(node)
