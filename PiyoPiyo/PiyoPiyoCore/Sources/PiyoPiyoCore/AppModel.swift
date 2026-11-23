@@ -104,7 +104,6 @@ import SwiftUI
   }
   init() {
     do {
-      questions = try Question.bundled()
       let directory = FileManager.default.urls(
         for: .applicationSupportDirectory, in: .userDomainMask)[0].appendingPathComponent(
           "PiyoPiyo", isDirectory: true)
@@ -120,17 +119,27 @@ import SwiftUI
     monitor.start(queue: DispatchQueue(label: "piyopiyo.connectivity"))
   }
   deinit { monitor.cancel() }
+  func loadBank() async {
+    do {
+      let cached = try await store?.list([Question].self, kind: "bank").first
+      let bank: [Question]
+      if let cached, !cached.isEmpty {
+        bank = cached
+      } else {
+        bank = try await Task.detached(priority: .userInitiated) { try Question.bundled() }.value
+      }
+      if questions.isEmpty { questions = bank }
+    } catch { self.error = error.localizedDescription }
+  }
   func load() async {
     let epoch = accountEpoch
     let currentOwner = owner
     do {
       guard let store else { return }
-      let cached = try await store.list([Question].self, kind: "bank").first
       let sessions = try await store.list(SessionState.self, kind: "session")
       let pending = try await store.list(PendingSubmission.self, kind: "queue")
       guard epoch == accountEpoch, currentOwner == owner else { return }
       aiFeedbackEnabled = UserDefaults.standard.bool(forKey: "aiFeedback." + currentOwner)
-      if let cached, !cached.isEmpty { questions = cached }
       publishedQuizzes = try await store.list([PublishedQuiz].self, kind: "quizzes").first ?? []
       history = sessions.filter { $0.owner == currentOwner }.sorted { $0.savedAt > $1.savedAt }
       queueCount = pending.filter { $0.owner == currentOwner }.count
@@ -221,7 +230,8 @@ import SwiftUI
   func saveDraft(_ answer: [String]) async {
     guard let engine, feedback == nil else { return }
     await engine.setDraft(answer)
-    await persist()
+    try? await Task.sleep(for: .milliseconds(400))
+    if !Task.isCancelled { await persist() }
   }
   func persist() async {
     guard !deletingAccount, let engine else { return }
@@ -275,7 +285,7 @@ import SwiftUI
     await load()
   }
   func sync() async {
-    guard !syncing, !deletingAccount, online, !offlinePractice, auth.tokens != nil, let store else { return }
+    guard !syncing, !deletingAccount, online, !offlinePractice, auth.tokens != nil, !questions.isEmpty, let store else { return }
     let epoch = accountEpoch
     syncing = true
     defer { syncing = false }
