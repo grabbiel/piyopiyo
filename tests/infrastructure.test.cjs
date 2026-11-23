@@ -4,17 +4,18 @@ const fs=require('node:fs');
 const template=JSON.parse(fs.readFileSync('cdk.out/PiyoPiyoDev.template.json','utf8'));
 const resources=Object.values(template.Resources);
 const ofType=t=>resources.filter(r=>r.Type===t);
-test('fixed-name Lambda code updates do not invalidate dependent IAM policies or integrations',()=>{
+test('function-name references preserve creation order without forced Lambda dependencies',()=>{
  const functions=new Set(Object.entries(template.Resources).filter(([,r])=>r.Type==='AWS::Lambda::Function').map(([id])=>id));
  function inspect(value){
   if(!value||typeof value!=='object')return;
   const attribute=value['Fn::GetAtt'];
-  if(attribute)assert.ok(!functions.has(Array.isArray(attribute)?attribute[0]:attribute.split('.')[0]),'Use a fixed function ARN and an explicit creation dependency');
+  if(attribute)assert.ok(!functions.has(Array.isArray(attribute)?attribute[0]:attribute.split('.')[0]),'Construct the ARN from the unchanged function-name Ref');
   for(const child of Object.values(value))inspect(child);
  }
  for(const resource of resources)inspect(resource.Properties);
- for(const resource of ofType('AWS::Lambda::Permission'))assert.ok(resource.DependsOn.some(id=>functions.has(id)));
- for(const resource of ofType('AWS::ApiGatewayV2::Integration'))assert.ok(resource.DependsOn.some(id=>functions.has(id)));
+ const hasFunctionRef=value=>value&&typeof value==='object'&&(functions.has(value.Ref)||Object.values(value).some(hasFunctionRef));
+ for(const resource of [...ofType('AWS::Lambda::Permission'),...ofType('AWS::ApiGatewayV2::Integration')])assert.ok(hasFunctionRef(resource.Properties),'Creation order must follow an implicit function-name reference');
+ for(const resource of resources)assert.ok(!(resource.DependsOn||[]).some(id=>functions.has(id)),'Explicit function dependencies force unrelated update operations');
 });
 test('storage is private, encrypted, versioned, and retained',()=>{
  assert.equal(ofType('AWS::S3::Bucket').length,4);
