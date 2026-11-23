@@ -17,6 +17,11 @@ test('multiple select rejects duplicates and ignores ordering',()=>{const q={for
 test('numeric handles tolerance, blank input and nonfinite input',()=>{const q={format:'numeric',correct:['0'],tolerance:0.1};assert.equal(score(q,['0.05']),1);assert.throws(()=>score(q,['']),/Invalid answer/);for(const a of ['NaN','Infinity','1'])assert.equal(score(q,[a]),0);});
 test('fill blank accepts explicitly enumerated synonyms only',()=>{const q={format:'fill_blank',correct:['mutex|lock','thread']};assert.equal(score(q,['Lock','THREAD']),1);assert.equal(score(q,['lock','process']),0);});
 for(const format of ['short_answer','homework','collaborative'])test(`${format}: fallback stays provisional and reports missing criteria`,()=>{const r=fallback({format,correct:[],criteria:['majority|quorum','randomized timeout']},['A quorum is needed']);assert.equal(r.score,3);assert.equal(r.status,'pending_review');assert.deepEqual(r.missingConcepts,['randomized timeout']);});
+for(const c of require('../tests/fixtures/scoring-parity.json'))test(`parity fixture: ${c.name}`,()=>{
+ const grade=()=>['short_answer','homework','collaborative'].includes(c.question.format)?fallback(c.question,c.answer):{score:score(c.question,c.answer)};
+ if(c.invalid)return assert.throws(grade,/Invalid answer/);
+ const r=grade();assert.equal(r.score,c.score);if(c.missing)assert.deepEqual(r.missingConcepts,c.missing);
+});
 test('malformed input cannot reach grading',()=>{assert.throws(()=>score({correct:['a']},'a'));assert.throws(()=>score({correct:['a']},['x'.repeat(6001)]));});
 test('missing authentication cannot access user progress',async()=>{const r=await handler({rawPath:'/progress'});assert.equal(r.statusCode,401);});
 
