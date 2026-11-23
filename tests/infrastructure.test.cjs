@@ -12,9 +12,17 @@ test('fixed-name Lambda code updates do not invalidate dependent IAM policies or
   if(attribute)assert.ok(!functions.has(Array.isArray(attribute)?attribute[0]:attribute.split('.')[0]),'Use a fixed function ARN and an explicit creation dependency');
   for(const child of Object.values(value))inspect(child);
  }
+ function referencesFunction(value){
+  if(!value||typeof value!=='object')return false;
+  if(typeof value.Ref==='string'&&functions.has(value.Ref))return true;
+  return Object.values(value).some(referencesFunction);
+ }
+ function orderedBeforeFunction(resource){
+  return [].concat(resource.DependsOn||[]).some(id=>functions.has(id))||referencesFunction(resource.Properties);
+ }
  for(const resource of resources)inspect(resource.Properties);
- for(const resource of ofType('AWS::Lambda::Permission'))assert.ok(resource.DependsOn.some(id=>functions.has(id)));
- for(const resource of ofType('AWS::ApiGatewayV2::Integration'))assert.ok(resource.DependsOn.some(id=>functions.has(id)));
+ for(const resource of ofType('AWS::Lambda::Permission'))assert.ok(orderedBeforeFunction(resource),'Permission must depend on its function via DependsOn or Ref');
+ for(const resource of ofType('AWS::ApiGatewayV2::Integration'))assert.ok(orderedBeforeFunction(resource),'Integration must depend on its function via DependsOn or Ref');
 });
 test('storage is private, encrypted, versioned, and retained',()=>{
  assert.equal(ofType('AWS::S3::Bucket').length,4);
