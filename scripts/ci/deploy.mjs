@@ -20,8 +20,9 @@ try {
  if(!['CREATE_COMPLETE','UPDATE_COMPLETE','UPDATE_ROLLBACK_COMPLETE'].includes(current.StackStatus)) throw Error('Stack is not in a stable deployable state');
  if(current.RoleARN) throw Error('Unexpected CloudFormation service role; review its permissions before CI delivery');
  const previous=JSON.parse((await cf.send(new GetTemplateCommand({StackName:stack,TemplateStage:'Original'}))).TemplateBody);
- const proposed=JSON.parse(await readFile('cdk.out/PiyoPiyoDev.template.json','utf8'));
- proof.changedFunctions=policy.assertCodeOnly(previous,proposed);
+ const synthesized=JSON.parse(await readFile('cdk.out/PiyoPiyoDev.template.json','utf8'));
+ proof.changedFunctions=policy.assertCodeOnly(previous,synthesized);
+ const proposed=policy.retainTelemetry(previous,synthesized);
  if(process.argv.includes('--plan')) {
   proof.status='PLAN_VALID';console.log('Code-only deployment plan validated:',proof.changedFunctions.length,'functions');
  } else {
@@ -51,7 +52,7 @@ try {
   if(change.Status==='FAILED'&&/didn.t contain changes|No updates are to be performed/i.test(change.StatusReason||'')) {
    proof.status='NO_CHANGES';await cf.send(new DeleteChangeSetCommand({StackName:stack,ChangeSetName:changeId}));changeId=undefined;
   } else {
-   policy.assertSafeChangeSet(change);
+   policy.assertSafeChangeSet(change,previous,proposed);
    await cf.send(new ExecuteChangeSetCommand({StackName:stack,ChangeSetName:changeId}));executed=true;
    for(let i=0;i<150;i++) {
     const state=(await cf.send(new DescribeStacksCommand({StackName:stack}))).Stacks[0].StackStatus;
