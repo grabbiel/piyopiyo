@@ -77,6 +77,42 @@
           "iam:PassedToService": "lambda.amazonaws.com"
         }
       }
+    },
+    {
+      "Sid": "ReadExistingExecutionRoles",
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetRole",
+        "iam:ListAttachedRolePolicies",
+        "iam:ListRolePolicies",
+        "iam:GetRolePolicy"
+      ],
+      "Resource": [
+        "arn:aws:iam::992680757326:role/PiyoPiyoDev-ApiExecution19218AAE-UiYjvIm2tZPQ",
+        "arn:aws:iam::992680757326:role/PiyoPiyoDev-KnowledgeAPIRole4717F15A-gLS6qevDv0Yx",
+        "arn:aws:iam::992680757326:role/PiyoPiyoDev-KnowledgeWorkerRole6EA081DE-WIIdqSVtjRrC",
+        "arn:aws:iam::992680757326:role/PiyoPiyoDev-KnowledgePDFRole5CE8A860-5d5r40MlY28i"
+      ]
+    },
+    {
+      "Sid": "ReadExistingApiEndpoint",
+      "Effect": "Allow",
+      "Action": [
+        "apigateway:GET"
+      ],
+      "Resource": "arn:aws:apigateway:us-east-1::/apis/xk4vd8adrd"
+    },
+    {
+      "Sid": "ReadExistingModelProfileAttributes",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:GetInferenceProfile",
+        "bedrock:ListTagsForResource"
+      ],
+      "Resource": [
+        "arn:aws:bedrock:us-east-1:992680757326:application-inference-profile/yfevvxi4bbi9",
+        "arn:aws:bedrock:us-east-1:992680757326:application-inference-profile/7z9pcwixgslg"
+      ]
     }
   ]
 }
