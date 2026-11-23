@@ -45,6 +45,10 @@
       "Action": [
         "lambda:GetFunction",
         "lambda:GetFunctionConfiguration",
+        "lambda:GetFunctionCodeSigningConfig",
+        "lambda:GetFunctionRecursionConfig",
+        "lambda:GetFunctionScalingConfig",
+        "lambda:GetRuntimeManagementConfig",
         "lambda:ListTags",
         "lambda:UpdateFunctionCode",
         "lambda:UpdateFunctionConfiguration"
