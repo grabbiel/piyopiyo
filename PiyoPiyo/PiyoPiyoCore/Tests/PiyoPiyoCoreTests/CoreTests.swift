@@ -138,6 +138,36 @@ final class CoreTests: XCTestCase {
     XCTAssertEqual(log.first?.count, 100)
     XCTAssertEqual(log.first?.first, "event-5")
   }
+  func testDefaultPracticeSpansTopicsAndFormats() throws {
+    let bank = try Question.bundled()
+    let chosen = AppModel.balancedSample(bank, count: 10)
+    XCTAssertEqual(chosen.count, 10)
+    XCTAssertEqual(Set(chosen.map(\.id)).count, 10)
+    XCTAssertEqual(Set(chosen.map { "\($0.topic)/\($0.format.rawValue)" }).count, 10)
+    XCTAssertGreaterThanOrEqual(Set(chosen.map(\.topic)).count, 2)
+    XCTAssertEqual(AppModel.balancedSample(Array(bank.prefix(3)), count: 10).count, 3)
+  }
+  func testRevisitMistakesClearsAfterLaterFullMarks() throws {
+    let bank = try Question.bundled()
+    let q = bank[0]
+    let open = try XCTUnwrap(bank.first { $0.format.isOpen })
+    var wrong = Attempt(questionId: q.id, answer: ["x"], result: try Scoring.evaluate(q, answer: ["x"]))
+    wrong.createdAt = Date(timeIntervalSince1970: 100)
+    var right = Attempt(questionId: q.id, answer: q.correct, result: try Scoring.evaluate(q, answer: q.correct))
+    right.createdAt = Date(timeIntervalSince1970: 200)
+    let pending = Attempt(questionId: open.id, answer: ["idea"], result: try Scoring.evaluate(open, answer: ["idea"]))
+    XCTAssertEqual(AppModel.missedQuestionIds([wrong]), [q.id])
+    XCTAssertEqual(AppModel.missedQuestionIds([right, wrong, pending]), [])
+  }
+  func testComponentRolesFollowLabelsNotPosition() {
+    XCTAssertEqual(ComponentRole("Database"), .storage)
+    XCTAssertEqual(ComponentRole("Read replica"), .storage)
+    XCTAssertEqual(ComponentRole("Job queue"), .queue)
+    XCTAssertEqual(ComponentRole("CDN cache"), .cache)
+    XCTAssertEqual(ComponentRole("Load balancer"), .router)
+    XCTAssertEqual(ComponentRole("Client"), .client)
+    XCTAssertEqual(ComponentRole("API"), .service)
+  }
   func testAllDeliveryModesConfigured() {
     XCTAssertEqual(DeliveryMode.allCases.count, 8)
     XCTAssertEqual(DeliveryMode.timed.config.timeLimit, 300)
