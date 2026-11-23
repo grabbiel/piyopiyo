@@ -32,6 +32,7 @@ with tempfile.TemporaryDirectory(prefix='piyopiyo-signing-',dir=os.environ.get('
         quiet(['security','unlock-keychain','-p',password,str(keychain)])
         quiet(['security','list-keychains','-d','user','-s',str(keychain),*previous])
         for stem in ['IOS_DISTRIBUTION','DEVELOPER_ID']:
+            print('Importing '+stem+' signing identity',flush=True)
             p12=private/(stem+'.p12');p12.write_bytes(base64.b64decode(os.environ[stem+'_P12_BASE64'],validate=True));p12.chmod(0o600)
             quiet(['security','import',str(p12),'-k',str(keychain),'-P',os.environ[stem+'_PASSWORD'],'-T','/usr/bin/codesign','-T','/usr/bin/security'])
         quiet(['security','set-key-partition-list','-S','apple-tool:,apple:,codesign:','-k',password,str(keychain)])
@@ -53,7 +54,7 @@ with tempfile.TemporaryDirectory(prefix='piyopiyo-signing-',dir=os.environ.get('
         logged('generate',['xcodegen','generate','--spec','PiyoPiyo/project.yml'])
         settings=[f'MARKETING_VERSION={version}',f'CURRENT_PROJECT_VERSION={build}',f'DEVELOPMENT_TEAM={os.environ["APPLE_TEAM_ID"]}']
         archive=output/'PiyoPiyo.xcarchive'
-        logged('ios-archive',['xcodebuild','-project','PiyoPiyo/PiyoPiyo.xcodeproj','-scheme','PiyoPiyo-iOS','-configuration','Release','-sdk','iphoneos','-destination','generic/platform=iOS','-archivePath',str(archive),'-derivedDataPath',str(root/'DerivedData/apple-ios'),*settings,'CODE_SIGN_STYLE=Manual',f'CODE_SIGN_IDENTITY={ios_identity}',f'PROVISIONING_PROFILE_SPECIFIER={profile_info["Name"]}','archive'])
+        logged('ios-archive',['xcodebuild','-project','PiyoPiyo/PiyoPiyo.xcodeproj','-scheme','PiyoPiyo-iOS','-configuration','Release','-sdk','iphoneos','-destination','generic/platform=iOS','-archivePath',str(archive),'-derivedDataPath',str(root/'DerivedData/apple-ios'),*settings,'CODE_SIGN_STYLE=Manual',f'CODE_SIGN_IDENTITY={ios_identity}',f'PIYOPIYO_IOS_PROFILE={profile_info["Name"]}','archive'])
         export={'method':'app-store-connect','destination':'export','signingStyle':'manual','teamID':os.environ['APPLE_TEAM_ID'],'signingCertificate':ios_identity,'provisioningProfiles':{'app.piyopiyo.iphone':profile_info['Name']},'manageAppVersionAndBuildNumber':False,'uploadSymbols':False,'stripSwiftSymbols':True}
         export_path=private/'ExportOptions.plist';export_path.write_bytes(plistlib.dumps(export))
         logged('ios-export',['xcodebuild','-exportArchive','-archivePath',str(archive),'-exportPath',str(output/'ios'),'-exportOptionsPlist',str(export_path)])
