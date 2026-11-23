@@ -21,8 +21,17 @@ struct QuestionInput: View {
     case .visual: VisualQuestion(question: question, answer: $answer)
     case .dragDrop: DragDropQuestion(question: question, answer: $answer)
     case .audio: AudioQuestion(question: question, answer: $answer)
-    case .game2D: Game2DQuestion(question: question, answer: $answer)
-    case .game3D: Game3DQuestion(question: question, answer: $answer)
+    case .game2D, .game3D:
+      switch question.game?.template {
+      case "falling_blocks": Game2DQuestion(question: question, answer: $answer)
+      case "system_architecture": Game3DQuestion(question: question, answer: $answer)
+      default:
+        if question.format == .game2D {
+          Game2DQuestion(question: question, answer: $answer)
+        } else {
+          Game3DQuestion(question: question, answer: $answer)
+        }
+      }
     case .live: LiveQuestion(question: question, answer: $answer)
     case .homework: HomeworkQuestion(question: question, answer: $answer)
     case .collaborative: CollaborativeQuestion(question: question, answer: $answer)
@@ -335,7 +344,7 @@ struct CollaborativeQuestion: QuestionRenderable {
 
 final class FallingScene: SKScene {
   var choose: ((String) -> Void)?
-  init(options: [String]) {
+  init(options: [String], speed: Double = 1) {
     super.init(size: CGSize(width: T.size("gameWidth"), height: T.size("gameHeight")))
     scaleMode = .aspectFit
     backgroundColor = .clear
@@ -355,7 +364,7 @@ final class FallingScene: SKScene {
       label.name = value
       block.addChild(label)
       addChild(block)
-      let down = SKAction.moveBy(x: 0, y: -180, duration: 3 + Double(i) * 0.4)
+      let down = SKAction.moveBy(x: 0, y: -180, duration: (3 + Double(i) * 0.4) / speed)
       block.run(.repeatForever(.sequence([down, .moveBy(x: 0, y: 180, duration: 0)])))
     }
   }
@@ -391,22 +400,26 @@ struct Game2DQuestion: QuestionRenderable {
         .foregroundStyle(T.muted)
       Choices(options: question.options, answer: $answer)
     }.onAppear {
-      let s = FallingScene(options: question.options)
+      let speed = question.game?.params?.speed ?? 1
+      let s = FallingScene(options: question.options, speed: speed > 0 ? speed : 1)
       s.choose = { value in answer = [value] }
       scene = s
     }
   }
 }
-@MainActor private func architectureScene(_ options: [String]) -> SCNScene {
+@MainActor private func architectureScene(_ options: [String], roles: [String: String]?)
+  -> SCNScene
+{
   let scene = SCNScene()
   scene.background.contents = SKColor(T.background).cgColor
   for (i, label) in options.enumerated() {
+    let cylinder = roles.map { $0[label] == "cylinder" } ?? (i == 2)
     let shape: SCNGeometry =
-      i == 2
+      cylinder
       ? SCNCylinder(radius: 0.55, height: 1.1)
       : SCNBox(width: 1, height: 0.8, length: 0.7, chamferRadius: 0.1)
     shape.firstMaterial?.diffuse.contents =
-      i == 2 ? SKColor(T.primary).cgColor : SKColor(T.yellow).cgColor
+      cylinder ? SKColor(T.primary).cgColor : SKColor(T.yellow).cgColor
     let node = SCNNode(geometry: shape)
     node.position = SCNVector3(Float(i % 2) * 2 - 1, 0, Float(i / 2) * 2 - 1)
     node.name = label
@@ -433,7 +446,9 @@ struct Game3DQuestion: QuestionRenderable {
   @Binding var answer: [String]
   var body: some View {
     VStack(spacing: T.md) {
-      SceneInteraction(options: question.options, selected: $answer).frame(
+      SceneInteraction(
+        options: question.options, roles: question.game?.params?.roles, selected: $answer
+      ).frame(
         height: T.size("gameHeight")
       ).clipShape(RoundedRectangle(cornerRadius: T.card)).accessibilityHidden(true)
       Text("Drag to orbit. Tap a component, or choose it below.").font(.caption).foregroundStyle(
@@ -465,11 +480,12 @@ final class SceneCoordinator: NSObject {
 #if os(macOS)
   struct SceneInteraction: NSViewRepresentable {
     let options: [String]
+    let roles: [String: String]?
     @Binding var selected: [String]
     func makeCoordinator() -> SceneCoordinator { SceneCoordinator($selected) }
     func makeNSView(context: Context) -> SCNView {
       let view = SCNView()
-      view.scene = architectureScene(options)
+      view.scene = architectureScene(options, roles: roles)
       view.autoenablesDefaultLighting = true
       view.allowsCameraControl = true
       view.addGestureRecognizer(
@@ -484,11 +500,12 @@ final class SceneCoordinator: NSObject {
 #else
   struct SceneInteraction: UIViewRepresentable {
     let options: [String]
+    let roles: [String: String]?
     @Binding var selected: [String]
     func makeCoordinator() -> SceneCoordinator { SceneCoordinator($selected) }
     func makeUIView(context: Context) -> SCNView {
       let view = SCNView()
-      view.scene = architectureScene(options)
+      view.scene = architectureScene(options, roles: roles)
       view.autoenablesDefaultLighting = true
       view.allowsCameraControl = true
       view.addGestureRecognizer(

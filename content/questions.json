@@ -280,7 +280,13 @@
     "explanation": "Merge sort has logarithmically many levels; each level processes a total of n elements.",
     "sourceId": "mit-algorithms",
     "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "game": {
+      "template": "falling_blocks",
+      "params": {
+        "speed": 1.0
+      }
+    }
   },
   {
     "id": "architecture-3d",
@@ -299,7 +305,18 @@
     "explanation": "The cylinder represents durable database storage. Rotate the scene to inspect the components.",
     "sourceId": "postgres",
     "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
-    "difficulty": "easy"
+    "difficulty": "easy",
+    "game": {
+      "template": "system_architecture",
+      "params": {
+        "roles": {
+          "Client": "box",
+          "API": "box",
+          "Database": "cylinder",
+          "Queue": "box"
+        }
+      }
+    }
   },
   {
     "id": "live-majority",
