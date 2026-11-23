@@ -1,0 +1,8 @@
+{
+  "enabled": true,
+  "modelId": "arn:aws:bedrock:us-east-1:992680757326:application-inference-profile/yfevvxi4bbi9",
+  "modelFamily": "haiku45",
+  "reportSHA256": "1ed4ccf369b8d06b6de20f586728aa4925f9bcafafb0f019b0b19f6b67ddca0f",
+  "validatedAt": "2026-11-23T14:00:41.403Z",
+  "notes": "50 owner-reviewed scores; reused regression set, not an untouched generalization estimate."
+}

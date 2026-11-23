@@ -1,0 +1,54 @@
+{
+  "name": "piyopiyo",
+  "version": "1.0.0",
+  "description": "PiyoPiyo native learning app infrastructure and backend",
+  "scripts": {
+    "typecheck": "tsc",
+    "synth": "cdk synth --quiet",
+    "test": "node --test backend/*.test.cjs backend/knowledge/*.test.cjs tests/*.test.cjs",
+    "test:integration": "AWS_PROFILE=admin AWS_REGION=us-east-1 node scripts/integration.mjs",
+    "presynth": "node scripts/prepare-public-documents.mjs && node scripts/build-backend.mjs && node scripts/build-knowledge.mjs",
+    "verify:grading": "node scripts/grading-gate.cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grabbiel/piyopiyo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/grabbiel/piyopiyo/issues"
+  },
+  "homepage": "https://github.com/grabbiel/piyopiyo#readme",
+  "dependencies": {
+    "@aws-sdk/client-bedrock-runtime": "^3.1175.0",
+    "@aws-sdk/client-cognito-identity-provider": "^3.1175.0",
+    "@aws-sdk/client-dynamodb": "^3.1175.0",
+    "@aws-sdk/client-lambda": "^3.1175.0",
+    "@aws-sdk/client-s3": "^3.1175.0",
+    "@aws-sdk/client-secrets-manager": "^3.1175.0",
+    "@aws-sdk/client-sqs": "^3.1175.0",
+    "@aws-sdk/lib-dynamodb": "^3.1175.0",
+    "@aws-sdk/s3-request-presigner": "^3.1175.0",
+    "@mozilla/readability": "^0.6.0",
+    "aws-cdk-lib": "^2.278.0",
+    "constructs": "^10.8.1",
+    "fast-xml-parser": "^5.12.1",
+    "ipaddr.js": "^2.5.0",
+    "linkedom": "^0.18.15",
+    "robots-parser": "^3.1.1"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-cloudformation": "3.1175.0",
+    "@aws-sdk/client-sts": "3.1175.0",
+    "@huggingface/transformers": "^4.3.2",
+    "@types/node": "^26.6.6",
+    "aws-cdk": "^2.1149.0",
+    "esbuild": "0.28.2",
+    "playwright": "^1.65.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "private": true
+}

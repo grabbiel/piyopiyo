@@ -1,0 +1,35 @@
+import {Stack, Duration, RemovalPolicy, CfnOutput, aws_s3 as s3, aws_dynamodb as db, aws_iam as iam, aws_lambda as lambda, aws_lambda_event_sources as sources, aws_logs as logs, aws_sqs as sqs, aws_scheduler as scheduler, aws_bedrock as bedrock, aws_apigatewayv2 as api, aws_cloudwatch as cw} from 'aws-cdk-lib';
+import {readFileSync} from 'node:fs';
+export function knowledge(stack:Stack, deploymentBucket:s3.Bucket, questionBucket:s3.Bucket, http:api.CfnApi, authorizer:api.CfnAuthorizer){
+ const bucket=new s3.Bucket(stack,'KnowledgeBucket',{bucketName:`piyopiyo-knowledge-${stack.account}`,blockPublicAccess:s3.BlockPublicAccess.BLOCK_ALL,encryption:s3.BucketEncryption.S3_MANAGED,enforceSSL:true,versioned:true,objectOwnership:s3.ObjectOwnership.BUCKET_OWNER_ENFORCED,removalPolicy:RemovalPolicy.RETAIN,lifecycleRules:[{abortIncompleteMultipartUploadAfter:Duration.days(1),noncurrentVersionExpiration:Duration.days(14)}]});
+ const table=new db.Table(stack,'KnowledgeData',{tableName:'PiyoPiyoKnowledge',partitionKey:{name:'PK',type:db.AttributeType.STRING},sortKey:{name:'SK',type:db.AttributeType.STRING},billingMode:db.BillingMode.PAY_PER_REQUEST,maxReadRequestUnits:10,maxWriteRequestUnits:5,timeToLiveAttribute:'expiresAt',removalPolicy:RemovalPolicy.RETAIN,pointInTimeRecoverySpecification:{pointInTimeRecoveryEnabled:true,recoveryPeriodInDays:7}});
+ const dead=new sqs.Queue(stack,'KnowledgeDeadLetters',{queueName:'piyopiyo-knowledge-dead.fifo',fifo:true,enforceSSL:true,encryption:sqs.QueueEncryption.SQS_MANAGED,retentionPeriod:Duration.days(14)});
+ const queue=new sqs.Queue(stack,'KnowledgeQueue',{queueName:'piyopiyo-knowledge.fifo',fifo:true,contentBasedDeduplication:true,enforceSSL:true,encryption:sqs.QueueEncryption.SQS_MANAGED,visibilityTimeout:Duration.minutes(30),retentionPeriod:Duration.days(4),deadLetterQueue:{queue:dead,maxReceiveCount:3}});
+ const profile=new bedrock.CfnApplicationInferenceProfile(stack,'KnowledgeModel',{inferenceProfileName:'piyopiyo-knowledge-generation',description:'PiyoPiyo source grounded generation and independent validation',modelSource:{copyFrom:`arn:aws:bedrock:us-east-1:${stack.account}:inference-profile/us.anthropic.claude-haiku-4-5-20251001-v1:0`}});
+ const artifacts=JSON.parse(readFileSync('artifacts/knowledge/manifest.json','utf8'));
+ const env={KNOWLEDGE_TABLE:table.tableName,KNOWLEDGE_BUCKET:bucket.bucketName,KNOWLEDGE_QUEUE:queue.queueUrl,QUESTION_BUCKET:questionBucket.bucketName};
+ const make=(id:string,name:string,artifact:string,runtime:lambda.Runtime,memory:number,timeout:number,extra:Record<string,string>={})=>{
+  const group=new logs.LogGroup(stack,id+'Logs',{logGroupName:'/aws/lambda/'+name,retention:logs.RetentionDays.ONE_WEEK,removalPolicy:RemovalPolicy.DESTROY});
+  const role=new iam.Role(stack,id+'Role',{assumedBy:new iam.ServicePrincipal('lambda.amazonaws.com'),description:'Dedicated PiyoPiyo knowledge pipeline runtime'});group.grantWrite(role);
+  return new lambda.Function(stack,id,{functionName:name,runtime,architecture:lambda.Architecture.ARM_64,handler:'index.handler',code:lambda.Code.fromBucket(deploymentBucket,artifacts[artifact].key),role,logGroup:group,memorySize:memory,timeout:Duration.seconds(timeout),reservedConcurrentExecutions:1,environment:{...env,...extra}});
+ };
+ const pdf=make('KnowledgePDF','piyopiyo-knowledge-pdf','pdf',lambda.Runtime.PYTHON_3_13,1024,90);
+ bucket.grantRead(pdf,'raw/*');bucket.grantPut(pdf,'extracted/*');
+ const worker=make('KnowledgeWorker','piyopiyo-knowledge-worker','worker',lambda.Runtime.NODEJS_22_X,512,300,{GENERATION_MODEL:profile.attrInferenceProfileArn,PDF_FUNCTION:pdf.functionName});
+ table.grantReadWriteData(worker);bucket.grantReadWrite(worker);questionBucket.grantReadWrite(worker,'published/*');queue.grantSendMessages(worker);pdf.grantInvoke(worker);
+ worker.addToRolePolicy(new iam.PolicyStatement({actions:['bedrock:InvokeModel'],resources:[profile.attrInferenceProfileArn]}));
+ worker.addToRolePolicy(new iam.PolicyStatement({actions:['bedrock:InvokeModel'],resources:['us-east-1','us-east-2','us-west-2'].map(region=>`arn:aws:bedrock:${region}::foundation-model/anthropic.claude-haiku-4-5-20251001-v1:0`),conditions:{StringEquals:{'bedrock:InferenceProfileArn':profile.attrInferenceProfileArn}}}));
+ worker.addEventSource(new sources.SqsEventSource(queue,{batchSize:1,reportBatchItemFailures:true}));
+ const admin=make('KnowledgeAPI','piyopiyo-knowledge-api','api',lambda.Runtime.NODEJS_22_X,256,25);
+ table.grantReadWriteData(admin);bucket.grantRead(admin);bucket.grantPut(admin,'raw/*');queue.grantSendMessages(admin);
+ const integration=new api.CfnIntegration(stack,'KnowledgeIntegration',{apiId:http.ref,integrationType:'AWS_PROXY',integrationUri:admin.functionArn,payloadFormatVersion:'2.0',timeoutInMillis:28000});
+ new api.CfnRoute(stack,'KnowledgeRoute',{apiId:http.ref,routeKey:'ANY /knowledge/{proxy+}',target:`integrations/${integration.ref}`,authorizationType:'JWT',authorizerId:authorizer.ref,authorizationScopes:['openid','aws.cognito.signin.user.admin']});
+ admin.addPermission('HttpInvoke',{principal:new iam.ServicePrincipal('apigateway.amazonaws.com'),sourceArn:`arn:aws:execute-api:us-east-1:${stack.account}:${http.ref}/*/*/knowledge/*`,sourceAccount:stack.account});
+ const group=new scheduler.CfnScheduleGroup(stack,'KnowledgeSchedules',{name:'piyopiyo-knowledge'});
+ const role=new iam.Role(stack,'KnowledgeScheduleRole',{assumedBy:new iam.ServicePrincipal('scheduler.amazonaws.com',{conditions:{StringEquals:{'aws:SourceAccount':stack.account},ArnEquals:{'aws:SourceArn':group.attrArn}}}),description:'PiyoPiyo scheduler may enqueue only knowledge jobs'});
+ queue.grantSendMessages(role);
+ for(const [op,hour] of [['discover','9'],['generate','10']])new scheduler.CfnSchedule(stack,'KnowledgeSchedule'+op,{name:'piyopiyo-knowledge-'+op,groupName:group.ref,scheduleExpression:`cron(30 ${hour} ? * MON,WED,FRI *)`,scheduleExpressionTimezone:'America/Lima',flexibleTimeWindow:{mode:'OFF'},state:'ENABLED',target:{arn:queue.queueArn,roleArn:role.roleArn,sqsParameters:{messageGroupId:'pipeline'},input:JSON.stringify({op,jobId:'<aws.scheduler.execution-id>'}),retryPolicy:{maximumRetryAttempts:2,maximumEventAgeInSeconds:3600}}});
+ new cw.Alarm(stack,'KnowledgeDeadLetterAlarm',{alarmDescription:'PiyoPiyo knowledge import/generation needs attention; see Sources app jobs and DLQ',metric:dead.metricApproximateNumberOfMessagesVisible(),threshold:1,evaluationPeriods:1,treatMissingData:cw.TreatMissingData.NOT_BREACHING});
+ for(const [key,value] of Object.entries({KnowledgeBucket:bucket.bucketName,KnowledgeTable:table.tableName,KnowledgeQueue:queue.queueUrl,KnowledgeModelArn:profile.attrInferenceProfileArn}))new CfnOutput(stack,key+'Output',{value});
+ return {table};
+}

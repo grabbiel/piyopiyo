@@ -1,0 +1,818 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		13D51E8D71013FF6D923B2CF /* Info-PiyoPiyo-macOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 267BDEDB88D48C43A60A4505 /* Info-PiyoPiyo-macOS.plist */; };
+		2247008374FBF8296139640E /* Info-PiyoPiyo-macOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 267BDEDB88D48C43A60A4505 /* Info-PiyoPiyo-macOS.plist */; };
+		2534C4DAAC6DD33FCCC4A189 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3261B7577E122A6885905645 /* Assets.xcassets */; };
+		26CD2064B42017F697AB383F /* Info-PiyoPiyo-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 873AB448A814C2B8382F5949 /* Info-PiyoPiyo-iOS.plist */; };
+		286CBB1330A6C6EBB9E53F20 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 3AA26687C2146D3396754393 /* PrivacyInfo.xcprivacy */; };
+		3386E224CB8EAB2D7DE4E98B /* Info-PiyoPiyo-iPadOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E16DF818ECEF72AB47AF5B8 /* Info-PiyoPiyo-iPadOS.plist */; };
+		35B314CA693905B08034E5F2 /* PiyoPiyoCore in Frameworks */ = {isa = PBXBuildFile; productRef = F7C6BAEF8CAA23AC1C7ACA6B /* PiyoPiyoCore */; };
+		486394629213D0BBAB6809D0 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 3AA26687C2146D3396754393 /* PrivacyInfo.xcprivacy */; };
+		6185E5B9CA93C7637FED6873 /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C1C850B1D81A17780D86E7 /* CoreTests.swift */; };
+		62EE7E7F68B5063211D39B49 /* Info-PiyoPiyo-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 873AB448A814C2B8382F5949 /* Info-PiyoPiyo-iOS.plist */; };
+		6338A3CCCE790A7C54B70352 /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C1C850B1D81A17780D86E7 /* CoreTests.swift */; };
+		6D6013A359D23B0B604E3A43 /* PiyoPiyoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E14A2AF1EC2B244C401073 /* PiyoPiyoApp.swift */; };
+		8F115516831B2F0592EA8FA8 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 9554086F555A9193BCF74EA7 /* SnapshotTesting */; };
+		A75B9ED8956E8BA2E0B3FA45 /* PiyoPiyoCore in Frameworks */ = {isa = PBXBuildFile; productRef = AF8723756AB744A3B0210736 /* PiyoPiyoCore */; };
+		AB51B08117A7F1A860909F36 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = D07C863E501111E5AB598B3B /* SnapshotTesting */; };
+		AC970344C6729347A76324BF /* PiyoPiyoCore in Frameworks */ = {isa = PBXBuildFile; productRef = 5A4040E7C2360ABD57ED7E0E /* PiyoPiyoCore */; };
+		B078DE58CA741C7DEC6B4D00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3261B7577E122A6885905645 /* Assets.xcassets */; };
+		B2066E28158A0F4A9D4477C6 /* PiyoPiyoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E14A2AF1EC2B244C401073 /* PiyoPiyoApp.swift */; };
+		B6E0A6565CEBF044F7202995 /* PiyoPiyoCore in Frameworks */ = {isa = PBXBuildFile; productRef = 1B5A6BDB76126820E9B88721 /* PiyoPiyoCore */; };
+		D42E2270C8D4E07A500FA331 /* Info-PiyoPiyo-iPadOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E16DF818ECEF72AB47AF5B8 /* Info-PiyoPiyo-iPadOS.plist */; };
+		D4311AD16840FDE980E29A32 /* SnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E093D7FC1E183DA9F39F3ECF /* SnapshotTests.swift */; };
+		D5DB2F9AA72937A97E2F66A0 /* PiyoPiyoCore in Frameworks */ = {isa = PBXBuildFile; productRef = E2A40AE17D93AC822143F58D /* PiyoPiyoCore */; };
+		D74743EF834946B2921E8862 /* SnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E093D7FC1E183DA9F39F3ECF /* SnapshotTests.swift */; };
+		EB46D43C61383047088E0467 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3261B7577E122A6885905645 /* Assets.xcassets */; };
+		ED8EEF3BBF77A46E438024A6 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 3AA26687C2146D3396754393 /* PrivacyInfo.xcprivacy */; };
+		F91C9F333A4EB2CFC2A890FE /* PiyoPiyoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E14A2AF1EC2B244C401073 /* PiyoPiyoApp.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1A33DAE5B2D90C7525EB29F1 /* PiyoPiyo-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PiyoPiyo-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		267BDEDB88D48C43A60A4505 /* Info-PiyoPiyo-macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Info-PiyoPiyo-macOS.plist"; sourceTree = "<group>"; };
+		3261B7577E122A6885905645 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		36C1C850B1D81A17780D86E7 /* CoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
+		3AA26687C2146D3396754393 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		4E16DF818ECEF72AB47AF5B8 /* Info-PiyoPiyo-iPadOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Info-PiyoPiyo-iPadOS.plist"; sourceTree = "<group>"; };
+		57E14A2AF1EC2B244C401073 /* PiyoPiyoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiyoPiyoApp.swift; sourceTree = "<group>"; };
+		5D9ED965FD67342B31362D9B /* PiyoPiyo-iPadOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "PiyoPiyo-iPadOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		704B0F57F834E4B79C1A8946 /* PiyoPiyo-iPhoneTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = "PiyoPiyo-iPhoneTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		873AB448A814C2B8382F5949 /* Info-PiyoPiyo-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Info-PiyoPiyo-iOS.plist"; sourceTree = "<group>"; };
+		A89648792E9BAB14C8E8CB27 /* PiyoPiyoCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = PiyoPiyoCore; path = PiyoPiyoCore; sourceTree = SOURCE_ROOT; };
+		D233A8F0510079910F3F11FA /* PiyoPiyo-iPadTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = "PiyoPiyo-iPadTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E093D7FC1E183DA9F39F3ECF /* SnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotTests.swift; sourceTree = "<group>"; };
+		EB8149FD4FA677DF27394BF2 /* Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mac.entitlements; sourceTree = "<group>"; };
+		F38619A3DA9EE29E0ECFB6AC /* PiyoPiyo-iOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "PiyoPiyo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4972E8F9E6B09800F74B411D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC970344C6729347A76324BF /* PiyoPiyoCore in Frameworks */,
+				8F115516831B2F0592EA8FA8 /* SnapshotTesting in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51DD1229350910C2634443E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6E0A6565CEBF044F7202995 /* PiyoPiyoCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58995B4E9CB0FFC4BE1FAA4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A75B9ED8956E8BA2E0B3FA45 /* PiyoPiyoCore in Frameworks */,
+				AB51B08117A7F1A860909F36 /* SnapshotTesting in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B42EBCC119741BE948B16CC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5DB2F9AA72937A97E2F66A0 /* PiyoPiyoCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA1C99DF3114ED165B037FD6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35B314CA693905B08034E5F2 /* PiyoPiyoCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		62D773217B832BDDDA0B5663 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3261B7577E122A6885905645 /* Assets.xcassets */,
+				873AB448A814C2B8382F5949 /* Info-PiyoPiyo-iOS.plist */,
+				4E16DF818ECEF72AB47AF5B8 /* Info-PiyoPiyo-iPadOS.plist */,
+				267BDEDB88D48C43A60A4505 /* Info-PiyoPiyo-macOS.plist */,
+				EB8149FD4FA677DF27394BF2 /* Mac.entitlements */,
+				57E14A2AF1EC2B244C401073 /* PiyoPiyoApp.swift */,
+				3AA26687C2146D3396754393 /* PrivacyInfo.xcprivacy */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A445C43E12A644F6C71D1B56 /* PiyoPiyoCoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				36C1C850B1D81A17780D86E7 /* CoreTests.swift */,
+				E093D7FC1E183DA9F39F3ECF /* SnapshotTests.swift */,
+			);
+			name = PiyoPiyoCoreTests;
+			path = PiyoPiyoCore/Tests/PiyoPiyoCoreTests;
+			sourceTree = "<group>";
+		};
+		AFE0248EB0676716D51714F2 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				A89648792E9BAB14C8E8CB27 /* PiyoPiyoCore */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		BF855FAF176EEB75DCC055FD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F38619A3DA9EE29E0ECFB6AC /* PiyoPiyo-iOS.app */,
+				5D9ED965FD67342B31362D9B /* PiyoPiyo-iPadOS.app */,
+				D233A8F0510079910F3F11FA /* PiyoPiyo-iPadTests.xctest */,
+				704B0F57F834E4B79C1A8946 /* PiyoPiyo-iPhoneTests.xctest */,
+				1A33DAE5B2D90C7525EB29F1 /* PiyoPiyo-macOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E3EB9DE94D675C99E4A6A8CD = {
+			isa = PBXGroup;
+			children = (
+				62D773217B832BDDDA0B5663 /* App */,
+				AFE0248EB0676716D51714F2 /* Packages */,
+				A445C43E12A644F6C71D1B56 /* PiyoPiyoCoreTests */,
+				BF855FAF176EEB75DCC055FD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B4EB05A7A161CB8CDBD234B6 /* PiyoPiyo-iPadTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 993FB384A210D5BABAF95FD4 /* Build configuration list for PBXNativeTarget "PiyoPiyo-iPadTests" */;
+			buildPhases = (
+				C80AAACA33969F2A0D147D7A /* Sources */,
+				4972E8F9E6B09800F74B411D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PiyoPiyo-iPadTests";
+			packageProductDependencies = (
+				5A4040E7C2360ABD57ED7E0E /* PiyoPiyoCore */,
+				9554086F555A9193BCF74EA7 /* SnapshotTesting */,
+			);
+			productName = "PiyoPiyo-iPadTests";
+			productReference = D233A8F0510079910F3F11FA /* PiyoPiyo-iPadTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C649EF2AEE66A88D4011D06B /* PiyoPiyo-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C86D470EF98867E6145D4E0F /* Build configuration list for PBXNativeTarget "PiyoPiyo-macOS" */;
+			buildPhases = (
+				7EBE2F451739B0137920A8B5 /* Sources */,
+				049EA98280F31DC963697B54 /* Resources */,
+				DA1C99DF3114ED165B037FD6 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PiyoPiyo-macOS";
+			packageProductDependencies = (
+				F7C6BAEF8CAA23AC1C7ACA6B /* PiyoPiyoCore */,
+			);
+			productName = "PiyoPiyo-macOS";
+			productReference = 1A33DAE5B2D90C7525EB29F1 /* PiyoPiyo-macOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CDC8C494D6EED923F7DCB31A /* PiyoPiyo-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A0EFADCF04BE56783320080 /* Build configuration list for PBXNativeTarget "PiyoPiyo-iOS" */;
+			buildPhases = (
+				C30ACD47A522A7CE1F1B1EC7 /* Sources */,
+				B4493F2B3001F32F09393714 /* Resources */,
+				51DD1229350910C2634443E3 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PiyoPiyo-iOS";
+			packageProductDependencies = (
+				1B5A6BDB76126820E9B88721 /* PiyoPiyoCore */,
+			);
+			productName = "PiyoPiyo-iOS";
+			productReference = F38619A3DA9EE29E0ECFB6AC /* PiyoPiyo-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D73E4A48A50E97688E9DF806 /* PiyoPiyo-iPhoneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FE06E0FDFEA46FEAB314F05 /* Build configuration list for PBXNativeTarget "PiyoPiyo-iPhoneTests" */;
+			buildPhases = (
+				2353E63059965A974AE35E57 /* Sources */,
+				58995B4E9CB0FFC4BE1FAA4F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PiyoPiyo-iPhoneTests";
+			packageProductDependencies = (
+				AF8723756AB744A3B0210736 /* PiyoPiyoCore */,
+				D07C863E501111E5AB598B3B /* SnapshotTesting */,
+			);
+			productName = "PiyoPiyo-iPhoneTests";
+			productReference = 704B0F57F834E4B79C1A8946 /* PiyoPiyo-iPhoneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E827C523BFD2492AFC2D38A2 /* PiyoPiyo-iPadOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C65ABD8A7FAC7F450CF9E7FB /* Build configuration list for PBXNativeTarget "PiyoPiyo-iPadOS" */;
+			buildPhases = (
+				1597B50B96A9082C7E0E498C /* Sources */,
+				0938CE05258C9F24BF01BF31 /* Resources */,
+				B42EBCC119741BE948B16CC8 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PiyoPiyo-iPadOS";
+			packageProductDependencies = (
+				E2A40AE17D93AC822143F58D /* PiyoPiyoCore */,
+			);
+			productName = "PiyoPiyo-iPadOS";
+			productReference = 5D9ED965FD67342B31362D9B /* PiyoPiyo-iPadOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4D2B838F900A79BA1576B723 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					B4EB05A7A161CB8CDBD234B6 = {
+						DevelopmentTeam = 3LYWV7T9MT;
+						ProvisioningStyle = Automatic;
+					};
+					C649EF2AEE66A88D4011D06B = {
+						DevelopmentTeam = 3LYWV7T9MT;
+					};
+					CDC8C494D6EED923F7DCB31A = {
+						DevelopmentTeam = 3LYWV7T9MT;
+					};
+					D73E4A48A50E97688E9DF806 = {
+						DevelopmentTeam = 3LYWV7T9MT;
+						ProvisioningStyle = Automatic;
+					};
+					E827C523BFD2492AFC2D38A2 = {
+						DevelopmentTeam = 3LYWV7T9MT;
+					};
+				};
+			};
+			buildConfigurationList = F78915AE81D9337E017B199C /* Build configuration list for PBXProject "PiyoPiyo" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = E3EB9DE94D675C99E4A6A8CD;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				241FCD175431DB382E844749 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+				9F1E3F62A87F037E5F6522E1 /* XCLocalSwiftPackageReference "PiyoPiyoCore" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = BF855FAF176EEB75DCC055FD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CDC8C494D6EED923F7DCB31A /* PiyoPiyo-iOS */,
+				E827C523BFD2492AFC2D38A2 /* PiyoPiyo-iPadOS */,
+				C649EF2AEE66A88D4011D06B /* PiyoPiyo-macOS */,
+				D73E4A48A50E97688E9DF806 /* PiyoPiyo-iPhoneTests */,
+				B4EB05A7A161CB8CDBD234B6 /* PiyoPiyo-iPadTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		049EA98280F31DC963697B54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2534C4DAAC6DD33FCCC4A189 /* Assets.xcassets in Resources */,
+				62EE7E7F68B5063211D39B49 /* Info-PiyoPiyo-iOS.plist in Resources */,
+				3386E224CB8EAB2D7DE4E98B /* Info-PiyoPiyo-iPadOS.plist in Resources */,
+				486394629213D0BBAB6809D0 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0938CE05258C9F24BF01BF31 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B078DE58CA741C7DEC6B4D00 /* Assets.xcassets in Resources */,
+				26CD2064B42017F697AB383F /* Info-PiyoPiyo-iOS.plist in Resources */,
+				2247008374FBF8296139640E /* Info-PiyoPiyo-macOS.plist in Resources */,
+				286CBB1330A6C6EBB9E53F20 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4493F2B3001F32F09393714 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB46D43C61383047088E0467 /* Assets.xcassets in Resources */,
+				D42E2270C8D4E07A500FA331 /* Info-PiyoPiyo-iPadOS.plist in Resources */,
+				13D51E8D71013FF6D923B2CF /* Info-PiyoPiyo-macOS.plist in Resources */,
+				ED8EEF3BBF77A46E438024A6 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1597B50B96A9082C7E0E498C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D6013A359D23B0B604E3A43 /* PiyoPiyoApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2353E63059965A974AE35E57 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6185E5B9CA93C7637FED6873 /* CoreTests.swift in Sources */,
+				D74743EF834946B2921E8862 /* SnapshotTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EBE2F451739B0137920A8B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F91C9F333A4EB2CFC2A890FE /* PiyoPiyoApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C30ACD47A522A7CE1F1B1EC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2066E28158A0F4A9D4477C6 /* PiyoPiyoApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C80AAACA33969F2A0D147D7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6338A3CCCE790A7C54B70352 /* CoreTests.swift in Sources */,
+				D4311AD16840FDE980E29A32 /* SnapshotTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		292DD24BAA058ECED3D76C84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.piyopiyo.ipad.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		37B07263225F73CFBE63DD82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/Mac.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "App/Info-PiyoPiyo-macOS.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.piyopiyo.mac;
+				PRODUCT_NAME = PiyoPiyo;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		3CDB41051666AEF5B618E1CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 5;
+				INFOPLIST_FILE = "App/Info-PiyoPiyo-iOS.plist";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.piyopiyo.iphone;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		65BC43103679655BF31FFF65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 5;
+				INFOPLIST_FILE = "App/Info-PiyoPiyo-iPadOS.plist";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.piyopiyo.iphone;
+				PROVISIONING_PROFILE_SPECIFIER = "PiyoPiyo iPhone App Store";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B44F97C86CA0C0595D1EDDDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 5;
+				INFOPLIST_FILE = "App/Info-PiyoPiyo-iPadOS.plist";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.piyopiyo.iphone;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C9B7E39F27F963D0FDA113A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.piyopiyo.iphone.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		CDD73EF76F9D7C6A680C18CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 4;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 3LYWV7T9MT;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = PiyoPiyo;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.10;
+			};
+			name = Release;
+		};
+		D0D47EFE6E88DF2A8A694ABC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 4;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 3LYWV7T9MT;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = PiyoPiyo;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.10;
+			};
+			name = Debug;
+		};
+		D4804C46F210D67B9BAD6AC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 5;
+				INFOPLIST_FILE = "App/Info-PiyoPiyo-iOS.plist";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.piyopiyo.iphone;
+				PROVISIONING_PROFILE_SPECIFIER = "PiyoPiyo iPhone App Store";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D71BEDA31536B8DDFE9B89F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.piyopiyo.iphone.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		E1EC2FA685DAC74179123543 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.piyopiyo.ipad.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		EEECB67B9BE3650265A1D10E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/Mac.entitlements;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "App/Info-PiyoPiyo-macOS.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				OTHER_CODE_SIGN_FLAGS = "--timestamp";
+				PRODUCT_BUNDLE_IDENTIFIER = app.piyopiyo.mac;
+				PRODUCT_NAME = PiyoPiyo;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7FE06E0FDFEA46FEAB314F05 /* Build configuration list for PBXNativeTarget "PiyoPiyo-iPhoneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9B7E39F27F963D0FDA113A7 /* Debug */,
+				D71BEDA31536B8DDFE9B89F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8A0EFADCF04BE56783320080 /* Build configuration list for PBXNativeTarget "PiyoPiyo-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CDB41051666AEF5B618E1CF /* Debug */,
+				D4804C46F210D67B9BAD6AC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		993FB384A210D5BABAF95FD4 /* Build configuration list for PBXNativeTarget "PiyoPiyo-iPadTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1EC2FA685DAC74179123543 /* Debug */,
+				292DD24BAA058ECED3D76C84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C65ABD8A7FAC7F450CF9E7FB /* Build configuration list for PBXNativeTarget "PiyoPiyo-iPadOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B44F97C86CA0C0595D1EDDDC /* Debug */,
+				65BC43103679655BF31FFF65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C86D470EF98867E6145D4E0F /* Build configuration list for PBXNativeTarget "PiyoPiyo-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37B07263225F73CFBE63DD82 /* Debug */,
+				EEECB67B9BE3650265A1D10E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F78915AE81D9337E017B199C /* Build configuration list for PBXProject "PiyoPiyo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0D47EFE6E88DF2A8A694ABC /* Debug */,
+				CDD73EF76F9D7C6A680C18CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		9F1E3F62A87F037E5F6522E1 /* XCLocalSwiftPackageReference "PiyoPiyoCore" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = PiyoPiyoCore;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		241FCD175431DB382E844749 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = exactVersion;
+				version = 1.19.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1B5A6BDB76126820E9B88721 /* PiyoPiyoCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PiyoPiyoCore;
+		};
+		5A4040E7C2360ABD57ED7E0E /* PiyoPiyoCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PiyoPiyoCore;
+		};
+		9554086F555A9193BCF74EA7 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 241FCD175431DB382E844749 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+		AF8723756AB744A3B0210736 /* PiyoPiyoCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PiyoPiyoCore;
+		};
+		D07C863E501111E5AB598B3B /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 241FCD175431DB382E844749 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+		E2A40AE17D93AC822143F58D /* PiyoPiyoCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PiyoPiyoCore;
+		};
+		F7C6BAEF8CAA23AC1C7ACA6B /* PiyoPiyoCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PiyoPiyoCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 4D2B838F900A79BA1576B723 /* Project object */;
+}

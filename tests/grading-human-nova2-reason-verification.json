@@ -1,0 +1,645 @@
+{
+  "createdAt": "2026-11-23T13:31:26.596Z",
+  "labelSource": "Owner-supplied scores; owner explicitly confirmed reviewing all 50 in conversation",
+  "reviewMetadata": {
+    "reviewer": "Francisco Cruzado",
+    "datasetSHA256": "42b1e79f2c696c5848d377738c5d36a15df8a7017358421fab942212dd6b994b",
+    "submittedCompletedAt": "2026-11-23T12:55:00.000Z"
+  },
+  "promptSHA256": "7f9d24f316d3e6b2f18aa9d82be2288d4f0c9ef035f57ea921d3f79798bfd99d",
+  "models": [
+    {
+      "modelId": "arn:aws:bedrock:us-east-1:992680757326:application-inference-profile/t9c4f6fzj7ci",
+      "cases": [
+        {
+          "id": "review-20",
+          "expected": 0,
+          "actual": 0,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"No mention of enqueueing the starting vertex\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"No mention of a first-in, first-out queue\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"No mention of marking a discovered neighbor\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"No mention of exploring neighbors of dequeued vertex\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"No mention of shortest paths in unweighted graphs\",\n      \"met\": false,\n      \"evidence\": []\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "Begin by enqueueing the starting vertex.",
+            "Use a first-in, first-out queue.",
+            "Mark a discovered neighbor before enqueueing it.",
+            "Explore neighbors of each dequeued vertex.",
+            "It finds shortest paths by edge count in unweighted graphs."
+          ],
+          "agreement": true,
+          "latencyMs": 2294
+        },
+        {
+          "id": "review-17",
+          "expected": 2,
+          "actual": 2,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Enqueue the start is mentioned.\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Queue is not FIFO; LIFO stack is used.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"No mention of marking before enqueueing.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Explore neighbors of each popped vertex mentioned.\",\n      \"met\": true,\n      \"evidence\": [2]\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Claims shortest paths in weighted graphs, not unweighted.\",\n      \"met\": false,\n      \"evidence\": []\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "Use a first-in, first-out queue.",
+            "Mark a discovered neighbor before enqueueing it.",
+            "It finds shortest paths by edge count in unweighted graphs."
+          ],
+          "agreement": true,
+          "latencyMs": 1244
+        },
+        {
+          "id": "review-23",
+          "expected": 4,
+          "actual": 4,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Stable unique request identifier mentioned\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Store result mentioned\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Detect repeated identifiers mentioned\",\n      \"met\": true,\n      \"evidence\": [2]\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Return stored result mentioned\",\n      \"met\": true,\n      \"evidence\": [2]\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Atomic record not mentioned\",\n      \"met\": false,\n      \"evidence\": []\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "Atomically record the identifier with the effect to prevent races."
+          ],
+          "agreement": true,
+          "latencyMs": 1288
+        },
+        {
+          "id": "review-03",
+          "expected": 2,
+          "actual": 2,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"No mention of follower starting election.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"No mention of term increase.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Candidate votes for itself and requests votes mentioned.\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Majority wins mentioned.\",\n      \"met\": true,\n      \"evidence\": [2]\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"No mention of randomized timeouts.\",\n      \"met\": false,\n      \"evidence\": []\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "A follower starts an election after its election timeout.",
+            "The candidate increases its term.",
+            "Randomized election timeouts reduce repeated split votes."
+          ],
+          "agreement": true,
+          "latencyMs": 1294
+        },
+        {
+          "id": "review-50",
+          "expected": 0,
+          "actual": 0,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Leader role contradicts follower behavior described.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"No mention of leader appending commands.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"No mention of AppendEntries replication.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"No mention of commit conditions.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"No mention of applying committed entries.\",\n      \"met\": false,\n      \"evidence\": []\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "The leader accepts client commands.",
+            "The leader appends a command to its log.",
+            "The leader replicates entries using AppendEntries.",
+            "A current-term entry replicated on a majority can be committed.",
+            "Committed entries are applied in order to the state machine."
+          ],
+          "agreement": true,
+          "latencyMs": 1320
+        },
+        {
+          "id": "review-01",
+          "expected": 5,
+          "actual": 4,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Follower starts election after timeout\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Candidate increases its term\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Candidate votes for itself and requests votes\",\n      \"met\": true,\n      \"evidence\": [2]\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Majority of votes elects the leader\",\n      \"met\": true,\n      \"evidence\": [2]\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Randomized election timeouts reduce repeated split votes\",\n      \"met\": true,\n      \"evidence\": [3]\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "The candidate increases its term."
+          ],
+          "agreement": false,
+          "latencyMs": 1219
+        },
+        {
+          "id": "review-34",
+          "expected": 2,
+          "actual": 2,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"append adds one item at the end is correct\",\n      \"met\": true,\n      \"evidence\": [2]\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"pop with no index removes the last item is contradicted\",\n      \"met\": false,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"sort mutates the existing list is correct\",\n      \"met\": true,\n      \"evidence\": [3]\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"sort returns None is contradicted\",\n      \"met\": false,\n      \"evidence\": [3]\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"sorted creates a new sorted list is not mentioned\",\n      \"met\": false,\n      \"evidence\": []\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "pop with no index removes and returns the last item.",
+            "sort returns None.",
+            "sorted creates a new sorted list."
+          ],
+          "agreement": true,
+          "latencyMs": 1695
+        },
+        {
+          "id": "review-39",
+          "expected": 2,
+          "actual": 2,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Threads do not share an address space here.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Each thread has its own stack.\",\n      \"met\": true,\n      \"evidence\": [2]\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Not mentioned.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Execution may interleave is mentioned.\",\n      \"met\": true,\n      \"evidence\": [3]\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Not mentioned.\",\n      \"met\": false,\n      \"evidence\": []\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "They share an address space.",
+            "Each has its own register state.",
+            "Conflicting shared-state accesses need synchronization."
+          ],
+          "agreement": true,
+          "latencyMs": 1203
+        },
+        {
+          "id": "review-29",
+          "expected": 1,
+          "actual": 1,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Not mentioned in the answer.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Answer mentions uncommitted changes, contradicting the fact.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Answer implies dirty reads are allowed.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Not mentioned in the answer.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Answer states transaction sees own previous updates.\",\n      \"met\": true,\n      \"evidence\": [1]\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "It is PostgreSQL’s default isolation level.",
+            "A command sees data committed before it begins.",
+            "Dirty reads are prevented.",
+            "Successive SELECT commands may see different committed data."
+          ],
+          "agreement": true,
+          "latencyMs": 1427
+        },
+        {
+          "id": "review-31",
+          "expected": 5,
+          "actual": 5,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"append adds one item at the end\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"pop with no index removes and returns the last item\",\n      \"met\": true,\n      \"evidence\": [2]\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"sort mutates the existing list\",\n      \"met\": true,\n      \"evidence\": [3]\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"sort returns None\",\n      \"met\": true,\n      \"evidence\": [3]\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"sorted creates a new sorted list\",\n      \"met\": true,\n      \"evidence\": [3]\n    }\n  ]\n}\n```",
+          "missingConcepts": [],
+          "agreement": true,
+          "latencyMs": 1231
+        },
+        {
+          "id": "review-43",
+          "expected": 3,
+          "actual": 3,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Divides input into smaller parts mentioned\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Recursive sorting of parts mentioned\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"No mention of base case size one\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Merges sorted parts mentioned\",\n      \"met\": true,\n      \"evidence\": [2]\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Worst-case time complexity not mentioned\",\n      \"met\": false,\n      \"evidence\": []\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "A part of size at most one is already sorted.",
+            "Its worst-case time is O(n log n)."
+          ],
+          "agreement": true,
+          "latencyMs": 1215
+        },
+        {
+          "id": "review-24",
+          "expected": 3,
+          "actual": 1,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"No mention of unique request identifier usage.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"No mention of storing the result with identifier.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Repeated identifiers detection mentioned but not how.\",\n      \"met\": false,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Returning stored result for duplicate mentioned.\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"No mention of atomic recording to prevent races.\",\n      \"met\": false,\n      \"evidence\": []\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "Use a stable unique request identifier.",
+            "Store the result associated with that identifier.",
+            "Detect repeated identifiers.",
+            "Atomically record the identifier with the effect to prevent races."
+          ],
+          "agreement": false,
+          "latencyMs": 1255
+        },
+        {
+          "id": "review-14",
+          "expected": 2,
+          "actual": 3,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"array must be sorted\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"compare target with middle element\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"discard half that cannot contain target\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"stop when found or interval empty\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"worst-case comparisons are logarithmic\",\n      \"met\": true,\n      \"evidence\": [2]\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "Discard the half that cannot contain the target.",
+            "Stop when the target is found or the interval is empty."
+          ],
+          "agreement": false,
+          "latencyMs": 1176
+        },
+        {
+          "id": "review-21",
+          "expected": 5,
+          "actual": 5,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Unique key reuse matches stable identifier use.\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Saved response storage aligns with result association.\",\n      \"met\": true,\n      \"evidence\": [2]\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Detection of already-seen key is explicit.\",\n      \"met\": true,\n      \"evidence\": [3]\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Returning saved response for duplicates is stated.\",\n      \"met\": true,\n      \"evidence\": [3]\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Atomic transaction mention satisfies race prevention.\",\n      \"met\": true,\n      \"evidence\": [2]\n    }\n  ]\n}\n```",
+          "missingConcepts": [],
+          "agreement": true,
+          "latencyMs": 1342
+        },
+        {
+          "id": "review-13",
+          "expected": 3,
+          "actual": 3,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Array must be sorted is stated.\",\n      \"met\": true,\n      \"evidence\": [2]\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Comparing target with middle element is implied.\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Discarding half is mentioned.\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Stopping condition not mentioned.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Logarithmic comparisons not mentioned.\",\n      \"met\": false,\n      \"evidence\": []\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "Stop when the target is found or the interval is empty.",
+            "The worst-case number of comparisons is logarithmic."
+          ],
+          "agreement": true,
+          "latencyMs": 1459
+        },
+        {
+          "id": "review-27",
+          "expected": 1,
+          "actual": 1,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Default isolation level is stated.\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Answer states snapshot view, not pre-begin data.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Not explicitly addressed.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Not addressed.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Answer says own writes stay invisible, contradicting.\",\n      \"met\": false,\n      \"evidence\": [2]\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "A command sees data committed before it begins.",
+            "Dirty reads are prevented.",
+            "Successive SELECT commands may see different committed data.",
+            "A transaction can see its own earlier writes."
+          ],
+          "agreement": true,
+          "latencyMs": 1405
+        },
+        {
+          "id": "review-47",
+          "expected": 2,
+          "actual": 2,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Leader receives client command mentioned\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Appends command locally stated\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"No mention of AppendEntries for replication\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Commit before followers contradicts log replication\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Arbitrary order contradicts in-order application\",\n      \"met\": false,\n      \"evidence\": []\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "The leader replicates entries using AppendEntries.",
+            "A current-term entry replicated on a majority can be committed.",
+            "Committed entries are applied in order to the state machine."
+          ],
+          "agreement": true,
+          "latencyMs": 1323
+        },
+        {
+          "id": "review-48",
+          "expected": 3,
+          "actual": 3,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Not mentioned in answer\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Not mentioned in answer\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Present: AppendEntries is used to replicate the leader’s log\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Present: A current-term entry replicated on a majority can commit\",\n      \"met\": true,\n      \"evidence\": [2]\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Present: committed entries are applied in log order\",\n      \"met\": true,\n      \"evidence\": [2]\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "The leader accepts client commands.",
+            "The leader appends a command to its log."
+          ],
+          "agreement": true,
+          "latencyMs": 1259
+        },
+        {
+          "id": "review-44",
+          "expected": 2,
+          "actual": 2,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Divides input into smaller parts\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Sorts parts recursively mentioned\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Singleton already sorted mentioned\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Merges sorted parts mentioned\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Worst-case time incorrectly given\",\n      \"met\": false,\n      \"evidence\": [2]\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "Divide the input into smaller parts.",
+            "Sort the parts recursively.",
+            "Its worst-case time is O(n log n)."
+          ],
+          "agreement": true,
+          "latencyMs": 1211
+        },
+        {
+          "id": "review-33",
+          "expected": 3,
+          "actual": 3,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"append behavior not mentioned\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"pop behavior not mentioned\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"states sort mutates the existing list\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"states sort returns None\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"states sorted creates a new sorted list\",\n      \"met\": true,\n      \"evidence\": [2]\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "append adds one item at the end.",
+            "pop with no index removes and returns the last item."
+          ],
+          "agreement": true,
+          "latencyMs": 1190
+        },
+        {
+          "id": "review-19",
+          "expected": 1,
+          "actual": 1,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Start vertex enqueued at beginning\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Queue must be FIFO but not described\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Neighbor marked after dequeuing, not before\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Neighbors explored after dequeuing not stated\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Shortest path property not mentioned\",\n      \"met\": false,\n      \"evidence\": []\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "Use a first-in, first-out queue.",
+            "Mark a discovered neighbor before enqueueing it.",
+            "Explore neighbors of each dequeued vertex.",
+            "It finds shortest paths by edge count in unweighted graphs."
+          ],
+          "agreement": true,
+          "latencyMs": 1217
+        },
+        {
+          "id": "review-16",
+          "expected": 5,
+          "actual": 5,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Start by placing source in queue\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Uses FIFO queue structure\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Marks neighbor before enqueueing\",\n      \"met\": true,\n      \"evidence\": [2]\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Examines neighbors of dequeued vertex\",\n      \"met\": true,\n      \"evidence\": [2]\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Finds shortest edge-count paths in unweighted graphs\",\n      \"met\": true,\n      \"evidence\": [3]\n    }\n  ]\n}\n```",
+          "missingConcepts": [],
+          "agreement": true,
+          "latencyMs": 1323
+        },
+        {
+          "id": "review-40",
+          "expected": 0,
+          "actual": 0,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"contradicts the fact about shared address space\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"contradicts the fact about each thread having its own stack\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"contradicts the fact about each thread having its own register state\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"contradicts the fact about execution interleaving\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"contradicts the fact about need for synchronization\",\n      \"met\": false,\n      \"evidence\": []\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "They share an address space.",
+            "Each has its own stack.",
+            "Each has its own register state.",
+            "Their execution may interleave.",
+            "Conflicting shared-state accesses need synchronization."
+          ],
+          "agreement": true,
+          "latencyMs": 1251
+        },
+        {
+          "id": "review-09",
+          "expected": 4,
+          "actual": 5,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"All writers use same mutex mentioned\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Acquire before read stated\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Read-modify-write inside critical section stated\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Release after write stated\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Mutual exclusion mentioned\",\n      \"met\": true,\n      \"evidence\": [2]\n    }\n  ]\n}\n```",
+          "missingConcepts": [],
+          "agreement": false,
+          "latencyMs": 1364
+        },
+        {
+          "id": "review-26",
+          "expected": 5,
+          "actual": 5,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Answer states Postgres defaults to Read Committed.\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Answer states each statement sees previously committed data.\",\n      \"met\": true,\n      \"evidence\": [2]\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Answer states it cannot read uncommitted changes.\",\n      \"met\": true,\n      \"evidence\": [2]\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Answer states two SELECTs may differ after commit.\",\n      \"met\": true,\n      \"evidence\": [3]\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Answer states transaction sees its own earlier changes.\",\n      \"met\": true,\n      \"evidence\": [4]\n    }\n  ]\n}\n```",
+          "missingConcepts": [],
+          "agreement": true,
+          "latencyMs": 1331
+        },
+        {
+          "id": "review-38",
+          "expected": 3,
+          "actual": 3,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Answer does not mention shared address space.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Answer states each thread has a private stack.\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Answer states each thread has a register context.\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Answer does not mention interleaving execution.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Answer states need to coordinate access when writing shared memory.\",\n      \"met\": true,\n      \"evidence\": [2]\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "They share an address space.",
+            "Their execution may interleave."
+          ],
+          "agreement": true,
+          "latencyMs": 1505
+        },
+        {
+          "id": "review-30",
+          "expected": 0,
+          "actual": 0,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Answer does not state that Read Committed is default.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Answer does not mention seeing data committed before.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Answer does not mention preventing dirty reads.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Answer does not mention successive SELECT commands.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Answer does not mention transaction seeing own writes.\",\n      \"met\": false,\n      \"evidence\": []\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "It is PostgreSQL’s default isolation level.",
+            "A command sees data committed before it begins.",
+            "Dirty reads are prevented.",
+            "Successive SELECT commands may see different committed data.",
+            "A transaction can see its own earlier writes."
+          ],
+          "agreement": true,
+          "latencyMs": 1251
+        },
+        {
+          "id": "review-22",
+          "expected": 3,
+          "actual": 4,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Stable unique identifier mentioned\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Store result mentioned\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Detect repeated identifiers mentioned\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Return stored result mentioned\",\n      \"met\": true,\n      \"evidence\": [2]\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Atomic recording not mentioned\",\n      \"met\": false,\n      \"evidence\": []\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "Atomically record the identifier with the effect to prevent races."
+          ],
+          "agreement": false,
+          "latencyMs": 1271
+        },
+        {
+          "id": "review-15",
+          "expected": 0,
+          "actual": 0,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Array sorting requirement is not mentioned.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Comparison with middle element not described.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Discarding half not described.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Stopping condition not described.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Logarithmic comparisons not supported.\",\n      \"met\": false,\n      \"evidence\": []\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "The array must be sorted.",
+            "Compare the target with the middle element.",
+            "Discard the half that cannot contain the target.",
+            "Stop when the target is found or the interval is empty.",
+            "The worst-case number of comparisons is logarithmic."
+          ],
+          "agreement": true,
+          "latencyMs": 1316
+        },
+        {
+          "id": "review-46",
+          "expected": 5,
+          "actual": 5,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Leader accepts client commands described\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Appending command to log described\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Replicates entries using AppendEntries described\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Current-term entry replicated on majority can be committed stated\",\n      \"met\": true,\n      \"evidence\": [2]\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Committed entries applied in order mentioned\",\n      \"met\": true,\n      \"evidence\": [3]\n    }\n  ]\n}\n```",
+          "missingConcepts": [],
+          "agreement": true,
+          "latencyMs": 1262
+        },
+        {
+          "id": "review-10",
+          "expected": 0,
+          "actual": 0,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"No mention of a shared mutex for writers\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"No mention of acquiring mutex for reading\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"No mention of keeping read-modify-write inside critical section\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"No mention of releasing mutex after writing\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"No mention of mutual exclusion via mutex\",\n      \"met\": false,\n      \"evidence\": []\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "All writers use the same mutex.",
+            "Acquire the mutex before reading the counter.",
+            "Keep the read-modify-write operation inside the critical section.",
+            "Release the mutex after writing.",
+            "Mutual exclusion prevents concurrent execution of the protected operation."
+          ],
+          "agreement": true,
+          "latencyMs": 1214
+        },
+        {
+          "id": "review-04",
+          "expected": 2,
+          "actual": 2,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Follower starts election after timeout mentioned\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Term increment mentioned\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Vote request and self-vote not mentioned\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Majority vote for leader not mentioned\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Exact same timeout contradicts randomized timeouts\",\n      \"met\": false,\n      \"evidence\": [2]\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "The candidate votes for itself and requests votes.",
+            "A majority of votes elects the leader.",
+            "Randomized election timeouts reduce repeated split votes."
+          ],
+          "agreement": true,
+          "latencyMs": 1294
+        },
+        {
+          "id": "review-08",
+          "expected": 2,
+          "actual": 3,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"All writers use the same mutex is stated.\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Reading before locking contradicts safe practice.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Keeping read-modify-write inside critical section not mentioned.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Releasing the mutex after writing is stated.\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Mutual exclusion from mutex prevents concurrent execution.\",\n      \"met\": true,\n      \"evidence\": [1]\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "Acquire the mutex before reading the counter.",
+            "Keep the read-modify-write operation inside the critical section."
+          ],
+          "agreement": false,
+          "latencyMs": 1217
+        },
+        {
+          "id": "review-18",
+          "expected": 3,
+          "actual": 3,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Starting vertex enqueueing is not mentioned\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"FIFO queue usage is explicitly stated\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Marking neighbor before enqueueing not mentioned\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Exploring neighbors of dequeued vertex stated\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Shortest paths in unweighted graphs mentioned\",\n      \"met\": true,\n      \"evidence\": [2]\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "Begin by enqueueing the starting vertex.",
+            "Mark a discovered neighbor before enqueueing it."
+          ],
+          "agreement": true,
+          "latencyMs": 1229
+        },
+        {
+          "id": "review-28",
+          "expected": 3,
+          "actual": 3,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Default isolation level not mentioned\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Matches command sees prior committed data\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Dirty reads are excluded confirms prevention\",\n      \"met\": true,\n      \"evidence\": [2]\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Later SELECT can observe newer commit\",\n      \"met\": true,\n      \"evidence\": [3]\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Not addressed in answer\",\n      \"met\": false,\n      \"evidence\": []\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "It is PostgreSQL’s default isolation level.",
+            "A transaction can see its own earlier writes."
+          ],
+          "agreement": true,
+          "latencyMs": 1345
+        },
+        {
+          "id": "review-07",
+          "expected": 1,
+          "actual": 0,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Writers should use the same mutex, not individual ones.\",\n      \"met\": false,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Reading before locking violates the required order.\",\n      \"met\": false,\n      \"evidence\": [2]\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"No mention of keeping the operation inside the critical section.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Unlocking is mentioned but not positioned after writing.\",\n      \"met\": false,\n      \"evidence\": [3]\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Mutual exclusion is implied by using a mutex but not explicit.\",\n      \"met\": false,\n      \"evidence\": []\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "All writers use the same mutex.",
+            "Acquire the mutex before reading the counter.",
+            "Keep the read-modify-write operation inside the critical section.",
+            "Release the mutex after writing.",
+            "Mutual exclusion prevents concurrent execution of the protected operation."
+          ],
+          "agreement": false,
+          "latencyMs": 1358
+        },
+        {
+          "id": "review-05",
+          "expected": 0,
+          "actual": 0,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"request to ignore rules violates policy\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"no election process described\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"no election process described\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"majority mentioned but not in election context\",\n      \"met\": false,\n      \"evidence\": [2]\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"no election timeout mechanism described\",\n      \"met\": false,\n      \"evidence\": []\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "A follower starts an election after its election timeout.",
+            "The candidate increases its term.",
+            "The candidate votes for itself and requests votes.",
+            "A majority of votes elects the leader.",
+            "Randomized election timeouts reduce repeated split votes."
+          ],
+          "agreement": true,
+          "latencyMs": 1312
+        },
+        {
+          "id": "review-02",
+          "expected": 1,
+          "actual": 1,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Follower does not start election after timeout\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Term increment mentioned correctly\",\n      \"met\": true,\n      \"evidence\": [2]\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Not mentioned in answer\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Not mentioned in answer\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Not mentioned in answer\",\n      \"met\": false,\n      \"evidence\": []\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "A follower starts an election after its election timeout.",
+            "The candidate votes for itself and requests votes.",
+            "A majority of votes elects the leader.",
+            "Randomized election timeouts reduce repeated split votes."
+          ],
+          "agreement": true,
+          "latencyMs": 1321
+        },
+        {
+          "id": "review-45",
+          "expected": 0,
+          "actual": 0,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"No division of input mentioned\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"No recursive sorting described\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"No base case mentioned\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"No merging described\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"No complexity stated\",\n      \"met\": false,\n      \"evidence\": []\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "Divide the input into smaller parts.",
+            "Sort the parts recursively.",
+            "A part of size at most one is already sorted.",
+            "Merge sorted parts into sorted output.",
+            "Its worst-case time is O(n log n)."
+          ],
+          "agreement": true,
+          "latencyMs": 1242
+        },
+        {
+          "id": "review-41",
+          "expected": 5,
+          "actual": 5,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Divides input into smaller parts\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Sorts parts recursively\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Base case is size one\",\n      \"met\": true,\n      \"evidence\": [2]\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Merges sorted parts\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Worst-case time is O(n log n)\",\n      \"met\": true,\n      \"evidence\": [3]\n    }\n  ]\n}\n```",
+          "missingConcepts": [],
+          "agreement": true,
+          "latencyMs": 1204
+        },
+        {
+          "id": "review-25",
+          "expected": 0,
+          "actual": 0,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"No mention of unique request identifier usage\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"No mention of storing results with identifiers\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"No mention of detecting repeated identifiers\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"No mention of returning stored results\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"No mention of atomic recording to prevent races\",\n      \"met\": false,\n      \"evidence\": []\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "Use a stable unique request identifier.",
+            "Store the result associated with that identifier.",
+            "Detect repeated identifiers.",
+            "Return the stored result for a duplicate.",
+            "Atomically record the identifier with the effect to prevent races."
+          ],
+          "agreement": true,
+          "latencyMs": 1188
+        },
+        {
+          "id": "review-35",
+          "expected": 0,
+          "actual": 0,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"append not mentioned, lists said immutable\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"pop not mentioned, lists said immutable\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"sort not mentioned, lists said immutable\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"sort not mentioned, lists said immutable\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"sorted not mentioned, lists said immutable\",\n      \"met\": false,\n      \"evidence\": []\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "append adds one item at the end.",
+            "pop with no index removes and returns the last item.",
+            "sort mutates the existing list.",
+            "sort returns None.",
+            "sorted creates a new sorted list."
+          ],
+          "agreement": true,
+          "latencyMs": 1279
+        },
+        {
+          "id": "review-06",
+          "expected": 5,
+          "actual": 4,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"All writers use the same mutex is stated\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Acquiring mutex before reading is not mentioned\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Read-modify-write inside critical section is described\",\n      \"met\": true,\n      \"evidence\": [2]\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Releasing mutex after writing is mentioned\",\n      \"met\": true,\n      \"evidence\": [3]\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Mutual exclusion preventing concurrent execution is stated\",\n      \"met\": true,\n      \"evidence\": [3]\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "Acquire the mutex before reading the counter."
+          ],
+          "agreement": false,
+          "latencyMs": 1272
+        },
+        {
+          "id": "review-36",
+          "expected": 5,
+          "actual": 5,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Shared address space is mentioned.\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Each has its own stack is mentioned.\",\n      \"met\": true,\n      \"evidence\": [2]\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Each has its own register state is mentioned.\",\n      \"met\": true,\n      \"evidence\": [2]\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Execution may interleave is mentioned.\",\n      \"met\": true,\n      \"evidence\": [3]\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Conflicting shared-state accesses need synchronization is mentioned.\",\n      \"met\": true,\n      \"evidence\": [3]\n    }\n  ]\n}\n```",
+          "missingConcepts": [],
+          "agreement": true,
+          "latencyMs": 1256
+        },
+        {
+          "id": "review-12",
+          "expected": 3,
+          "actual": 1,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"array must be sorted for binary search\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"compare target with middle element\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"discard half not containing target\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"stop when found or interval empty\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"worst-case comparisons are logarithmic\",\n      \"met\": true,\n      \"evidence\": [2]\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "The array must be sorted.",
+            "Compare the target with the middle element.",
+            "Discard the half that cannot contain the target.",
+            "Stop when the target is found or the interval is empty."
+          ],
+          "agreement": false,
+          "latencyMs": 1366
+        },
+        {
+          "id": "review-11",
+          "expected": 5,
+          "actual": 5,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Array must be sorted for binary search\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Compare target with middle element\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Discard half not containing target\",\n      \"met\": true,\n      \"evidence\": [2]\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Stop when found or interval empty\",\n      \"met\": true,\n      \"evidence\": [3]\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Worst-case comparisons are logarithmic\",\n      \"met\": true,\n      \"evidence\": [4]\n    }\n  ]\n}\n```",
+          "missingConcepts": [],
+          "agreement": true,
+          "latencyMs": 1402
+        },
+        {
+          "id": "review-32",
+          "expected": 2,
+          "actual": 2,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"append adds one item at the end\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"pop with no index removes and returns the last item\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"sort mutates the existing list, but answer says it leaves original untouched\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"sort returns None, but answer says it returns a new list\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"sorted creates a new sorted list, not mentioned\",\n      \"met\": false,\n      \"evidence\": []\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "sort mutates the existing list.",
+            "sort returns None.",
+            "sorted creates a new sorted list."
+          ],
+          "agreement": true,
+          "latencyMs": 1204
+        },
+        {
+          "id": "review-42",
+          "expected": 3,
+          "actual": 3,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Divides input into smaller parts\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Sorts parts recursively\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"One-element pieces are already sorted\",\n      \"met\": true,\n      \"evidence\": [2]\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Not mentioned\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Contradicts O(n log n) with O(n)\",\n      \"met\": false,\n      \"evidence\": [3]\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "Merge sorted parts into sorted output.",
+            "Its worst-case time is O(n log n)."
+          ],
+          "agreement": true,
+          "latencyMs": 1268
+        },
+        {
+          "id": "review-37",
+          "expected": 2,
+          "actual": 2,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Answer states they share one address space.\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Answer incorrectly says they share one stack.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Answer incorrectly says they share one register state.\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Answer states they can interleave.\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"Answer implies locks are unnecessary, contradicting need for synchronization.\",\n      \"met\": false,\n      \"evidence\": []\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "Each has its own stack.",
+            "Each has its own register state.",
+            "Conflicting shared-state accesses need synchronization."
+          ],
+          "agreement": true,
+          "latencyMs": 1378
+        },
+        {
+          "id": "review-49",
+          "expected": 3,
+          "actual": 3,
+          "assessment": "```json\n{\n  \"checks\": [\n    {\n      \"id\": 1,\n      \"reason\": \"Leader accepts client commands described\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 2,\n      \"reason\": \"Leader appends command to log described\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 3,\n      \"reason\": \"Leader replicates entries using AppendEntries described\",\n      \"met\": true,\n      \"evidence\": [1]\n    },\n    {\n      \"id\": 4,\n      \"reason\": \"Wrong condition for commitment described\",\n      \"met\": false,\n      \"evidence\": []\n    },\n    {\n      \"id\": 5,\n      \"reason\": \"No mention of applying committed entries\",\n      \"met\": false,\n      \"evidence\": []\n    }\n  ]\n}\n```",
+          "missingConcepts": [
+            "A current-term entry replicated on a majority can be committed.",
+            "Committed entries are applied in order to the state machine."
+          ],
+          "agreement": true,
+          "latencyMs": 1258
+        }
+      ],
+      "inputTokens": 21403,
+      "outputTokens": 9675,
+      "exactAgreement": 0.82,
+      "p95LatencyMs": 1505,
+      "releaseThresholdPassed": false
+    }
+  ]
+}

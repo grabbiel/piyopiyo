@@ -1,0 +1,974 @@
+{
+    "StackResourceSummaries": [
+        {
+            "LogicalResourceId": "Api5xx3D9EE91A",
+            "PhysicalResourceId": "PiyoPiyoDev-Api5xx3D9EE91A-ZMLS5GuSWRxl",
+            "ResourceType": "AWS::CloudWatch::Alarm",
+            "LastUpdatedTimestamp": "2026-11-21T15:46:08.969000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "ApiExecution19218AAE",
+            "PhysicalResourceId": "PiyoPiyoDev-ApiExecution19218AAE-UiYjvIm2tZPQ",
+            "ResourceType": "AWS::IAM::Role",
+            "LastUpdatedTimestamp": "2026-11-21T15:46:21.188000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "ApiExecutionDefaultPolicyCCEE5A93",
+            "PhysicalResourceId": "PiyoP-ApiEx-j5LaxbOQjnI3",
+            "ResourceType": "AWS::IAM::Policy",
+            "LastUpdatedTimestamp": "2026-11-23T14:05:33.634000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "ApiFunctionCE271BD4",
+            "PhysicalResourceId": "piyopiyo-dev-api",
+            "ResourceType": "AWS::Lambda::Function",
+            "LastUpdatedTimestamp": "2026-11-23T17:02:31.128000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "ApiFunctionHttpInvokeBCDD20D3",
+            "PhysicalResourceId": "PiyoPiyoDev-ApiFunctionHttpInvokeBCDD20D3-sMjloenHKPet",
+            "ResourceType": "AWS::Lambda::Permission",
+            "LastUpdatedTimestamp": "2026-11-21T15:21:46.608000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "ApiLogs3D05D88B",
+            "PhysicalResourceId": "/aws/lambda/piyopiyo-dev-api",
+            "ResourceType": "AWS::Logs::LogGroup",
+            "LastUpdatedTimestamp": "2026-11-21T15:46:05.832000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "AppleKey",
+            "PhysicalResourceId": "arn:aws:secretsmanager:us-east-1:992680757326:secret:piyopiyo/apple-sign-in-Y1eG4c",
+            "ResourceType": "AWS::SecretsManager::Secret",
+            "LastUpdatedTimestamp": "2026-11-23T13:03:29.895000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "AppleLoginEA50E680",
+            "PhysicalResourceId": "SignInWithApple",
+            "ResourceType": "AWS::Cognito::UserPoolIdentityProvider",
+            "LastUpdatedTimestamp": "2026-11-23T13:03:33.655000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "Authorizer",
+            "PhysicalResourceId": "03fhk3",
+            "ResourceType": "AWS::ApiGatewayV2::Authorizer",
+            "LastUpdatedTimestamp": "2026-11-21T15:21:08.277000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "Bucketmedia2EECE439",
+            "PhysicalResourceId": "piyopiyo-media",
+            "ResourceType": "AWS::S3::Bucket",
+            "LastUpdatedTimestamp": "2026-11-21T15:46:27.818000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "BucketmediaPolicy9818BC3E",
+            "PhysicalResourceId": "piyopiyo-media",
+            "ResourceType": "AWS::S3::BucketPolicy",
+            "LastUpdatedTimestamp": "2026-11-21T15:21:17.757000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "BucketprovenanceFB7D347C",
+            "PhysicalResourceId": "piyopiyo-provenance",
+            "ResourceType": "AWS::S3::Bucket",
+            "LastUpdatedTimestamp": "2026-11-21T15:46:27.957000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "BucketprovenancePolicyFBBEFF17",
+            "PhysicalResourceId": "piyopiyo-provenance",
+            "ResourceType": "AWS::S3::BucketPolicy",
+            "LastUpdatedTimestamp": "2026-11-21T15:21:18.293000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "BucketquestionbanksF37A76B5",
+            "PhysicalResourceId": "piyopiyo-question-banks",
+            "ResourceType": "AWS::S3::Bucket",
+            "LastUpdatedTimestamp": "2026-11-21T15:46:27.759000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "BucketquestionbanksPolicy17E0DFBF",
+            "PhysicalResourceId": "piyopiyo-question-banks",
+            "ResourceType": "AWS::S3::BucketPolicy",
+            "LastUpdatedTimestamp": "2026-11-21T15:21:17.680000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "CDKMetadata",
+            "PhysicalResourceId": "1fcc6840-e5bf-11f1-a09f-12ffdca8f565",
+            "ResourceType": "AWS::CDK::Metadata",
+            "LastUpdatedTimestamp": "2026-11-23T16:55:08.129000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "DELETEaccount",
+            "PhysicalResourceId": "71fhsdc",
+            "ResourceType": "AWS::ApiGatewayV2::Route",
+            "LastUpdatedTimestamp": "2026-11-23T13:04:07.305000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "Data666C94C7",
+            "PhysicalResourceId": "PiyoPiyoQuizSessions",
+            "ResourceType": "AWS::DynamoDB::Table",
+            "LastUpdatedTimestamp": "2026-11-21T15:46:07.280000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "GET",
+            "PhysicalResourceId": "0v7kem7",
+            "ResourceType": "AWS::ApiGatewayV2::Route",
+            "LastUpdatedTimestamp": "2026-11-23T16:55:19.775000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "GETaccountapplecallback",
+            "PhysicalResourceId": "2c5yd9k",
+            "ResourceType": "AWS::ApiGatewayV2::Route",
+            "LastUpdatedTimestamp": "2026-11-23T13:04:07.384000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "GEThealth",
+            "PhysicalResourceId": "o0bop1s",
+            "ResourceType": "AWS::ApiGatewayV2::Route",
+            "LastUpdatedTimestamp": "2026-11-21T15:21:48.752000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "GETprivacy",
+            "PhysicalResourceId": "un7f32v",
+            "ResourceType": "AWS::ApiGatewayV2::Route",
+            "LastUpdatedTimestamp": "2026-11-23T14:05:51.500000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "GETprogress",
+            "PhysicalResourceId": "stak2qf",
+            "ResourceType": "AWS::ApiGatewayV2::Route",
+            "LastUpdatedTimestamp": "2026-11-21T15:52:14.774000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "GETquestions",
+            "PhysicalResourceId": "fpn4wr4",
+            "ResourceType": "AWS::ApiGatewayV2::Route",
+            "LastUpdatedTimestamp": "2026-11-21T15:52:14.722000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "GETquizsessionId",
+            "PhysicalResourceId": "prcjlal",
+            "ResourceType": "AWS::ApiGatewayV2::Route",
+            "LastUpdatedTimestamp": "2026-11-21T15:52:14.559000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "GETquizzes",
+            "PhysicalResourceId": "r6jqg99",
+            "ResourceType": "AWS::ApiGatewayV2::Route",
+            "LastUpdatedTimestamp": "2026-11-23T14:55:53.285000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "GETsupport",
+            "PhysicalResourceId": "bdojpoq",
+            "ResourceType": "AWS::ApiGatewayV2::Route",
+            "LastUpdatedTimestamp": "2026-11-23T14:05:51.453000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "GradingHaiku45Profile",
+            "PhysicalResourceId": "arn:aws:bedrock:us-east-1:992680757326:application-inference-profile/yfevvxi4bbi9",
+            "ResourceType": "AWS::Bedrock::ApplicationInferenceProfile",
+            "LastUpdatedTimestamp": "2026-11-23T13:47:14.858000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "GradingHaikuProfile",
+            "PhysicalResourceId": "arn:aws:bedrock:us-east-1:992680757326:application-inference-profile/jzmiq7a4t41v",
+            "ResourceType": "AWS::Bedrock::ApplicationInferenceProfile",
+            "LastUpdatedTimestamp": "2026-11-23T13:43:10.856000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "GradingLatency405C4D51",
+            "PhysicalResourceId": "PiyoPiyoDev-GradingLatency405C4D51-jbz3wXpm35c8",
+            "ResourceType": "AWS::CloudWatch::Alarm",
+            "LastUpdatedTimestamp": "2026-11-21T15:46:06.541000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "GradingLiteProfile",
+            "PhysicalResourceId": "arn:aws:bedrock:us-east-1:992680757326:application-inference-profile/3oog2y10vrgd",
+            "ResourceType": "AWS::Bedrock::ApplicationInferenceProfile",
+            "LastUpdatedTimestamp": "2026-11-23T13:03:28.001000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "GradingNova2Profile",
+            "PhysicalResourceId": "arn:aws:bedrock:us-east-1:992680757326:application-inference-profile/t9c4f6fzj7ci",
+            "ResourceType": "AWS::Bedrock::ApplicationInferenceProfile",
+            "LastUpdatedTimestamp": "2026-11-23T13:18:03.928000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "GradingProProfile",
+            "PhysicalResourceId": "arn:aws:bedrock:us-east-1:992680757326:application-inference-profile/6jt2igsvo17t",
+            "ResourceType": "AWS::Bedrock::ApplicationInferenceProfile",
+            "LastUpdatedTimestamp": "2026-11-23T13:47:14.961000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "GradingProfile",
+            "PhysicalResourceId": "arn:aws:bedrock:us-east-1:992680757326:application-inference-profile/n7xh1dhwaw8u",
+            "ResourceType": "AWS::Bedrock::ApplicationInferenceProfile",
+            "LastUpdatedTimestamp": "2026-11-21T15:49:53.355000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "HttpApi",
+            "PhysicalResourceId": "xk4vd8adrd",
+            "ResourceType": "AWS::ApiGatewayV2::Api",
+            "LastUpdatedTimestamp": "2026-11-21T15:46:06.550000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "Identities",
+            "PhysicalResourceId": "us-east-1:66e36e02-0ec5-4840-ba2e-cfb296345397",
+            "ResourceType": "AWS::Cognito::IdentityPool",
+            "LastUpdatedTimestamp": "2026-11-21T15:46:11.182000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "IdentityRoles",
+            "PhysicalResourceId": "us-east-1:66e36e02-0ec5-4840-ba2e-cfb296345397",
+            "ResourceType": "AWS::Cognito::IdentityPoolRoleAttachment",
+            "LastUpdatedTimestamp": "2026-11-21T15:21:28.413000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "Integration",
+            "PhysicalResourceId": "13huqka",
+            "ResourceType": "AWS::ApiGatewayV2::Integration",
+            "LastUpdatedTimestamp": "2026-11-21T15:21:46.616000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "KnowledgeAPIEC3D3D1D",
+            "PhysicalResourceId": "piyopiyo-knowledge-api",
+            "ResourceType": "AWS::Lambda::Function",
+            "LastUpdatedTimestamp": "2026-11-23T15:15:26.762000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "KnowledgeAPIHttpInvokeB02776D1",
+            "PhysicalResourceId": "PiyoPiyoDev-KnowledgeAPIHttpInvokeB02776D1-iRLgeMzWQEyn",
+            "ResourceType": "AWS::Lambda::Permission",
+            "LastUpdatedTimestamp": "2026-11-23T14:58:16.165000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "KnowledgeAPILogsE4E289C4",
+            "PhysicalResourceId": "/aws/lambda/piyopiyo-knowledge-api",
+            "ResourceType": "AWS::Logs::LogGroup",
+            "LastUpdatedTimestamp": "2026-11-23T14:55:50.952000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "KnowledgeAPIRole4717F15A",
+            "PhysicalResourceId": "PiyoPiyoDev-KnowledgeAPIRole4717F15A-gLS6qevDv0Yx",
+            "ResourceType": "AWS::IAM::Role",
+            "LastUpdatedTimestamp": "2026-11-23T14:55:58.152000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "KnowledgeAPIRoleDefaultPolicy4011E6B6",
+            "PhysicalResourceId": "PiyoP-Knowl-iYFLnn8omZ7l",
+            "ResourceType": "AWS::IAM::Policy",
+            "LastUpdatedTimestamp": "2026-11-23T14:58:04.175000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "KnowledgeBucketD7C8B00D",
+            "PhysicalResourceId": "piyopiyo-knowledge-992680757326",
+            "ResourceType": "AWS::S3::Bucket",
+            "LastUpdatedTimestamp": "2026-11-23T14:55:55.891000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "KnowledgeBucketPolicy59FB573E",
+            "PhysicalResourceId": "piyopiyo-knowledge-992680757326",
+            "ResourceType": "AWS::S3::BucketPolicy",
+            "LastUpdatedTimestamp": "2026-11-23T14:55:58.320000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "KnowledgeDataB9F72BB9",
+            "PhysicalResourceId": "PiyoPiyoKnowledge",
+            "ResourceType": "AWS::DynamoDB::Table",
+            "LastUpdatedTimestamp": "2026-11-23T14:55:55.068000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "KnowledgeDeadLetterAlarm89BA6B02",
+            "PhysicalResourceId": "PiyoPiyoDev-KnowledgeDeadLetterAlarm89BA6B02-zSmoxdLjM9v4",
+            "ResourceType": "AWS::CloudWatch::Alarm",
+            "LastUpdatedTimestamp": "2026-11-23T14:56:47.309000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "KnowledgeDeadLettersE205E2A5",
+            "PhysicalResourceId": "https://sqs.us-east-1.amazonaws.com/992680757326/piyopiyo-knowledge-dead.fifo",
+            "ResourceType": "AWS::SQS::Queue",
+            "LastUpdatedTimestamp": "2026-11-23T14:56:43.596000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "KnowledgeDeadLettersPolicyA261C0DA",
+            "PhysicalResourceId": "PiyoPiyoDev-KnowledgeDeadLettersPolicyA261C0DA-zB5GFq3IfrTC",
+            "ResourceType": "AWS::SQS::QueuePolicy",
+            "LastUpdatedTimestamp": "2026-11-23T14:57:15.323000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "KnowledgeIntegration",
+            "PhysicalResourceId": "u4dgxyp",
+            "ResourceType": "AWS::ApiGatewayV2::Integration",
+            "LastUpdatedTimestamp": "2026-11-23T14:58:16.144000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "KnowledgeModel",
+            "PhysicalResourceId": "arn:aws:bedrock:us-east-1:992680757326:application-inference-profile/7z9pcwixgslg",
+            "ResourceType": "AWS::Bedrock::ApplicationInferenceProfile",
+            "LastUpdatedTimestamp": "2026-11-23T14:55:43.041000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "KnowledgePDF7CC18043",
+            "PhysicalResourceId": "piyopiyo-knowledge-pdf",
+            "ResourceType": "AWS::Lambda::Function",
+            "LastUpdatedTimestamp": "2026-11-23T14:57:56.792000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "KnowledgePDFLogsA7FD4722",
+            "PhysicalResourceId": "/aws/lambda/piyopiyo-knowledge-pdf",
+            "ResourceType": "AWS::Logs::LogGroup",
+            "LastUpdatedTimestamp": "2026-11-23T14:55:51.133000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "KnowledgePDFRole5CE8A860",
+            "PhysicalResourceId": "PiyoPiyoDev-KnowledgePDFRole5CE8A860-5d5r40MlY28i",
+            "ResourceType": "AWS::IAM::Role",
+            "LastUpdatedTimestamp": "2026-11-23T14:55:58.409000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "KnowledgePDFRoleDefaultPolicyA7C4AB8C",
+            "PhysicalResourceId": "PiyoP-Knowl-PtMFl18VSHR5",
+            "ResourceType": "AWS::IAM::Policy",
+            "LastUpdatedTimestamp": "2026-11-23T14:56:15.440000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "KnowledgeQueue865B3581",
+            "PhysicalResourceId": "https://sqs.us-east-1.amazonaws.com/992680757326/piyopiyo-knowledge.fifo",
+            "ResourceType": "AWS::SQS::Queue",
+            "LastUpdatedTimestamp": "2026-11-23T14:57:46.642000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "KnowledgeQueuePolicyD703DC5F",
+            "PhysicalResourceId": "PiyoPiyoDev-KnowledgeQueuePolicyD703DC5F-i9jPiSjv7QCM",
+            "ResourceType": "AWS::SQS::QueuePolicy",
+            "LastUpdatedTimestamp": "2026-11-23T14:58:18.636000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "KnowledgeRoute",
+            "PhysicalResourceId": "cxfb9nj",
+            "ResourceType": "AWS::ApiGatewayV2::Route",
+            "LastUpdatedTimestamp": "2026-11-23T14:58:17.996000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "KnowledgeScheduleRole464A82F8",
+            "PhysicalResourceId": "PiyoPiyoDev-KnowledgeScheduleRole464A82F8-tmcVqnOgUSDW",
+            "ResourceType": "AWS::IAM::Role",
+            "LastUpdatedTimestamp": "2026-11-23T14:56:00.304000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "KnowledgeScheduleRoleDefaultPolicy4A94FE1E",
+            "PhysicalResourceId": "PiyoP-Knowl-TpX1nW5WwuFg",
+            "ResourceType": "AWS::IAM::Policy",
+            "LastUpdatedTimestamp": "2026-11-23T14:58:03.663000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "KnowledgeSchedulediscover",
+            "PhysicalResourceId": "piyopiyo-knowledge-discover",
+            "ResourceType": "AWS::Scheduler::Schedule",
+            "LastUpdatedTimestamp": "2026-11-23T14:57:49.441000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "KnowledgeSchedulegenerate",
+            "PhysicalResourceId": "piyopiyo-knowledge-generate",
+            "ResourceType": "AWS::Scheduler::Schedule",
+            "LastUpdatedTimestamp": "2026-11-23T14:57:49.376000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "KnowledgeSchedules",
+            "PhysicalResourceId": "piyopiyo-knowledge",
+            "ResourceType": "AWS::Scheduler::ScheduleGroup",
+            "LastUpdatedTimestamp": "2026-11-23T14:55:42.572000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "KnowledgeWorker5D785723",
+            "PhysicalResourceId": "piyopiyo-knowledge-worker",
+            "ResourceType": "AWS::Lambda::Function",
+            "LastUpdatedTimestamp": "2026-11-23T15:15:27.464000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "KnowledgeWorkerLogs0E146402",
+            "PhysicalResourceId": "/aws/lambda/piyopiyo-knowledge-worker",
+            "ResourceType": "AWS::Logs::LogGroup",
+            "LastUpdatedTimestamp": "2026-11-23T14:55:50.946000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "KnowledgeWorkerRole6EA081DE",
+            "PhysicalResourceId": "PiyoPiyoDev-KnowledgeWorkerRole6EA081DE-WIIdqSVtjRrC",
+            "ResourceType": "AWS::IAM::Role",
+            "LastUpdatedTimestamp": "2026-11-23T14:55:58.194000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "KnowledgeWorkerRoleDefaultPolicy91E9994D",
+            "PhysicalResourceId": "PiyoP-Knowl-peGDWtVxMcWe",
+            "ResourceType": "AWS::IAM::Policy",
+            "LastUpdatedTimestamp": "2026-11-23T14:58:14.912000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "KnowledgeWorkerSqsEventSourcePiyoPiyoDevKnowledgeQueue86A4F012696D4EF5",
+            "PhysicalResourceId": "bb71863c-f2d1-4e04-aa4f-4ab53042d364",
+            "ResourceType": "AWS::Lambda::EventSourceMapping",
+            "LastUpdatedTimestamp": "2026-11-23T14:58:49.629000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "LambdaErrorRate534887CC",
+            "PhysicalResourceId": "PiyoPiyoDev-LambdaErrorRate534887CC-ubtEbEpzvYRa",
+            "ResourceType": "AWS::CloudWatch::Alarm",
+            "LastUpdatedTimestamp": "2026-11-21T15:46:41.806000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "LearnerAccess47F7A573",
+            "PhysicalResourceId": "PiyoPiyoDev-LearnerAccess47F7A573-p5yT1MZXCh4O",
+            "ResourceType": "AWS::IAM::Role",
+            "LastUpdatedTimestamp": "2026-11-21T15:46:28.266000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "LearnerAccessDefaultPolicy3B9A642E",
+            "PhysicalResourceId": "PiyoP-Learn-2VDYehdSKc94",
+            "ResourceType": "AWS::IAM::Policy",
+            "LastUpdatedTimestamp": "2026-11-21T15:21:42.234000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "LearnersABD429C6",
+            "PhysicalResourceId": "us-east-1_dJ1jTXRS1",
+            "ResourceType": "AWS::Cognito::UserPool",
+            "LastUpdatedTimestamp": "2026-11-21T15:46:08.097000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "LearnersDomain1C35B744",
+            "PhysicalResourceId": "piyopiyo-992680757326-dev",
+            "ResourceType": "AWS::Cognito::UserPoolDomain",
+            "LastUpdatedTimestamp": "2026-11-21T15:21:08.530000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "LearnersNativeB71FCDCA",
+            "PhysicalResourceId": "7rtsh51resu37vac6qrvnmobdf",
+            "ResourceType": "AWS::Cognito::UserPoolClient",
+            "LastUpdatedTimestamp": "2026-11-23T14:55:43.029000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "Live848578DF",
+            "PhysicalResourceId": "arn:aws:appsync:us-east-1:992680757326:apis/bchln5bvojh2zda2sxeigcsqp4",
+            "ResourceType": "AWS::AppSync::GraphQLApi",
+            "LastUpdatedTimestamp": "2026-11-21T15:46:10.255000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "LiveAccess0F7C02D3",
+            "PhysicalResourceId": "PiyoPiyoDev-LiveAccess0F7C02D3-xhvQBgeOJas4",
+            "ResourceType": "AWS::IAM::Role",
+            "LastUpdatedTimestamp": "2026-11-21T15:46:27.693000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "LiveAccessDefaultPolicy5369A8C0",
+            "PhysicalResourceId": "PiyoP-LiveA-QdcM1vxRNUQm",
+            "ResourceType": "AWS::IAM::Policy",
+            "LastUpdatedTimestamp": "2026-11-21T15:22:01.248000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "LiveMutationcreateRoomD99774EF",
+            "PhysicalResourceId": "arn:aws:appsync:us-east-1:992680757326:apis/bchln5bvojh2zda2sxeigcsqp4/types/Mutation/resolvers/createRoom",
+            "ResourceType": "AWS::AppSync::Resolver",
+            "LastUpdatedTimestamp": "2026-11-21T15:21:49.902000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "LiveMutationjoinRoom1752F3CB",
+            "PhysicalResourceId": "arn:aws:appsync:us-east-1:992680757326:apis/bchln5bvojh2zda2sxeigcsqp4/types/Mutation/resolvers/joinRoom",
+            "ResourceType": "AWS::AppSync::Resolver",
+            "LastUpdatedTimestamp": "2026-11-21T15:21:50.122000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "LiveMutationsubmitAnswer1B311808",
+            "PhysicalResourceId": "arn:aws:appsync:us-east-1:992680757326:apis/bchln5bvojh2zda2sxeigcsqp4/types/Mutation/resolvers/submitAnswer",
+            "ResourceType": "AWS::AppSync::Resolver",
+            "LastUpdatedTimestamp": "2026-11-21T15:21:50.146000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "LiveQueryroomBBA10489",
+            "PhysicalResourceId": "arn:aws:appsync:us-east-1:992680757326:apis/bchln5bvojh2zda2sxeigcsqp4/types/Query/resolvers/room",
+            "ResourceType": "AWS::AppSync::Resolver",
+            "LastUpdatedTimestamp": "2026-11-21T15:21:50.184000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "LiveRuntime60A99AD0",
+            "PhysicalResourceId": "arn:aws:appsync:us-east-1:992680757326:apis/bchln5bvojh2zda2sxeigcsqp4/datasources/LiveRuntime",
+            "ResourceType": "AWS::AppSync::DataSource",
+            "LastUpdatedTimestamp": "2026-11-21T15:21:46.936000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "LiveSchema0A34574F",
+            "PhysicalResourceId": "bchln5bvojh2zda2sxeigcsqp4GraphQLSchema",
+            "ResourceType": "AWS::AppSync::GraphQLSchema",
+            "LastUpdatedTimestamp": "2026-11-21T15:21:18.589000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "LiveSubscriptiononAnswerEFD8DF06",
+            "PhysicalResourceId": "arn:aws:appsync:us-east-1:992680757326:apis/bchln5bvojh2zda2sxeigcsqp4/types/Subscription/resolvers/onAnswer",
+            "ResourceType": "AWS::AppSync::Resolver",
+            "LastUpdatedTimestamp": "2026-11-21T15:21:50.108000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "MonthlyBudget",
+            "PhysicalResourceId": "PiyoPiyo-monthly",
+            "ResourceType": "AWS::Budgets::Budget",
+            "LastUpdatedTimestamp": "2026-11-23T13:03:30.876000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "POSTaccountdeletionauthorization",
+            "PhysicalResourceId": "5igpyu8",
+            "ResourceType": "AWS::ApiGatewayV2::Route",
+            "LastUpdatedTimestamp": "2026-11-23T13:04:07.240000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "POSTdiagnostics",
+            "PhysicalResourceId": "yypoue1",
+            "ResourceType": "AWS::ApiGatewayV2::Route",
+            "LastUpdatedTimestamp": "2026-11-21T15:52:14.752000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "POSTquiz",
+            "PhysicalResourceId": "nycpef7",
+            "ResourceType": "AWS::ApiGatewayV2::Route",
+            "LastUpdatedTimestamp": "2026-11-21T15:52:14.534000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "POSTquizsessionIdattempts",
+            "PhysicalResourceId": "2botyfm",
+            "ResourceType": "AWS::ApiGatewayV2::Route",
+            "LastUpdatedTimestamp": "2026-11-21T15:52:14.506000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "POSTquizsessionIdevaluate",
+            "PhysicalResourceId": "mc3spto",
+            "ResourceType": "AWS::ApiGatewayV2::Route",
+            "LastUpdatedTimestamp": "2026-11-21T15:52:14.525000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "Stage",
+            "PhysicalResourceId": "$default",
+            "ResourceType": "AWS::ApiGatewayV2::Stage",
+            "LastUpdatedTimestamp": "2026-11-21T15:46:08.779000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "TableThrottlesCD44955A",
+            "PhysicalResourceId": "PiyoPiyoDev-TableThrottlesCD44955A-VUkVkOjMHPUf",
+            "ResourceType": "AWS::CloudWatch::Alarm",
+            "LastUpdatedTimestamp": "2026-11-21T15:46:09.669000+00:00",
+            "ResourceStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "WebsiteCertificateEEE1FA4C",
+            "PhysicalResourceId": "arn:aws:acm:us-east-1:992680757326:certificate/068ba2e0-d5bc-4f68-980d-f2dac7624c24",
+            "ResourceType": "AWS::CertificateManager::Certificate",
+            "LastUpdatedTimestamp": "2026-11-23T16:57:40.309000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "WebsiteDomain",
+            "PhysicalResourceId": "piyopiyo.grabbiel.com",
+            "ResourceType": "AWS::ApiGatewayV2::DomainName",
+            "LastUpdatedTimestamp": "2026-11-23T16:57:49.191000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "WebsiteMapping",
+            "PhysicalResourceId": "k6s4er",
+            "ResourceType": "AWS::ApiGatewayV2::ApiMapping",
+            "LastUpdatedTimestamp": "2026-11-23T16:57:51.554000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "contentadmins",
+            "PhysicalResourceId": "content-admins",
+            "ResourceType": "AWS::Cognito::UserPoolGroup",
+            "LastUpdatedTimestamp": "2026-11-21T15:21:27.090000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "LogicalResourceId": "learners",
+            "PhysicalResourceId": "learners",
+            "ResourceType": "AWS::Cognito::UserPoolGroup",
+            "LastUpdatedTimestamp": "2026-11-21T15:21:27.349000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }
+        }
+    ]
+}

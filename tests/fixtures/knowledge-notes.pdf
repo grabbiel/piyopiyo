@@ -1,0 +1,66 @@
+%PDF-1.3
+%‚„œ”
+1 0 obj
+<<
+/Producer (pypdf)
+>>
+endobj
+2 0 obj
+<<
+/Type /Pages
+/Count 1
+/Kids [ 4 0 R ]
+>>
+endobj
+3 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+4 0 obj
+<<
+/Type /Page
+/Resources <<
+/Font <<
+/F1 5 0 R
+>>
+>>
+/MediaBox [ 0.0 0.0 612 792 ]
+/Parent 2 0 R
+/Contents 6 0 R
+>>
+endobj
+5 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+6 0 obj
+<<
+/Length 1156
+>>
+stream
+BT /F1 11 Tf 42 740 Td 17 TL (PiyoPiyo original learning notes: queues and stacks) Tj T* (A queue follows first-in-first-out order. Items enter at the tail and leave at the head.) Tj T* (Enqueuing A, then B, then C means dequeuing returns A, then B, then C.) Tj T* (A stack follows last-in-first-out order. Push adds at the top; pop removes the top.) Tj T* (Pushing A, then B, then C means popping returns C, then B, then A.) Tj T* (A linked queue with both head and tail pointers supports constant-time enqueue) Tj T* (and dequeue. A stack implemented with a linked list supports constant-time push) Tj T* (and pop at the head. The abstract ordering rule does not prescribe storage layout.) Tj T* (A bounded queue has a fixed capacity. A full queue must reject, wait, or apply an) Tj T* (explicit overflow policy; silently overwriting data is not part of the queue contract.) Tj T* (A circular buffer reuses freed slots by wrapping indices modulo its capacity.) Tj T* (A breadth-first graph traversal uses a queue for its frontier. A depth-first traversal) Tj T* (can use a stack. Marking visited vertices prevents repeated processing in cycles.) Tj T* ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000054 00000 n 
+0000000113 00000 n 
+0000000162 00000 n 
+0000000294 00000 n 
+0000000364 00000 n 
+trailer
+<<
+/Size 7
+/Root 3 0 R
+/Info 1 0 R
+>>
+startxref
+1572
+%%EOF

@@ -1,0 +1,499 @@
+[
+  {
+    "id": "mit-syllabus",
+    "title": "MIT 6.006 syllabus",
+    "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/syllabus/",
+    "accessedAt": "2026-11-21T15:24:49.288755+00:00",
+    "kind": "academic",
+    "topic": "Algorithms",
+    "retrievalMethod": "public_https",
+    "redistributable": false,
+    "releaseInclusion": "citation_only",
+    "resolvedURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/syllabus/",
+    "sha256": "1c88acc416b7010bb7fffbf2f73abb6b15ddce5c8236d3b70400248997e74168",
+    "status": "acquired"
+  },
+  {
+    "id": "mit-algorithms",
+    "title": "MIT 6.006 course review",
+    "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "accessedAt": "2026-11-21T15:24:50.941231+00:00",
+    "kind": "academic",
+    "topic": "Algorithms",
+    "retrievalMethod": "public_https",
+    "redistributable": false,
+    "releaseInclusion": "citation_only",
+    "resolvedURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "sha256": "8f762641b3b9f470d8f9019d3b279448dfe071480a56aa7bb9dd60cd6ce55ff5",
+    "status": "acquired"
+  },
+  {
+    "id": "cmu-syllabus",
+    "title": "CMU 15-440 Distributed Systems",
+    "url": "https://courseweb.sp.cs.cmu.edu/15-440/fall-2026/syllabus/",
+    "accessedAt": "2026-11-21T15:24:52.791178+00:00",
+    "kind": "academic",
+    "topic": "Distributed systems",
+    "retrievalMethod": "public_https",
+    "redistributable": false,
+    "releaseInclusion": "citation_only",
+    "resolvedURL": "https://courseweb.sp.cs.cmu.edu/15-440/fall-2026/syllabus/",
+    "sha256": "417c94a8cbda18ed2c614f38e293dc7019ac05a073862e7c86ca40a6b63981d4",
+    "status": "acquired"
+  },
+  {
+    "id": "raft",
+    "title": "In Search of an Understandable Consensus Algorithm",
+    "url": "https://raft.github.io/raft.pdf",
+    "accessedAt": "2026-11-21T15:24:54.450369+00:00",
+    "kind": "academic",
+    "topic": "Distributed systems",
+    "retrievalMethod": "public_https",
+    "redistributable": false,
+    "releaseInclusion": "citation_only",
+    "resolvedURL": "https://raft.github.io/raft.pdf",
+    "sha256": "5a5c679b6a7c88007faeff8c3eef19a77e9e5caa8bd7390922584fe8ecf0ce1f",
+    "status": "acquired"
+  },
+  {
+    "id": "ostep",
+    "title": "OSTEP: Concurrency introduction",
+    "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "accessedAt": "2026-11-21T15:24:57.840388+00:00",
+    "kind": "academic",
+    "topic": "Operating systems",
+    "retrievalMethod": "public_https",
+    "redistributable": false,
+    "releaseInclusion": "citation_only",
+    "resolvedURL": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "sha256": "04eebf12233463d54c6b39352bbea644241b308312cabd568b24b9aa3b7e4d1e",
+    "status": "acquired"
+  },
+  {
+    "id": "postgres",
+    "title": "PostgreSQL transaction isolation",
+    "url": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "accessedAt": "2026-11-21T15:25:00.178866+00:00",
+    "kind": "reference",
+    "topic": "Databases",
+    "retrievalMethod": "public_https",
+    "redistributable": false,
+    "releaseInclusion": "citation_only",
+    "resolvedURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "sha256": "aef102c425a4f8e5774e02812430f453ea0a09157ed0c1f5275ee5da6a45a9c8",
+    "status": "acquired"
+  },
+  {
+    "id": "python",
+    "title": "Python data structures",
+    "url": "https://docs.python.org/3/tutorial/datastructures.html",
+    "accessedAt": "2026-11-21T15:25:02.506403+00:00",
+    "kind": "reference",
+    "topic": "Programming",
+    "retrievalMethod": "public_https",
+    "redistributable": false,
+    "releaseInclusion": "citation_only",
+    "resolvedURL": "https://docs.python.org/3/tutorial/datastructures.html",
+    "sha256": "77bd4e071d6ca5fce295b6fd8d264f5662a8b2e3fe29723cd8a942f311a155e5",
+    "status": "acquired"
+  },
+  {
+    "id": "acm-news",
+    "title": "ACM TechNews",
+    "url": "https://technews.acm.org/",
+    "accessedAt": "2026-11-21T15:25:04.025737+00:00",
+    "kind": "reference",
+    "topic": "Research",
+    "retrievalMethod": "public_https",
+    "redistributable": false,
+    "releaseInclusion": "citation_only",
+    "status": "unavailable",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "id": "acm-queue",
+    "title": "ACM Queue",
+    "url": "https://queue.acm.org/",
+    "accessedAt": "2026-11-21T15:25:04.147544+00:00",
+    "kind": "reference",
+    "topic": "Software engineering",
+    "retrievalMethod": "public_https",
+    "redistributable": false,
+    "releaseInclusion": "citation_only",
+    "status": "unavailable",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "id": "cacm",
+    "title": "Communications of the ACM",
+    "url": "https://cacm.acm.org/",
+    "accessedAt": "2026-11-21T15:25:04.287016+00:00",
+    "kind": "reference",
+    "topic": "Research",
+    "retrievalMethod": "public_https",
+    "redistributable": false,
+    "releaseInclusion": "citation_only",
+    "status": "unavailable",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "id": "books-index",
+    "title": "Community textbook discovery index",
+    "url": "https://github.com/namelessandgood/Books",
+    "accessedAt": "2026-11-21T15:25:04.403958+00:00",
+    "kind": "reference",
+    "topic": "Discovery",
+    "retrievalMethod": "public_https",
+    "redistributable": false,
+    "releaseInclusion": "citation_only",
+    "resolvedURL": "https://github.com/namelessandgood/Books",
+    "sha256": "c883e50920fdae0f95a7e8e1ef5a05e6b96fe1fe1ea8f9cbcfb316c7075d142d",
+    "status": "acquired"
+  },
+  {
+    "id": "show-hn",
+    "title": "Show Hacker News",
+    "url": "https://news.ycombinator.com/show",
+    "accessedAt": "2026-11-21T15:25:07.304516+00:00",
+    "kind": "reference",
+    "topic": "Discovery",
+    "retrievalMethod": "public_https",
+    "redistributable": false,
+    "releaseInclusion": "citation_only",
+    "resolvedURL": "https://news.ycombinator.com/show",
+    "sha256": "7366a628f2af257a126f3c6345bab6ee31f8b64462c36bc462b25c28e0ade0db",
+    "status": "acquired"
+  },
+  {
+    "id": "visual-naver",
+    "url": "https://www.naver.com",
+    "accessedAt": "2026-11-21T15:26:29.330Z",
+    "kind": "visual_reference",
+    "intendedUse": "compact information hierarchy",
+    "redistributable": false,
+    "releaseInclusion": "none",
+    "sha256": "bcbe321c526d4c5e2c6c5e588345d5f94e40b5f7a5a847d9e90ae209c95ddd5b",
+    "styles": {
+      "font": "-apple-system, \"system-ui\", \"Malgun Gothic\", \"\ub9d1\uc740 \uace0\ub515\", helvetica, \"Apple SD Gothic Neo\", sans-serif",
+      "color": "rgb(46, 46, 46)",
+      "background": "rgb(255, 255, 255)"
+    },
+    "status": "captured"
+  },
+  {
+    "id": "visual-duolingo",
+    "url": "https://www.duolingo.com",
+    "accessedAt": "2026-11-21T15:26:30.498Z",
+    "kind": "visual_reference",
+    "intendedUse": "friendly progress and raised buttons",
+    "redistributable": false,
+    "releaseInclusion": "none",
+    "sha256": "a630e9fc44728d963ac029f351e9159742a5c8c4b86756bbe5d3a201d648e0f9",
+    "styles": {
+      "font": "sans-serif",
+      "color": "rgb(60, 60, 60)",
+      "background": "rgb(255, 255, 255)"
+    },
+    "status": "captured"
+  },
+  {
+    "id": "visual-rosetta",
+    "url": "https://www.rosettastone.com",
+    "accessedAt": "2026-11-21T15:26:32.334Z",
+    "kind": "visual_reference",
+    "intendedUse": "clear learning paths",
+    "redistributable": false,
+    "releaseInclusion": "none",
+    "sha256": "53fdbca7be7c7f139c3ca0135b1b115cbed218f17b21759f4f6c9fa3e48f51c0",
+    "styles": {
+      "font": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "color": "rgb(0, 0, 0)",
+      "background": "rgb(13, 15, 17)"
+    },
+    "status": "captured"
+  },
+  {
+    "id": "visual-notion",
+    "url": "https://www.notion.com",
+    "accessedAt": "2026-11-21T15:26:34.187Z",
+    "kind": "visual_reference",
+    "intendedUse": "quiet typography and navigation",
+    "redistributable": false,
+    "releaseInclusion": "none",
+    "sha256": "571f70339d0386363b21ff76f3b46083a290c410332c2ca8879bbcae8d5bddea",
+    "styles": {
+      "font": "NotionInter, Inter, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+      "color": "rgba(0, 0, 0, 0.95)",
+      "background": "rgb(255, 255, 255)"
+    },
+    "status": "captured"
+  },
+  {
+    "id": "visual-canva",
+    "url": "https://www.canva.com",
+    "accessedAt": "2026-11-21T15:26:35.544Z",
+    "kind": "visual_reference",
+    "intendedUse": "generous cards",
+    "redistributable": false,
+    "releaseInclusion": "none",
+    "sha256": "26dea93ec15863b62136d816f95c71e2fa7c0cfe0ee90854fc977285c763acb1",
+    "styles": {
+      "font": "sans-serif",
+      "color": "rgb(0, 0, 0)",
+      "background": "rgba(0, 0, 0, 0)"
+    },
+    "status": "captured"
+  },
+  {
+    "id": "visual-kahoot",
+    "url": "https://kahoot.com",
+    "accessedAt": "2026-11-21T15:26:37.128Z",
+    "kind": "visual_reference",
+    "intendedUse": "readable quiz choices",
+    "redistributable": false,
+    "releaseInclusion": "none",
+    "sha256": "78e176c039310247938fe47fd83f6c18efce6450a636a63a5d3e429b17ef7f9d",
+    "styles": {
+      "font": "Montserrat, sans-serif",
+      "color": "rgb(51, 51, 51)",
+      "background": "rgba(0, 0, 0, 0)"
+    },
+    "status": "captured"
+  },
+  {
+    "id": "original-focus",
+    "kind": "audio",
+    "title": "Piyo / focus",
+    "url": "local:scripts/compose.py",
+    "accessedAt": "2026-11-21T15:27:02.770972+00:00",
+    "sha256": "41118ef78bfce55d4c7290b70c83f7bc7e2b8f92de2369b052bde0d9284a5dec",
+    "bpm": 76,
+    "license": "Original generated composition; project-owned",
+    "redistributable": true,
+    "releaseInclusion": "bundled",
+    "notes": "Original note sequence, additive synthesis; no sampled recordings.",
+    "assets": [
+      {
+        "path": "PiyoPiyo/PiyoPiyoCore/Sources/PiyoPiyoCore/Resources/focus.wav",
+        "sha256": "a8f1c00baabbf3bc464c166fe9a8ca0ae5dec91c08cbb887d8526571f097094a"
+      },
+      {
+        "path": "PiyoPiyo/PiyoPiyoCore/Sources/PiyoPiyoCore/Resources/focus.mid",
+        "sha256": "4d5eae27e985994a1fbaaa3ff6321662ab3750f6bf205a5b5f29453f123199fc"
+      }
+    ]
+  },
+  {
+    "id": "original-celebration",
+    "kind": "audio",
+    "title": "Piyo / celebration",
+    "url": "local:scripts/compose.py",
+    "accessedAt": "2026-11-21T15:27:02.833774+00:00",
+    "sha256": "41118ef78bfce55d4c7290b70c83f7bc7e2b8f92de2369b052bde0d9284a5dec",
+    "bpm": 144,
+    "license": "Original generated composition; project-owned",
+    "redistributable": true,
+    "releaseInclusion": "bundled",
+    "notes": "Original note sequence, additive synthesis; no sampled recordings.",
+    "assets": [
+      {
+        "path": "PiyoPiyo/PiyoPiyoCore/Sources/PiyoPiyoCore/Resources/celebration.wav",
+        "sha256": "d12eb257128190cf9acb4afd319ea677b54aea1c260c4a2c757e72fe5a6c06b2"
+      },
+      {
+        "path": "PiyoPiyo/PiyoPiyoCore/Sources/PiyoPiyoCore/Resources/celebration.mid",
+        "sha256": "0cf35e0bf0452f9dee07bd561e2bfa69d73fda9753f79c424ae52645861602e5"
+      }
+    ]
+  },
+  {
+    "id": "original-reflection",
+    "kind": "audio",
+    "title": "Piyo / reflection",
+    "url": "local:scripts/compose.py",
+    "accessedAt": "2026-11-21T15:27:02.954922+00:00",
+    "sha256": "41118ef78bfce55d4c7290b70c83f7bc7e2b8f92de2369b052bde0d9284a5dec",
+    "bpm": 68,
+    "license": "Original generated composition; project-owned",
+    "redistributable": true,
+    "releaseInclusion": "bundled",
+    "notes": "Original note sequence, additive synthesis; no sampled recordings.",
+    "assets": [
+      {
+        "path": "PiyoPiyo/PiyoPiyoCore/Sources/PiyoPiyoCore/Resources/reflection.wav",
+        "sha256": "57ab70eae5a86f60a289eb67767074dd8301a74bf24aebdb7856052894308906"
+      },
+      {
+        "path": "PiyoPiyo/PiyoPiyoCore/Sources/PiyoPiyoCore/Resources/reflection.mid",
+        "sha256": "e479b324820c2b3e2418f6eff1b6b6a5c6ac1a4d5a00d240c22970ec59afd251"
+      }
+    ]
+  },
+  {
+    "id": "original-transition",
+    "kind": "audio",
+    "title": "Piyo / transition",
+    "url": "local:scripts/compose.py",
+    "accessedAt": "2026-11-21T15:27:03.014184+00:00",
+    "sha256": "41118ef78bfce55d4c7290b70c83f7bc7e2b8f92de2369b052bde0d9284a5dec",
+    "bpm": 108,
+    "license": "Original generated composition; project-owned",
+    "redistributable": true,
+    "releaseInclusion": "bundled",
+    "notes": "Original note sequence, additive synthesis; no sampled recordings.",
+    "assets": [
+      {
+        "path": "PiyoPiyo/PiyoPiyoCore/Sources/PiyoPiyoCore/Resources/transition.wav",
+        "sha256": "0a8e37f58e5541381a3056ed897738895ab2dc68d7e7b51969a5f76f99313fcc"
+      },
+      {
+        "path": "PiyoPiyo/PiyoPiyoCore/Sources/PiyoPiyoCore/Resources/transition.mid",
+        "sha256": "065acaacbf5179023a79c93bc0d95301fa6b65bd487faf7722248855457a0c70"
+      }
+    ]
+  },
+  {
+    "id": "original-audio",
+    "kind": "audio",
+    "title": "Three pulse signal",
+    "url": "local:scripts/compose.py",
+    "accessedAt": "2026-11-21T15:27:03.041083+00:00",
+    "sha256": "41118ef78bfce55d4c7290b70c83f7bc7e2b8f92de2369b052bde0d9284a5dec",
+    "license": "Original generated signal; project-owned",
+    "redistributable": true,
+    "releaseInclusion": "bundled",
+    "assets": [
+      {
+        "path": "PiyoPiyo/PiyoPiyoCore/Sources/PiyoPiyoCore/Resources/pulses.wav",
+        "sha256": "cf78525dc9636cb58855d599f5c3ec04535b19b2c9450619eae79d65bf323d84"
+      }
+    ]
+  },
+  {
+    "id": "hyouka-official-preview",
+    "kind": "audio_reference",
+    "title": "Hyouka Part One official trailer, 20-second reference excerpt",
+    "url": "https://www.youtube.com/watch?v=KbIUra_o2wc",
+    "accessedAt": "2026-11-21T15:55:39.472317+00:00",
+    "sha256": "5603a833be8494c37cff471f6510c39dbc6cafcebda6897287abf296e28f4ee0",
+    "method": "yt-dlp; public official trailer; first 20 seconds",
+    "status": "acquired",
+    "redistributable": false,
+    "releaseInclusion": false,
+    "analysis": {
+      "tempoBpm": 112.34714673913044,
+      "spectralCentroidHz": 2260.403076171875,
+      "durationSeconds": 19.993514739229024,
+      "bucket": "transition",
+      "limitation": "Trailer dialogue and effects affect beat estimates; centroid is timbral brightness, not a validated valence measure."
+    }
+  },
+  {
+    "id": "piyo-vector",
+    "kind": "original_visual",
+    "title": "Piyo Vector",
+    "url": "local:PiyoPiyo/PiyoPiyoCore/Sources/PiyoPiyoCore/Theme.swift",
+    "accessedAt": "2026-11-21T15:58:31.858942+00:00",
+    "sha256": "25637b0f7abe5c9fab2e9d18f8a7fc167f8e58effa3a7f23637492cdef6790a9",
+    "license": "Original project artwork and token synthesis",
+    "redistributable": true,
+    "releaseInclusion": "bundled",
+    "status": "created"
+  },
+  {
+    "id": "original-theme",
+    "kind": "design_tokens",
+    "title": "Original Theme",
+    "url": "local:design-tokens.json",
+    "accessedAt": "2026-11-21T15:58:31.858942+00:00",
+    "sha256": "f30d3d2ffb11f57434e33c59cae1823238dd5ed4f34f8825d804e6afc2e4d50c",
+    "license": "Original project artwork and token synthesis",
+    "redistributable": true,
+    "releaseInclusion": "bundled",
+    "status": "created"
+  },
+  {
+    "id": "icon-inspiration",
+    "kind": "visual_reference",
+    "title": "Owner-supplied minimal yellow chick reference",
+    "url": "owner-supplied attachment, November 23 2026",
+    "accessedAt": "2026-11-23T13:52:57.797946+00:00",
+    "sha256": "bf20edefea87a7733148a8625e43c46673d4230de8f681e90c22674fc6304697",
+    "license": "Not established; reference only",
+    "redistributable": false,
+    "releaseInclusion": "reference_only",
+    "status": "provided"
+  },
+  {
+    "id": "piyo-app-icons",
+    "kind": "original_visual",
+    "title": "Original smiling yellow chick icon",
+    "url": "local:artifacts/branding/piyopiyo-icon-master.png",
+    "accessedAt": "2026-11-23T13:52:57.797946+00:00",
+    "sha256": "fad038b515ecfa885ed2dd6f75f51bc002e7c1959cf6a3f6590271e24beedc30",
+    "license": "Original AI-generated project artwork; reference used for visual inspiration only",
+    "redistributable": true,
+    "releaseInclusion": "bundled",
+    "status": "created",
+    "generator": "Built-in image_gen",
+    "files": [
+      {
+        "path": "PiyoPiyo/App/Assets.xcassets/AppIcon.appiconset/ios-1024.png",
+        "sha256": "7a4c76a1df47e709d3a818457f61809ac919dad427438e346cf940a22ece6b8c"
+      },
+      {
+        "path": "PiyoPiyo/App/Assets.xcassets/AppIcon.appiconset/mac-128@1x.png",
+        "sha256": "182c44e4017e5f1422cbe456bc4bedb15b6fe9b923928818577ab4cb83175cc7"
+      },
+      {
+        "path": "PiyoPiyo/App/Assets.xcassets/AppIcon.appiconset/mac-128@2x.png",
+        "sha256": "942d77928bd6f2d226436276bbddccab1e6e7b78807912e954c1bab6a4c8ff77"
+      },
+      {
+        "path": "PiyoPiyo/App/Assets.xcassets/AppIcon.appiconset/mac-16@1x.png",
+        "sha256": "6d254a565aa875a41e41d7dad4a3a67e528fbe6989169c879a7bc6f799e6e896"
+      },
+      {
+        "path": "PiyoPiyo/App/Assets.xcassets/AppIcon.appiconset/mac-16@2x.png",
+        "sha256": "ed31e38c00dd755e9dd52696cbcb8f82683dc2a3f36b6442675167ea55c179ba"
+      },
+      {
+        "path": "PiyoPiyo/App/Assets.xcassets/AppIcon.appiconset/mac-256@1x.png",
+        "sha256": "942d77928bd6f2d226436276bbddccab1e6e7b78807912e954c1bab6a4c8ff77"
+      },
+      {
+        "path": "PiyoPiyo/App/Assets.xcassets/AppIcon.appiconset/mac-256@2x.png",
+        "sha256": "4bdf775a9b507acf642856f9e9bdb3f7796223f5c8d54186a458262c47ddd9ef"
+      },
+      {
+        "path": "PiyoPiyo/App/Assets.xcassets/AppIcon.appiconset/mac-32@1x.png",
+        "sha256": "ed31e38c00dd755e9dd52696cbcb8f82683dc2a3f36b6442675167ea55c179ba"
+      },
+      {
+        "path": "PiyoPiyo/App/Assets.xcassets/AppIcon.appiconset/mac-32@2x.png",
+        "sha256": "0eb6c398d1c21aa95bdc112fd66b30877b46a74b50164b1cd7907bd0e716ed8f"
+      },
+      {
+        "path": "PiyoPiyo/App/Assets.xcassets/AppIcon.appiconset/mac-512@1x.png",
+        "sha256": "4bdf775a9b507acf642856f9e9bdb3f7796223f5c8d54186a458262c47ddd9ef"
+      },
+      {
+        "path": "PiyoPiyo/App/Assets.xcassets/AppIcon.appiconset/mac-512@2x.png",
+        "sha256": "7a4c76a1df47e709d3a818457f61809ac919dad427438e346cf940a22ece6b8c"
+      }
+    ]
+  },
+  {
+    "id": "piyo-sources-icon",
+    "kind": "original_visual",
+    "title": "Piyo reading a teal library book",
+    "url": "local:SourcesDesk/Branding/sources-icon-master.png",
+    "accessedAt": "2026-11-23T17:02:16.178380+00:00",
+    "sha256": "726139a4fadebc5bcc8ec9f5c3018d5542260e4e26923a4e5c72bb35b754deae",
+    "license": "Original AI-generated project artwork, based on the original PiyoPiyo character",
+    "redistributable": true,
+    "releaseInclusion": "PiyoPiyo Sources companion only",
+    "status": "created",
+    "generator": "Built-in image_gen"
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "acceptedAt": "2026-11-23T14:14:59.680989+00:00",
+  "confirmation": "Accept the verified devices",
+  "source": "Direct owner reply in the development conversation",
+  "acceptedCoverage": [
+    "iPhone SE (3rd generation) simulator",
+    "iPad mini simulator",
+    "Available MacBook Pro"
+  ],
+  "substitution": "Owner accepts this verified coverage in place of the specifically named MacBook Air.",
+  "manualVoiceOverAuditCompleted": false
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "id": "original-focus",
+    "kind": "audio",
+    "title": "Piyo / focus",
+    "url": "local:scripts/compose.py",
+    "accessedAt": "2026-11-21T15:27:02.770972+00:00",
+    "sha256": "a8f1c00baabbf3bc464c166fe9a8ca0ae5dec91c08cbb887d8526571f097094a",
+    "bpm": 76,
+    "license": "Original generated composition; project-owned",
+    "redistributable": true,
+    "releaseInclusion": "bundled",
+    "notes": "Original note sequence, additive synthesis; no sampled recordings."
+  },
+  {
+    "id": "original-celebration",
+    "kind": "audio",
+    "title": "Piyo / celebration",
+    "url": "local:scripts/compose.py",
+    "accessedAt": "2026-11-21T15:27:02.833774+00:00",
+    "sha256": "d12eb257128190cf9acb4afd319ea677b54aea1c260c4a2c757e72fe5a6c06b2",
+    "bpm": 144,
+    "license": "Original generated composition; project-owned",
+    "redistributable": true,
+    "releaseInclusion": "bundled",
+    "notes": "Original note sequence, additive synthesis; no sampled recordings."
+  },
+  {
+    "id": "original-reflection",
+    "kind": "audio",
+    "title": "Piyo / reflection",
+    "url": "local:scripts/compose.py",
+    "accessedAt": "2026-11-21T15:27:02.954922+00:00",
+    "sha256": "57ab70eae5a86f60a289eb67767074dd8301a74bf24aebdb7856052894308906",
+    "bpm": 68,
+    "license": "Original generated composition; project-owned",
+    "redistributable": true,
+    "releaseInclusion": "bundled",
+    "notes": "Original note sequence, additive synthesis; no sampled recordings."
+  },
+  {
+    "id": "original-transition",
+    "kind": "audio",
+    "title": "Piyo / transition",
+    "url": "local:scripts/compose.py",
+    "accessedAt": "2026-11-21T15:27:03.014184+00:00",
+    "sha256": "0a8e37f58e5541381a3056ed897738895ab2dc68d7e7b51969a5f76f99313fcc",
+    "bpm": 108,
+    "license": "Original generated composition; project-owned",
+    "redistributable": true,
+    "releaseInclusion": "bundled",
+    "notes": "Original note sequence, additive synthesis; no sampled recordings."
+  },
+  {
+    "id": "original-audio",
+    "kind": "audio",
+    "title": "Three pulse signal",
+    "url": "local:scripts/compose.py",
+    "accessedAt": "2026-11-21T15:27:03.041083+00:00",
+    "sha256": "cf78525dc9636cb58855d599f5c3ec04535b19b2c9450619eae79d65bf323d84",
+    "license": "Original generated signal; project-owned",
+    "redistributable": true,
+    "releaseInclusion": "bundled"
+  }
+]

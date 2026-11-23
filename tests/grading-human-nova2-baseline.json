@@ -1,0 +1,372 @@
+{
+  "createdAt": "2026-11-23T13:20:18.930Z",
+  "labelSource": "Owner-supplied scores; owner explicitly confirmed reviewing all 50 in conversation",
+  "reviewMetadata": {
+    "reviewer": "Francisco Cruzado",
+    "datasetSHA256": "42b1e79f2c696c5848d377738c5d36a15df8a7017358421fab942212dd6b994b",
+    "submittedCompletedAt": "2026-11-23T12:55:00.000Z"
+  },
+  "promptSHA256": "52e52f4a2ec10a7b1173d14216c7f56eb4594d2b268e1ab979465ef6b86e7861",
+  "models": [
+    {
+      "modelId": "arn:aws:bedrock:us-east-1:992680757326:application-inference-profile/t9c4f6fzj7ci",
+      "cases": [
+        {
+          "id": "review-20",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 1867
+        },
+        {
+          "id": "review-17",
+          "expected": 2,
+          "actual": 2,
+          "agreement": true,
+          "latencyMs": 916
+        },
+        {
+          "id": "review-23",
+          "expected": 4,
+          "actual": 4,
+          "agreement": true,
+          "latencyMs": 961
+        },
+        {
+          "id": "review-03",
+          "expected": 2,
+          "actual": 2,
+          "agreement": true,
+          "latencyMs": 1049
+        },
+        {
+          "id": "review-50",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 1050
+        },
+        {
+          "id": "review-01",
+          "expected": 5,
+          "actual": 4,
+          "agreement": false,
+          "latencyMs": 956
+        },
+        {
+          "id": "review-34",
+          "expected": 2,
+          "actual": 1,
+          "agreement": false,
+          "latencyMs": 1171
+        },
+        {
+          "id": "review-39",
+          "expected": 2,
+          "actual": 2,
+          "agreement": true,
+          "latencyMs": 886
+        },
+        {
+          "id": "review-29",
+          "expected": 1,
+          "actual": 0,
+          "agreement": false,
+          "latencyMs": 1058
+        },
+        {
+          "id": "review-31",
+          "expected": 5,
+          "actual": 5,
+          "agreement": true,
+          "latencyMs": 935
+        },
+        {
+          "id": "review-43",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 969
+        },
+        {
+          "id": "review-24",
+          "expected": 3,
+          "actual": 2,
+          "agreement": false,
+          "latencyMs": 1167
+        },
+        {
+          "id": "review-14",
+          "expected": 2,
+          "actual": 3,
+          "agreement": false,
+          "latencyMs": 1125
+        },
+        {
+          "id": "review-21",
+          "expected": 5,
+          "actual": 4,
+          "agreement": false,
+          "latencyMs": 975
+        },
+        {
+          "id": "review-13",
+          "expected": 3,
+          "actual": 2,
+          "agreement": false,
+          "latencyMs": 973
+        },
+        {
+          "id": "review-27",
+          "expected": 1,
+          "actual": 1,
+          "agreement": true,
+          "latencyMs": 1125
+        },
+        {
+          "id": "review-47",
+          "expected": 2,
+          "actual": 2,
+          "agreement": true,
+          "latencyMs": 926
+        },
+        {
+          "id": "review-48",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 1095
+        },
+        {
+          "id": "review-44",
+          "expected": 2,
+          "actual": 2,
+          "agreement": true,
+          "latencyMs": 974
+        },
+        {
+          "id": "review-33",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 1064
+        },
+        {
+          "id": "review-19",
+          "expected": 1,
+          "actual": 1,
+          "agreement": true,
+          "latencyMs": 1073
+        },
+        {
+          "id": "review-16",
+          "expected": 5,
+          "actual": 5,
+          "agreement": true,
+          "latencyMs": 1025
+        },
+        {
+          "id": "review-40",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 1010
+        },
+        {
+          "id": "review-09",
+          "expected": 4,
+          "actual": 4,
+          "agreement": true,
+          "latencyMs": 998
+        },
+        {
+          "id": "review-26",
+          "expected": 5,
+          "actual": 5,
+          "agreement": true,
+          "latencyMs": 994
+        },
+        {
+          "id": "review-38",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 979
+        },
+        {
+          "id": "review-30",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 1067
+        },
+        {
+          "id": "review-22",
+          "expected": 3,
+          "actual": 4,
+          "agreement": false,
+          "latencyMs": 1019
+        },
+        {
+          "id": "review-15",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 1017
+        },
+        {
+          "id": "review-46",
+          "expected": 5,
+          "actual": 5,
+          "agreement": true,
+          "latencyMs": 1002
+        },
+        {
+          "id": "review-10",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 1022
+        },
+        {
+          "id": "review-04",
+          "expected": 2,
+          "actual": 2,
+          "agreement": true,
+          "latencyMs": 1206
+        },
+        {
+          "id": "review-08",
+          "expected": 2,
+          "actual": 2,
+          "agreement": true,
+          "latencyMs": 1039
+        },
+        {
+          "id": "review-18",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 1075
+        },
+        {
+          "id": "review-28",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 1192
+        },
+        {
+          "id": "review-07",
+          "expected": 1,
+          "actual": 0,
+          "agreement": false,
+          "latencyMs": 1028
+        },
+        {
+          "id": "review-05",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 1084
+        },
+        {
+          "id": "review-02",
+          "expected": 1,
+          "actual": 1,
+          "agreement": true,
+          "latencyMs": 966
+        },
+        {
+          "id": "review-45",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 1004
+        },
+        {
+          "id": "review-41",
+          "expected": 5,
+          "actual": 5,
+          "agreement": true,
+          "latencyMs": 1084
+        },
+        {
+          "id": "review-25",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 880
+        },
+        {
+          "id": "review-35",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 1042
+        },
+        {
+          "id": "review-06",
+          "expected": 5,
+          "actual": 5,
+          "agreement": true,
+          "latencyMs": 909
+        },
+        {
+          "id": "review-36",
+          "expected": 5,
+          "actual": 5,
+          "agreement": true,
+          "latencyMs": 1012
+        },
+        {
+          "id": "review-12",
+          "expected": 3,
+          "actual": 1,
+          "agreement": false,
+          "latencyMs": 1114
+        },
+        {
+          "id": "review-11",
+          "expected": 5,
+          "actual": 5,
+          "agreement": true,
+          "latencyMs": 1142
+        },
+        {
+          "id": "review-32",
+          "expected": 2,
+          "actual": 3,
+          "agreement": false,
+          "latencyMs": 946
+        },
+        {
+          "id": "review-42",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 1194
+        },
+        {
+          "id": "review-37",
+          "expected": 2,
+          "actual": 2,
+          "agreement": true,
+          "latencyMs": 1016
+        },
+        {
+          "id": "review-49",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 1127
+        }
+      ],
+      "inputTokens": 15353,
+      "outputTokens": 5293,
+      "exactAgreement": 0.78,
+      "p95LatencyMs": 1194,
+      "releaseThresholdPassed": false
+    }
+  ]
+}

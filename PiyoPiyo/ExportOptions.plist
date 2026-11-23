@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>destination</key>
+	<string>export</string>
+	<key>manageAppVersionAndBuildNumber</key>
+	<false/>
+	<key>method</key>
+	<string>app-store-connect</string>
+	<key>provisioningProfiles</key>
+	<dict>
+		<key>app.piyopiyo.iphone</key>
+		<string>PiyoPiyo iPhone App Store</string>
+	</dict>
+	<key>signingCertificate</key>
+	<string>9B53CF6EC575551F6F7D23F71EB146ED5D2AE1A9</string>
+	<key>signingStyle</key>
+	<string>manual</string>
+	<key>teamID</key>
+	<string>3LYWV7T9MT</string>
+	<key>uploadSymbols</key>
+	<false/>
+</dict>
+</plist>

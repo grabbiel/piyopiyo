@@ -1,0 +1,27 @@
+{
+  "at": "2026-11-23T17:00:11.587Z",
+  "url": "https://piyopiyo.grabbiel.com",
+  "results": [
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 94613,
+      "title": "PiyoPiyo · Computer science, little steps",
+      "csp": "default-src 'none'; img-src data:; style-src 'unsafe-inline'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'"
+    },
+    {
+      "path": "/support",
+      "status": 200,
+      "bytes": 4270,
+      "title": "PiyoPiyo Support",
+      "csp": "default-src 'none'; img-src data:; style-src 'unsafe-inline'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'"
+    },
+    {
+      "path": "/privacy",
+      "status": 200,
+      "bytes": 7095,
+      "title": "PiyoPiyo Privacy Policy",
+      "csp": "default-src 'none'; img-src data:; style-src 'unsafe-inline'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'"
+    }
+  ]
+}

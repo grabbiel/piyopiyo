@@ -1,0 +1,11 @@
+{
+  "reviewedAt": "2026-11-23T14:14:59.680989+00:00",
+  "reviewer": "Coding assistant; not independent human editorial review",
+  "counts": {
+    "authored": 45,
+    "parameterized": 1070
+  },
+  "authoredReview": "Read the 18 format examples and 27 concept exercises; checked expected answers and explanations for ambiguity or factual inconsistency. No corrections identified.",
+  "parameterizedReview": "All 1,070 generated numeric answers checked against their stated counting problems.",
+  "scope": "Initial practice corpus, not exhaustive academic coverage."
+}

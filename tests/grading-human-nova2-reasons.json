@@ -1,0 +1,597 @@
+{
+  "createdAt": "2026-11-23T13:26:41.232Z",
+  "labelSource": "Owner-supplied scores; owner explicitly confirmed reviewing all 50 in conversation",
+  "reviewMetadata": {
+    "reviewer": "Francisco Cruzado",
+    "datasetSHA256": "42b1e79f2c696c5848d377738c5d36a15df8a7017358421fab942212dd6b994b",
+    "submittedCompletedAt": "2026-11-23T12:55:00.000Z"
+  },
+  "promptSHA256": "7f9d24f316d3e6b2f18aa9d82be2288d4f0c9ef035f57ea921d3f79798bfd99d",
+  "models": [
+    {
+      "modelId": "arn:aws:bedrock:us-east-1:992680757326:application-inference-profile/t9c4f6fzj7ci",
+      "cases": [
+        {
+          "id": "review-20",
+          "expected": 0,
+          "actual": 0,
+          "missingConcepts": [
+            "Begin by enqueueing the starting vertex.",
+            "Use a first-in, first-out queue.",
+            "Mark a discovered neighbor before enqueueing it.",
+            "Explore neighbors of each dequeued vertex.",
+            "It finds shortest paths by edge count in unweighted graphs."
+          ],
+          "agreement": true,
+          "latencyMs": 2368
+        },
+        {
+          "id": "review-17",
+          "expected": 2,
+          "actual": 2,
+          "missingConcepts": [
+            "Use a first-in, first-out queue.",
+            "Mark a discovered neighbor before enqueueing it.",
+            "It finds shortest paths by edge count in unweighted graphs."
+          ],
+          "agreement": true,
+          "latencyMs": 1497
+        },
+        {
+          "id": "review-23",
+          "expected": 4,
+          "actual": 4,
+          "missingConcepts": [
+            "Atomically record the identifier with the effect to prevent races."
+          ],
+          "agreement": true,
+          "latencyMs": 1286
+        },
+        {
+          "id": "review-03",
+          "expected": 2,
+          "actual": 2,
+          "missingConcepts": [
+            "A follower starts an election after its election timeout.",
+            "The candidate increases its term.",
+            "Randomized election timeouts reduce repeated split votes."
+          ],
+          "agreement": true,
+          "latencyMs": 1442
+        },
+        {
+          "id": "review-50",
+          "expected": 0,
+          "actual": 0,
+          "missingConcepts": [
+            "The leader accepts client commands.",
+            "The leader appends a command to its log.",
+            "The leader replicates entries using AppendEntries.",
+            "A current-term entry replicated on a majority can be committed.",
+            "Committed entries are applied in order to the state machine."
+          ],
+          "agreement": true,
+          "latencyMs": 2044
+        },
+        {
+          "id": "review-01",
+          "expected": 5,
+          "actual": 4,
+          "missingConcepts": [
+            "The candidate increases its term."
+          ],
+          "agreement": false,
+          "latencyMs": 1381
+        },
+        {
+          "id": "review-34",
+          "expected": 2,
+          "actual": 2,
+          "missingConcepts": [
+            "pop with no index removes and returns the last item.",
+            "sort returns None.",
+            "sorted creates a new sorted list."
+          ],
+          "agreement": true,
+          "latencyMs": 1365
+        },
+        {
+          "id": "review-39",
+          "expected": 2,
+          "actual": 2,
+          "missingConcepts": [
+            "They share an address space.",
+            "Each has its own register state.",
+            "Conflicting shared-state accesses need synchronization."
+          ],
+          "agreement": true,
+          "latencyMs": 1293
+        },
+        {
+          "id": "review-29",
+          "expected": 1,
+          "actual": 1,
+          "missingConcepts": [
+            "It is PostgreSQL’s default isolation level.",
+            "A command sees data committed before it begins.",
+            "Dirty reads are prevented.",
+            "Successive SELECT commands may see different committed data."
+          ],
+          "agreement": true,
+          "latencyMs": 1476
+        },
+        {
+          "id": "review-31",
+          "expected": 5,
+          "actual": 5,
+          "missingConcepts": [],
+          "agreement": true,
+          "latencyMs": 1367
+        },
+        {
+          "id": "review-43",
+          "expected": 3,
+          "actual": 3,
+          "missingConcepts": [
+            "A part of size at most one is already sorted.",
+            "Its worst-case time is O(n log n)."
+          ],
+          "agreement": true,
+          "latencyMs": 1299
+        },
+        {
+          "id": "review-24",
+          "expected": 3,
+          "actual": 1,
+          "missingConcepts": [
+            "Use a stable unique request identifier.",
+            "Store the result associated with that identifier.",
+            "Detect repeated identifiers.",
+            "Atomically record the identifier with the effect to prevent races."
+          ],
+          "agreement": false,
+          "latencyMs": 1377
+        },
+        {
+          "id": "review-14",
+          "expected": 2,
+          "actual": 3,
+          "missingConcepts": [
+            "Discard the half that cannot contain the target.",
+            "Stop when the target is found or the interval is empty."
+          ],
+          "agreement": false,
+          "latencyMs": 1261
+        },
+        {
+          "id": "review-21",
+          "expected": 5,
+          "actual": 4,
+          "missingConcepts": [
+            "Atomically record the identifier with the effect to prevent races."
+          ],
+          "agreement": false,
+          "latencyMs": 1691
+        },
+        {
+          "id": "review-13",
+          "expected": 3,
+          "actual": 2,
+          "missingConcepts": [
+            "Compare the target with the middle element.",
+            "Stop when the target is found or the interval is empty.",
+            "The worst-case number of comparisons is logarithmic."
+          ],
+          "agreement": false,
+          "latencyMs": 1293
+        },
+        {
+          "id": "review-27",
+          "expected": 1,
+          "actual": 1,
+          "missingConcepts": [
+            "A command sees data committed before it begins.",
+            "Dirty reads are prevented.",
+            "Successive SELECT commands may see different committed data.",
+            "A transaction can see its own earlier writes."
+          ],
+          "agreement": true,
+          "latencyMs": 1334
+        },
+        {
+          "id": "review-47",
+          "expected": 2,
+          "actual": 2,
+          "missingConcepts": [
+            "The leader replicates entries using AppendEntries.",
+            "A current-term entry replicated on a majority can be committed.",
+            "Committed entries are applied in order to the state machine."
+          ],
+          "agreement": true,
+          "latencyMs": 1434
+        },
+        {
+          "id": "review-48",
+          "expected": 3,
+          "actual": 3,
+          "missingConcepts": [
+            "The leader accepts client commands.",
+            "The leader appends a command to its log."
+          ],
+          "agreement": true,
+          "latencyMs": 1230
+        },
+        {
+          "id": "review-44",
+          "expected": 2,
+          "actual": 2,
+          "missingConcepts": [
+            "Divide the input into smaller parts.",
+            "Sort the parts recursively.",
+            "Its worst-case time is O(n log n)."
+          ],
+          "agreement": true,
+          "latencyMs": 1251
+        },
+        {
+          "id": "review-33",
+          "expected": 3,
+          "actual": 3,
+          "missingConcepts": [
+            "append adds one item at the end.",
+            "pop with no index removes and returns the last item."
+          ],
+          "agreement": true,
+          "latencyMs": 1196
+        },
+        {
+          "id": "review-19",
+          "expected": 1,
+          "actual": 1,
+          "missingConcepts": [
+            "Use a first-in, first-out queue.",
+            "Mark a discovered neighbor before enqueueing it.",
+            "Explore neighbors of each dequeued vertex.",
+            "It finds shortest paths by edge count in unweighted graphs."
+          ],
+          "agreement": true,
+          "latencyMs": 1381
+        },
+        {
+          "id": "review-16",
+          "expected": 5,
+          "actual": 5,
+          "missingConcepts": [],
+          "agreement": true,
+          "latencyMs": 1418
+        },
+        {
+          "id": "review-40",
+          "expected": 0,
+          "actual": 0,
+          "missingConcepts": [
+            "They share an address space.",
+            "Each has its own stack.",
+            "Each has its own register state.",
+            "Their execution may interleave.",
+            "Conflicting shared-state accesses need synchronization."
+          ],
+          "agreement": true,
+          "latencyMs": 1349
+        },
+        {
+          "id": "review-09",
+          "expected": 4,
+          "actual": 5,
+          "missingConcepts": [],
+          "agreement": false,
+          "latencyMs": 1285
+        },
+        {
+          "id": "review-26",
+          "expected": 5,
+          "actual": 5,
+          "missingConcepts": [],
+          "agreement": true,
+          "latencyMs": 1501
+        },
+        {
+          "id": "review-38",
+          "expected": 3,
+          "actual": 3,
+          "missingConcepts": [
+            "They share an address space.",
+            "Their execution may interleave."
+          ],
+          "agreement": true,
+          "latencyMs": 1381
+        },
+        {
+          "id": "review-30",
+          "expected": 0,
+          "actual": 0,
+          "missingConcepts": [
+            "It is PostgreSQL’s default isolation level.",
+            "A command sees data committed before it begins.",
+            "Dirty reads are prevented.",
+            "Successive SELECT commands may see different committed data.",
+            "A transaction can see its own earlier writes."
+          ],
+          "agreement": true,
+          "latencyMs": 1278
+        },
+        {
+          "id": "review-22",
+          "expected": 3,
+          "actual": 4,
+          "missingConcepts": [
+            "Atomically record the identifier with the effect to prevent races."
+          ],
+          "agreement": false,
+          "latencyMs": 1415
+        },
+        {
+          "id": "review-15",
+          "expected": 0,
+          "actual": 0,
+          "missingConcepts": [
+            "The array must be sorted.",
+            "Compare the target with the middle element.",
+            "Discard the half that cannot contain the target.",
+            "Stop when the target is found or the interval is empty.",
+            "The worst-case number of comparisons is logarithmic."
+          ],
+          "agreement": true,
+          "latencyMs": 1781
+        },
+        {
+          "id": "review-46",
+          "expected": 5,
+          "actual": 5,
+          "missingConcepts": [],
+          "agreement": true,
+          "latencyMs": 1430
+        },
+        {
+          "id": "review-10",
+          "expected": 0,
+          "actual": 0,
+          "missingConcepts": [
+            "All writers use the same mutex.",
+            "Acquire the mutex before reading the counter.",
+            "Keep the read-modify-write operation inside the critical section.",
+            "Release the mutex after writing.",
+            "Mutual exclusion prevents concurrent execution of the protected operation."
+          ],
+          "agreement": true,
+          "latencyMs": 1257
+        },
+        {
+          "id": "review-04",
+          "expected": 2,
+          "actual": 2,
+          "missingConcepts": [
+            "The candidate votes for itself and requests votes.",
+            "A majority of votes elects the leader.",
+            "Randomized election timeouts reduce repeated split votes."
+          ],
+          "agreement": true,
+          "latencyMs": 1319
+        },
+        {
+          "id": "review-08",
+          "expected": 2,
+          "actual": 3,
+          "missingConcepts": [
+            "Acquire the mutex before reading the counter.",
+            "Keep the read-modify-write operation inside the critical section."
+          ],
+          "agreement": false,
+          "latencyMs": 1329
+        },
+        {
+          "id": "review-18",
+          "expected": 3,
+          "actual": 3,
+          "missingConcepts": [
+            "Begin by enqueueing the starting vertex.",
+            "Mark a discovered neighbor before enqueueing it."
+          ],
+          "agreement": true,
+          "latencyMs": 1231
+        },
+        {
+          "id": "review-28",
+          "expected": 3,
+          "actual": 3,
+          "missingConcepts": [
+            "It is PostgreSQL’s default isolation level.",
+            "A transaction can see its own earlier writes."
+          ],
+          "agreement": true,
+          "latencyMs": 1634
+        },
+        {
+          "id": "review-07",
+          "expected": 1,
+          "actual": 0,
+          "missingConcepts": [
+            "All writers use the same mutex.",
+            "Acquire the mutex before reading the counter.",
+            "Keep the read-modify-write operation inside the critical section.",
+            "Release the mutex after writing.",
+            "Mutual exclusion prevents concurrent execution of the protected operation."
+          ],
+          "agreement": false,
+          "latencyMs": 1312
+        },
+        {
+          "id": "review-05",
+          "expected": 0,
+          "actual": 0,
+          "missingConcepts": [
+            "A follower starts an election after its election timeout.",
+            "The candidate increases its term.",
+            "The candidate votes for itself and requests votes.",
+            "A majority of votes elects the leader.",
+            "Randomized election timeouts reduce repeated split votes."
+          ],
+          "agreement": true,
+          "latencyMs": 1167
+        },
+        {
+          "id": "review-02",
+          "expected": 1,
+          "actual": 1,
+          "missingConcepts": [
+            "A follower starts an election after its election timeout.",
+            "The candidate votes for itself and requests votes.",
+            "A majority of votes elects the leader.",
+            "Randomized election timeouts reduce repeated split votes."
+          ],
+          "agreement": true,
+          "latencyMs": 1197
+        },
+        {
+          "id": "review-45",
+          "expected": 0,
+          "actual": 0,
+          "missingConcepts": [
+            "Divide the input into smaller parts.",
+            "Sort the parts recursively.",
+            "A part of size at most one is already sorted.",
+            "Merge sorted parts into sorted output.",
+            "Its worst-case time is O(n log n)."
+          ],
+          "agreement": true,
+          "latencyMs": 1621
+        },
+        {
+          "id": "review-41",
+          "expected": 5,
+          "actual": 5,
+          "missingConcepts": [],
+          "agreement": true,
+          "latencyMs": 1222
+        },
+        {
+          "id": "review-25",
+          "expected": 0,
+          "actual": 0,
+          "missingConcepts": [
+            "Use a stable unique request identifier.",
+            "Store the result associated with that identifier.",
+            "Detect repeated identifiers.",
+            "Return the stored result for a duplicate.",
+            "Atomically record the identifier with the effect to prevent races."
+          ],
+          "agreement": true,
+          "latencyMs": 1684
+        },
+        {
+          "id": "review-35",
+          "expected": 0,
+          "actual": 0,
+          "missingConcepts": [
+            "append adds one item at the end.",
+            "pop with no index removes and returns the last item.",
+            "sort mutates the existing list.",
+            "sort returns None.",
+            "sorted creates a new sorted list."
+          ],
+          "agreement": true,
+          "latencyMs": 1448
+        },
+        {
+          "id": "review-06",
+          "expected": 5,
+          "actual": 4,
+          "missingConcepts": [
+            "Acquire the mutex before reading the counter."
+          ],
+          "agreement": false,
+          "latencyMs": 1594
+        },
+        {
+          "id": "review-36",
+          "expected": 5,
+          "actual": 5,
+          "missingConcepts": [],
+          "agreement": true,
+          "latencyMs": 1234
+        },
+        {
+          "id": "review-12",
+          "expected": 3,
+          "actual": 2,
+          "missingConcepts": [
+            "The array must be sorted.",
+            "Discard the half that cannot contain the target.",
+            "Stop when the target is found or the interval is empty."
+          ],
+          "agreement": false,
+          "latencyMs": 1234
+        },
+        {
+          "id": "review-11",
+          "expected": 5,
+          "actual": 5,
+          "missingConcepts": [],
+          "agreement": true,
+          "latencyMs": 1463
+        },
+        {
+          "id": "review-32",
+          "expected": 2,
+          "actual": 2,
+          "missingConcepts": [
+            "sort mutates the existing list.",
+            "sort returns None.",
+            "sorted creates a new sorted list."
+          ],
+          "agreement": true,
+          "latencyMs": 1290
+        },
+        {
+          "id": "review-42",
+          "expected": 3,
+          "actual": 3,
+          "missingConcepts": [
+            "Merge sorted parts into sorted output.",
+            "Its worst-case time is O(n log n)."
+          ],
+          "agreement": true,
+          "latencyMs": 1235
+        },
+        {
+          "id": "review-37",
+          "expected": 2,
+          "actual": 2,
+          "missingConcepts": [
+            "Each has its own stack.",
+            "Each has its own register state.",
+            "Conflicting shared-state accesses need synchronization."
+          ],
+          "agreement": true,
+          "latencyMs": 1264
+        },
+        {
+          "id": "review-49",
+          "expected": 3,
+          "actual": 3,
+          "missingConcepts": [
+            "A current-term entry replicated on a majority can be committed.",
+            "Committed entries are applied in order to the state machine."
+          ],
+          "agreement": true,
+          "latencyMs": 1148
+        }
+      ],
+      "inputTokens": 21403,
+      "outputTokens": 9700,
+      "exactAgreement": 0.78,
+      "p95LatencyMs": 1781,
+      "releaseThresholdPassed": false
+    }
+  ]
+}

@@ -1,0 +1,322 @@
+{
+  "createdAt": "2026-11-23T13:33:36.986Z",
+  "labelSource": "Owner-supplied scores; owner explicitly confirmed reviewing all 50 in conversation",
+  "reviewMetadata": {
+    "reviewer": "Francisco Cruzado",
+    "datasetSHA256": "42b1e79f2c696c5848d377738c5d36a15df8a7017358421fab942212dd6b994b",
+    "submittedCompletedAt": "2026-11-23T12:55:00.000Z"
+  },
+  "promptSHA256": "3cecbcbbb1012c908d1d7eecc31e089aa7ed266b0896160a382a579b30df458e",
+  "models": [
+    {
+      "modelId": "arn:aws:bedrock:us-east-1:992680757326:application-inference-profile/t9c4f6fzj7ci",
+      "cases": [
+        {
+          "id": "review-20",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 2990
+        },
+        {
+          "id": "review-17",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 2251
+        },
+        {
+          "id": "review-23",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 1841
+        },
+        {
+          "id": "review-03",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 2764
+        },
+        {
+          "id": "review-50",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 2154
+        },
+        {
+          "id": "review-01",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 2514
+        },
+        {
+          "id": "review-34",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 2634
+        },
+        {
+          "id": "review-39",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 3663
+        },
+        {
+          "id": "review-29",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 2432
+        },
+        {
+          "id": "review-31",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 2614
+        },
+        {
+          "id": "review-43",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 2419
+        },
+        {
+          "id": "review-24",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 1847
+        },
+        {
+          "id": "review-14",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 2572
+        },
+        {
+          "id": "review-21",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 1763
+        },
+        {
+          "id": "review-13",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 2166
+        },
+        {
+          "id": "review-27",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 1906
+        },
+        {
+          "id": "review-47",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 2547
+        },
+        {
+          "id": "review-48",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 1866
+        },
+        {
+          "id": "review-44",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 2149
+        },
+        {
+          "id": "review-33",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 2888
+        },
+        {
+          "id": "review-19",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 2136
+        },
+        {
+          "id": "review-16",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 1844
+        },
+        {
+          "id": "review-40",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 2078
+        },
+        {
+          "id": "review-09",
+          "error": "SyntaxError",
+          "message": "Unterminated string in JSON at position 135 (line 7 column 8)",
+          "latencyMs": 3607
+        },
+        {
+          "id": "review-26",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 2476
+        },
+        {
+          "id": "review-38",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 1743
+        },
+        {
+          "id": "review-30",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 1944
+        },
+        {
+          "id": "review-22",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 2662
+        },
+        {
+          "id": "review-15",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 3099
+        },
+        {
+          "id": "review-46",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 2328
+        },
+        {
+          "id": "review-10",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 1980
+        },
+        {
+          "id": "review-04",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 1592
+        },
+        {
+          "id": "review-08",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 2676
+        },
+        {
+          "id": "review-18",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 1639
+        },
+        {
+          "id": "review-28",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 5655
+        },
+        {
+          "id": "review-07",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 2141
+        },
+        {
+          "id": "review-05",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 2234
+        },
+        {
+          "id": "review-02",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 2087
+        },
+        {
+          "id": "review-45",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 2790
+        },
+        {
+          "id": "review-41",
+          "error": "SyntaxError",
+          "message": "Expected ',' or '}' after property value in JSON at position 94 (line 1 column 95)",
+          "latencyMs": 2874
+        },
+        {
+          "id": "review-25",
+          "error": "SyntaxError",
+          "message": "Unterminated string in JSON at position 29 (line 1 column 30)",
+          "latencyMs": 2592
+        },
+        {
+          "id": "review-35",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 2572
+        },
+        {
+          "id": "review-06",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 2325
+        },
+        {
+          "id": "review-36",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 1709
+        },
+        {
+          "id": "review-12",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 2288
+        },
+        {
+          "id": "review-11",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 3037
+        },
+        {
+          "id": "review-32",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 1781
+        },
+        {
+          "id": "review-42",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 1962
+        },
+        {
+          "id": "review-37",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 2334
+        },
+        {
+          "id": "review-49",
+          "error": "SyntaxError",
+          "message": "Unexpected end of JSON input",
+          "latencyMs": 2015
+        }
+      ],
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "exactAgreement": 0,
+      "p95LatencyMs": 3607,
+      "releaseThresholdPassed": false
+    }
+  ]
+}

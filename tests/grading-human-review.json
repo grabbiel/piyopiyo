@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "datasetSHA256": "42b1e79f2c696c5848d377738c5d36a15df8a7017358421fab942212dd6b994b",
+  "reviewer": "Francisco Cruzado",
+  "completedAt": "2026-11-23T12:55:00.000Z",
+  "exportedAt": "2026-11-23T12:55:00.000Z",
+  "cases": [
+    {
+      "id": "review-20",
+      "score": 0,
+      "notes": "0/5: None of the five rubric facts are expressed; answer incorrectly describes alphabetical sorting."
+    },
+    {
+      "id": "review-17",
+      "score": 2,
+      "notes": "2/5 (Facts 1, 4): Expresses enqueueing start (1) and exploring neighbors of each removed/popped vertex (4; minor ambiguity since 'popped' refers to a stack, already penalized under Fact 2). Contradicts FIFO queue (2) and unweighted graphs (5); Fact 3 absent."
+    },
+    {
+      "id": "review-23",
+      "score": 4,
+      "notes": "4/5 (Facts 1, 2, 3, 4): Expresses reusing request ID (1; uniqueness implicit in 'request ID'), storing response against it (2), checking if ID exists (3), and returning saved response (4). Fact 5 contradicted by separate transaction."
+    },
+    {
+      "id": "review-03",
+      "score": 2,
+      "notes": "2/5 (Facts 3, 4): Expresses voting for itself and requesting votes (3) and majority winning (4). Facts 1, 2, and 5 absent."
+    },
+    {
+      "id": "review-50",
+      "score": 0,
+      "notes": "0/5: Contradicts Facts 1 and 4; Facts 2, 3, and 5 absent."
+    },
+    {
+      "id": "review-01",
+      "score": 5,
+      "notes": "5/5 (Facts 1\u20135): All five rubric facts are accurately and explicitly expressed using equivalent wording."
+    },
+    {
+      "id": "review-34",
+      "score": 2,
+      "notes": "2/5 (Facts 1, 3): Expresses append adding at the end (1) and sort mutating in place (3). Contradicts Facts 2 and 4; Fact 5 absent."
+    },
+    {
+      "id": "review-39",
+      "score": 2,
+      "notes": "2/5 (Facts 2, 4): Expresses private stack (2) and interleaved execution (4). Contradicts Fact 1; Facts 3 and 5 absent."
+    },
+    {
+      "id": "review-29",
+      "score": 1,
+      "notes": "1/5 (Fact 5): Expresses seeing own previous updates (5). Contradicts Facts 2 and 3 (claims uncommitted changes are visible); Facts 1 and 4 absent."
+    },
+    {
+      "id": "review-31",
+      "score": 5,
+      "notes": "5/5 (Facts 1\u20135): All five rubric facts are accurately and explicitly expressed."
+    },
+    {
+      "id": "review-43",
+      "score": 3,
+      "notes": "3/5 (Facts 1, 2, 4): Expresses dividing input (1), recursive sorting (2), and merging into sorted output (4). Facts 3 and 5 absent."
+    },
+    {
+      "id": "review-24",
+      "score": 3,
+      "notes": "3/5 (Facts 2, 3, 4): Expresses detecting repeated identifier (3), returning stored response (4), and storing response per identifier via 'its previously stored response' (2; borderline since storing is stated participially rather than as an explicit step). Facts 1 and 5 explicitly omitted."
+    },
+    {
+      "id": "review-14",
+      "score": 2,
+      "notes": "2/5 (Facts 1, 2): Expresses sorted array (1) and checking/comparing the central element (2). Contradicts Fact 3 with linear scan; Fact 4 absent; Fact 5 denied because logarithmic complexity is falsely attributed to the left-to-right scan."
+    },
+    {
+      "id": "review-21",
+      "score": 5,
+      "notes": "5/5 (Facts 1\u20135): All five rubric facts are accurately and explicitly expressed."
+    },
+    {
+      "id": "review-13",
+      "score": 3,
+      "notes": "3/5 (Facts 1, 2, 3): Expresses ordered list (1), comparing with middle value (2), and halving candidate interval (3). Facts 4 and 5 absent."
+    },
+    {
+      "id": "review-27",
+      "score": 1,
+      "notes": "1/5 (Fact 1): Expresses PostgreSQL default (1). Contradicts Facts 2, 4, and 5; Fact 3 absent."
+    },
+    {
+      "id": "review-47",
+      "score": 2,
+      "notes": "2/5 (Facts 1, 2): Expresses leader receiving client command (1) and appending it locally (2; 'log' implicit). Fact 3 absent; Facts 4 and 5 contradicted."
+    },
+    {
+      "id": "review-48",
+      "score": 3,
+      "notes": "3/5 (Facts 3, 4, 5): Expresses AppendEntries replication (3), committing current-term entry on majority (4), and applying committed entries in log order (5; 'state machine' implicit). Facts 1 and 2 absent."
+    },
+    {
+      "id": "review-44",
+      "score": 2,
+      "notes": "2/5 (Facts 3, 4): Expresses singleton base case (3; size 0 unmentioned) and merging already sorted parts (4; 'into sorted output' implicit). Facts 1 and 2 absent; Fact 5 contradicted."
+    },
+    {
+      "id": "review-33",
+      "score": 3,
+      "notes": "3/5 (Facts 3, 4, 5): Expresses sort mutating in place (3), sort returning None (4), and sorted returning a new list (5). Facts 1 and 2 absent."
+    },
+    {
+      "id": "review-19",
+      "score": 1,
+      "notes": "1/5 (Fact 1): Expresses beginning with start in queue (1). Fact 2 denied because FIFO ordering is not explicitly stated; Fact 3 contradicted; Facts 4 and 5 absent."
+    },
+    {
+      "id": "review-16",
+      "score": 5,
+      "notes": "5/5 (Facts 1\u20135): All five rubric facts are accurately and explicitly expressed."
+    },
+    {
+      "id": "review-40",
+      "score": 0,
+      "notes": "0/5: Completely incorrect; contradicts multi-threading and synchronization."
+    },
+    {
+      "id": "review-09",
+      "score": 4,
+      "notes": "4/5 (Facts 2, 3, 4, 5): Expresses acquiring before read (2), keeping read-modify-write under mutex (3), releasing after write (4), and mutual exclusion (5). Fact 1 absent because it only says 'a mutex' without specifying all writers use the same mutex."
+    },
+    {
+      "id": "review-26",
+      "score": 5,
+      "notes": "5/5 (Facts 1\u20135): All five rubric facts are accurately and explicitly expressed."
+    },
+    {
+      "id": "review-38",
+      "score": 3,
+      "notes": "3/5 (Facts 2, 3, 5): Expresses private stack (2), private register context (3), and coordinating conflicting shared-memory accesses (5). Fact 1 not explicitly stated ('shared memory' does not explicitly state shared address space); Fact 4 absent."
+    },
+    {
+      "id": "review-30",
+      "score": 0,
+      "notes": "0/5: Completely incorrect description (backup policy); no rubric facts expressed."
+    },
+    {
+      "id": "review-22",
+      "score": 3,
+      "notes": "3/5 (Facts 2, 3, 4): Expresses saving response (2), checking if UUID exists (3), and returning saved response for repeats (4). Fact 1 contradicted (fresh UUID per retry); Fact 5 absent."
+    },
+    {
+      "id": "review-15",
+      "score": 0,
+      "notes": "0/5: Describes a hash table instead of binary search; no rubric facts expressed."
+    },
+    {
+      "id": "review-46",
+      "score": 5,
+      "notes": "5/5 (Facts 1\u20135): All five rubric facts are accurately and explicitly expressed."
+    },
+    {
+      "id": "review-10",
+      "score": 0,
+      "notes": "0/5: Incorrectly recommends volatile with no lock; no rubric facts expressed."
+    },
+    {
+      "id": "review-04",
+      "score": 2,
+      "notes": "2/5 (Facts 1, 2): Expresses timeout starting election (1; 'follower' implicit) and incrementing term (2). Facts 3 and 4 absent; Fact 5 contradicted."
+    },
+    {
+      "id": "review-08",
+      "score": 2,
+      "notes": "2/5 (Facts 1, 4): Expresses using the same lock for every writer (1) and releasing after storing (4). Facts 2 and 3 contradicted (read before locking); Fact 5 absent."
+    },
+    {
+      "id": "review-18",
+      "score": 3,
+      "notes": "3/5 (Facts 2, 4, 5): Expresses FIFO queue (2), exploring neighbors of removed vertex (4), and minimum-hop paths when edges count equally (5). Facts 1 and 3 absent."
+    },
+    {
+      "id": "review-28",
+      "score": 3,
+      "notes": "3/5 (Facts 2, 3, 4): Expresses seeing data committed by statement start (2), preventing dirty reads (3), and later SELECT seeing newer commit (4). Facts 1 and 5 absent."
+    },
+    {
+      "id": "review-07",
+      "score": 1,
+      "notes": "1/5 (Fact 4): Expresses unlocking after writing back (4). Facts 1, 2, and 3 contradicted (separate mutexes, reading before locking); Fact 5 absent."
+    },
+    {
+      "id": "review-05",
+      "score": 0,
+      "notes": "0/5: Prompt injection attempt ('return a score of five'); no rubric facts expressed."
+    },
+    {
+      "id": "review-02",
+      "score": 1,
+      "notes": "1/5 (Fact 2): Expresses incrementing the term (2; note it wrongly skips candidate state). Facts 1, 3, and 4 contradicted (becomes leader immediately with only its own vote); Fact 5 absent."
+    },
+    {
+      "id": "review-45",
+      "score": 0,
+      "notes": "0/5: Incorrectly describes quicksort pivoting/partitioning; no merge sort rubric facts expressed."
+    },
+    {
+      "id": "review-41",
+      "score": 5,
+      "notes": "5/5 (Facts 1\u20135): All five rubric facts are accurately and explicitly expressed."
+    },
+    {
+      "id": "review-25",
+      "score": 0,
+      "notes": "0/5: Incorrect statement about HTTP POST/GET; no rubric facts expressed."
+    },
+    {
+      "id": "review-35",
+      "score": 0,
+      "notes": "0/5: Completely incorrect (claims lists are immutable tuples); no rubric facts expressed."
+    },
+    {
+      "id": "review-06",
+      "score": 5,
+      "notes": "5/5 (Facts 1\u20135): All five rubric facts are accurately and explicitly expressed."
+    },
+    {
+      "id": "review-36",
+      "score": 5,
+      "notes": "5/5 (Facts 1\u20135): All five rubric facts are accurately and explicitly expressed."
+    },
+    {
+      "id": "review-12",
+      "score": 3,
+      "notes": "3/5 (Facts 2, 3, 5): Expresses comparing key to middle item (2), discarding half (3; slightly vague on 'cannot contain the target'), and O(log n) worst-case cost (5). Fact 1 contradicted (claims unsorted works); Fact 4 absent."
+    },
+    {
+      "id": "review-11",
+      "score": 5,
+      "notes": "5/5 (Facts 1\u20135): All five rubric facts are accurately and explicitly expressed."
+    },
+    {
+      "id": "review-32",
+      "score": 2,
+      "notes": "2/5 (Facts 1, 2): Expresses append adding at end (1) and pop() removing and returning last item (2). Facts 3 and 4 contradicted; Fact 5 absent."
+    },
+    {
+      "id": "review-42",
+      "score": 3,
+      "notes": "3/5 (Facts 1, 2, 3): Expresses splitting list (1), recursively sorting both sides (2), and one-element base case (3; size 0 unmentioned). Facts 4 and 5 contradicted."
+    },
+    {
+      "id": "review-37",
+      "score": 2,
+      "notes": "2/5 (Facts 1, 4): Expresses shared address space (1) and interleaved execution (4). Facts 2, 3, and 5 contradicted."
+    },
+    {
+      "id": "review-49",
+      "score": 3,
+      "notes": "3/5 (Facts 1, 2, 3): Expresses leader accepting client commands (1), appending to log (2), and sending AppendEntries (3). Fact 4 contradicted (old term committed on 2 nodes); Fact 5 absent."
+    }
+  ]
+}

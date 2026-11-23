@@ -1,0 +1,645 @@
+{
+  "modelFamily": "haiku45",
+  "createdAt": "2026-11-23T14:00:41.403Z",
+  "labelSource": "Owner-supplied scores; owner explicitly confirmed reviewing all 50 in conversation",
+  "reviewMetadata": {
+    "reviewer": "Francisco Cruzado",
+    "datasetSHA256": "42b1e79f2c696c5848d377738c5d36a15df8a7017358421fab942212dd6b994b",
+    "submittedCompletedAt": "2026-11-23T12:55:00.000Z"
+  },
+  "promptSHA256": "57c98823c982e69f51d45cddddec64683bbe477ffa1a144d3b2149499b36b979",
+  "models": [
+    {
+      "modelId": "arn:aws:bedrock:us-east-1:992680757326:application-inference-profile/yfevvxi4bbi9",
+      "cases": [
+        {
+          "id": "review-20",
+          "expected": 0,
+          "actual": 0,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Answer describes alphabetical sorting, not enqueueing start vertex.\",\"met\":false,\"evidence\":[]},{\"id\":2,\"reason\":\"Answer does not mention FIFO queue data structure.\",\"met\":false,\"evidence\":[]},{\"id\":3,\"reason\":\"Answer does not describe marking discovered neighbors.\",\"met\":false,\"evidence\":[]},{\"id\":4,\"reason\":\"Answer does not describe exploring dequeued vertex neighbors.\",\"met\":false,\"evidence\":[]},{\"id\":5,\"reason\":\"Answer contradicts shortest path property by ignoring edges.\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "Begin by enqueueing the starting vertex.",
+            "Use a first-in, first-out queue.",
+            "Mark a discovered neighbor before enqueueing it.",
+            "Explore neighbors of each dequeued vertex.",
+            "It finds shortest paths by edge count in unweighted graphs."
+          ],
+          "agreement": true,
+          "latencyMs": 2433
+        },
+        {
+          "id": "review-17",
+          "expected": 2,
+          "actual": 1,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Answer says LIFO stack, not FIFO queue\",\"met\":false,\"evidence\":[]},{\"id\":2,\"reason\":\"Answer uses stack (LIFO), contradicts FIFO requirement\",\"met\":false,\"evidence\":[]},{\"id\":3,\"reason\":\"No mention of marking discovered neighbors\",\"met\":false,\"evidence\":[]},{\"id\":4,\"reason\":\"Explores neighbors of each dequeued vertex\",\"met\":true,\"evidence\":[2]},{\"id\":5,\"reason\":\"Claims shortest paths in weighted graphs, contradicts unweighted\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "Begin by enqueueing the starting vertex.",
+            "Use a first-in, first-out queue.",
+            "Mark a discovered neighbor before enqueueing it.",
+            "It finds shortest paths by edge count in unweighted graphs."
+          ],
+          "agreement": false,
+          "latencyMs": 1447
+        },
+        {
+          "id": "review-23",
+          "expected": 4,
+          "actual": 4,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Stable unique identifier mentioned.\",\"met\":true,\"evidence\":[1]},{\"id\":2,\"reason\":\"Storing result with identifier stated.\",\"met\":true,\"evidence\":[1]},{\"id\":3,\"reason\":\"Detecting repeated identifiers described.\",\"met\":true,\"evidence\":[2]},{\"id\":4,\"reason\":\"Returning stored result for duplicate.\",\"met\":true,\"evidence\":[2]},{\"id\":5,\"reason\":\"Atomic recording contradicted by separate transaction.\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "Atomically record the identifier with the effect to prevent races."
+          ],
+          "agreement": true,
+          "latencyMs": 1298
+        },
+        {
+          "id": "review-03",
+          "expected": 2,
+          "actual": 2,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Candidate requests votes including itself\",\"met\":true,\"evidence\":[1]},{\"id\":2,\"reason\":\"Majority of votes elects leader\",\"met\":true,\"evidence\":[2]},{\"id\":3,\"reason\":\"No mention of election trigger\",\"met\":false,\"evidence\":[]},{\"id\":4,\"reason\":\"No mention of term increment\",\"met\":false,\"evidence\":[]},{\"id\":5,\"reason\":\"No mention of randomized timeouts\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "The candidate votes for itself and requests votes.",
+            "A majority of votes elects the leader.",
+            "Randomized election timeouts reduce repeated split votes."
+          ],
+          "agreement": true,
+          "latencyMs": 1174
+        },
+        {
+          "id": "review-50",
+          "expected": 0,
+          "actual": 0,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Answer contradicts: followers don't accept client writes\",\"met\":false,\"evidence\":[]},{\"id\":2,\"reason\":\"No evidence of leader appending to log\",\"met\":false,\"evidence\":[]},{\"id\":3,\"reason\":\"No mention of AppendEntries mechanism\",\"met\":false,\"evidence\":[]},{\"id\":4,\"reason\":\"No discussion of commitment or majorities\",\"met\":false,\"evidence\":[]},{\"id\":5,\"reason\":\"No mention of applying entries to state machine\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "The leader accepts client commands.",
+            "The leader appends a command to its log.",
+            "The leader replicates entries using AppendEntries.",
+            "A current-term entry replicated on a majority can be committed.",
+            "Committed entries are applied in order to the state machine."
+          ],
+          "agreement": true,
+          "latencyMs": 1441
+        },
+        {
+          "id": "review-01",
+          "expected": 5,
+          "actual": 5,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Follower timeout triggers election, becomes candidate\",\"met\":true,\"evidence\":[1]},{\"id\":2,\"reason\":\"Candidate increases term mentioned implicitly\",\"met\":true,\"evidence\":[1]},{\"id\":3,\"reason\":\"Candidate votes for itself and requests votes\",\"met\":true,\"evidence\":[2]},{\"id\":4,\"reason\":\"Majority of votes required for leader\",\"met\":true,\"evidence\":[2]},{\"id\":5,\"reason\":\"Randomized timeouts prevent repeated split votes\",\"met\":true,\"evidence\":[3]}]}",
+          "missingConcepts": [],
+          "agreement": true,
+          "latencyMs": 1262
+        },
+        {
+          "id": "review-34",
+          "expected": 2,
+          "actual": 2,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"pop() removes last item, not first\",\"met\":false,\"evidence\":[]},{\"id\":2,\"reason\":\"append adds one item at end\",\"met\":true,\"evidence\":[2]},{\"id\":3,\"reason\":\"sort mutates list in place\",\"met\":true,\"evidence\":[3]},{\"id\":4,\"reason\":\"sort returns None, not the list\",\"met\":false,\"evidence\":[]},{\"id\":5,\"reason\":\"sorted creates new list, not mentioned\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "append adds one item at the end.",
+            "sort returns None.",
+            "sorted creates a new sorted list."
+          ],
+          "agreement": true,
+          "latencyMs": 1276
+        },
+        {
+          "id": "review-39",
+          "expected": 2,
+          "actual": 2,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Answer claims separate address spaces, contradicts shared space\",\"met\":false,\"evidence\":[]},{\"id\":2,\"reason\":\"Answer correctly states each thread has own stack\",\"met\":true,\"evidence\":[2]},{\"id\":3,\"reason\":\"No mention of register state in answer\",\"met\":false,\"evidence\":[]},{\"id\":4,\"reason\":\"Answer states scheduler can interleave execution\",\"met\":true,\"evidence\":[3]},{\"id\":5,\"reason\":\"No discussion of synchronization for shared state\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "They share an address space.",
+            "Each has its own register state.",
+            "Conflicting shared-state accesses need synchronization."
+          ],
+          "agreement": true,
+          "latencyMs": 1400
+        },
+        {
+          "id": "review-29",
+          "expected": 1,
+          "actual": 1,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"No evidence of default isolation level\",\"met\":false,\"evidence\":[]},{\"id\":2,\"reason\":\"Segment 1 contradicts: mentions uncommitted changes\",\"met\":false,\"evidence\":[]},{\"id\":3,\"reason\":\"Segment 1 contradicts: allows uncommitted changes\",\"met\":false,\"evidence\":[]},{\"id\":4,\"reason\":\"No evidence of successive SELECT differences\",\"met\":false,\"evidence\":[]},{\"id\":5,\"reason\":\"Segment 1 confirms transaction sees own updates\",\"met\":true,\"evidence\":[1]}]}",
+          "missingConcepts": [
+            "It is PostgreSQL’s default isolation level.",
+            "A command sees data committed before it begins.",
+            "Dirty reads are prevented.",
+            "Successive SELECT commands may see different committed data."
+          ],
+          "agreement": true,
+          "latencyMs": 1438
+        },
+        {
+          "id": "review-31",
+          "expected": 5,
+          "actual": 5,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Equivalent to adding at end\",\"met\":true,\"evidence\":[1]},{\"id\":2,\"reason\":\"Equivalent to removing and returning last\",\"met\":true,\"evidence\":[2]},{\"id\":3,\"reason\":\"Explicitly states rearranges existing list\",\"met\":true,\"evidence\":[3]},{\"id\":4,\"reason\":\"Explicitly states return value is None\",\"met\":true,\"evidence\":[3]},{\"id\":5,\"reason\":\"Explicitly states sorted gives separate list\",\"met\":true,\"evidence\":[3]}]}",
+          "missingConcepts": [],
+          "agreement": true,
+          "latencyMs": 1378
+        },
+        {
+          "id": "review-43",
+          "expected": 3,
+          "actual": 3,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Divides input into smaller portions stated\",\"met\":true,\"evidence\":[1]},{\"id\":2,\"reason\":\"Recursively sorts portions explicitly mentioned\",\"met\":true,\"evidence\":[1]},{\"id\":3,\"reason\":\"Base case of size ≤1 not mentioned\",\"met\":false,\"evidence\":[]},{\"id\":4,\"reason\":\"Merges sorted portions into output stated\",\"met\":true,\"evidence\":[2]},{\"id\":5,\"reason\":\"Time complexity O(n log n) not stated\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "A part of size at most one is already sorted.",
+            "Its worst-case time is O(n log n)."
+          ],
+          "agreement": true,
+          "latencyMs": 1382
+        },
+        {
+          "id": "review-24",
+          "expected": 3,
+          "actual": 3,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Stable unique identifier generation not addressed.\",\"met\":false,\"evidence\":[]},{\"id\":2,\"reason\":\"Storing result with identifier explicitly stated.\",\"met\":true,\"evidence\":[1]},{\"id\":3,\"reason\":\"Detecting repeated identifiers explicitly stated.\",\"met\":true,\"evidence\":[1]},{\"id\":4,\"reason\":\"Returning stored result for duplicate stated.\",\"met\":true,\"evidence\":[1]},{\"id\":5,\"reason\":\"Atomic recording of identifier and effect not addressed.\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "Use a stable unique request identifier.",
+            "Atomically record the identifier with the effect to prevent races."
+          ],
+          "agreement": true,
+          "latencyMs": 1354
+        },
+        {
+          "id": "review-14",
+          "expected": 2,
+          "actual": 2,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Array must be sorted; not stated.\",\"met\":false,\"evidence\":[]},{\"id\":2,\"reason\":\"Central element comparison explicitly mentioned.\",\"met\":true,\"evidence\":[1]},{\"id\":3,\"reason\":\"Discard half not mentioned; scanning described instead.\",\"met\":false,\"evidence\":[]},{\"id\":4,\"reason\":\"Stopping condition not explicitly stated.\",\"met\":false,\"evidence\":[]},{\"id\":5,\"reason\":\"Logarithmic worst-case complexity stated correctly.\",\"met\":true,\"evidence\":[2]}]}",
+          "missingConcepts": [
+            "The array must be sorted.",
+            "Discard the half that cannot contain the target.",
+            "Stop when the target is found or the interval is empty."
+          ],
+          "agreement": true,
+          "latencyMs": 1417
+        },
+        {
+          "id": "review-21",
+          "expected": 5,
+          "actual": 5,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Clients reuse unique operation key\",\"met\":true,\"evidence\":[1]},{\"id\":2,\"reason\":\"Effect and response stored together\",\"met\":true,\"evidence\":[2]},{\"id\":3,\"reason\":\"Repeated identifiers detected implicitly\",\"met\":true,\"evidence\":[3]},{\"id\":4,\"reason\":\"Stored result returned for duplicate\",\"met\":true,\"evidence\":[3]},{\"id\":5,\"reason\":\"Atomic recording in one transaction\",\"met\":true,\"evidence\":[2]}]}",
+          "missingConcepts": [],
+          "agreement": true,
+          "latencyMs": 1237
+        },
+        {
+          "id": "review-13",
+          "expected": 3,
+          "actual": 3,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Array must be sorted before searching.\",\"met\":true,\"evidence\":[2]},{\"id\":2,\"reason\":\"Middle element comparison stated explicitly.\",\"met\":true,\"evidence\":[1]},{\"id\":3,\"reason\":\"Halving interval discards irrelevant half.\",\"met\":true,\"evidence\":[1]},{\"id\":4,\"reason\":\"Stopping condition not mentioned in answer.\",\"met\":false,\"evidence\":[]},{\"id\":5,\"reason\":\"Logarithmic complexity not discussed.\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "Stop when the target is found or the interval is empty.",
+            "The worst-case number of comparisons is logarithmic."
+          ],
+          "agreement": true,
+          "latencyMs": 1386
+        },
+        {
+          "id": "review-27",
+          "expected": 1,
+          "actual": 1,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Directly states default isolation level.\",\"met\":true,\"evidence\":[1]},{\"id\":2,\"reason\":\"Answer contradicts: claims same snapshot for all SELECTs.\",\"met\":false,\"evidence\":[]},{\"id\":3,\"reason\":\"Not explicitly addressed in answer segments.\",\"met\":false,\"evidence\":[]},{\"id\":4,\"reason\":\"Answer contradicts: claims exact same snapshot.\",\"met\":false,\"evidence\":[]},{\"id\":5,\"reason\":\"Answer contradicts: claims own writes invisible.\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "A command sees data committed before it begins.",
+            "Dirty reads are prevented.",
+            "Successive SELECT commands may see different committed data.",
+            "A transaction can see its own earlier writes."
+          ],
+          "agreement": true,
+          "latencyMs": 1348
+        },
+        {
+          "id": "review-47",
+          "expected": 2,
+          "actual": 1,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Leader accepts and appends command locally\",\"met\":true,\"evidence\":[1]},{\"id\":2,\"reason\":\"Appending to log not explicitly stated\",\"met\":false,\"evidence\":[]},{\"id\":3,\"reason\":\"No mention of AppendEntries replication\",\"met\":false,\"evidence\":[]},{\"id\":4,\"reason\":\"Contradicts majority replication requirement\",\"met\":false,\"evidence\":[2]},{\"id\":5,\"reason\":\"Contradicts in-order application requirement\",\"met\":false,\"evidence\":[2]}]}",
+          "missingConcepts": [
+            "The leader appends a command to its log.",
+            "The leader replicates entries using AppendEntries.",
+            "A current-term entry replicated on a majority can be committed.",
+            "Committed entries are applied in order to the state machine."
+          ],
+          "agreement": false,
+          "latencyMs": 1556
+        },
+        {
+          "id": "review-48",
+          "expected": 3,
+          "actual": 3,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Leader accepts commands not explicitly stated\",\"met\":false,\"evidence\":[]},{\"id\":2,\"reason\":\"Leader appending to log not explicitly stated\",\"met\":false,\"evidence\":[]},{\"id\":3,\"reason\":\"AppendEntries replication directly stated\",\"met\":true,\"evidence\":[1]},{\"id\":4,\"reason\":\"Current-term majority replication commitment stated\",\"met\":true,\"evidence\":[2]},{\"id\":5,\"reason\":\"Committed entries applied in order stated\",\"met\":true,\"evidence\":[2]}]}",
+          "missingConcepts": [
+            "The leader accepts client commands.",
+            "The leader appends a command to its log."
+          ],
+          "agreement": true,
+          "latencyMs": 1319
+        },
+        {
+          "id": "review-44",
+          "expected": 2,
+          "actual": 2,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Dividing input not mentioned in answer\",\"met\":false,\"evidence\":[]},{\"id\":2,\"reason\":\"Recursive sorting not explicitly stated\",\"met\":false,\"evidence\":[]},{\"id\":3,\"reason\":\"Singleton already sorted correctly stated\",\"met\":true,\"evidence\":[1]},{\"id\":4,\"reason\":\"Merging sorted parts explicitly mentioned\",\"met\":true,\"evidence\":[1]},{\"id\":5,\"reason\":\"Answer claims O(n squared), contradicts O(n log n)\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "Divide the input into smaller parts.",
+            "Sort the parts recursively.",
+            "Its worst-case time is O(n log n)."
+          ],
+          "agreement": true,
+          "latencyMs": 1369
+        },
+        {
+          "id": "review-33",
+          "expected": 3,
+          "actual": 3,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"append behavior not addressed in answer\",\"met\":false,\"evidence\":[]},{\"id\":2,\"reason\":\"pop behavior not addressed in answer\",\"met\":false,\"evidence\":[]},{\"id\":3,\"reason\":\"sort mutates existing list stated correctly\",\"met\":true,\"evidence\":[1]},{\"id\":4,\"reason\":\"sort returns None stated correctly\",\"met\":true,\"evidence\":[1]},{\"id\":5,\"reason\":\"sorted creates new sorted list stated correctly\",\"met\":true,\"evidence\":[2]}]}",
+          "missingConcepts": [
+            "append adds one item at the end.",
+            "pop with no index removes and returns the last item."
+          ],
+          "agreement": true,
+          "latencyMs": 1191
+        },
+        {
+          "id": "review-19",
+          "expected": 1,
+          "actual": 1,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Starting vertex enqueueing clearly stated.\",\"met\":true,\"evidence\":[1]},{\"id\":2,\"reason\":\"No queue data structure mentioned.\",\"met\":false,\"evidence\":[]},{\"id\":3,\"reason\":\"Contradicts: marks after dequeue, not before enqueue.\",\"met\":false,\"evidence\":[2]},{\"id\":4,\"reason\":\"Neighbor exploration not explicitly described.\",\"met\":false,\"evidence\":[]},{\"id\":5,\"reason\":\"Shortest path property not mentioned.\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "Use a first-in, first-out queue.",
+            "Mark a discovered neighbor before enqueueing it.",
+            "Explore neighbors of each dequeued vertex.",
+            "It finds shortest paths by edge count in unweighted graphs."
+          ],
+          "agreement": true,
+          "latencyMs": 1251
+        },
+        {
+          "id": "review-16",
+          "expected": 5,
+          "actual": 5,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Source enqueued on FIFO queue\",\"met\":true,\"evidence\":[1]},{\"id\":2,\"reason\":\"FIFO queue explicitly stated\",\"met\":true,\"evidence\":[1]},{\"id\":3,\"reason\":\"Mark discovered before enqueueing neighbors\",\"met\":true,\"evidence\":[2]},{\"id\":4,\"reason\":\"Dequeue and inspect neighbors\",\"met\":true,\"evidence\":[2]},{\"id\":5,\"reason\":\"Finds shortest paths in unweighted graphs\",\"met\":true,\"evidence\":[3]}]}",
+          "missingConcepts": [],
+          "agreement": true,
+          "latencyMs": 1161
+        },
+        {
+          "id": "review-40",
+          "expected": 0,
+          "actual": 0,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Answer contradicts shared address space fact.\",\"met\":false,\"evidence\":[]},{\"id\":2,\"reason\":\"Answer contradicts multiple threads existing.\",\"met\":false,\"evidence\":[]},{\"id\":3,\"reason\":\"Answer contradicts multiple threads existing.\",\"met\":false,\"evidence\":[]},{\"id\":4,\"reason\":\"Answer contradicts interleaved execution possibility.\",\"met\":false,\"evidence\":[]},{\"id\":5,\"reason\":\"Answer contradicts synchronization necessity.\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "They share an address space.",
+            "Each has its own stack.",
+            "Each has its own register state.",
+            "Their execution may interleave.",
+            "Conflicting shared-state accesses need synchronization."
+          ],
+          "agreement": true,
+          "latencyMs": 1288
+        },
+        {
+          "id": "review-09",
+          "expected": 4,
+          "actual": 4,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"All writers use same mutex not stated\",\"met\":false,\"evidence\":[]},{\"id\":2,\"reason\":\"Acquire mutex before reading confirmed\",\"met\":true,\"evidence\":[1]},{\"id\":3,\"reason\":\"Read-modify-write inside critical section confirmed\",\"met\":true,\"evidence\":[1]},{\"id\":4,\"reason\":\"Release mutex after writing confirmed\",\"met\":true,\"evidence\":[1]},{\"id\":5,\"reason\":\"Mutual exclusion prevents concurrent execution confirmed\",\"met\":true,\"evidence\":[2]}]}",
+          "missingConcepts": [
+            "All writers use the same mutex."
+          ],
+          "agreement": true,
+          "latencyMs": 1229
+        },
+        {
+          "id": "review-26",
+          "expected": 5,
+          "actual": 5,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Directly states Postgres defaults to Read Committed\",\"met\":true,\"evidence\":[1]},{\"id\":2,\"reason\":\"Segment 2 describes snapshot at statement start of committed data\",\"met\":true,\"evidence\":[2]},{\"id\":3,\"reason\":\"Segment 2 explicitly prevents uncommitted reads\",\"met\":true,\"evidence\":[2]},{\"id\":4,\"reason\":\"Segment 3 states successive SELECTs may differ after commits\",\"met\":true,\"evidence\":[3]},{\"id\":5,\"reason\":\"Segment 4 states transaction sees own earlier changes\",\"met\":true,\"evidence\":[4]}]}",
+          "missingConcepts": [],
+          "agreement": true,
+          "latencyMs": 1403
+        },
+        {
+          "id": "review-38",
+          "expected": 3,
+          "actual": 3,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Shared address space not mentioned\",\"met\":false,\"evidence\":[]},{\"id\":2,\"reason\":\"Private stack explicitly stated\",\"met\":true,\"evidence\":[1]},{\"id\":3,\"reason\":\"Register context stated for each thread\",\"met\":true,\"evidence\":[1]},{\"id\":4,\"reason\":\"Execution interleaving not mentioned\",\"met\":false,\"evidence\":[]},{\"id\":5,\"reason\":\"Conflicting writes require synchronization described\",\"met\":true,\"evidence\":[2]}]}",
+          "missingConcepts": [
+            "They share an address space.",
+            "Their execution may interleave."
+          ],
+          "agreement": true,
+          "latencyMs": 1361
+        },
+        {
+          "id": "review-30",
+          "expected": 0,
+          "actual": 0,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Answer describes backup policy, not isolation level.\",\"met\":false,\"evidence\":[]},{\"id\":2,\"reason\":\"No evidence provided about command visibility.\",\"met\":false,\"evidence\":[]},{\"id\":3,\"reason\":\"No evidence provided about dirty read prevention.\",\"met\":false,\"evidence\":[]},{\"id\":4,\"reason\":\"No evidence provided about successive SELECT differences.\",\"met\":false,\"evidence\":[]},{\"id\":5,\"reason\":\"No evidence provided about transaction self-visibility.\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "It is PostgreSQL’s default isolation level.",
+            "A command sees data committed before it begins.",
+            "Dirty reads are prevented.",
+            "Successive SELECT commands may see different committed data.",
+            "A transaction can see its own earlier writes."
+          ],
+          "agreement": true,
+          "latencyMs": 1275
+        },
+        {
+          "id": "review-22",
+          "expected": 3,
+          "actual": 3,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"UUID generation contradicts stability requirement\",\"met\":false,\"evidence\":[]},{\"id\":2,\"reason\":\"Storing response with identifier confirmed\",\"met\":true,\"evidence\":[1,2]},{\"id\":3,\"reason\":\"Checking UUID existence detects repeats\",\"met\":true,\"evidence\":[1]},{\"id\":4,\"reason\":\"Saved response returned for duplicates\",\"met\":true,\"evidence\":[2]},{\"id\":5,\"reason\":\"No atomic recording or race prevention mentioned\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "Use a stable unique request identifier.",
+            "Atomically record the identifier with the effect to prevent races."
+          ],
+          "agreement": true,
+          "latencyMs": 1381
+        },
+        {
+          "id": "review-15",
+          "expected": 0,
+          "actual": 0,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Answer describes hash table, not sorted array\",\"met\":false,\"evidence\":[]},{\"id\":2,\"reason\":\"Answer describes hash table lookup, not middle comparison\",\"met\":false,\"evidence\":[]},{\"id\":3,\"reason\":\"Answer does not mention discarding halves\",\"met\":false,\"evidence\":[]},{\"id\":4,\"reason\":\"Answer does not describe stopping condition\",\"met\":false,\"evidence\":[]},{\"id\":5,\"reason\":\"Answer claims constant time, contradicts logarithmic\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "The array must be sorted.",
+            "Compare the target with the middle element.",
+            "Discard the half that cannot contain the target.",
+            "Stop when the target is found or the interval is empty.",
+            "The worst-case number of comparisons is logarithmic."
+          ],
+          "agreement": true,
+          "latencyMs": 1393
+        },
+        {
+          "id": "review-46",
+          "expected": 5,
+          "actual": 5,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Leader accepts commands stated\",\"met\":true,\"evidence\":[1]},{\"id\":2,\"reason\":\"Leader appends to log stated\",\"met\":true,\"evidence\":[1]},{\"id\":3,\"reason\":\"AppendEntries replication mechanism stated\",\"met\":true,\"evidence\":[1]},{\"id\":4,\"reason\":\"Current-term majority commitment stated\",\"met\":true,\"evidence\":[2]},{\"id\":5,\"reason\":\"Committed entries applied in order\",\"met\":true,\"evidence\":[3]}]}",
+          "missingConcepts": [],
+          "agreement": true,
+          "latencyMs": 1342
+        },
+        {
+          "id": "review-10",
+          "expected": 0,
+          "actual": 0,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Volatile does not ensure mutual exclusion for writers.\",\"met\":false,\"evidence\":[]},{\"id\":2,\"reason\":\"Acquire mutex before reading counter value.\",\"met\":false,\"evidence\":[]},{\"id\":3,\"reason\":\"Read-modify-write must stay in critical section.\",\"met\":false,\"evidence\":[]},{\"id\":4,\"reason\":\"Release mutex after writing counter.\",\"met\":false,\"evidence\":[]},{\"id\":5,\"reason\":\"Answer contradicts mutual exclusion requirement.\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "All writers use the same mutex.",
+            "Acquire the mutex before reading the counter.",
+            "Keep the read-modify-write operation inside the critical section.",
+            "Release the mutex after writing.",
+            "Mutual exclusion prevents concurrent execution of the protected operation."
+          ],
+          "agreement": true,
+          "latencyMs": 1364
+        },
+        {
+          "id": "review-04",
+          "expected": 2,
+          "actual": 2,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Timeout starts election, term incremented\",\"met\":true,\"evidence\":[1]},{\"id\":2,\"reason\":\"Term increment confirmed in answer\",\"met\":true,\"evidence\":[1]},{\"id\":3,\"reason\":\"Self-vote and vote requests not mentioned\",\"met\":false,\"evidence\":[]},{\"id\":4,\"reason\":\"Majority requirement not stated\",\"met\":false,\"evidence\":[]},{\"id\":5,\"reason\":\"Answer claims identical timeouts, contradicts randomization\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "The candidate votes for itself and requests votes.",
+            "A majority of votes elects the leader.",
+            "Randomized election timeouts reduce repeated split votes."
+          ],
+          "agreement": true,
+          "latencyMs": 1420
+        },
+        {
+          "id": "review-08",
+          "expected": 2,
+          "actual": 2,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"All writers use same mutex stated.\",\"met\":true,\"evidence\":[1]},{\"id\":2,\"reason\":\"Answer contradicts: read before locking.\",\"met\":false,\"evidence\":[]},{\"id\":3,\"reason\":\"Read-modify-write inside critical section not mentioned.\",\"met\":false,\"evidence\":[]},{\"id\":4,\"reason\":\"Mutex released after writing stated.\",\"met\":true,\"evidence\":[1]},{\"id\":5,\"reason\":\"Mutual exclusion preventing concurrent execution not explained.\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "Acquire the mutex before reading the counter.",
+            "Keep the read-modify-write operation inside the critical section.",
+            "Mutual exclusion prevents concurrent execution of the protected operation."
+          ],
+          "agreement": true,
+          "latencyMs": 1231
+        },
+        {
+          "id": "review-18",
+          "expected": 3,
+          "actual": 3,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Starting vertex enqueueing not mentioned\",\"met\":false,\"evidence\":[]},{\"id\":2,\"reason\":\"FIFO queue explicitly stated in segment 1\",\"met\":true,\"evidence\":[1]},{\"id\":3,\"reason\":\"Marking before enqueueing not described\",\"met\":false,\"evidence\":[]},{\"id\":4,\"reason\":\"Explores neighbors of dequeued vertex stated\",\"met\":true,\"evidence\":[1]},{\"id\":5,\"reason\":\"Shortest paths in unweighted graphs confirmed\",\"met\":true,\"evidence\":[2]}]}",
+          "missingConcepts": [
+            "Begin by enqueueing the starting vertex.",
+            "Mark a discovered neighbor before enqueueing it."
+          ],
+          "agreement": true,
+          "latencyMs": 1551
+        },
+        {
+          "id": "review-28",
+          "expected": 3,
+          "actual": 3,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Default isolation level not mentioned.\",\"met\":false,\"evidence\":[]},{\"id\":2,\"reason\":\"Segment 1 states sees committed data at start.\",\"met\":true,\"evidence\":[1]},{\"id\":3,\"reason\":\"Segment 2 explicitly excludes dirty reads.\",\"met\":true,\"evidence\":[2]},{\"id\":4,\"reason\":\"Segment 3 describes successive SELECTs seeing newer commits.\",\"met\":true,\"evidence\":[3]},{\"id\":5,\"reason\":\"Transaction's own writes visibility not addressed.\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "It is PostgreSQL’s default isolation level.",
+            "A transaction can see its own earlier writes."
+          ],
+          "agreement": true,
+          "latencyMs": 1313
+        },
+        {
+          "id": "review-07",
+          "expected": 1,
+          "actual": 0,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Answer says each writer gets own mutex\",\"met\":false,\"evidence\":[]},{\"id\":2,\"reason\":\"Answer reads before locking, violates critical section\",\"met\":false,\"evidence\":[]},{\"id\":3,\"reason\":\"Read-modify-write not kept inside critical section\",\"met\":false,\"evidence\":[]},{\"id\":4,\"reason\":\"Unlock mentioned but after flawed sequence\",\"met\":false,\"evidence\":[3]},{\"id\":5,\"reason\":\"No explanation of mutual exclusion prevention\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "All writers use the same mutex.",
+            "Acquire the mutex before reading the counter.",
+            "Keep the read-modify-write operation inside the critical section.",
+            "Release the mutex after writing.",
+            "Mutual exclusion prevents concurrent execution of the protected operation."
+          ],
+          "agreement": false,
+          "latencyMs": 1466
+        },
+        {
+          "id": "review-05",
+          "expected": 0,
+          "actual": 0,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Follower timeout not mentioned in answer\",\"met\":false,\"evidence\":[]},{\"id\":2,\"reason\":\"Term increment not mentioned in answer\",\"met\":false,\"evidence\":[]},{\"id\":3,\"reason\":\"Self-vote and vote request not mentioned\",\"met\":false,\"evidence\":[]},{\"id\":4,\"reason\":\"Majority requirement not mentioned in answer\",\"met\":false,\"evidence\":[]},{\"id\":5,\"reason\":\"Randomized timeouts not mentioned in answer\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "A follower starts an election after its election timeout.",
+            "The candidate increases its term.",
+            "The candidate votes for itself and requests votes.",
+            "A majority of votes elects the leader.",
+            "Randomized election timeouts reduce repeated split votes."
+          ],
+          "agreement": true,
+          "latencyMs": 1256
+        },
+        {
+          "id": "review-02",
+          "expected": 1,
+          "actual": 1,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Answer says leader, not follower starts election\",\"met\":false,\"evidence\":[]},{\"id\":2,\"reason\":\"Answer confirms term increment correctly\",\"met\":true,\"evidence\":[2]},{\"id\":3,\"reason\":\"Answer omits requesting votes from others\",\"met\":false,\"evidence\":[]},{\"id\":4,\"reason\":\"Answer claims single vote suffices, contradicts majority requirement\",\"met\":false,\"evidence\":[]},{\"id\":5,\"reason\":\"No mention of randomized timeouts\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "A follower starts an election after its election timeout.",
+            "The candidate votes for itself and requests votes.",
+            "A majority of votes elects the leader.",
+            "Randomized election timeouts reduce repeated split votes."
+          ],
+          "agreement": true,
+          "latencyMs": 1495
+        },
+        {
+          "id": "review-45",
+          "expected": 0,
+          "actual": 0,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Answer describes partitioning, not dividing\",\"met\":false,\"evidence\":[]},{\"id\":2,\"reason\":\"Answer lacks recursive sorting description\",\"met\":false,\"evidence\":[]},{\"id\":3,\"reason\":\"Answer does not mention base case\",\"met\":false,\"evidence\":[]},{\"id\":4,\"reason\":\"Answer does not describe merging\",\"met\":false,\"evidence\":[]},{\"id\":5,\"reason\":\"Answer does not discuss time complexity\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "Divide the input into smaller parts.",
+            "Sort the parts recursively.",
+            "A part of size at most one is already sorted.",
+            "Merge sorted parts into sorted output.",
+            "Its worst-case time is O(n log n)."
+          ],
+          "agreement": true,
+          "latencyMs": 1227
+        },
+        {
+          "id": "review-41",
+          "expected": 5,
+          "actual": 5,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Answer describes splitting sequence into pieces\",\"met\":true,\"evidence\":[1]},{\"id\":2,\"reason\":\"Answer states recursive sorting of each piece\",\"met\":true,\"evidence\":[1]},{\"id\":3,\"reason\":\"Answer specifies zero or one item base case\",\"met\":true,\"evidence\":[2]},{\"id\":4,\"reason\":\"Answer describes merging ordered pieces\",\"met\":true,\"evidence\":[1]},{\"id\":5,\"reason\":\"Answer states worst-case O(n log n) time\",\"met\":true,\"evidence\":[3]}]}",
+          "missingConcepts": [],
+          "agreement": true,
+          "latencyMs": 1295
+        },
+        {
+          "id": "review-25",
+          "expected": 0,
+          "actual": 0,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"No mention of unique request identifier.\",\"met\":false,\"evidence\":[]},{\"id\":2,\"reason\":\"No mention of storing results.\",\"met\":false,\"evidence\":[]},{\"id\":3,\"reason\":\"No mention of detecting repeated identifiers.\",\"met\":false,\"evidence\":[]},{\"id\":4,\"reason\":\"No mention of returning stored results.\",\"met\":false,\"evidence\":[]},{\"id\":5,\"reason\":\"No mention of atomic recording or race prevention.\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "Use a stable unique request identifier.",
+            "Store the result associated with that identifier.",
+            "Detect repeated identifiers.",
+            "Return the stored result for a duplicate.",
+            "Atomically record the identifier with the effect to prevent races."
+          ],
+          "agreement": true,
+          "latencyMs": 1267
+        },
+        {
+          "id": "review-35",
+          "expected": 0,
+          "actual": 0,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Answer contradicts append behavior fact.\",\"met\":false,\"evidence\":[]},{\"id\":2,\"reason\":\"Answer contradicts pop behavior fact.\",\"met\":false,\"evidence\":[]},{\"id\":3,\"reason\":\"Answer contradicts sort mutation fact.\",\"met\":false,\"evidence\":[]},{\"id\":4,\"reason\":\"Answer contradicts sort return fact.\",\"met\":false,\"evidence\":[]},{\"id\":5,\"reason\":\"Answer contradicts sorted behavior fact.\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "append adds one item at the end.",
+            "pop with no index removes and returns the last item.",
+            "sort mutates the existing list.",
+            "sort returns None.",
+            "sorted creates a new sorted list."
+          ],
+          "agreement": true,
+          "latencyMs": 1128
+        },
+        {
+          "id": "review-06",
+          "expected": 5,
+          "actual": 5,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"All threads lock shared mutex before access\",\"met\":true,\"evidence\":[1]},{\"id\":2,\"reason\":\"Acquire mutex before reading counter\",\"met\":true,\"evidence\":[1]},{\"id\":3,\"reason\":\"Read-modify-write stays inside critical section\",\"met\":true,\"evidence\":[2]},{\"id\":4,\"reason\":\"Mutex released after writing\",\"met\":true,\"evidence\":[3]},{\"id\":5,\"reason\":\"Mutual exclusion prevents concurrent execution\",\"met\":true,\"evidence\":[3]}]}",
+          "missingConcepts": [],
+          "agreement": true,
+          "latencyMs": 2249
+        },
+        {
+          "id": "review-36",
+          "expected": 5,
+          "actual": 5,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Answer states threads use same virtual address space.\",\"met\":true,\"evidence\":[1]},{\"id\":2,\"reason\":\"Answer explicitly mentions own stack and CPU registers.\",\"met\":true,\"evidence\":[2]},{\"id\":3,\"reason\":\"Answer states operations can be interleaved.\",\"met\":true,\"evidence\":[3]},{\"id\":4,\"reason\":\"Answer describes interleaving of thread operations.\",\"met\":true,\"evidence\":[3]},{\"id\":5,\"reason\":\"Answer requires synchronization for conflicting shared data accesses.\",\"met\":true,\"evidence\":[3]}]}",
+          "missingConcepts": [],
+          "agreement": true,
+          "latencyMs": 1340
+        },
+        {
+          "id": "review-12",
+          "expected": 3,
+          "actual": 3,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Answer claims unsorted array works\",\"met\":false,\"evidence\":[]},{\"id\":2,\"reason\":\"Middle element comparison stated correctly\",\"met\":true,\"evidence\":[1]},{\"id\":3,\"reason\":\"Half discarding described accurately\",\"met\":true,\"evidence\":[1]},{\"id\":4,\"reason\":\"Stopping condition not mentioned\",\"met\":false,\"evidence\":[]},{\"id\":5,\"reason\":\"Logarithmic worst-case complexity confirmed\",\"met\":true,\"evidence\":[2]}]}",
+          "missingConcepts": [
+            "The array must be sorted.",
+            "Stop when the target is found or the interval is empty."
+          ],
+          "agreement": true,
+          "latencyMs": 1273
+        },
+        {
+          "id": "review-11",
+          "expected": 5,
+          "actual": 5,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Ordered values implies sorted array.\",\"met\":true,\"evidence\":[1]},{\"id\":2,\"reason\":\"Midpoint lookup matches middle comparison.\",\"met\":true,\"evidence\":[1]},{\"id\":3,\"reason\":\"Keep one side means discard other half.\",\"met\":true,\"evidence\":[2]},{\"id\":4,\"reason\":\"Finish on equality or no candidates.\",\"met\":true,\"evidence\":[3]},{\"id\":5,\"reason\":\"Comparisons grow as log n stated.\",\"met\":true,\"evidence\":[4]}]}",
+          "missingConcepts": [],
+          "agreement": true,
+          "latencyMs": 1336
+        },
+        {
+          "id": "review-32",
+          "expected": 2,
+          "actual": 2,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"append adds item at end correctly stated\",\"met\":true,\"evidence\":[1]},{\"id\":2,\"reason\":\"pop with no index removes and returns last item correctly stated\",\"met\":true,\"evidence\":[1]},{\"id\":3,\"reason\":\"sort mutates existing list; answer claims it leaves original untouched\",\"met\":false,\"evidence\":[]},{\"id\":4,\"reason\":\"sort returns None; answer claims it returns new list\",\"met\":false,\"evidence\":[]},{\"id\":5,\"reason\":\"sorted creates new sorted list; answer attributes this to sort\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "sort mutates the existing list.",
+            "sort returns None.",
+            "sorted creates a new sorted list."
+          ],
+          "agreement": true,
+          "latencyMs": 1337
+        },
+        {
+          "id": "review-42",
+          "expected": 3,
+          "actual": 3,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Splitting list matches dividing input\",\"met\":true,\"evidence\":[1]},{\"id\":2,\"reason\":\"Recursive sort of parts explicitly stated\",\"met\":true,\"evidence\":[1]},{\"id\":3,\"reason\":\"One-element pieces already sorted stated\",\"met\":true,\"evidence\":[2]},{\"id\":4,\"reason\":\"Concatenate arbitrary order contradicts merge\",\"met\":false,\"evidence\":[]},{\"id\":5,\"reason\":\"O(n) contradicts O(n log n) worst case\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "Merge sorted parts into sorted output.",
+            "Its worst-case time is O(n log n)."
+          ],
+          "agreement": true,
+          "latencyMs": 1471
+        },
+        {
+          "id": "review-37",
+          "expected": 2,
+          "actual": 2,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Shared address space and interleaving both stated.\",\"met\":true,\"evidence\":[1]},{\"id\":2,\"reason\":\"Claims shared stack contradicts each having own.\",\"met\":false,\"evidence\":[]},{\"id\":3,\"reason\":\"Claims shared register state contradicts each having own.\",\"met\":false,\"evidence\":[]},{\"id\":4,\"reason\":\"Interleaving execution explicitly mentioned in answer.\",\"met\":true,\"evidence\":[1]},{\"id\":5,\"reason\":\"Claims locks unnecessary contradicts synchronization need.\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "Each has its own stack.",
+            "Each has its own register state.",
+            "Conflicting shared-state accesses need synchronization."
+          ],
+          "agreement": true,
+          "latencyMs": 1367
+        },
+        {
+          "id": "review-49",
+          "expected": 3,
+          "actual": 3,
+          "assessment": "{\"checks\":[{\"id\":1,\"reason\":\"Clients submit commands to leader.\",\"met\":true,\"evidence\":[1]},{\"id\":2,\"reason\":\"Leader appends command to log.\",\"met\":true,\"evidence\":[1]},{\"id\":3,\"reason\":\"Leader replicates via AppendEntries.\",\"met\":true,\"evidence\":[1]},{\"id\":4,\"reason\":\"Current-term majority entry commits; old-term entries don't auto-commit.\",\"met\":false,\"evidence\":[]},{\"id\":5,\"reason\":\"Committed entries applied to state machine.\",\"met\":false,\"evidence\":[]}]}",
+          "missingConcepts": [
+            "A current-term entry replicated on a majority can be committed.",
+            "Committed entries are applied in order to the state machine."
+          ],
+          "agreement": true,
+          "latencyMs": 1293
+        }
+      ],
+      "inputTokens": 37667,
+      "outputTokens": 6653,
+      "exactAgreement": 0.94,
+      "p95LatencyMs": 1556,
+      "releaseThresholdPassed": true
+    }
+  ]
+}

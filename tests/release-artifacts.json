@@ -1,0 +1,35 @@
+{
+  "verifiedAt": "2026-11-23T14:05:40.335549+00:00",
+  "version": "1.0.0",
+  "build": "3",
+  "artifacts": [
+    {
+      "path": "artifacts/release/PiyoPiyo-1.0.0-rc.2.zip",
+      "sha256": "4c07181286d62e702c0cc46dcd198d1b75e811a05eee0558d80dde581d8ed2f4",
+      "bytes": 3024590
+    },
+    {
+      "path": "artifacts/release/iOS/PiyoPiyo-iOS.ipa",
+      "sha256": "ef5157127bfcebfc4f9eaa52338855a21d7733f869b15c878a070df8a9512509",
+      "bytes": 2985963
+    }
+  ],
+  "macNotarization": {
+    "status": "Accepted",
+    "message": "Processing complete",
+    "id": "df1313fe-a356-45ef-8712-e3ac7d6463aa"
+  },
+  "macGatekeeper": "accepted: Notarized Developer ID",
+  "stapled": true,
+  "provenanceEntries": 28,
+  "verifiedAssetHashes": 28,
+  "universalIOSDeviceFamilies": [
+    1,
+    2
+  ],
+  "iconsVerified": {
+    "mac": "AppIcon.icns",
+    "iOS": "CFBundleIcons and CFBundleIcons~ipad; Assets.car",
+    "sourcePNGs": 11
+  }
+}

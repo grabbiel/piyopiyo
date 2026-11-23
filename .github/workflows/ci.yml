@@ -1,0 +1,153 @@
+name: CI
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  backend:
+    name: Backend
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    concurrency:
+      group: backend-${{ github.ref }}
+      cancel-in-progress: true
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned validation tools
+        run: |
+          python scripts/ci/install-tool.py actionlint gitleaks
+          echo "$PWD/.agent/tools" >> "$GITHUB_PATH"
+          python -m pip install cfn-lint==1.46.0 pypdf==7.1.1
+      - name: Scan tracked files and validate workflows
+        run: |
+          actionlint
+          mkdir -p .agent/scan
+          git archive HEAD | tar -x -C .agent/scan
+          gitleaks dir .agent/scan --redact --no-banner
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run synth
+      - run: cfn-lint cdk.out/PiyoPiyoDev.template.json
+      - run: npm test
+      - run: python -m unittest discover -s backend/pdf -p 'test_*.py'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: backend-${{ github.sha }}
+          retention-days: 7
+          if-no-files-found: error
+          path: |
+            cdk.out/PiyoPiyoDev.template.json
+            artifacts/backend/function.zip
+            artifacts/backend/manifest.json
+            artifacts/knowledge/*.zip
+            artifacts/knowledge/manifest.json
+  native:
+    name: Native
+    runs-on: macos-26
+    timeout-minutes: 40
+    concurrency:
+      group: native-${{ github.ref }}
+      cancel-in-progress: true
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.6.app/Contents/Developer
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - name: Install XcodeGen
+        run: |
+          python scripts/ci/install-tool.py xcodegen
+          echo "$PWD/.agent/tools" >> "$GITHUB_PATH"
+      - name: Test and build native apps
+        run: python scripts/ci/native-checks.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: failure()
+        with:
+          name: native-failure-${{ github.run_id }}
+          retention-days: 7
+          include-hidden-files: true
+          path: .agent/ci-logs/
+  checks:
+    name: Checks
+    if: always()
+    needs: [backend, native]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 2
+    steps:
+      - name: Require both check suites
+        env:
+          BACKEND_RESULT: ${{ needs.backend.result }}
+          NATIVE_RESULT: ${{ needs.native.result }}
+        run: test "$BACKEND_RESULT" = success && test "$NATIVE_RESULT" = success
+  deploy:
+    name: Deploy AWS
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: [checks]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    environment:
+      name: aws-production
+      url: https://piyopiyo.grabbiel.com
+    concurrency:
+      group: aws-production
+      cancel-in-progress: false
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Skip superseded deployments
+        id: revision
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          current=$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/main" --jq .object.sha)
+          if [ "$current" = "$GITHUB_SHA" ]; then
+            echo 'current=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'Skipped: a newer main commit exists.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        if: steps.revision.outputs.current == 'true'
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+        if: steps.revision.outputs.current == 'true'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        if: steps.revision.outputs.current == 'true'
+        with:
+          name: backend-${{ github.sha }}
+      - uses: aws-actions/configure-aws-credentials@7474bc4690e29a8392af63c5b98e7449536d5c3a # v4
+        if: steps.revision.outputs.current == 'true'
+        with:
+          role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: us-east-1
+          role-session-name: piyopiyo-${{ github.run_id }}
+          allowed-account-ids: '992680757326'
+      - name: Deploy validated function artifacts and check health
+        if: steps.revision.outputs.current == 'true'
+        run: node scripts/ci/deploy.mjs
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always() && steps.revision.outputs.current == 'true'
+        with:
+          name: deployment-${{ github.sha }}
+          retention-days: 30
+          path: artifacts/ci/deployment.json

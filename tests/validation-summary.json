@@ -1,0 +1,57 @@
+{
+  "at": "2026-11-23T14:25:40.325513+00:00",
+  "version": "1.0.0",
+  "build": "3",
+  "builds": {
+    "macOS": "signed, notarized, stapled, Gatekeeper accepted",
+    "universalIOS": "App Store IPA exported; iPhone and iPad"
+  },
+  "swiftTests": {
+    "macOS": 18,
+    "iPhoneSESimulator": 18,
+    "iPadMiniSimulator": 18
+  },
+  "snapshots": 54,
+  "backendAndInfrastructureTests": 40,
+  "realAWSIntegration": {
+    "at": "2026-11-23T14:08:58.571Z",
+    "passed": true,
+    "checks": [
+      "Public privacy page is available without sign-in",
+      "Public support page is available without sign-in",
+      "Unauthenticated progress rejected",
+      "Duplicate attempt increments score only once",
+      "Cross-user session reads rejected",
+      "Real Bedrock evaluation succeeds through Lambda",
+      "All 18 formats persisted in real DynamoDB",
+      "Progress returns session and every attempt",
+      "Concurrent authenticated learners join a room",
+      "AppSync WebSocket broadcasts collaborative answers",
+      "Concurrent submissions preserve every participant score",
+      "Offline timed answer survives delayed upload",
+      "Deleted account JWT cannot read or recreate data",
+      "Deletion removes progress and room contributions without deleting other learners",
+      "Account deletion removes the Cognito identity"
+    ],
+    "temporaryDataRemoved": true
+  },
+  "humanGrading": {
+    "agreement": 0.94,
+    "matches": 47,
+    "cases": 50,
+    "p95LatencyMs": 1556,
+    "errors": 0,
+    "ownerAttested": true,
+    "reusedRegressionSet": true
+  },
+  "appleSignIn": "Owner confirmed success; signed-in and synced state observed in native app",
+  "releaseReady": true,
+  "releaseCandidatePackaged": true,
+  "remaining": [
+    "App Store listing/TestFlight upload and submission"
+  ],
+  "readinessScope": "Engineering gate passed with owner-accepted device coverage; signed artifacts ready for distribution. App Store publication is separate.",
+  "deviceAcceptance": "tests/device-acceptance.json",
+  "manualAccessibilityAudit": "Not claimed; semantic labels and format snapshots verified",
+  "storeScreenshots": "artifacts/app-store/manifest.json"
+}

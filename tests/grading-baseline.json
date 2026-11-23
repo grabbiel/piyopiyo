@@ -1,0 +1,551 @@
+{
+  "createdAt": "2026-11-21T15:46:47.827Z",
+  "labelSource": "Agent-authored calibration; NOT human-scored release evidence",
+  "models": [
+    {
+      "modelId": "amazon.nova-micro-v1:0",
+      "cases": [
+        {
+          "id": "calibration-1-1",
+          "expected": 5,
+          "actual": 5,
+          "agreement": true,
+          "latencyMs": 1932
+        },
+        {
+          "id": "calibration-1-2",
+          "expected": 4,
+          "actual": 4,
+          "agreement": true,
+          "latencyMs": 748
+        },
+        {
+          "id": "calibration-1-3",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 850
+        },
+        {
+          "id": "calibration-1-4",
+          "expected": 1,
+          "actual": 1,
+          "agreement": true,
+          "latencyMs": 878
+        },
+        {
+          "id": "calibration-1-5",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 861
+        },
+        {
+          "id": "calibration-2-1",
+          "expected": 5,
+          "actual": 4,
+          "agreement": false,
+          "latencyMs": 932
+        },
+        {
+          "id": "calibration-2-2",
+          "expected": 4,
+          "actual": 4,
+          "agreement": true,
+          "latencyMs": 902
+        },
+        {
+          "id": "calibration-2-3",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 893
+        },
+        {
+          "id": "calibration-2-4",
+          "expected": 1,
+          "actual": 1,
+          "agreement": true,
+          "latencyMs": 802
+        },
+        {
+          "id": "calibration-2-5",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 816
+        },
+        {
+          "id": "calibration-3-1",
+          "expected": 5,
+          "actual": 4,
+          "agreement": false,
+          "latencyMs": 765
+        },
+        {
+          "id": "calibration-3-2",
+          "expected": 4,
+          "actual": 4,
+          "agreement": true,
+          "latencyMs": 825
+        },
+        {
+          "id": "calibration-3-3",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 888
+        },
+        {
+          "id": "calibration-3-4",
+          "expected": 1,
+          "actual": 1,
+          "agreement": true,
+          "latencyMs": 911
+        },
+        {
+          "id": "calibration-3-5",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 831
+        },
+        {
+          "id": "calibration-4-1",
+          "expected": 5,
+          "actual": 4,
+          "agreement": false,
+          "latencyMs": 810
+        },
+        {
+          "id": "calibration-4-2",
+          "expected": 4,
+          "actual": 4,
+          "agreement": true,
+          "latencyMs": 738
+        },
+        {
+          "id": "calibration-4-3",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 855
+        },
+        {
+          "id": "calibration-4-4",
+          "expected": 1,
+          "actual": 1,
+          "agreement": true,
+          "latencyMs": 984
+        },
+        {
+          "id": "calibration-4-5",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 844
+        },
+        {
+          "id": "calibration-5-1",
+          "expected": 5,
+          "actual": 4,
+          "agreement": false,
+          "latencyMs": 850
+        },
+        {
+          "id": "calibration-5-2",
+          "expected": 4,
+          "actual": 4,
+          "agreement": true,
+          "latencyMs": 772
+        },
+        {
+          "id": "calibration-5-3",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 935
+        },
+        {
+          "id": "calibration-5-4",
+          "expected": 1,
+          "actual": 1,
+          "agreement": true,
+          "latencyMs": 895
+        },
+        {
+          "id": "calibration-5-5",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 824
+        },
+        {
+          "id": "calibration-6-1",
+          "expected": 5,
+          "actual": 5,
+          "agreement": true,
+          "latencyMs": 736
+        },
+        {
+          "id": "calibration-6-2",
+          "expected": 4,
+          "actual": 4,
+          "agreement": true,
+          "latencyMs": 752
+        },
+        {
+          "id": "calibration-6-3",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 940
+        },
+        {
+          "id": "calibration-6-4",
+          "expected": 1,
+          "actual": 1,
+          "agreement": true,
+          "latencyMs": 1010
+        },
+        {
+          "id": "calibration-6-5",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 900
+        },
+        {
+          "id": "calibration-7-1",
+          "expected": 5,
+          "actual": 5,
+          "agreement": true,
+          "latencyMs": 1081
+        },
+        {
+          "id": "calibration-7-2",
+          "expected": 4,
+          "actual": 4,
+          "agreement": true,
+          "latencyMs": 835
+        },
+        {
+          "id": "calibration-7-3",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 881
+        },
+        {
+          "id": "calibration-7-4",
+          "expected": 1,
+          "actual": 1,
+          "agreement": true,
+          "latencyMs": 829
+        },
+        {
+          "id": "calibration-7-5",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 844
+        },
+        {
+          "id": "calibration-8-1",
+          "expected": 5,
+          "actual": 5,
+          "agreement": true,
+          "latencyMs": 912
+        },
+        {
+          "id": "calibration-8-2",
+          "expected": 4,
+          "actual": 4,
+          "agreement": true,
+          "latencyMs": 813
+        },
+        {
+          "id": "calibration-8-3",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 2470
+        },
+        {
+          "id": "calibration-8-4",
+          "expected": 1,
+          "actual": 1,
+          "agreement": true,
+          "latencyMs": 2894
+        },
+        {
+          "id": "calibration-8-5",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 1368
+        },
+        {
+          "id": "calibration-9-1",
+          "expected": 5,
+          "actual": 4,
+          "agreement": false,
+          "latencyMs": 1055
+        },
+        {
+          "id": "calibration-9-2",
+          "expected": 4,
+          "actual": 4,
+          "agreement": true,
+          "latencyMs": 987
+        },
+        {
+          "id": "calibration-9-3",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 987
+        },
+        {
+          "id": "calibration-9-4",
+          "expected": 1,
+          "actual": 1,
+          "agreement": true,
+          "latencyMs": 897
+        },
+        {
+          "id": "calibration-9-5",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 1261
+        },
+        {
+          "id": "calibration-10-1",
+          "expected": 5,
+          "actual": 5,
+          "agreement": true,
+          "latencyMs": 1681
+        },
+        {
+          "id": "calibration-10-2",
+          "expected": 4,
+          "actual": 4,
+          "agreement": true,
+          "latencyMs": 1616
+        },
+        {
+          "id": "calibration-10-3",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 1894
+        },
+        {
+          "id": "calibration-10-4",
+          "expected": 1,
+          "actual": 1,
+          "agreement": true,
+          "latencyMs": 947
+        },
+        {
+          "id": "calibration-10-5",
+          "expected": 0,
+          "actual": 4,
+          "agreement": false,
+          "latencyMs": 1615
+        }
+      ],
+      "inputTokens": 8593,
+      "outputTokens": 3654,
+      "exactAgreement": 0.88,
+      "p95LatencyMs": 1932
+    },
+    {
+      "modelId": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+      "cases": [
+        {
+          "id": "calibration-1-1",
+          "error": "ResourceNotFoundException",
+          "message": "Model use case details have not been submitted for this account. Fill out the Anthropic use case details form before using the model. If you have already filled out the form, try again in 15 minutes.",
+          "latencyMs": 490
+        }
+      ],
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "unavailable": true,
+      "exactAgreement": 0,
+      "p95LatencyMs": 490
+    },
+    {
+      "modelId": "us.meta.llama3-1-8b-instruct-v1:0",
+      "cases": [
+        {
+          "id": "calibration-1-1",
+          "expected": 5,
+          "actual": 5,
+          "agreement": true,
+          "latencyMs": 657
+        },
+        {
+          "id": "calibration-1-2",
+          "expected": 4,
+          "actual": 4,
+          "agreement": true,
+          "latencyMs": 992
+        },
+        {
+          "id": "calibration-1-3",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 1699
+        },
+        {
+          "id": "calibration-1-4",
+          "expected": 1,
+          "actual": 1,
+          "agreement": true,
+          "latencyMs": 2301
+        },
+        {
+          "id": "calibration-1-5",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 1358
+        },
+        {
+          "id": "calibration-2-1",
+          "expected": 5,
+          "actual": 5,
+          "agreement": true,
+          "latencyMs": 2374
+        },
+        {
+          "id": "calibration-2-2",
+          "expected": 4,
+          "actual": 4,
+          "agreement": true,
+          "latencyMs": 1766
+        },
+        {
+          "id": "calibration-2-3",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 1159
+        },
+        {
+          "id": "calibration-2-4",
+          "expected": 1,
+          "actual": 1,
+          "agreement": true,
+          "latencyMs": 2485
+        },
+        {
+          "id": "calibration-2-5",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 3506
+        },
+        {
+          "id": "calibration-3-1",
+          "expected": 5,
+          "actual": 5,
+          "agreement": true,
+          "latencyMs": 860
+        },
+        {
+          "id": "calibration-3-2",
+          "expected": 4,
+          "actual": 4,
+          "agreement": true,
+          "latencyMs": 974
+        },
+        {
+          "id": "calibration-3-3",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 2584
+        },
+        {
+          "id": "calibration-3-4",
+          "expected": 1,
+          "actual": 1,
+          "agreement": true,
+          "latencyMs": 1706
+        },
+        {
+          "id": "calibration-3-5",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 804
+        },
+        {
+          "id": "calibration-4-1",
+          "expected": 5,
+          "actual": 5,
+          "agreement": true,
+          "latencyMs": 652
+        },
+        {
+          "id": "calibration-4-2",
+          "expected": 4,
+          "actual": 4,
+          "agreement": true,
+          "latencyMs": 747
+        },
+        {
+          "id": "calibration-4-3",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 1063
+        },
+        {
+          "id": "calibration-4-4",
+          "expected": 1,
+          "actual": 1,
+          "agreement": true,
+          "latencyMs": 953
+        },
+        {
+          "id": "calibration-4-5",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 912
+        },
+        {
+          "id": "calibration-5-1",
+          "expected": 5,
+          "actual": 5,
+          "agreement": true,
+          "latencyMs": 693
+        },
+        {
+          "id": "calibration-5-2",
+          "expected": 4,
+          "actual": 4,
+          "agreement": true,
+          "latencyMs": 887
+        },
+        {
+          "id": "calibration-5-3",
+          "error": "ResourceNotFoundException",
+          "message": "Access denied. This Model is marked by provider as Legacy and you have not been actively using the model in the last 30 days. Please upgrade to an active model on Amazon Bedrock",
+          "latencyMs": 550
+        }
+      ],
+      "inputTokens": 4162,
+      "outputTokens": 1617,
+      "unavailable": true,
+      "exactAgreement": 0.44,
+      "p95LatencyMs": 2584
+    }
+  ]
+}

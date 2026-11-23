@@ -1,0 +1,350 @@
+{
+  "createdAt": "2026-11-23T13:10:24.549Z",
+  "labelSource": "Owner-supplied scores; owner explicitly confirmed reviewing all 50 in conversation",
+  "reviewMetadata": {
+    "reviewer": "Francisco Cruzado",
+    "datasetSHA256": "42b1e79f2c696c5848d377738c5d36a15df8a7017358421fab942212dd6b994b",
+    "submittedCompletedAt": "2026-11-23T12:55:00.000Z"
+  },
+  "promptSHA256": "ba7a48f175c70d32f33b95539c6a205a096d4bcb1c14fb1da33d01e4e93dd552",
+  "models": [
+    {
+      "modelId": "arn:aws:bedrock:us-east-1:992680757326:application-inference-profile/3oog2y10vrgd",
+      "cases": [
+        {
+          "id": "review-20",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 1981
+        },
+        {
+          "id": "review-17",
+          "expected": 2,
+          "actual": 1,
+          "agreement": false,
+          "latencyMs": 986
+        },
+        {
+          "id": "review-23",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 1064
+        },
+        {
+          "id": "review-03",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 1016
+        },
+        {
+          "id": "review-50",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 1132
+        },
+        {
+          "id": "review-01",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 1240
+        },
+        {
+          "id": "review-34",
+          "expected": 2,
+          "actual": 2,
+          "agreement": true,
+          "latencyMs": 1043
+        },
+        {
+          "id": "review-39",
+          "expected": 2,
+          "actual": 2,
+          "agreement": true,
+          "latencyMs": 975
+        },
+        {
+          "id": "review-29",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 1073
+        },
+        {
+          "id": "review-31",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 1189
+        },
+        {
+          "id": "review-43",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 1148
+        },
+        {
+          "id": "review-24",
+          "expected": 3,
+          "actual": 2,
+          "agreement": false,
+          "latencyMs": 1061
+        },
+        {
+          "id": "review-14",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 1004
+        },
+        {
+          "id": "review-21",
+          "expected": 5,
+          "actual": 5,
+          "agreement": true,
+          "latencyMs": 1261
+        },
+        {
+          "id": "review-13",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 1062
+        },
+        {
+          "id": "review-27",
+          "expected": 1,
+          "actual": 1,
+          "agreement": true,
+          "latencyMs": 920
+        },
+        {
+          "id": "review-47",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 892
+        },
+        {
+          "id": "review-48",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 1017
+        },
+        {
+          "id": "review-44",
+          "expected": 2,
+          "actual": 1,
+          "agreement": false,
+          "latencyMs": 1119
+        },
+        {
+          "id": "review-33",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 1277
+        },
+        {
+          "id": "review-19",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 1008
+        },
+        {
+          "id": "review-16",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 1011
+        },
+        {
+          "id": "review-40",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 886
+        },
+        {
+          "id": "review-09",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 983
+        },
+        {
+          "id": "review-26",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 1126
+        },
+        {
+          "id": "review-38",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 1128
+        },
+        {
+          "id": "review-30",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 950
+        },
+        {
+          "id": "review-22",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 1200
+        },
+        {
+          "id": "review-15",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 1023
+        },
+        {
+          "id": "review-46",
+          "expected": 5,
+          "actual": 5,
+          "agreement": true,
+          "latencyMs": 1026
+        },
+        {
+          "id": "review-10",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 990
+        },
+        {
+          "id": "review-04",
+          "expected": 2,
+          "actual": 2,
+          "agreement": true,
+          "latencyMs": 1260
+        },
+        {
+          "id": "review-08",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 1230
+        },
+        {
+          "id": "review-18",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 923
+        },
+        {
+          "id": "review-28",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 1061
+        },
+        {
+          "id": "review-07",
+          "expected": 1,
+          "actual": 0,
+          "agreement": false,
+          "latencyMs": 984
+        },
+        {
+          "id": "review-05",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 952
+        },
+        {
+          "id": "review-02",
+          "expected": 1,
+          "actual": 1,
+          "agreement": true,
+          "latencyMs": 995
+        },
+        {
+          "id": "review-45",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 995
+        },
+        {
+          "id": "review-41",
+          "expected": 5,
+          "actual": 5,
+          "agreement": true,
+          "latencyMs": 961
+        },
+        {
+          "id": "review-25",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 1139
+        },
+        {
+          "id": "review-35",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 1206
+        },
+        {
+          "id": "review-06",
+          "expected": 5,
+          "actual": 4,
+          "agreement": false,
+          "latencyMs": 1022
+        },
+        {
+          "id": "review-36",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 1001
+        },
+        {
+          "id": "review-12",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 1149
+        },
+        {
+          "id": "review-11",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 1131
+        },
+        {
+          "id": "review-32",
+          "expected": 2,
+          "actual": 2,
+          "agreement": true,
+          "latencyMs": 976
+        },
+        {
+          "id": "review-42",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 1049
+        },
+        {
+          "id": "review-37",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 941
+        },
+        {
+          "id": "review-49",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 1024
+        }
+      ],
+      "inputTokens": 7808,
+      "outputTokens": 3769,
+      "exactAgreement": 0.46,
+      "p95LatencyMs": 1261,
+      "releaseThresholdPassed": false
+    }
+  ]
+}
