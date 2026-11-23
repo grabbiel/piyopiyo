@@ -319,6 +319,547 @@
     }
   },
   {
+    "id": "falling-hash-lookup",
+    "format": "game_2d",
+    "topic": "Algorithms",
+    "prompt": "Catch the average-case time of a hash table lookup.",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n²)"
+    ],
+    "correct": [
+      "O(1)"
+    ],
+    "explanation": "A good hash function spreads keys across buckets, so a lookup inspects a constant expected number of entries.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "easy",
+    "game": {
+      "template": "falling_blocks",
+      "params": {
+        "speed": 1.0
+      }
+    }
+  },
+  {
+    "id": "falling-binary-search",
+    "format": "game_2d",
+    "topic": "Algorithms",
+    "prompt": "Catch binary search’s worst-case time on a sorted array.",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+    ],
+    "correct": [
+      "O(log n)"
+    ],
+    "explanation": "Each comparison halves the remaining range, so about log₂ n comparisons suffice.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "easy",
+    "game": {
+      "template": "falling_blocks",
+      "params": {
+        "speed": 1.0
+      }
+    }
+  },
+  {
+    "id": "falling-merge-space",
+    "format": "game_2d",
+    "topic": "Algorithms",
+    "prompt": "Catch the extra space merge sort needs to sort an array.",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n²)"
+    ],
+    "correct": [
+      "O(n)"
+    ],
+    "explanation": "Merging two sorted halves of an array copies elements into an auxiliary buffer of linear size.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "easy",
+    "game": {
+      "template": "falling_blocks",
+      "params": {
+        "speed": 1.0
+      }
+    }
+  },
+  {
+    "id": "falling-bfs-frontier",
+    "format": "game_2d",
+    "topic": "Algorithms",
+    "prompt": "Catch the structure breadth-first search uses for its frontier.",
+    "options": [
+      "Stack",
+      "Queue",
+      "Heap",
+      "Trie"
+    ],
+    "correct": [
+      "Queue"
+    ],
+    "explanation": "A FIFO queue expands vertices in order of distance, which is what makes the search breadth-first.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "easy",
+    "game": {
+      "template": "falling_blocks",
+      "params": {
+        "speed": 1.0
+      }
+    }
+  },
+  {
+    "id": "falling-dfs-structure",
+    "format": "game_2d",
+    "topic": "Algorithms",
+    "prompt": "Catch the structure that recursive depth-first search uses implicitly.",
+    "options": [
+      "Queue",
+      "Stack",
+      "Heap",
+      "Set"
+    ],
+    "correct": [
+      "Stack"
+    ],
+    "explanation": "Each recursive call pushes a frame onto the call stack, so the most recent vertex is explored first.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "easy",
+    "game": {
+      "template": "falling_blocks",
+      "params": {
+        "speed": 1.0
+      }
+    }
+  },
+  {
+    "id": "falling-dijkstra",
+    "format": "game_2d",
+    "topic": "Algorithms",
+    "prompt": "Catch the structure Dijkstra’s algorithm uses to pick the closest unvisited vertex.",
+    "options": [
+      "Queue",
+      "Stack",
+      "Min-heap",
+      "Trie"
+    ],
+    "correct": [
+      "Min-heap"
+    ],
+    "explanation": "A min-priority queue returns the vertex with the smallest tentative distance in logarithmic time.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "easy",
+    "game": {
+      "template": "falling_blocks",
+      "params": {
+        "speed": 1.0
+      }
+    }
+  },
+  {
+    "id": "falling-generator",
+    "format": "game_2d",
+    "topic": "Programming",
+    "prompt": "Catch the keyword that makes a Python function a generator.",
+    "options": [
+      "return",
+      "yield",
+      "async",
+      "pass"
+    ],
+    "correct": [
+      "yield"
+    ],
+    "explanation": "A function body containing yield returns a generator that produces values lazily.",
+    "sourceId": "python",
+    "sourceURL": "https://docs.python.org/3/tutorial/datastructures.html",
+    "difficulty": "easy",
+    "game": {
+      "template": "falling_blocks",
+      "params": {
+        "speed": 1.0
+      }
+    }
+  },
+  {
+    "id": "falling-immutable",
+    "format": "game_2d",
+    "topic": "Programming",
+    "prompt": "Catch the built-in Python collection that is immutable.",
+    "options": [
+      "list",
+      "dict",
+      "set",
+      "tuple"
+    ],
+    "correct": [
+      "tuple"
+    ],
+    "explanation": "Tuples cannot be changed after creation; lists, dicts, and sets are mutable.",
+    "sourceId": "python",
+    "sourceURL": "https://docs.python.org/3/tutorial/datastructures.html",
+    "difficulty": "easy",
+    "game": {
+      "template": "falling_blocks",
+      "params": {
+        "speed": 1.0
+      }
+    }
+  },
+  {
+    "id": "falling-sjf",
+    "format": "game_2d",
+    "topic": "Operating systems",
+    "prompt": "Catch the scheduler that always runs the shortest job first.",
+    "options": [
+      "FIFO",
+      "SJF",
+      "RR",
+      "MLFQ"
+    ],
+    "correct": [
+      "SJF"
+    ],
+    "explanation": "Shortest Job First minimizes average turnaround time when all jobs arrive together.",
+    "sourceId": "ostep",
+    "sourceURL": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "difficulty": "easy",
+    "game": {
+      "template": "falling_blocks",
+      "params": {
+        "speed": 1.0
+      }
+    }
+  },
+  {
+    "id": "falling-lru",
+    "format": "game_2d",
+    "topic": "Operating systems",
+    "prompt": "Catch the policy that evicts the page unused for the longest time.",
+    "options": [
+      "FIFO",
+      "LRU",
+      "Random",
+      "MRU"
+    ],
+    "correct": [
+      "LRU"
+    ],
+    "explanation": "Least Recently Used approximates the optimal policy by assuming recent use predicts future use.",
+    "sourceId": "ostep",
+    "sourceURL": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "difficulty": "easy",
+    "game": {
+      "template": "falling_blocks",
+      "params": {
+        "speed": 1.0
+      }
+    }
+  },
+  {
+    "id": "falling-read-committed",
+    "format": "game_2d",
+    "topic": "Databases",
+    "prompt": "Catch the weakest isolation level that prevents dirty reads.",
+    "options": [
+      "Read uncommitted",
+      "Read committed",
+      "Repeatable read",
+      "Serializable"
+    ],
+    "correct": [
+      "Read committed"
+    ],
+    "explanation": "Read committed only shows committed data but may return different values when a row is re-read.",
+    "sourceId": "postgres",
+    "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "difficulty": "easy",
+    "game": {
+      "template": "falling_blocks",
+      "params": {
+        "speed": 1.0
+      }
+    }
+  },
+  {
+    "id": "falling-raft-leader",
+    "format": "game_2d",
+    "topic": "Distributed systems",
+    "prompt": "Catch the Raft role that accepts client writes.",
+    "options": [
+      "Follower",
+      "Candidate",
+      "Leader"
+    ],
+    "correct": [
+      "Leader"
+    ],
+    "explanation": "Clients send commands to the leader, which appends them to its log and replicates them to followers.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "easy",
+    "game": {
+      "template": "falling_blocks",
+      "params": {
+        "speed": 1.0
+      }
+    }
+  },
+  {
+    "id": "system-cache",
+    "format": "game_3d",
+    "topic": "Databases",
+    "prompt": "Tap the component that keeps hot keys in memory to avoid repeated database reads.",
+    "options": [
+      "Client",
+      "API",
+      "Cache",
+      "Database"
+    ],
+    "correct": [
+      "Cache"
+    ],
+    "explanation": "A cache stores replaceable copies of frequently read data close to the service.",
+    "sourceId": "postgres",
+    "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "difficulty": "medium",
+    "game": {
+      "template": "system_architecture"
+    }
+  },
+  {
+    "id": "system-queue",
+    "format": "game_3d",
+    "topic": "Distributed systems",
+    "prompt": "Tap the component that lets producers and consumers run at different rates.",
+    "options": [
+      "API",
+      "Queue",
+      "Worker",
+      "Database"
+    ],
+    "correct": [
+      "Queue"
+    ],
+    "explanation": "A queue buffers messages so a burst of producers does not overwhelm slower consumers.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "medium",
+    "game": {
+      "template": "system_architecture"
+    }
+  },
+  {
+    "id": "system-balancer",
+    "format": "game_3d",
+    "topic": "Distributed systems",
+    "prompt": "Tap the component that spreads incoming requests across identical API servers.",
+    "options": [
+      "Client",
+      "Load balancer",
+      "API",
+      "Database"
+    ],
+    "correct": [
+      "Load balancer"
+    ],
+    "explanation": "A load balancer distributes requests so no single server is overloaded and failed servers can be skipped.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "medium",
+    "game": {
+      "template": "system_architecture"
+    }
+  },
+  {
+    "id": "system-client",
+    "format": "game_3d",
+    "topic": "Distributed systems",
+    "prompt": "Tap the component that initiates the HTTP request.",
+    "options": [
+      "Client",
+      "Load balancer",
+      "API",
+      "Cache"
+    ],
+    "correct": [
+      "Client"
+    ],
+    "explanation": "The client sends the request; every other component reacts to it.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "medium",
+    "game": {
+      "template": "system_architecture"
+    }
+  },
+  {
+    "id": "system-durable",
+    "format": "game_3d",
+    "topic": "Databases",
+    "prompt": "Tap the component where a committed transaction becomes durable.",
+    "options": [
+      "API",
+      "Cache",
+      "Queue",
+      "Database"
+    ],
+    "correct": [
+      "Database"
+    ],
+    "explanation": "The database writes committed changes to stable storage, usually through its write-ahead log.",
+    "sourceId": "postgres",
+    "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "difficulty": "medium",
+    "game": {
+      "template": "system_architecture"
+    }
+  },
+  {
+    "id": "system-api",
+    "format": "game_3d",
+    "topic": "Databases",
+    "prompt": "Tap the component that validates requests and applies business rules before storage.",
+    "options": [
+      "Client",
+      "API",
+      "Cache",
+      "Database"
+    ],
+    "correct": [
+      "API"
+    ],
+    "explanation": "The API layer checks input and enforces rules so storage only receives valid changes.",
+    "sourceId": "postgres",
+    "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "difficulty": "medium",
+    "game": {
+      "template": "system_architecture"
+    }
+  },
+  {
+    "id": "system-cache-miss",
+    "format": "game_3d",
+    "topic": "Databases",
+    "prompt": "A cache miss occurs. Tap the component the service reads next.",
+    "options": [
+      "Client",
+      "Cache",
+      "Database",
+      "Load balancer"
+    ],
+    "correct": [
+      "Database"
+    ],
+    "explanation": "On a miss, the service falls back to the system of record and may then populate the cache.",
+    "sourceId": "postgres",
+    "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "difficulty": "medium",
+    "game": {
+      "template": "system_architecture"
+    }
+  },
+  {
+    "id": "system-replica",
+    "format": "game_3d",
+    "topic": "Databases",
+    "prompt": "Tap the component that serves reads from copies of the primary’s writes.",
+    "options": [
+      "Primary database",
+      "Read replica",
+      "API",
+      "Client"
+    ],
+    "correct": [
+      "Read replica"
+    ],
+    "explanation": "A read replica applies the primary’s write-ahead log and serves read-only queries.",
+    "sourceId": "postgres",
+    "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "difficulty": "medium",
+    "game": {
+      "template": "system_architecture"
+    }
+  },
+  {
+    "id": "system-background-job",
+    "format": "game_3d",
+    "topic": "Distributed systems",
+    "prompt": "Tap the component that lets a slow email job finish after the HTTP response is sent.",
+    "options": [
+      "API",
+      "Job queue",
+      "Cache",
+      "Client"
+    ],
+    "correct": [
+      "Job queue"
+    ],
+    "explanation": "Enqueuing the job lets the API respond immediately while a worker sends the email later.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "medium",
+    "game": {
+      "template": "system_architecture"
+    }
+  },
+  {
+    "id": "system-gateway",
+    "format": "game_3d",
+    "topic": "Distributed systems",
+    "prompt": "Tap the component that routes requests to services by URL path.",
+    "options": [
+      "Client",
+      "API gateway",
+      "Database",
+      "Queue"
+    ],
+    "correct": [
+      "API gateway"
+    ],
+    "explanation": "A gateway is the single entry point that forwards each path to the service that owns it.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "medium",
+    "game": {
+      "template": "system_architecture"
+    }
+  },
+  {
+    "id": "system-raft-log",
+    "format": "game_3d",
+    "topic": "Distributed systems",
+    "prompt": "Tap the component a Raft leader writes before replicating an entry.",
+    "options": [
+      "Client",
+      "Leader",
+      "Log storage",
+      "Follower"
+    ],
+    "correct": [
+      "Log storage"
+    ],
+    "explanation": "The leader appends the entry to its persistent log, then sends it to followers in AppendEntries.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "medium",
+    "game": {
+      "template": "system_architecture"
+    }
+  },
+  {
     "id": "live-majority",
     "format": "live",
     "topic": "Distributed systems",

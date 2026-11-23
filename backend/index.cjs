@@ -1,6 +1,6 @@
 'use strict';
 const publicDocuments=require('./public-documents.json');
-const {randomUUID,randomBytes,createPrivateKey,createPublicKey,sign,verify}=require('node:crypto');
+const {randomUUID,randomBytes,randomInt,createPrivateKey,createPublicKey,sign,verify}=require('node:crypto');
 const {SecretsManagerClient,GetSecretValueCommand}=require('@aws-sdk/client-secrets-manager');
 const {DynamoDBClient}=require('@aws-sdk/client-dynamodb');
 const {DynamoDBDocumentClient,GetCommand,PutCommand,QueryCommand,UpdateCommand,TransactWriteCommand,ScanCommand,BatchWriteCommand,DeleteCommand}=require('@aws-sdk/lib-dynamodb');
@@ -217,11 +217,17 @@ async function roomFor(id,sub,requireMember=true){
  if(!room||room.expiresAt<Math.floor(Date.now()/1000))fail(404,'Room not found or expired');
  if(requireMember&&!room.participants.some(p=>p.id===sub))fail(403,'Join this room first');return room;
 }
+function sample(items,count){
+ const copy=[...items];
+ for(let i=copy.length-1;i>0;i--){const j=randomInt(i+1);[copy[i],copy[j]]=[copy[j],copy[i]];}
+ return copy.slice(0,count);
+}
 async function live(event,sub){
  const a=event.arguments,field=event.info.fieldName;
  if(field==='createRoom'){
   if(!['live','collaborative'].includes(a.mode))fail(400,'Unsupported room mode');
-  const id=randomUUID();const room={PK:`ROOM#${id}`,SK:'META',id,hostId:sub,mode:a.mode,participants:[{id:sub,name:'Host',score:0}],expiresAt:Math.floor(Date.now()/1000)+7200,questionIds:(await bank()).filter(q=>q.format==='multiple_choice'&&!q.retired).slice(0,10).map(q=>q.id),version:1};
+  const name=a.name?.trim()?checkString(a.name.trim(),'name',30):'Host';
+  const id=randomUUID();const room={PK:`ROOM#${id}`,SK:'META',id,hostId:sub,mode:a.mode,participants:[{id:sub,name,score:0}],expiresAt:Math.floor(Date.now()/1000)+7200,questionIds:sample((await bank()).filter(q=>q.format==='multiple_choice'&&!q.retired),10).map(q=>q.id),version:1};
   await putFor(sub,{TableName,Item:room,ConditionExpression:'attribute_not_exists(PK)'});return room;
  }
  if(field==='joinRoom'){
@@ -285,4 +291,4 @@ exports.handler=async event=>{
   return json(404,{error:'Route not found'});
  }catch(e){if(event.info)throw new Error(e.status?e.message:'Please retry this operation');console.error(JSON.stringify({event:'request_error',type:e.name,status:e.status||500}));return json(e.status||503,{error:e.status?e.message:'Service temporarily unavailable. Your work can be saved offline.'});}
 };
-exports.clientTimestamp=clientTimestamp;exports.score=score;exports.fallback=fallback;exports.answerSegments=answerSegments;exports.gradingRequest=gradingRequest;exports.parseGrade=parseGrade;
+exports.clientTimestamp=clientTimestamp;exports.score=score;exports.fallback=fallback;exports.answerSegments=answerSegments;exports.gradingRequest=gradingRequest;exports.parseGrade=parseGrade;exports.sample=sample;

@@ -30,13 +30,12 @@ public struct PiyoPiyoRootView: View {
       Text(model.error ?? "")
     }
     .task {
+      await model.loadBank()
       await model.load()
-      var tick = 0
+      await model.sync()
       while !Task.isCancelled {
-        try? await Task.sleep(for: .seconds(1))
-        await model.tick()
-        tick += 1
-        if tick % 30 == 0 { await model.sync() }
+        try? await Task.sleep(for: .seconds(30))
+        await model.sync()
       }
     }
     .onChange(of: scenePhase) { _, phase in
@@ -352,6 +351,7 @@ struct QuizScreen: View {
   @EnvironmentObject private var model: AppModel
   @Environment(\.dismiss) private var dismiss
   @State private var answer: [String] = []
+  @State private var draftSave: Task<Void, Never>?
   var body: some View {
     VStack(spacing: T.none) {
       HStack {
@@ -404,7 +404,8 @@ struct QuizScreen: View {
                 ).textSelection(.enabled)
               }
               QuestionInput(question: q, answer: $answer).id(q.id).disabled(
-                model.feedback != nil || model.busy)
+                model.feedback != nil || model.busy
+              ).environment(\.piyoAnimationsPaused, model.feedback != nil)
               if state.mode == .openBook, let url = URL(string: q.sourceURL), url.scheme == "https"
               {
                 Link(destination: url) { Label("Open reference", systemImage: "book") }.font(
@@ -430,7 +431,16 @@ struct QuizScreen: View {
     }.background(T.surface).onAppear { restoreAnswer() }.onChange(of: model.state?.current?.id) {
       _, _ in restoreAnswer()
     }
-    .onChange(of: answer) { _, value in Task { await model.saveDraft(value) } }
+    .onChange(of: answer) { _, value in
+      draftSave?.cancel()
+      draftSave = Task { await model.saveDraft(value) }
+    }
+    .task(id: model.state?.id) {
+      while model.state?.remaining != nil, model.state?.complete == false, !Task.isCancelled {
+        try? await Task.sleep(for: .seconds(1))
+        await model.tick()
+      }
+    }
     #if os(macOS)
       .frame(
         minWidth: T.size("quizWidth"), idealWidth: T.size("quizIdealWidth"),
@@ -610,7 +620,7 @@ struct RoomContent: View {
           let q = model.questions.first(where: { $0.id == room.questionIds[cursor] })
         {
           Text(q.prompt).font(.title2.bold())
-          Choices(options: q.options, answer: $answer).disabled(submitted || busy)
+          QuestionInput(question: q, answer: $answer).id(q.id).disabled(submitted || busy)
           if submitted {
             Text("Answer recorded").foregroundStyle(T.primary)
             Button("Next question") {
@@ -638,10 +648,11 @@ struct RoomContent: View {
       } else {
         TextField("Your display name", text: $name).textFieldStyle(.roundedBorder)
         HStack {
-          Button("Create live quiz") { perform { try await live.open(mode: "live", auth: auth) } }
-            .buttonStyle(PiyoButton())
+          Button("Create live quiz") {
+            perform { try await live.open(mode: "live", name: name, auth: auth) }
+          }.buttonStyle(PiyoButton())
           Button("Study together") {
-            perform { try await live.open(mode: "collaborative", auth: auth) }
+            perform { try await live.open(mode: "collaborative", name: name, auth: auth) }
           }.buttonStyle(PiyoButton(secondary: true))
         }.disabled(busy)
         VStack(alignment: .leading, spacing: T.md) {
@@ -760,16 +771,18 @@ struct SourcesCard: View {
     let status: String?
     let kind: String
   }
-  private var sources: [Source] {
+  private static let acquired: [Source] = {
     guard let url = Bundle.module.url(forResource: "provenance", withExtension: "json"),
       let data = try? Data(contentsOf: url)
     else { return [] }
-    return (try? JSONDecoder().decode([Source].self, from: data)) ?? []
-  }
+    return ((try? JSONDecoder().decode([Source].self, from: data)) ?? []).filter {
+      $0.status == "acquired"
+    }
+  }()
   var body: some View {
     DisclosureGroup("Sources & original assets") {
       VStack(alignment: .leading, spacing: T.md) {
-        ForEach(sources.filter { $0.status == "acquired" }) { source in
+        ForEach(Self.acquired) { source in
           if let url = URL(string: source.url) {
             Link(source.title ?? source.id, destination: url).font(.subheadline)
           }
