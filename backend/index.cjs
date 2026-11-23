@@ -247,7 +247,7 @@ exports.handler=async event=>{
  try {
   if(event.rawPath==='/account/apple/callback'&&event.requestContext?.http?.method==='GET')return await appleDeletionCallback(event.queryStringParameters);
   if(event.requestContext?.http?.method==='GET'&&Object.hasOwn(publicDocuments,event.rawPath))return {statusCode:200,headers:{'content-type':'text/html; charset=utf-8','cache-control':'public, max-age=3600','x-content-type-options':'nosniff','strict-transport-security':'max-age=31536000','referrer-policy':'no-referrer','content-security-policy':"default-src 'none'; img-src data:; style-src 'unsafe-inline'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'"},body:publicDocuments[event.rawPath]};
-  if(event.rawPath==='/health')return json(200,{service:'PiyoPiyo',status:'ready',version:1});
+  if(event.rawPath==='/health')return json(200,{service:'PiyoPiyo',status:'ready',version:1,releaseCommit:process.env.PIYOPIYO_RELEASE_COMMIT||'local'});
   const claims=event.requestContext?.authorizer?.jwt?.claims||event.identity?.claims;
   const sub=claims?.sub;if(!sub)fail(401,'Sign in to continue');
   if(event.rawPath==='/account/deletion-authorization'&&event.requestContext?.http?.method==='POST')return await beginAppleDeletion(sub,claims.username||claims['cognito:username']);

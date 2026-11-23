@@ -4,12 +4,12 @@ The repository is [grabbiel/piyopiyo](https://github.com/grabbiel/piyopiyo). It 
 
 ## Pull requests and main
 
-The **CI** workflow runs on pull requests, pushes to `main`, and manual dispatch. Its required **Checks** job succeeds only when both suites pass:
+The **CI** workflow runs on pull requests, pushes to `main`, and manual dispatch. Branch protection requires a pull request, an up-to-date passing **Checks** result, linear history and resolved conversations, including for administrators. Force pushes and branch deletion are disabled. No second human approval is required for this single-owner project. **Checks** succeeds only when both suites pass:
 
 - **Backend:** checksum-pinned actionlint and Gitleaks, `npm ci`, TypeScript, credential-free CDK synthesis, CloudFormation lint, the owner-approved grading evidence gate, all backend/infrastructure/deployment tests, and PDF extraction tests. It saves the exact four function ZIPs and template for seven days.
 - **Native:** XcodeGen 2.48.0, Swift functional tests, unsigned Mac/iOS builds, the Sources release build, and iPhone/iPad simulator functional tests on GitHub's macOS 26 runner with Xcode 26.6. Existing pixel baselines were captured on macOS/iOS 27; those rendering comparisons remain a separate local release check rather than being silently re-recorded on a different OS.
 
-Actions are pinned to full commit hashes. External validation binaries have fixed SHA-256 checksums. Dependabot checks npm and action updates monthly, with at most three open PRs per ecosystem. Pull-request jobs have read-only GitHub access and no production secrets. Superseded check jobs are cancelled; deployments and signed releases are serialized without cancelling an active delivery.
+Actions are pinned to full commit hashes, with repository settings enforcing SHA pinning and allowing only GitHub-owned actions plus the specific AWS credentials action. External validation binaries have fixed SHA-256 checksums. Dependabot checks npm and action updates monthly, with at most three open PRs per ecosystem. Pull-request jobs have read-only GitHub access and no production secrets. Superseded check jobs are cancelled; deployments and signed releases are serialized without cancelling an active delivery.
 
 ## AWS delivery
 
@@ -23,7 +23,7 @@ repo:grabbiel@90626364/piyopiyo@1466624853:environment:aws-production
 
 No AWS access key or human SSO credential is stored in GitHub. The role can read/update this app's CloudFormation stack, write/read only its deployment artifact prefixes, and update the four existing app functions using their existing execution roles. It cannot create IAM roles, read the source library or signing secret directly, delete storage, or operate unrelated applications.
 
-`scripts/ci/deploy-policy.cjs` compares the proposed template against the live original template. Only content-addressed `Code.S3Key` updates on the four known functions are accepted. IAM changes, environment/configuration changes, resource removal/addition and replacement are rejected. The CloudFormation change set is inspected again before execution. AWS failure rollback remains enabled. A no-change deployment succeeds. Final checks cover home, health, support, privacy, and the unauthenticated questions endpoint returning 401. Each run retains a deployment record for 30 days.
+`scripts/ci/deploy-policy.cjs` compares the proposed template against the live original template. Only content-addressed `Code.S3Key` updates on the four known functions are accepted. IAM changes, environment/configuration changes, resource removal/addition and replacement are rejected. The CloudFormation change set is inspected again before execution. AWS failure rollback remains enabled. A no-change deployment succeeds. Final checks cover home, health, support, privacy, and the unauthenticated questions endpoint returning 401. Health must also identify the exact tested GitHub commit embedded during bundling. Each run retains a deployment record for 30 days.
 
 Infrastructure changes still follow `scripts/deploy.mjs` with the owner's admin profile and a reviewed change set. A change rejected by automatic delivery is an explicit instruction to use that process; do not bypass the guard. For a code rollback, revert the application commit and merge after CI passes; the previous content-addressed artifacts remain available in app storage.
 

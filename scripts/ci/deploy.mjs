@@ -64,8 +64,9 @@ try {
   proof.smoke=[];
   for(const [path,expected] of [['/',200],['/health',200],['/privacy',200],['/support',200],['/questions',401]]) {
    const response=await fetch(`https://piyopiyo.grabbiel.com${path}`,{signal:AbortSignal.timeout(15000)});
-   await response.arrayBuffer();proof.smoke.push({path,status:response.status});
+   const body=await response.text();proof.smoke.push({path,status:response.status});
    if(response.status!==expected) throw Error(`Post-deploy smoke check failed for ${path}: HTTP ${response.status}`);
+   if(path==='/health'&&proof.commit&&JSON.parse(body).releaseCommit!==proof.commit) throw Error('The live API is not running the tested GitHub commit');
   }
   console.log(`Deployment ${proof.status}; public pages, health, and authentication boundary passed.`);
  }

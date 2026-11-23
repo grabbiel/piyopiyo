@@ -4,7 +4,7 @@ import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 
 await mkdir('artifacts/backend', {recursive:true});
-await build({entryPoints:['backend/index.cjs'],bundle:true,platform:'node',target:'node22',format:'cjs',minify:true,legalComments:'eof',outfile:'artifacts/backend/index.js'});
+await build({entryPoints:['backend/index.cjs'],bundle:true,platform:'node',target:'node22',format:'cjs',minify:true,legalComments:'eof',define:{'process.env.PIYOPIYO_RELEASE_COMMIT':JSON.stringify(process.env.GITHUB_SHA||'local')},outfile:'artifacts/backend/index.js'});
 // Fix timestamps and metadata so identical source/dependencies produce the same archive.
 execFileSync('python3',['-c',[
  'import pathlib, zipfile',

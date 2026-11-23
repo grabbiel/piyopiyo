@@ -70,7 +70,7 @@ jobs:
           ASC_PRIVATE_KEY: ${{ secrets.ASC_PRIVATE_KEY }}
         run: node scripts/ci/apple-upload.mjs
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
-        if: always()
+        if: always() && hashFiles('artifacts/apple-release/manifest.json') != ''
         with:
           name: apple-${{ inputs.version }}-${{ github.run_number }}
           retention-days: 14
