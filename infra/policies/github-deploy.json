@@ -79,7 +79,18 @@
       }
     },
     {
-      "Sid": "ReadExistingExecutionRoles",
+      "Sid": "ReadExistingApiEndpoint",
+      "Effect": "Allow",
+      "Action": [
+        "apigateway:GET"
+      ],
+      "Resource": [
+        "arn:aws:apigateway:us-east-1::/apis/xk4vd8adrd",
+        "arn:aws:apigateway:us-east-1::/domainnames/piyopiyo.grabbiel.com"
+      ]
+    },
+    {
+      "Sid": "ResolveAppRoleAttributes",
       "Effect": "Allow",
       "Action": [
         "iam:GetRole",
@@ -91,19 +102,124 @@
         "arn:aws:iam::992680757326:role/PiyoPiyoDev-ApiExecution19218AAE-UiYjvIm2tZPQ",
         "arn:aws:iam::992680757326:role/PiyoPiyoDev-KnowledgeAPIRole4717F15A-gLS6qevDv0Yx",
         "arn:aws:iam::992680757326:role/PiyoPiyoDev-KnowledgeWorkerRole6EA081DE-WIIdqSVtjRrC",
-        "arn:aws:iam::992680757326:role/PiyoPiyoDev-KnowledgePDFRole5CE8A860-5d5r40MlY28i"
+        "arn:aws:iam::992680757326:role/PiyoPiyoDev-KnowledgePDFRole5CE8A860-5d5r40MlY28i",
+        "arn:aws:iam::992680757326:role/PiyoPiyoDev-LiveAccess0F7C02D3-xhvQBgeOJas4"
       ]
     },
     {
-      "Sid": "ReadExistingApiEndpoint",
+      "Sid": "ListLogMetadataInAppRegion",
       "Effect": "Allow",
       "Action": [
-        "apigateway:GET"
+        "logs:DescribeLogGroups",
+        "logs:DescribeResourcePolicies"
       ],
-      "Resource": "arn:aws:apigateway:us-east-1::/apis/xk4vd8adrd"
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
     },
     {
-      "Sid": "ReadExistingModelProfileAttributes",
+      "Sid": "ReadLogsLogGroupMetadata",
+      "Effect": "Allow",
+      "Action": [
+        "logs:ListTagsForResource",
+        "logs:GetDataProtectionPolicy",
+        "logs:DescribeIndexPolicies"
+      ],
+      "Resource": [
+        "arn:aws:logs:us-east-1:992680757326:log-group:/aws/lambda/piyopiyo-dev-api",
+        "arn:aws:logs:us-east-1:992680757326:log-group:/aws/lambda/piyopiyo-knowledge-api",
+        "arn:aws:logs:us-east-1:992680757326:log-group:/aws/lambda/piyopiyo-knowledge-worker",
+        "arn:aws:logs:us-east-1:992680757326:log-group:/aws/lambda/piyopiyo-knowledge-pdf"
+      ]
+    },
+    {
+      "Sid": "ReadS3BucketMetadata",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetAccelerateConfiguration",
+        "s3:GetLifecycleConfiguration",
+        "s3:GetBucketPublicAccessBlock",
+        "s3:GetAnalyticsConfiguration",
+        "s3:GetBucketCORS",
+        "s3:GetEncryptionConfiguration",
+        "s3:GetInventoryConfiguration",
+        "s3:GetBucketLogging",
+        "s3:GetMetricsConfiguration",
+        "s3:GetBucketNotification",
+        "s3:GetBucketVersioning",
+        "s3:GetReplicationConfiguration",
+        "s3:GetBucketWebsite",
+        "s3:GetBucketObjectLockConfiguration",
+        "s3:GetBucketTagging",
+        "s3:ListTagsForResource",
+        "s3:GetBucketAbac",
+        "s3:GetBucketOwnershipControls",
+        "s3:GetIntelligentTieringConfiguration",
+        "s3:GetBucketMetadataTableConfiguration",
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::piyopiyo-provenance",
+        "arn:aws:s3:::piyopiyo-question-banks",
+        "arn:aws:s3:::piyopiyo-media",
+        "arn:aws:s3:::piyopiyo-knowledge-992680757326"
+      ]
+    },
+    {
+      "Sid": "ReadDynamoDBTableMetadata",
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:DescribeTable",
+        "dynamodb:DescribeContinuousBackups",
+        "dynamodb:DescribeContributorInsights",
+        "dynamodb:DescribeKinesisStreamingDestination",
+        "dynamodb:ListTagsOfResource",
+        "dynamodb:GetResourcePolicy",
+        "dynamodb:DescribeTimeToLive"
+      ],
+      "Resource": [
+        "arn:aws:dynamodb:us-east-1:992680757326:table/PiyoPiyoQuizSessions",
+        "arn:aws:dynamodb:us-east-1:992680757326:table/PiyoPiyoKnowledge"
+      ]
+    },
+    {
+      "Sid": "ReadSQSQueueMetadata",
+      "Effect": "Allow",
+      "Action": [
+        "sqs:GetQueueAttributes",
+        "sqs:ListQueueTags"
+      ],
+      "Resource": [
+        "arn:aws:sqs:us-east-1:992680757326:piyopiyo-knowledge.fifo"
+      ]
+    },
+    {
+      "Sid": "ReadAppSyncGraphQLApiMetadata",
+      "Effect": "Allow",
+      "Action": [
+        "appsync:GetGraphqlApi",
+        "appsync:GetGraphqlApiEnvironmentVariables",
+        "appsync:ListTagsForResource"
+      ],
+      "Resource": [
+        "arn:aws:appsync:us-east-1:992680757326:apis/bchln5bvojh2zda2sxeigcsqp4"
+      ]
+    },
+    {
+      "Sid": "ReadAppSyncDataSourceMetadata",
+      "Effect": "Allow",
+      "Action": [
+        "appsync:GetDataSource"
+      ],
+      "Resource": [
+        "arn:aws:appsync:us-east-1:992680757326:apis/bchln5bvojh2zda2sxeigcsqp4/datasources/LiveRuntime"
+      ]
+    },
+    {
+      "Sid": "ReadAppProfileOutputs",
       "Effect": "Allow",
       "Action": [
         "bedrock:GetInferenceProfile",
@@ -111,6 +227,11 @@
       ],
       "Resource": [
         "arn:aws:bedrock:us-east-1:992680757326:application-inference-profile/yfevvxi4bbi9",
+        "arn:aws:bedrock:us-east-1:992680757326:application-inference-profile/jzmiq7a4t41v",
+        "arn:aws:bedrock:us-east-1:992680757326:application-inference-profile/3oog2y10vrgd",
+        "arn:aws:bedrock:us-east-1:992680757326:application-inference-profile/t9c4f6fzj7ci",
+        "arn:aws:bedrock:us-east-1:992680757326:application-inference-profile/6jt2igsvo17t",
+        "arn:aws:bedrock:us-east-1:992680757326:application-inference-profile/n7xh1dhwaw8u",
         "arn:aws:bedrock:us-east-1:992680757326:application-inference-profile/7z9pcwixgslg"
       ]
     }
