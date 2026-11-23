@@ -45,6 +45,7 @@ jobs:
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: backend-${{ github.sha }}
+          overwrite: true
           retention-days: 7
           if-no-files-found: error
           path: |
@@ -78,7 +79,7 @@ jobs:
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         if: failure()
         with:
-          name: native-failure-${{ github.run_id }}
+          name: native-failure-${{ github.run_id }}-${{ github.run_attempt }}
           retention-days: 7
           include-hidden-files: true
           path: .agent/ci-logs/
@@ -148,6 +149,6 @@ jobs:
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         if: always() && steps.revision.outputs.current == 'true'
         with:
-          name: deployment-${{ github.sha }}
+          name: deployment-${{ github.sha }}-${{ github.run_attempt }}
           retention-days: 30
           path: artifacts/ci/deployment.json

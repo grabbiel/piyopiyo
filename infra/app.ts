@@ -45,11 +45,15 @@ const gradingApproval=require('../scripts/grading-gate.cjs').verifyGradingReleas
 const http=new api.CfnApi(stack,'HttpApi',{name:'piyopiyo-dev',protocolType:'HTTP'});
 const backendArtifact=JSON.parse(readFileSync('artifacts/backend/manifest.json','utf8'));
 const fn = new lambda.Function(stack,'ApiFunction',{functionName:'piyopiyo-dev-api',runtime:lambda.Runtime.NODEJS_22_X,architecture:lambda.Architecture.ARM_64,handler:'index.handler',code:lambda.Code.fromBucket(buckets.provenance,backendArtifact.key),role:execution,logGroup:group,memorySize:256,timeout:Duration.seconds(20),reservedConcurrentExecutions:2,environment:{GRADING_APPROVED_MODEL:gradingApproval.modelId||'',GRADING_MODEL_FAMILY:gradingApproval.modelFamily||'haiku45',GRADING_ENABLED:String(gradingApproval.enabled===true),APPLE_CLIENT_ID:'app.piyopiyo.login',APPLE_TEAM_ID:'3LYWV7T9MT',APPLE_KEY_ID:'9DF3M5V2LP',APPLE_KEY_SECRET_ARN:appleSecret.ref,APPLE_CALLBACK_URL:`${http.attrApiEndpoint}/account/apple/callback`,USER_POOL_ID:pool.userPoolId,TABLE_NAME:table.tableName,QUESTION_BUCKET:buckets['question-banks'].bucketName,GRADING_MODEL:haiku45Profile.attrInferenceProfileArn}});
+// Fixed-name references keep code delivery from reevaluating IAM policies and
+// integrations. Explicit creation dependencies preserve bootstrap ordering.
+const apiReference=lambda.Function.fromFunctionName(stack,'ApiReference','piyopiyo-dev-api');
 execution.addToPolicy(new iam.PolicyStatement({actions:['bedrock:InvokeModel'],resources:[haiku45Profile.attrInferenceProfileArn]}));
 execution.addToPolicy(new iam.PolicyStatement({actions:['bedrock:InvokeModel'],resources:['us-east-1','us-east-2','us-west-2'].map(region=>`arn:aws:bedrock:${region}::foundation-model/anthropic.claude-haiku-4-5-20251001-v1:0`),conditions:{StringEquals:{'bedrock:InferenceProfileArn':haiku45Profile.attrInferenceProfileArn}}}));
 const authorizer=new api.CfnAuthorizer(stack,'Authorizer',{apiId:http.ref,authorizerType:'JWT',identitySource:['$request.header.Authorization'],name:'Cognito',jwtConfiguration:{audience:[client.userPoolClientId],issuer:pool.userPoolProviderUrl}});
 knowledge(stack,buckets.provenance,buckets['question-banks'],http,authorizer);
-const integration=new api.CfnIntegration(stack,'Integration',{apiId:http.ref,integrationType:'AWS_PROXY',integrationUri:fn.functionArn,payloadFormatVersion:'2.0',timeoutInMillis:22000});
+const integration=new api.CfnIntegration(stack,'Integration',{apiId:http.ref,integrationType:'AWS_PROXY',integrationUri:apiReference.functionArn,payloadFormatVersion:'2.0',timeoutInMillis:22000});
+integration.addDependency(fn.node.defaultChild as lambda.CfnFunction);
 const publicRoutes=['GET /','GET /health','GET /account/apple/callback','GET /privacy','GET /support'];
 for(const key of ['GET /','GET /privacy','GET /support','GET /health','GET /questions','GET /quizzes','GET /progress','POST /quiz','GET /quiz/{sessionId}','POST /quiz/{sessionId}/attempts','POST /quiz/{sessionId}/evaluate','POST /diagnostics','DELETE /account','POST /account/deletion-authorization','GET /account/apple/callback']) new api.CfnRoute(stack,key.replace(/[^a-zA-Z]/g,''),{apiId:http.ref,routeKey:key,target:`integrations/${integration.ref}`,authorizationType:publicRoutes.includes(key)?'NONE':'JWT',authorizerId:publicRoutes.includes(key)?undefined:authorizer.ref,authorizationScopes:publicRoutes.includes(key)?undefined:['openid','aws.cognito.signin.user.admin']});
 const stage=new api.CfnStage(stack,'Stage',{apiId:http.ref,stageName:'$default',autoDeploy:true,defaultRouteSettings:{throttlingBurstLimit:10,throttlingRateLimit:5}});
@@ -63,9 +67,14 @@ new CfnOutput(stack,'WebsiteUrl',{value:'https://piyopiyo.grabbiel.com'});
 new CfnOutput(stack,'WebsiteDnsTarget',{value:websiteDomain.attrRegionalDomainName});
 new CfnOutput(stack,'WebsiteCertificateArn',{value:websiteCertificate.certificateArn});
 fn.addPermission('HttpInvoke',{principal:new iam.ServicePrincipal('apigateway.amazonaws.com'),sourceArn:`arn:aws:execute-api:us-east-1:${identity.Account}:${http.ref}/*`,sourceAccount:identity.Account});
+const httpPermission=fn.node.findChild('HttpInvoke') as lambda.CfnPermission;
+httpPermission.functionName=apiReference.functionArn;
+httpPermission.addDependency(fn.node.defaultChild as lambda.CfnFunction);
 const live=new appsync.GraphqlApi(stack,'Live',{name:'piyopiyo-dev-live',definition:appsync.Definition.fromFile('backend/schema.graphql'),authorizationConfig:{defaultAuthorization:{authorizationType:appsync.AuthorizationType.USER_POOL,userPoolConfig:{userPool:pool}}},xrayEnabled:false});
 const liveRole = new iam.Role(stack,'LiveAccess',{assumedBy:new iam.ServicePrincipal('appsync.amazonaws.com',{conditions:{StringEquals:{'aws:SourceAccount':identity.Account},ArnEquals:{'aws:SourceArn':live.arn}}}),description:'PiyoPiyo live API invokes only its application function'});
-const ds=new appsync.LambdaDataSource(stack,'LiveRuntime',{api:live,lambdaFunction:fn,serviceRole:liveRole});
+const ds=new appsync.LambdaDataSource(stack,'LiveRuntime',{api:live,lambdaFunction:apiReference,serviceRole:liveRole});
+ds.node.addDependency(fn);
+liveRole.node.findChild('DefaultPolicy').node.addDependency(fn);
 for(const [typeName,fieldName] of [['Query','room'],['Mutation','createRoom'],['Mutation','joinRoom'],['Mutation','submitAnswer'],['Subscription','onAnswer']]) ds.createResolver(`${typeName}${fieldName}`,{typeName,fieldName});
 new cw.Alarm(stack,'LambdaErrorRate',{metric:new cw.MathExpression({expression:'IF(invocations>0,100*errors/invocations,0)',usingMetrics:{errors:fn.metricErrors({statistic:'Sum'}),invocations:fn.metricInvocations({statistic:'Sum'})}}),threshold:1,evaluationPeriods:2,treatMissingData:cw.TreatMissingData.NOT_BREACHING});
 new cw.Alarm(stack,'TableThrottles',{metric:table.metric('ThrottledRequests',{statistic:'Sum'}),threshold:1,evaluationPeriods:1,treatMissingData:cw.TreatMissingData.NOT_BREACHING});

@@ -4,6 +4,18 @@ const fs=require('node:fs');
 const template=JSON.parse(fs.readFileSync('cdk.out/PiyoPiyoDev.template.json','utf8'));
 const resources=Object.values(template.Resources);
 const ofType=t=>resources.filter(r=>r.Type===t);
+test('fixed-name Lambda code updates do not invalidate dependent IAM policies or integrations',()=>{
+ const functions=new Set(Object.entries(template.Resources).filter(([,r])=>r.Type==='AWS::Lambda::Function').map(([id])=>id));
+ function inspect(value){
+  if(!value||typeof value!=='object')return;
+  const attribute=value['Fn::GetAtt'];
+  if(attribute)assert.ok(!functions.has(Array.isArray(attribute)?attribute[0]:attribute.split('.')[0]),'Use a fixed function ARN and an explicit creation dependency');
+  for(const child of Object.values(value))inspect(child);
+ }
+ for(const resource of resources)inspect(resource.Properties);
+ for(const resource of ofType('AWS::Lambda::Permission'))assert.ok(resource.DependsOn.some(id=>functions.has(id)));
+ for(const resource of ofType('AWS::ApiGatewayV2::Integration'))assert.ok(resource.DependsOn.some(id=>functions.has(id)));
+});
 test('storage is private, encrypted, versioned, and retained',()=>{
  assert.equal(ofType('AWS::S3::Bucket').length,4);
  for(const r of ofType('AWS::S3::Bucket')) {

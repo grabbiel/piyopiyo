@@ -63,7 +63,7 @@ with tempfile.TemporaryDirectory(prefix='piyopiyo-signing-',dir=os.environ.get('
         assert app_info['CFBundleIdentifier']=='app.piyopiyo.iphone'
         assert app_info['CFBundleShortVersionString']==version and app_info['CFBundleVersion']==build
         assert app_info['UIDeviceFamily']==[1,2] and len(app_info['UISupportedInterfaceOrientations'])==4
-        logged('mac-build',['xcodebuild','-project','PiyoPiyo/PiyoPiyo.xcodeproj','-scheme','PiyoPiyo-macOS','-configuration','Release','-destination','platform=macOS','-derivedDataPath',str(root/'DerivedData/apple-mac'),*settings,f'CODE_SIGN_IDENTITY={mac_identity}','build'])
+        logged('mac-build',['xcodebuild','-project','PiyoPiyo/PiyoPiyo.xcodeproj','-scheme','PiyoPiyo-macOS','-configuration','Release','-destination','platform=macOS','-derivedDataPath',str(root/'DerivedData/apple-mac'),*settings,'CODE_SIGN_STYLE=Manual',f'CODE_SIGN_IDENTITY={mac_identity}','build'])
         main=output/'PiyoPiyo.app';shutil.copytree(root/'DerivedData/apple-mac/Build/Products/Release/PiyoPiyo.app',main)
         source_env={**os.environ,'PIYOPIYO_RELEASE_DIR':str(output),'PIYOPIYO_SOURCES_VERSION':version,'PIYOPIYO_BUILD_NUMBER':build,'PIYOPIYO_SIGNING_IDENTITY':mac_identity}
         logged('sources-package',['python3','scripts/package-sources.py'],env=source_env)
