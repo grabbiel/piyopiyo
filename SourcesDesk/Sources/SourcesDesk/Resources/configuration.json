@@ -1,0 +1,10 @@
+{
+  "ApiUrl": "https://xk4vd8adrd.execute-api.us-east-1.amazonaws.com",
+  "UserPoolId": "us-east-1_dJ1jTXRS1",
+  "ClientId": "7rtsh51resu37vac6qrvnmobdf",
+  "IdentityPoolId": "us-east-1:66e36e02-0ec5-4840-ba2e-cfb296345397",
+  "AuthDomain": "https://piyopiyo-992680757326-dev.auth.us-east-1.amazoncognito.com",
+  "LiveUrl": "https://hmjmoqj5szcsfa4jisyjnvn7ji.appsync-api.us-east-1.amazonaws.com/graphql",
+  "Region": "us-east-1",
+  "TableName": "PiyoPiyoQuizSessions"
+}

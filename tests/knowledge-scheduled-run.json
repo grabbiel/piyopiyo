@@ -1,0 +1,15 @@
+{
+  "observedAt": "2026-11-23T15:36:59.026Z",
+  "trigger": "EventBridge Scheduler",
+  "schedule": "Monday, Wednesday, Friday at 10:30 America/Lima",
+  "jobId": "3e6b045b-f8b0-40ff-b1a6-ebb888cb75b2",
+  "status": "completed",
+  "completedAt": "2026-11-23T15:30:37.716Z",
+  "published": 1,
+  "rejected": 2,
+  "sourceId": "e78cebf4a184c1f47f49b7166b75622abc73a847c1426cce8e6a6f18c95e6d37",
+  "publishedQuestionIds": [
+    "generated-6012677ce0147cc2a70fab17"
+  ],
+  "evidenceSource": "DynamoDB job and batch records, private S3 batch details"
+}

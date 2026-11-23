@@ -1,0 +1,9 @@
+PiyoPiyo original learning notes: hash tables
+
+A hash table uses a hash function to map a key to a bucket. Different keys can map to the same bucket; this is a collision. Correct implementations compare the original keys when resolving collisions, so a collision does not imply that the keys are equal.
+
+Separate chaining stores colliding entries in a collection associated with each bucket. Open addressing keeps entries in the table itself and searches other slots according to a probing rule. These are alternative collision-resolution strategies.
+
+The load factor is the number of stored entries divided by the number of buckets or slots. For a table with 8 slots and 6 entries, the load factor is 0.75. Implementations often resize when the load factor grows beyond a chosen threshold. Resizing generally requires computing positions for the entries in the new table.
+
+Expected constant-time lookup requires assumptions about hashing and load. It is not a worst-case guarantee for every possible key set. A poor hash function can direct many distinct keys to the same bucket and degrade lookup performance.

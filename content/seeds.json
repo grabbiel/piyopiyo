@@ -1,0 +1,1282 @@
+[
+  {
+    "seed_id": "sha256:683cfa3eff3f35dc7cd46eb9da81e93d0e1cb95c15d30e173d3da067f5a06a13",
+    "source_url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/syllabus/",
+    "source_title": "MIT 6.006 syllabus",
+    "topic": "Algorithms",
+    "concept": "Class Meeting Times",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:683cfa3eff3f35dc7cd46eb9da81e93d0e1cb95c15d30e173d3da067f5a06a13",
+    "page": 1,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:7047deb7305ff6e06a0061236788950350522322bf76a832355fc571e9abeed3",
+    "source_url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "source_title": "MIT 6.006 course review",
+    "topic": "Algorithms",
+    "concept": "Introduction to Algorithms: 6.006",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:7047deb7305ff6e06a0061236788950350522322bf76a832355fc571e9abeed3",
+    "page": 1,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:3f82ba0b05ebbfb4cc1d2efc2eb44f2211fd4657872eb6b09c6fd2f449990d67",
+    "source_url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "source_title": "MIT 6.006 course review",
+    "topic": "Algorithms",
+    "concept": "Lecture 20: Course Review                                                           2",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:3f82ba0b05ebbfb4cc1d2efc2eb44f2211fd4657872eb6b09c6fd2f449990d67",
+    "page": 2,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:a7fed4a7d0bf345155d732925311fb21012a485c6304ee8cf5a243786f371a44",
+    "source_url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "source_title": "MIT 6.006 course review",
+    "topic": "Algorithms",
+    "concept": "Lecture 20: Course Review                                                         3",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:a7fed4a7d0bf345155d732925311fb21012a485c6304ee8cf5a243786f371a44",
+    "page": 3,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:1336d8cb04bd9e6d26b491c08f73664764326171c033fef7190ed64bd751a774",
+    "source_url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "source_title": "MIT 6.006 course review",
+    "topic": "Algorithms",
+    "concept": "MIT OpenCourseWare",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:1336d8cb04bd9e6d26b491c08f73664764326171c033fef7190ed64bd751a774",
+    "page": 4,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:e95aa03675f3ff5bb314b56fb7b05f61a176b068e756fc48480bec3c128a9517",
+    "source_url": "https://courseweb.sp.cs.cmu.edu/15-440/fall-2026/syllabus/",
+    "source_title": "CMU 15-440 Distributed Systems",
+    "topic": "Distributed systems",
+    "concept": "Prerequisites",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:e95aa03675f3ff5bb314b56fb7b05f61a176b068e756fc48480bec3c128a9517",
+    "page": 1,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:0a5191b4bc58b270e1812e4cb0e24d3387ade1308184c9227ffd394ac30c0ceb",
+    "source_url": "https://courseweb.sp.cs.cmu.edu/15-440/fall-2026/syllabus/",
+    "source_title": "CMU 15-440 Distributed Systems",
+    "topic": "Distributed systems",
+    "concept": "Prerequisites",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:0a5191b4bc58b270e1812e4cb0e24d3387ade1308184c9227ffd394ac30c0ceb",
+    "page": 1,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:0bd488a13abf8579a739d62a74c5881f217907433eb363b76d38c8f042faef55",
+    "source_url": "https://courseweb.sp.cs.cmu.edu/15-440/fall-2026/syllabus/",
+    "source_title": "CMU 15-440 Distributed Systems",
+    "topic": "Distributed systems",
+    "concept": "Prerequisites",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:0bd488a13abf8579a739d62a74c5881f217907433eb363b76d38c8f042faef55",
+    "page": 1,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:4773d77c3cdfebdcba58d6c616c1f935c0547bb581fb5d55d3a4a9a4bc16f603",
+    "source_url": "https://courseweb.sp.cs.cmu.edu/15-440/fall-2026/syllabus/",
+    "source_title": "CMU 15-440 Distributed Systems",
+    "topic": "Distributed systems",
+    "concept": "Prerequisites",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:4773d77c3cdfebdcba58d6c616c1f935c0547bb581fb5d55d3a4a9a4bc16f603",
+    "page": 1,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:65cf0db42b6b9d5e5842bf0b8454f6ac69a42bc435ac76cc96f376cd2cf01912",
+    "source_url": "https://courseweb.sp.cs.cmu.edu/15-440/fall-2026/syllabus/",
+    "source_title": "CMU 15-440 Distributed Systems",
+    "topic": "Distributed systems",
+    "concept": "Prerequisites",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:65cf0db42b6b9d5e5842bf0b8454f6ac69a42bc435ac76cc96f376cd2cf01912",
+    "page": 1,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:e32bf3956555c7337cd65f50f19cb8b418b8d3fc0a15d89b265b1360f17f189b",
+    "source_url": "https://courseweb.sp.cs.cmu.edu/15-440/fall-2026/syllabus/",
+    "source_title": "CMU 15-440 Distributed Systems",
+    "topic": "Distributed systems",
+    "concept": "Prerequisites",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:e32bf3956555c7337cd65f50f19cb8b418b8d3fc0a15d89b265b1360f17f189b",
+    "page": 1,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:254fcc5d7eabb5dda8620f36904cc2e092841a295bb4db089ec914f422b6eb4d",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "In Search of an Understandable Consensus Algorithm",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:254fcc5d7eabb5dda8620f36904cc2e092841a295bb4db089ec914f422b6eb4d",
+    "page": 1,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:bc8dddd244933393c70483c0c60d1f7919280ec3e4c51d01f566a4628646224c",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "In Search of an Understandable Consensus Algorithm",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:bc8dddd244933393c70483c0c60d1f7919280ec3e4c51d01f566a4628646224c",
+    "page": 1,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:0f8c8ab4a8ba74324fc53a91b2e0c219136184fb563a9846bd9dca6dec10213d",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "tency of the logs: faulty clocks and extreme message",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:0f8c8ab4a8ba74324fc53a91b2e0c219136184fb563a9846bd9dca6dec10213d",
+    "page": 2,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:f55999e73e783f92d9d03e01eb741b09599cf0650a681c98d35073f9ed62b175",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "tency of the logs: faulty clocks and extreme message",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:f55999e73e783f92d9d03e01eb741b09599cf0650a681c98d35073f9ed62b175",
+    "page": 2,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:8d79c40d469f6796aacb020579962b01611cc37bfd0759ad6f59d9763de73e94",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "from each other and from Lamport\u2019s sketches. Systems                   There were numerous points in the design of Raft",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:8d79c40d469f6796aacb020579962b01611cc37bfd0759ad6f59d9763de73e94",
+    "page": 3,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:f73b984a4486a48e4838160e6f4f57abb77d75d1e30550eaa076396c315dfef5",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "from each other and from Lamport\u2019s sketches. Systems                   There were numerous points in the design of Raft",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:f73b984a4486a48e4838160e6f4f57abb77d75d1e30550eaa076396c315dfef5",
+    "page": 3,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:3839946acbc37b82f724c2a9b14260447776be95abef7032357ce77a1d2b48c6",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "State                                                          RequestVote RPC",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:3839946acbc37b82f724c2a9b14260447776be95abef7032357ce77a1d2b48c6",
+    "page": 4,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:ccd8afe742e1558c7ad29c80b7b037bf8a662c709596df69300479bd9e1ba4b6",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "State                                                          RequestVote RPC",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:ccd8afe742e1558c7ad29c80b7b037bf8a662c709596df69300479bd9e1ba4b6",
+    "page": 4,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:85475d0e09d37c0254f565f1fe78b9c26baa1f53665a54dfe34e92d16d721e87",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "Election Safety: at most one leader can be elected in a",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:85475d0e09d37c0254f565f1fe78b9c26baa1f53665a54dfe34e92d16d721e87",
+    "page": 5,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:9ee14a85adf7edd39c424d1f712199f831258ddf67001db5138fc6159fa16d98",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "Election Safety: at most one leader can be elected in a",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:9ee14a85adf7edd39c424d1f712199f831258ddf67001db5138fc6159fa16d98",
+    "page": 5,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:b1ef1cc591eeeb783fb80f0b83006dbd47661482b56a24cd7d14c3b7ce559254",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "RPCs from a leader or candidate. Leaders send periodic",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:b1ef1cc591eeeb783fb80f0b83006dbd47661482b56a24cd7d14c3b7ce559254",
+    "page": 6,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:d116fa8288cbcab20957b0e069d998197b2d713eab3c894369a9b37b5708a04e",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "RPCs from a leader or candidate. Leaders send periodic",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:d116fa8288cbcab20957b0e069d998197b2d713eab3c894369a9b37b5708a04e",
+    "page": 6,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:8fc6de183fa4c14a5e1f455a7b087d5ea927e0cd26da24abdb6ddda959420972",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "tifying its position in the log.",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:8fc6de183fa4c14a5e1f455a7b087d5ea927e0cd26da24abdb6ddda959420972",
+    "page": 7,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:b617bb81fdd8b7109121ab0a577149ac62577aeb663a4f3467763ae264d20c29",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "tifying its position in the log.",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:b617bb81fdd8b7109121ab0a577149ac62577aeb663a4f3467763ae264d20c29",
+    "page": 7,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:38ba3ac8769b91ae7c619714c2314576c0156746a592811a12fb5a5b3349bf33",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "can include the term of the conflicting entry and the first",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:38ba3ac8769b91ae7c619714c2314576c0156746a592811a12fb5a5b3349bf33",
+    "page": 8,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:72f1aa62bf01d85ac6146a8de49b419f206eddfd2210b7ce471d52dc7095e1cf",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "can include the term of the conflicting entry and the first",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:72f1aa62bf01d85ac6146a8de49b419f206eddfd2210b7ce471d52dc7095e1cf",
+    "page": 8,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:cea70cde979569e6cfb4a168c12d40f14960d3d4e9ba2beb7e67a4f377b18c3a",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "leaderU , as shown in Figure 9. The voter is key to",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:cea70cde979569e6cfb4a168c12d40f14960d3d4e9ba2beb7e67a4f377b18c3a",
+    "page": 9,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:4efaeea4ad56decb3da049ea2cefce9f111d29ad4a9098aa32a5a77fbd6b5729",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "leaderU , as shown in Figure 9. The voter is key to",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:4efaeea4ad56decb3da049ea2cefce9f111d29ad4a9098aa32a5a77fbd6b5729",
+    "page": 9,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:4e03e38e9113fc5502df107f768d7fc21d025c892c82edd186cdedd7de909218",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "5.5 Follower and candidate crashes",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:4e03e38e9113fc5502df107f768d7fc21d025c892c82edd186cdedd7de909218",
+    "page": 10,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:835e794d4992d13b92f72c5f15e093d427d2cec0e89d3b840d8e92645094f0a5",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "5.5 Follower and candidate crashes",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:835e794d4992d13b92f72c5f15e093d427d2cec0e89d3b840d8e92645094f0a5",
+    "page": 10,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:904ee692424cd3ac8a5ba9a2728eaab30b41b33f587d180e68411575d776dbcb",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "There are three more issues to address for reconfigura-",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:904ee692424cd3ac8a5ba9a2728eaab30b41b33f587d180e68411575d776dbcb",
+    "page": 11,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:52e4c621857fed5cb6ff689cbed9f07ce9759d7ed7fc316471309cb1732cfbe3",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "There are three more issues to address for reconfigura-",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:52e4c621857fed5cb6ff689cbed9f07ce9759d7ed7fc316471309cb1732cfbe3",
+    "page": 11,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:3d589ab0beedb91b79b42bdc8518b451a4095ab7b5060e5a92b66f50acee71ea",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "InstallSnapshot RPC",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:3d589ab0beedb91b79b42bdc8518b451a4095ab7b5060e5a92b66f50acee71ea",
+    "page": 12,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:e4178ba66b90923041e52e7af2dd1a613be7eeb9584e36cf07a5ff2bc478dbe8",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "InstallSnapshot RPC",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:e4178ba66b90923041e52e7af2dd1a613be7eeb9584e36cf07a5ff2bc478dbe8",
+    "page": 12,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:4ded7bff831075e9c96d439966e80891f5ce8138fd9ae81a3584932bce890819",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "lowers, just followers can now reorganize their data.                 crashes after committing the log entry but before respond-",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:4ded7bff831075e9c96d439966e80891f5ce8138fd9ae81a3584932bce890819",
+    "page": 13,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:164be7fc40d01499d6e3babd4f1431e27a44e9303b0460a24570802784c110a3",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "lowers, just followers can now reorganize their data.                 crashes after committing the log entry but before respond-",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:164be7fc40d01499d6e3babd4f1431e27a44e9303b0460a24570802784c110a3",
+    "page": 13,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:472e94b1e8f79d9d0b13e6f51a44477d82d3fd6169f4c3405189fd096dc63231",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "20",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:472e94b1e8f79d9d0b13e6f51a44477d82d3fd6169f4c3405189fd096dc63231",
+    "page": 14,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:10bd40418e21ef58928b2073079cf779ff8f007ce3727c9ef34874ab5fd4d10e",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "20",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:10bd40418e21ef58928b2073079cf779ff8f007ce3727c9ef34874ab5fd4d10e",
+    "page": 14,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:b662441abeb5f8195484e1e0ea59dce2f77c525139e8a4b3b80578c4360f13ed",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "100%",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:b662441abeb5f8195484e1e0ea59dce2f77c525139e8a4b3b80578c4360f13ed",
+    "page": 15,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:0c2587fca94fbd1bfda150aeb6908572e8fd4d104201af70247258a8dd00f1cb",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "100%",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:0c2587fca94fbd1bfda150aeb6908572e8fd4d104201af70247258a8dd00f1cb",
+    "page": 15,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:6c48ddbb4ab5b276cf493a1c8f2cd0e17bafeb02ed8ac5e62eb16571e2990ba4",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "trates as much functionality as possible in the leader. This           Several different approaches for cluster member-",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:6c48ddbb4ab5b276cf493a1c8f2cd0e17bafeb02ed8ac5e62eb16571e2990ba4",
+    "page": 16,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:de54f05735243edf06a7b353f54cb70647d6f4976de3bed3a9c224de7ad52dfb",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "trates as much functionality as possible in the leader. This           Several different approaches for cluster member-",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:de54f05735243edf06a7b353f54cb70647d6f4976de3bed3a9c224de7ad52dfb",
+    "page": 16,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:1d6106f2b5cc315d82e9f7af434a45b7b7d0f11f3d1091fe5417f30989fa54fc",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "Daniel Giffin, Arjun Gopalan, Jon Howell, Vimalkumar                  [7] C OUSINEAU , D., D OLIGEZ , D., L AMPORT, L., M ERZ ,",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:1d6106f2b5cc315d82e9f7af434a45b7b7d0f11f3d1091fe5417f30989fa54fc",
+    "page": 17,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:4ccf696d7c456c98336cefd4da1a2bb87fd2ac6ee5363792b4b952eda1a0df47",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "Daniel Giffin, Arjun Gopalan, Jon Howell, Vimalkumar                  [7] C OUSINEAU , D., D OLIGEZ , D., L AMPORT, L., M ERZ ,",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:4ccf696d7c456c98336cefd4da1a2bb87fd2ac6ee5363792b4b952eda1a0df47",
+    "page": 17,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:4e4f1accf86291e69a05ca007364087e1392b3e0f4fa3e252c3e66db4101320a",
+    "source_url": "https://raft.github.io/raft.pdf",
+    "source_title": "In Search of an Understandable Consensus Algorithm",
+    "topic": "Distributed systems",
+    "concept": "[24] L ORCH , J. R., A DYA , A., B OLOSKY, W. J., C HAIKEN ,               http://ramcloud.stanford.edu/\u02dcongaro/",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:4e4f1accf86291e69a05ca007364087e1392b3e0f4fa3e252c3e66db4101320a",
+    "page": 18,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:b3d876d11b4550386975a9259b437d3f9b1e258488f44a3d32bb3ed879279748",
+    "source_url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "source_title": "OSTEP: Concurrency introduction",
+    "topic": "Operating systems",
+    "concept": "26",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:b3d876d11b4550386975a9259b437d3f9b1e258488f44a3d32bb3ed879279748",
+    "page": 1,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:78016870ee43fccc493a28a7721aadbe8e46eef798883e332b82bec2eb34502d",
+    "source_url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "source_title": "OSTEP: Concurrency introduction",
+    "topic": "Operating systems",
+    "concept": "2                                         C ONCURRENCY: A N I NTRODUCTION",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:78016870ee43fccc493a28a7721aadbe8e46eef798883e332b82bec2eb34502d",
+    "page": 2,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:9820b1c023d881190555b57d4e5f378544d6efc1e36bc30c2178b716017f0010",
+    "source_url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "source_title": "OSTEP: Concurrency introduction",
+    "topic": "Operating systems",
+    "concept": "C ONCURRENCY: A N I NTRODUCTION                                              3",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:9820b1c023d881190555b57d4e5f378544d6efc1e36bc30c2178b716017f0010",
+    "page": 3,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:eaa94d9f7cb41abcca75e7c9e4b20a8615f339a26b9462513370d9b2b0341e9d",
+    "source_url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "source_title": "OSTEP: Concurrency introduction",
+    "topic": "Operating systems",
+    "concept": "C ONCURRENCY: A N I NTRODUCTION                                              3",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:eaa94d9f7cb41abcca75e7c9e4b20a8615f339a26b9462513370d9b2b0341e9d",
+    "page": 3,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:4171542daa146a4d180ac4f702e63f32cee69724fdebb9bf0bcfeb179b4d8380",
+    "source_url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "source_title": "OSTEP: Concurrency introduction",
+    "topic": "Operating systems",
+    "concept": "4                                    C ONCURRENCY: A N I NTRODUCTION",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:4171542daa146a4d180ac4f702e63f32cee69724fdebb9bf0bcfeb179b4d8380",
+    "page": 4,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:cd7d0f0064d8884d59076d1a43fa9fafd61e42d329ec431aa7b1db22af68ba2d",
+    "source_url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "source_title": "OSTEP: Concurrency introduction",
+    "topic": "Operating systems",
+    "concept": "C ONCURRENCY: A N I NTRODUCTION                                                    5",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:cd7d0f0064d8884d59076d1a43fa9fafd61e42d329ec431aa7b1db22af68ba2d",
+    "page": 5,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:47d30de5dde75e324d40ad498063a5d0cb347104f83c6b7b6a92ef4a6e0bc853",
+    "source_url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "source_title": "OSTEP: Concurrency introduction",
+    "topic": "Operating systems",
+    "concept": "6                                       C ONCURRENCY: A N I NTRODUCTION",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:47d30de5dde75e324d40ad498063a5d0cb347104f83c6b7b6a92ef4a6e0bc853",
+    "page": 6,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:6262a8190e2d0f74a365586e9c06af3c1e794b6c5c0d6a923ab3aa225ee5c4a7",
+    "source_url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "source_title": "OSTEP: Concurrency introduction",
+    "topic": "Operating systems",
+    "concept": "C ONCURRENCY: A N I NTRODUCTION                                 7",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:6262a8190e2d0f74a365586e9c06af3c1e794b6c5c0d6a923ab3aa225ee5c4a7",
+    "page": 7,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:fcc6094daf513b9c6837cb816e36e06b556ef21aabeaac14fdb8bce1f447ecb4",
+    "source_url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "source_title": "OSTEP: Concurrency introduction",
+    "topic": "Operating systems",
+    "concept": "8                                   C ONCURRENCY: A N I NTRODUCTION",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:fcc6094daf513b9c6837cb816e36e06b556ef21aabeaac14fdb8bce1f447ecb4",
+    "page": 8,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:3c8d14efa0a626184da59810177b2daa60ad0eb687cfcd973ca94230cf0d9c4a",
+    "source_url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "source_title": "OSTEP: Concurrency introduction",
+    "topic": "Operating systems",
+    "concept": "C ONCURRENCY: A N I NTRODUCTION                                              9",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:3c8d14efa0a626184da59810177b2daa60ad0eb687cfcd973ca94230cf0d9c4a",
+    "page": 9,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:64cb9cb7d3ef3baa3a4a2ff4de2da90c05aedf764d84cb6f80e13127be7d7b66",
+    "source_url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "source_title": "OSTEP: Concurrency introduction",
+    "topic": "Operating systems",
+    "concept": "10                                   C ONCURRENCY: A N I NTRODUCTION",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:64cb9cb7d3ef3baa3a4a2ff4de2da90c05aedf764d84cb6f80e13127be7d7b66",
+    "page": 10,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:73890f15457e1db03561d38838b2739cc6eb791c44940b92f43b57b916c1a0b0",
+    "source_url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "source_title": "OSTEP: Concurrency introduction",
+    "topic": "Operating systems",
+    "concept": "C ONCURRENCY: A N I NTRODUCTION                                            11",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:73890f15457e1db03561d38838b2739cc6eb791c44940b92f43b57b916c1a0b0",
+    "page": 11,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:1495cc05172361402e984d720aacc87465e54f9a83e387910232a36527c9df35",
+    "source_url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "source_title": "OSTEP: Concurrency introduction",
+    "topic": "Operating systems",
+    "concept": "12                                  C ONCURRENCY: A N I NTRODUCTION",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:1495cc05172361402e984d720aacc87465e54f9a83e387910232a36527c9df35",
+    "page": 12,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:6e0a6bbb8496dad518c4fbb6ea78e4639918573399874306661058b92228af07",
+    "source_url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "source_title": "OSTEP: Concurrency introduction",
+    "topic": "Operating systems",
+    "concept": "C ONCURRENCY: A N I NTRODUCTION                                           13",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:6e0a6bbb8496dad518c4fbb6ea78e4639918573399874306661058b92228af07",
+    "page": 13,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:67070fc68e9fe9b400f4399f8a8ba4cec85b54ba7d477b17742a97945e76aacd",
+    "source_url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "source_title": "OSTEP: Concurrency introduction",
+    "topic": "Operating systems",
+    "concept": "14                                                 C ONCURRENCY: A N I NTRODUCTION",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:67070fc68e9fe9b400f4399f8a8ba4cec85b54ba7d477b17742a97945e76aacd",
+    "page": 14,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:6bb66f31bb710856f95e5ce8360805e727101eb1034f910c3ce027c38b7bb5d8",
+    "source_url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "source_title": "OSTEP: Concurrency introduction",
+    "topic": "Operating systems",
+    "concept": "C ONCURRENCY: A N I NTRODUCTION                                          15",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:6bb66f31bb710856f95e5ce8360805e727101eb1034f910c3ce027c38b7bb5d8",
+    "page": 15,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:d2254d37053ba1d78ef4aa350d18a4a734ffe2e19763573ecaae9d4499c808f3",
+    "source_url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "source_title": "OSTEP: Concurrency introduction",
+    "topic": "Operating systems",
+    "concept": "16                                   C ONCURRENCY: A N I NTRODUCTION",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:d2254d37053ba1d78ef4aa350d18a4a734ffe2e19763573ecaae9d4499c808f3",
+    "page": 16,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:bacdc7a8a57c5a257b383b9622e0040a7d61ad64c65d6eafd18e01c40d653033",
+    "source_url": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "source_title": "PostgreSQL transaction isolation",
+    "topic": "Databases",
+    "concept": "The SQL standard defines four levels of transaction isolation. The most strict is Serializable, which is defined by the standard in a paragraph which says that ",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:bacdc7a8a57c5a257b383b9622e0040a7d61ad64c65d6eafd18e01c40d653033",
+    "page": 1,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:f20a92f43754cd66912487e4bb0137ff703407ceeff818d79333fadd20d669d0",
+    "source_url": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "source_title": "PostgreSQL transaction isolation",
+    "topic": "Databases",
+    "concept": "The SQL standard defines four levels of transaction isolation. The most strict is Serializable, which is defined by the standard in a paragraph which says that ",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:f20a92f43754cd66912487e4bb0137ff703407ceeff818d79333fadd20d669d0",
+    "page": 1,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:a6a22f638fda999ce7d3ac4de23632ab1191ba57dac87fe0cb0c16b218cd066c",
+    "source_url": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "source_title": "PostgreSQL transaction isolation",
+    "topic": "Databases",
+    "concept": "The SQL standard defines four levels of transaction isolation. The most strict is Serializable, which is defined by the standard in a paragraph which says that ",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:a6a22f638fda999ce7d3ac4de23632ab1191ba57dac87fe0cb0c16b218cd066c",
+    "page": 1,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:05149130b2ae9259e3dcd3b8250ea254d2d56f3a5f6ecbffd5c129f5f39192e3",
+    "source_url": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "source_title": "PostgreSQL transaction isolation",
+    "topic": "Databases",
+    "concept": "The SQL standard defines four levels of transaction isolation. The most strict is Serializable, which is defined by the standard in a paragraph which says that ",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:05149130b2ae9259e3dcd3b8250ea254d2d56f3a5f6ecbffd5c129f5f39192e3",
+    "page": 1,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:0be46817e82b44c733acf69fb48322e949a3f5291bd8a12a9379d27b3d047132",
+    "source_url": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "source_title": "PostgreSQL transaction isolation",
+    "topic": "Databases",
+    "concept": "The SQL standard defines four levels of transaction isolation. The most strict is Serializable, which is defined by the standard in a paragraph which says that ",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:0be46817e82b44c733acf69fb48322e949a3f5291bd8a12a9379d27b3d047132",
+    "page": 1,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:98bef6c0e813677be4773de4180b6763c82a872a85af7da947e97c56ff5c7cee",
+    "source_url": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "source_title": "PostgreSQL transaction isolation",
+    "topic": "Databases",
+    "concept": "The SQL standard defines four levels of transaction isolation. The most strict is Serializable, which is defined by the standard in a paragraph which says that ",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:98bef6c0e813677be4773de4180b6763c82a872a85af7da947e97c56ff5c7cee",
+    "page": 1,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:dd32cd59027dcb36f1e223d8f7e23acdfc7647e7fb13a55834f68ea136aef193",
+    "source_url": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "source_title": "PostgreSQL transaction isolation",
+    "topic": "Databases",
+    "concept": "The SQL standard defines four levels of transaction isolation. The most strict is Serializable, which is defined by the standard in a paragraph which says that ",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:dd32cd59027dcb36f1e223d8f7e23acdfc7647e7fb13a55834f68ea136aef193",
+    "page": 1,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:0f3a46407bd5b7a7c151d3ab59afb8f6e3d242b1f56c73b1f450fc129bb07f44",
+    "source_url": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "source_title": "PostgreSQL transaction isolation",
+    "topic": "Databases",
+    "concept": "The SQL standard defines four levels of transaction isolation. The most strict is Serializable, which is defined by the standard in a paragraph which says that ",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:0f3a46407bd5b7a7c151d3ab59afb8f6e3d242b1f56c73b1f450fc129bb07f44",
+    "page": 1,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:bf3b11b958d958703ab74a4fc3e9e40e27b7d47e36da22103af4c6805d4b2901",
+    "source_url": "https://docs.python.org/3/tutorial/datastructures.html",
+    "source_title": "Python data structures",
+    "topic": "Programming",
+    "concept": "5. Data Structures\u00b6",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:bf3b11b958d958703ab74a4fc3e9e40e27b7d47e36da22103af4c6805d4b2901",
+    "page": 1,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:47f5101d043dff60bfad045467c9b67cc64c32f6288f0131be00f89a84018e94",
+    "source_url": "https://docs.python.org/3/tutorial/datastructures.html",
+    "source_title": "Python data structures",
+    "topic": "Programming",
+    "concept": "5. Data Structures\u00b6",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:47f5101d043dff60bfad045467c9b67cc64c32f6288f0131be00f89a84018e94",
+    "page": 1,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:2ea12253222504fb5a4a126697c420a0437a45b5799ebf512fc9a91e0b416c53",
+    "source_url": "https://docs.python.org/3/tutorial/datastructures.html",
+    "source_title": "Python data structures",
+    "topic": "Programming",
+    "concept": "5. Data Structures\u00b6",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:2ea12253222504fb5a4a126697c420a0437a45b5799ebf512fc9a91e0b416c53",
+    "page": 1,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:5a31829520c38d1a8b963914edff86268e5bbe6ca95a8a8b4ada1fa794ef39a1",
+    "source_url": "https://docs.python.org/3/tutorial/datastructures.html",
+    "source_title": "Python data structures",
+    "topic": "Programming",
+    "concept": "5. Data Structures\u00b6",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:5a31829520c38d1a8b963914edff86268e5bbe6ca95a8a8b4ada1fa794ef39a1",
+    "page": 1,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:1a806fb689e736b8c457642ff5c5dac04e310474387f864dae1c5cccde330aab",
+    "source_url": "https://docs.python.org/3/tutorial/datastructures.html",
+    "source_title": "Python data structures",
+    "topic": "Programming",
+    "concept": "5. Data Structures\u00b6",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:1a806fb689e736b8c457642ff5c5dac04e310474387f864dae1c5cccde330aab",
+    "page": 1,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:747d87fda6ac3f7e8bcca3627b5ae50143eb4af72383cad1d4714366e386e122",
+    "source_url": "https://docs.python.org/3/tutorial/datastructures.html",
+    "source_title": "Python data structures",
+    "topic": "Programming",
+    "concept": "5. Data Structures\u00b6",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:747d87fda6ac3f7e8bcca3627b5ae50143eb4af72383cad1d4714366e386e122",
+    "page": 1,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:982f51de7797e32ea3d01d2dc40cad265ab27e4d2b29f6b5495f98d5c24a74cd",
+    "source_url": "https://docs.python.org/3/tutorial/datastructures.html",
+    "source_title": "Python data structures",
+    "topic": "Programming",
+    "concept": "5. Data Structures\u00b6",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:982f51de7797e32ea3d01d2dc40cad265ab27e4d2b29f6b5495f98d5c24a74cd",
+    "page": 1,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:1df97c2c60c61977e9363087b2c58dc37c08920a40e87c0cfe149c151d6e77c8",
+    "source_url": "https://docs.python.org/3/tutorial/datastructures.html",
+    "source_title": "Python data structures",
+    "topic": "Programming",
+    "concept": "5. Data Structures\u00b6",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:1df97c2c60c61977e9363087b2c58dc37c08920a40e87c0cfe149c151d6e77c8",
+    "page": 1,
+    "reviewStatus": "needs_editorial_review"
+  },
+  {
+    "seed_id": "sha256:44839c485dc925544533dd2f0b59fddd6be8e175ede6407593ba02e4767d33be",
+    "source_url": "https://docs.python.org/3/tutorial/datastructures.html",
+    "source_title": "Python data structures",
+    "topic": "Programming",
+    "concept": "5. Data Structures\u00b6",
+    "difficulty": "medium",
+    "candidate_formats": [
+      "multiple_choice",
+      "short_answer",
+      "ordering"
+    ],
+    "source_excerpt_hash": "sha256:44839c485dc925544533dd2f0b59fddd6be8e175ede6407593ba02e4767d33be",
+    "page": 1,
+    "reviewStatus": "needs_editorial_review"
+  }
+]

@@ -1,0 +1,60 @@
+{
+  "status": "Submitted to Apple on November 23, 2026: 1.1.0 (5) is WAITING_FOR_REVIEW. Public release is manual and has not occurred.",
+  "name": "PiyoPiyo: Computer Science",
+  "subtitle": "Computer science, little steps",
+  "primaryLanguage": "en-US",
+  "suggestedPrimaryCategory": "Education",
+  "bundleId": "app.piyopiyo.iphone",
+  "sku": "piyopiyo-universal-1",
+  "version": "1.1.0",
+  "build": "5",
+  "promotionalText": "Grow your computer-science understanding with bite-sized practice, a friendly chick companion, and progress that stays with you offline.",
+  "description": "Learn a little with Piyo every day. Practice algorithms, programming, databases, operating systems, and distributed systems on iPhone and iPad.\n\nExplore 18 question formats, from quick choices and ordering puzzles to written explanations, audio, and playful 2D and 3D challenges. Choose daily practice, a five-minute sprint, open-book study, or resumable homework.\n\nYour answers and drafts save on your device, even offline. Sign in with Apple or email to sync progress. Optional AI feedback reviews written answers against a rubric; it is off by default and is intended for practice, not official assessment.\n\nDiscover fresh quizzes from a growing source library. New questions are checked against their sources and reviewed before publication. Source references help you keep exploring.\n\nStudy together in small live or collaborative rooms. Enjoy original gentle music and Piyo's encouraging company. No advertising or cross-app tracking.\n\nThe bundled library contains 45 authored exercises and 1,070 parameterized practice variants. Fresh cloud quizzes add to that collection over time. Internet access and an account are required for fresh quizzes, cloud sync, AI feedback, and shared rooms.",
+  "keywords": "coding,programming,quiz,algorithms,computer science,study,offline,databases,systems",
+  "privacyPolicyUrl": "https://piyopiyo.grabbiel.com/privacy",
+  "supportUrl": "https://piyopiyo.grabbiel.com/support",
+  "supportEmail": "fcruzado22@gmail.com",
+  "reviewNotes": "Guest practice works immediately without sign-in. Settings offers Apple/email sign-in for sync. AI feedback is disabled by default; enable it in Settings to upload written answers. Closed questions use deterministic scoring. AI feedback may be provisional during outages or after the daily quota. Account deletion is in Settings; Apple accounts reauthorize to revoke access. Rooms require two signed-in participants for collaborative behavior. Fresh quizzes are in Library after signing in. PiyoPiyo Sources is a separate private Mac administrator companion; it is not required to use or review this iPhone/iPad app. The demo review account has ordinary learner access.",
+  "privacyInventory": {
+    "tracking": false,
+    "advertising": false,
+    "linkedAppFunctionality": [
+      "email address",
+      "name supplied during authentication",
+      "user identifier",
+      "answers and other user content",
+      "learning progress and product interactions"
+    ],
+    "optionalUnlinkedAnalytics": [
+      "aggregate session, render-failure and queue counts"
+    ]
+  },
+  "ownerCompletion": [],
+  "screenshots": [
+    "artifacts/app-store/1.1.0/iphone-large-home.png",
+    "artifacts/app-store/1.1.0/iphone-medium-home.png",
+    "artifacts/app-store/1.1.0/ipad-13-home.png"
+  ],
+  "publicContactStatus": "Store support and privacy links use the existing published app pages.",
+  "copyright": "2026 Francisco Cruzado Arroyo",
+  "price": "Free",
+  "releaseType": "MANUAL",
+  "whatsNew": "Fresh quizzes from the growing source library, source citations, and updated cloud content sync.",
+  "appStoreId": "6838389242",
+  "appStoreVersionId": "e813df90-c0fb-491d-9a6a-db1ca05cf8eb",
+  "marketingUrl": "https://piyopiyo.grabbiel.com",
+  "contentRights": "USES_THIRD_PARTY_CONTENT",
+  "ageRating": "4+ calculated by Apple; regional exceptions",
+  "appStoreState": "WAITING_FOR_REVIEW",
+  "reviewSubmissionId": "ffd960b6-3a19-45cd-96d4-df6c282e9034",
+  "submittedAt": "2026-11-23T17:21:03.511Z",
+  "territories": [
+    "USA",
+    "PER"
+  ],
+  "privacyPublished": true,
+  "uploadedScreenshots": [
+    "artifacts/app-store/1.1.0/iphone-medium-home.png",
+    "artifacts/app-store/1.1.0/ipad-13-home.png"
+  ]
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "id": "visual-naver",
+    "url": "https://www.naver.com",
+    "accessedAt": "2026-11-21T15:26:29.330Z",
+    "kind": "visual_reference",
+    "intendedUse": "compact information hierarchy",
+    "redistributable": false,
+    "releaseInclusion": "none",
+    "sha256": "bcbe321c526d4c5e2c6c5e588345d5f94e40b5f7a5a847d9e90ae209c95ddd5b",
+    "styles": {
+      "font": "-apple-system, \"system-ui\", \"Malgun Gothic\", \"맑은 고딕\", helvetica, \"Apple SD Gothic Neo\", sans-serif",
+      "color": "rgb(46, 46, 46)",
+      "background": "rgb(255, 255, 255)"
+    },
+    "status": "captured"
+  },
+  {
+    "id": "visual-duolingo",
+    "url": "https://www.duolingo.com",
+    "accessedAt": "2026-11-21T15:26:30.498Z",
+    "kind": "visual_reference",
+    "intendedUse": "friendly progress and raised buttons",
+    "redistributable": false,
+    "releaseInclusion": "none",
+    "sha256": "a630e9fc44728d963ac029f351e9159742a5c8c4b86756bbe5d3a201d648e0f9",
+    "styles": {
+      "font": "sans-serif",
+      "color": "rgb(60, 60, 60)",
+      "background": "rgb(255, 255, 255)"
+    },
+    "status": "captured"
+  },
+  {
+    "id": "visual-rosetta",
+    "url": "https://www.rosettastone.com",
+    "accessedAt": "2026-11-21T15:26:32.334Z",
+    "kind": "visual_reference",
+    "intendedUse": "clear learning paths",
+    "redistributable": false,
+    "releaseInclusion": "none",
+    "sha256": "53fdbca7be7c7f139c3ca0135b1b115cbed218f17b21759f4f6c9fa3e48f51c0",
+    "styles": {
+      "font": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "color": "rgb(0, 0, 0)",
+      "background": "rgb(13, 15, 17)"
+    },
+    "status": "captured"
+  },
+  {
+    "id": "visual-notion",
+    "url": "https://www.notion.com",
+    "accessedAt": "2026-11-21T15:26:34.187Z",
+    "kind": "visual_reference",
+    "intendedUse": "quiet typography and navigation",
+    "redistributable": false,
+    "releaseInclusion": "none",
+    "sha256": "571f70339d0386363b21ff76f3b46083a290c410332c2ca8879bbcae8d5bddea",
+    "styles": {
+      "font": "NotionInter, Inter, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+      "color": "rgba(0, 0, 0, 0.95)",
+      "background": "rgb(255, 255, 255)"
+    },
+    "status": "captured"
+  },
+  {
+    "id": "visual-canva",
+    "url": "https://www.canva.com",
+    "accessedAt": "2026-11-21T15:26:35.544Z",
+    "kind": "visual_reference",
+    "intendedUse": "generous cards",
+    "redistributable": false,
+    "releaseInclusion": "none",
+    "sha256": "26dea93ec15863b62136d816f95c71e2fa7c0cfe0ee90854fc977285c763acb1",
+    "styles": {
+      "font": "sans-serif",
+      "color": "rgb(0, 0, 0)",
+      "background": "rgba(0, 0, 0, 0)"
+    },
+    "status": "captured"
+  },
+  {
+    "id": "visual-kahoot",
+    "url": "https://kahoot.com",
+    "accessedAt": "2026-11-21T15:26:37.128Z",
+    "kind": "visual_reference",
+    "intendedUse": "readable quiz choices",
+    "redistributable": false,
+    "releaseInclusion": "none",
+    "sha256": "78e176c039310247938fe47fd83f6c18efce6450a636a63a5d3e429b17ef7f9d",
+    "styles": {
+      "font": "Montserrat, sans-serif",
+      "color": "rgb(51, 51, 51)",
+      "background": "rgba(0, 0, 0, 0)"
+    },
+    "status": "captured"
+  }
+]

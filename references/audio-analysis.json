@@ -1,0 +1,19 @@
+{
+  "id": "hyouka-official-preview",
+  "kind": "audio_reference",
+  "title": "Hyouka Part One official trailer, 20-second reference excerpt",
+  "url": "https://www.youtube.com/watch?v=KbIUra_o2wc",
+  "accessedAt": "2026-11-21T15:55:39.472317+00:00",
+  "sha256": "5603a833be8494c37cff471f6510c39dbc6cafcebda6897287abf296e28f4ee0",
+  "method": "yt-dlp; public official trailer; first 20 seconds",
+  "status": "acquired",
+  "redistributable": false,
+  "releaseInclusion": false,
+  "analysis": {
+    "tempoBpm": 112.34714673913044,
+    "spectralCentroidHz": 2260.403076171875,
+    "durationSeconds": 19.993514739229024,
+    "bucket": "transition",
+    "limitation": "Trailer dialogue and effects affect beat estimates; centroid is timbral brightness, not a validated valence measure."
+  }
+}

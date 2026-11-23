@@ -1,0 +1,81 @@
+name: Apple release
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version (for example 1.1.1)'
+        type: string
+        required: true
+        default: '1.1.1'
+      upload_testflight:
+        description: 'Upload the new iPhone/iPad build to TestFlight (does not release publicly)'
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: apple-release
+  cancel-in-progress: false
+jobs:
+  release:
+    name: Signed Apple packages
+    if: github.ref == 'refs/heads/main'
+    runs-on: macos-26
+    timeout-minutes: 55
+    environment: apple-release
+    permissions:
+      contents: read
+      checks: read
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.6.app/Contents/Developer
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Require passing CI for this exact commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api "repos/$GITHUB_REPOSITORY/commits/$GITHUB_SHA/check-runs" \
+            --jq 'any(.check_runs[]; .name == "Checks" and .app.slug == "github-actions" and .conclusion == "success")' \
+            | grep -qx true
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22'
+      - name: Install XcodeGen
+        run: |
+          python scripts/ci/install-tool.py xcodegen
+          echo "$PWD/.agent/tools" >> "$GITHUB_PATH"
+      - name: Build, sign, notarize, and staple
+        env:
+          RELEASE_VERSION: ${{ inputs.version }}
+          APPLE_TEAM_ID: ${{ vars.APPLE_TEAM_ID }}
+          ASC_KEY_ID: ${{ vars.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ vars.ASC_ISSUER_ID }}
+          ASC_PRIVATE_KEY: ${{ secrets.ASC_PRIVATE_KEY }}
+          IOS_DISTRIBUTION_P12_BASE64: ${{ secrets.IOS_DISTRIBUTION_P12_BASE64 }}
+          IOS_DISTRIBUTION_PASSWORD: ${{ secrets.IOS_DISTRIBUTION_PASSWORD }}
+          IOS_PROFILE_BASE64: ${{ secrets.IOS_PROFILE_BASE64 }}
+          DEVELOPER_ID_P12_BASE64: ${{ secrets.DEVELOPER_ID_P12_BASE64 }}
+          DEVELOPER_ID_PASSWORD: ${{ secrets.DEVELOPER_ID_PASSWORD }}
+        run: python scripts/ci/apple-release.py
+      - name: Upload and verify TestFlight processing
+        if: inputs.upload_testflight
+        env:
+          ASC_KEY_ID: ${{ vars.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ vars.ASC_ISSUER_ID }}
+          ASC_PRIVATE_KEY: ${{ secrets.ASC_PRIVATE_KEY }}
+        run: node scripts/ci/apple-upload.mjs
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always() && hashFiles('artifacts/apple-release/manifest.json') != ''
+        with:
+          name: apple-${{ inputs.version }}-${{ github.run_number }}
+          retention-days: 14
+          if-no-files-found: warn
+          path: |
+            artifacts/apple-release/*.zip
+            artifacts/apple-release/ios/*.ipa
+            artifacts/apple-release/manifest.json

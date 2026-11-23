@@ -1,0 +1,67 @@
+{
+  "color": {
+    "primary": "#28634F",
+    "surface": "#FFFFFF",
+    "background": "#F7F6F0",
+    "ink": "#24352D",
+    "muted": "#65746A",
+    "line": "#DFE4DB",
+    "accent_warm": "#F3CB57",
+    "accent_playful": "#DC8064",
+    "soft_green": "#E7F0E8",
+    "soft_yellow": "#FCF2D0",
+    "white": "#FFFFFF"
+  },
+  "typography": {
+    "heading_family": "SF Pro Rounded",
+    "body_family": "SF Pro",
+    "scale": [
+      "caption",
+      "body",
+      "title",
+      "display"
+    ]
+  },
+  "spacing": {
+    "unit": 4,
+    "scale": [
+      4,
+      8,
+      12,
+      16,
+      24,
+      32,
+      48
+    ],
+    "none": 0
+  },
+  "radius": {
+    "card": 20,
+    "button": 12,
+    "sheet": 24
+  },
+  "motion": {
+    "spring": {
+      "damping": 0.8,
+      "response": 0.4
+    }
+  },
+  "layout": {
+    "content": 1080,
+    "sidebar": 220,
+    "heroMascot": 180,
+    "smallMascot": 48,
+    "gameHeight": 300,
+    "editorHeight": 140,
+    "cardMinWidth": 240,
+    "buttonHeight": 48,
+    "macMinWidth": 900,
+    "macMinHeight": 650,
+    "quizWidth": 720,
+    "quizIdealWidth": 780,
+    "quizMinHeight": 680,
+    "gameWidth": 600,
+    "gameBlockWidth": 120,
+    "gameBlockHeight": 54
+  }
+}

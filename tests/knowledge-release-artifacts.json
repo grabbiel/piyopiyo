@@ -1,0 +1,94 @@
+{
+  "at": "2026-11-23T15:16:09.088146+00:00",
+  "learnerVersion": "1.1.0",
+  "learnerBuild": 4,
+  "sourcesVersion": "1.0.1",
+  "artifacts": [
+    {
+      "path": "artifacts/release/PiyoPiyo-1.1.0.zip",
+      "sha256": "1722d6150e07f4df8c65044ed1e1d48d7eb74ee6f13cf486f0ad874c392fea58",
+      "bytes": 3040212
+    },
+    {
+      "path": "artifacts/release/1.1.0-iOS/PiyoPiyo-iOS.ipa",
+      "sha256": "2c84019c83a4dd3d6c0de35ee1184ceb352af2720d6280c9e9c2dcc6027f2484",
+      "bytes": 2993208,
+      "build": 5
+    },
+    {
+      "path": "artifacts/release/PiyoPiyo-Sources-1.0.1.zip",
+      "sha256": "9d2399f85233aa35d499e1f385e5352cc9b365d6cc79b72377821fb7205394f3",
+      "bytes": 2654589
+    }
+  ],
+  "notarization": {
+    "learner": "02d2021c-8e3c-4f66-b23c-d8cee78acf40",
+    "sources": "8e2f94aa-61fa-41ac-9db5-7e0fc8004d12"
+  },
+  "notarizationStatus": "Accepted",
+  "gatekeeper": "Both installed Mac apps accepted as Notarized Developer ID",
+  "installedApps": [
+    "/Users/rumpology/Applications/PiyoPiyo.app",
+    "/Users/rumpology/Applications/PiyoPiyo Sources.app"
+  ],
+  "ownerAppleSignInVerified": true,
+  "nativeTextUploadVerified": true,
+  "pdfTests": 3,
+  "backendTests": 50,
+  "nativeTestsPerPlatform": 18,
+  "platforms": [
+    "macOS",
+    "iPhone SE simulator",
+    "iPad mini simulator"
+  ],
+  "appStoreUploaded": true,
+  "learnerFreshQuizVerified": true,
+  "learnerGeneratedQuestionScoringVerified": true,
+  "privateSourceCitationVerified": true,
+  "previousIOSUpload": {
+    "build": 4,
+    "sha256": "45f11924df0082eb5751f1c825cdb5d2f546b838bede3c0db582838a87a108f3",
+    "status": "Rejected by Apple upload validation",
+    "reason": "90474: UISupportedInterfaceOrientations missing"
+  },
+  "iosBuild": 5,
+  "iosOrientationValidation": {
+    "checkedAt": "2026-11-23T16:47:43.029270+00:00",
+    "orientations": [
+      "UIInterfaceOrientationPortrait",
+      "UIInterfaceOrientationPortraitUpsideDown",
+      "UIInterfaceOrientationLandscapeLeft",
+      "UIInterfaceOrientationLandscapeRight"
+    ],
+    "deviceFamilies": [
+      1,
+      2
+    ]
+  },
+  "appStore": {
+    "appId": "6838389242",
+    "name": "PiyoPiyo: Computer Science",
+    "version": "1.1.0",
+    "build": 5,
+    "buildId": "0b55b0fb-3619-4419-b6eb-11dbbd6175ac",
+    "processingState": "VALID",
+    "uploadedAt": "2026-11-23T08:49:45-08:00",
+    "publicRelease": false,
+    "state": "WAITING_FOR_REVIEW",
+    "reviewSubmissionId": "ffd960b6-3a19-45cd-96d4-df6c282e9034",
+    "submittedAt": "2026-11-23T17:21:03.511Z",
+    "releaseType": "MANUAL",
+    "territories": [
+      "USA",
+      "PER"
+    ]
+  },
+  "previousSourcesArtifact": {
+    "path": "artifacts/release/PiyoPiyo-Sources-1.0.0.zip",
+    "sha256": "d53db8a7617e8bc90707efa46dd13a81d4195e4823e63fccf4855aa5fc0ac697",
+    "bytes": 390535
+  },
+  "sourcesIcon": "SourcesDesk/Branding/sources-icon-master.png",
+  "updatedAt": "2026-11-23T17:24:42.817052+00:00",
+  "sourcesBuild": 2
+}

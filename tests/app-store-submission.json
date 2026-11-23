@@ -1,0 +1,41 @@
+{
+  "checkedAt": "2026-11-23T17:21:48.805Z",
+  "appId": "6838389242",
+  "appName": "PiyoPiyo: Computer Science",
+  "versionId": "e813df90-c0fb-491d-9a6a-db1ca05cf8eb",
+  "version": {
+    "platform": "IOS",
+    "versionString": "1.1.0",
+    "appStoreState": "WAITING_FOR_REVIEW",
+    "appVersionState": "WAITING_FOR_REVIEW",
+    "copyright": "2026 Francisco Cruzado Arroyo",
+    "reviewType": "APP_STORE",
+    "releaseType": "MANUAL",
+    "earliestReleaseDate": null,
+    "usesIdfa": null,
+    "downloadable": true,
+    "createdDate": "2026-11-23T08:39:09-08:00"
+  },
+  "build": [
+    {
+      "id": "0b55b0fb-3619-4419-b6eb-11dbbd6175ac",
+      "version": "5",
+      "processingState": "VALID",
+      "uploadedDate": "2026-11-23T08:49:45-08:00"
+    }
+  ],
+  "submission": {
+    "id": "ffd960b6-3a19-45cd-96d4-df6c282e9034",
+    "platform": "IOS",
+    "submittedDate": "2026-11-23T17:21:03.511Z",
+    "state": "WAITING_FOR_REVIEW"
+  },
+  "price": "Free",
+  "territories": [
+    "USA",
+    "PER"
+  ],
+  "privacyPublished": true,
+  "publicRelease": false,
+  "screenshot": "artifacts/app-store/1.1.0/submitted-for-review.jpg"
+}

@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-23T14:08:58.571Z",
+  "passed": true,
+  "checks": [
+    "Public privacy page is available without sign-in",
+    "Public support page is available without sign-in",
+    "Unauthenticated progress rejected",
+    "Duplicate attempt increments score only once",
+    "Cross-user session reads rejected",
+    "Real Bedrock evaluation succeeds through Lambda",
+    "All 18 formats persisted in real DynamoDB",
+    "Progress returns session and every attempt",
+    "Concurrent authenticated learners join a room",
+    "AppSync WebSocket broadcasts collaborative answers",
+    "Concurrent submissions preserve every participant score",
+    "Offline timed answer survives delayed upload",
+    "Deleted account JWT cannot read or recreate data",
+    "Deletion removes progress and room contributions without deleting other learners",
+    "Account deletion removes the Cognito identity"
+  ],
+  "temporaryDataRemoved": true
+}

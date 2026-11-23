@@ -1,0 +1,1973 @@
+{
+  "candidate": "five independent Nova 2 Lite fact checks, at most 300 output tokens total",
+  "createdAt": "2026-11-23T13:40:43.141Z",
+  "agreement": 0.74,
+  "p95LatencyMs": 1208,
+  "cases": [
+    {
+      "id": "review-20",
+      "actual": 0,
+      "expected": 0,
+      "agreement": true,
+      "latencyMs": 1805,
+      "checks": [
+        {
+          "id": 1,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 2,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 3,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 4,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 5,
+          "met": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "review-17",
+      "actual": 2,
+      "expected": 2,
+      "agreement": true,
+      "latencyMs": 806,
+      "checks": [
+        {
+          "id": 1,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 2,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 3,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 4,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        },
+        {
+          "id": 5,
+          "met": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "review-23",
+      "actual": 4,
+      "expected": 4,
+      "agreement": true,
+      "latencyMs": 849,
+      "checks": [
+        {
+          "id": 1,
+          "met": true,
+          "evidence": [
+            1,
+            2
+          ]
+        },
+        {
+          "id": 2,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        },
+        {
+          "id": 3,
+          "met": true,
+          "evidence": [
+            1,
+            2
+          ]
+        },
+        {
+          "id": 4,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        },
+        {
+          "id": 5,
+          "met": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "review-03",
+      "actual": 2,
+      "expected": 2,
+      "agreement": true,
+      "latencyMs": 835,
+      "checks": [
+        {
+          "id": 1,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 2,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 3,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 4,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        },
+        {
+          "id": 5,
+          "met": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "review-50",
+      "actual": 0,
+      "expected": 0,
+      "agreement": true,
+      "latencyMs": 820,
+      "checks": [
+        {
+          "id": 1,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 2,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 3,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 4,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 5,
+          "met": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "review-01",
+      "actual": 5,
+      "expected": 5,
+      "agreement": true,
+      "latencyMs": 789,
+      "checks": [
+        {
+          "id": 1,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 2,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        },
+        {
+          "id": 4,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        },
+        {
+          "id": 5,
+          "met": true,
+          "evidence": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review-34",
+      "actual": 2,
+      "expected": 2,
+      "agreement": true,
+      "latencyMs": 788,
+      "checks": [
+        {
+          "id": 1,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        },
+        {
+          "id": 2,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 3,
+          "met": true,
+          "evidence": [
+            3
+          ]
+        },
+        {
+          "id": 4,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 5,
+          "met": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "review-39",
+      "actual": 2,
+      "expected": 2,
+      "agreement": true,
+      "latencyMs": 1208,
+      "checks": [
+        {
+          "id": 1,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 2,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        },
+        {
+          "id": 3,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 4,
+          "met": true,
+          "evidence": [
+            3
+          ]
+        },
+        {
+          "id": 5,
+          "met": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "review-29",
+      "actual": 1,
+      "expected": 1,
+      "agreement": true,
+      "latencyMs": 812,
+      "checks": [
+        {
+          "id": 1,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 2,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 3,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 4,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 5,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review-31",
+      "actual": 5,
+      "expected": 5,
+      "agreement": true,
+      "latencyMs": 1164,
+      "checks": [
+        {
+          "id": 1,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 2,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        },
+        {
+          "id": 3,
+          "met": true,
+          "evidence": [
+            3
+          ]
+        },
+        {
+          "id": 4,
+          "met": true,
+          "evidence": [
+            3
+          ]
+        },
+        {
+          "id": 5,
+          "met": true,
+          "evidence": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review-43",
+      "actual": 3,
+      "expected": 3,
+      "agreement": true,
+      "latencyMs": 849,
+      "checks": [
+        {
+          "id": 1,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 2,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 4,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        },
+        {
+          "id": 5,
+          "met": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "review-24",
+      "actual": 4,
+      "expected": 3,
+      "agreement": false,
+      "latencyMs": 818,
+      "checks": [
+        {
+          "id": 1,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 2,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 4,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 5,
+          "met": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "review-14",
+      "actual": 3,
+      "expected": 2,
+      "agreement": false,
+      "latencyMs": 810,
+      "checks": [
+        {
+          "id": 1,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 2,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 4,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 5,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review-21",
+      "actual": 5,
+      "expected": 5,
+      "agreement": true,
+      "latencyMs": 824,
+      "checks": [
+        {
+          "id": 1,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 2,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        },
+        {
+          "id": 3,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 4,
+          "met": true,
+          "evidence": [
+            3
+          ]
+        },
+        {
+          "id": 5,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review-13",
+      "actual": 2,
+      "expected": 3,
+      "agreement": false,
+      "latencyMs": 848,
+      "checks": [
+        {
+          "id": 1,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        },
+        {
+          "id": 2,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 4,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 5,
+          "met": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "review-27",
+      "actual": 2,
+      "expected": 1,
+      "agreement": false,
+      "latencyMs": 860,
+      "checks": [
+        {
+          "id": 1,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 2,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 3,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        },
+        {
+          "id": 4,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 5,
+          "met": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "review-47",
+      "actual": 2,
+      "expected": 2,
+      "agreement": true,
+      "latencyMs": 876,
+      "checks": [
+        {
+          "id": 1,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 2,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 4,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 5,
+          "met": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "review-48",
+      "actual": 4,
+      "expected": 3,
+      "agreement": false,
+      "latencyMs": 797,
+      "checks": [
+        {
+          "id": 1,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 2,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 4,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        },
+        {
+          "id": 5,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review-44",
+      "actual": 3,
+      "expected": 2,
+      "agreement": false,
+      "latencyMs": 924,
+      "checks": [
+        {
+          "id": 1,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 2,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 4,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 5,
+          "met": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "review-33",
+      "actual": 3,
+      "expected": 3,
+      "agreement": true,
+      "latencyMs": 917,
+      "checks": [
+        {
+          "id": 1,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 2,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 3,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 4,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 5,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review-19",
+      "actual": 3,
+      "expected": 1,
+      "agreement": false,
+      "latencyMs": 867,
+      "checks": [
+        {
+          "id": 1,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 2,
+          "met": true,
+          "evidence": [
+            1,
+            2
+          ]
+        },
+        {
+          "id": 3,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 4,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        },
+        {
+          "id": 5,
+          "met": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "review-16",
+      "actual": 5,
+      "expected": 5,
+      "agreement": true,
+      "latencyMs": 780,
+      "checks": [
+        {
+          "id": 1,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 2,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        },
+        {
+          "id": 4,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        },
+        {
+          "id": 5,
+          "met": true,
+          "evidence": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review-40",
+      "actual": 0,
+      "expected": 0,
+      "agreement": true,
+      "latencyMs": 941,
+      "checks": [
+        {
+          "id": 1,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 2,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 3,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 4,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 5,
+          "met": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "review-09",
+      "actual": 5,
+      "expected": 4,
+      "agreement": false,
+      "latencyMs": 834,
+      "checks": [
+        {
+          "id": 1,
+          "met": true,
+          "evidence": [
+            1,
+            2
+          ]
+        },
+        {
+          "id": 2,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 4,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 5,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review-26",
+      "actual": 5,
+      "expected": 5,
+      "agreement": true,
+      "latencyMs": 1069,
+      "checks": [
+        {
+          "id": 1,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 2,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        },
+        {
+          "id": 3,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        },
+        {
+          "id": 4,
+          "met": true,
+          "evidence": [
+            3
+          ]
+        },
+        {
+          "id": 5,
+          "met": true,
+          "evidence": [
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review-38",
+      "actual": 3,
+      "expected": 3,
+      "agreement": true,
+      "latencyMs": 815,
+      "checks": [
+        {
+          "id": 1,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 2,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 4,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 5,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review-30",
+      "actual": 0,
+      "expected": 0,
+      "agreement": true,
+      "latencyMs": 874,
+      "checks": [
+        {
+          "id": 1,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 2,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 3,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 4,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 5,
+          "met": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "review-22",
+      "actual": 2,
+      "expected": 3,
+      "agreement": false,
+      "latencyMs": 790,
+      "checks": [
+        {
+          "id": 1,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 2,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 3,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 4,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        },
+        {
+          "id": 5,
+          "met": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "review-15",
+      "actual": 0,
+      "expected": 0,
+      "agreement": true,
+      "latencyMs": 833,
+      "checks": [
+        {
+          "id": 1,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 2,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 3,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 4,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 5,
+          "met": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "review-46",
+      "actual": 5,
+      "expected": 5,
+      "agreement": true,
+      "latencyMs": 1013,
+      "checks": [
+        {
+          "id": 1,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 2,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 4,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        },
+        {
+          "id": 5,
+          "met": true,
+          "evidence": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review-10",
+      "actual": 0,
+      "expected": 0,
+      "agreement": true,
+      "latencyMs": 1026,
+      "checks": [
+        {
+          "id": 1,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 2,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 3,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 4,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 5,
+          "met": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "review-04",
+      "actual": 2,
+      "expected": 2,
+      "agreement": true,
+      "latencyMs": 901,
+      "checks": [
+        {
+          "id": 1,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 2,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 4,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 5,
+          "met": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "review-08",
+      "actual": 2,
+      "expected": 2,
+      "agreement": true,
+      "latencyMs": 791,
+      "checks": [
+        {
+          "id": 1,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 2,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 3,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 4,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 5,
+          "met": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "review-18",
+      "actual": 3,
+      "expected": 3,
+      "agreement": true,
+      "latencyMs": 983,
+      "checks": [
+        {
+          "id": 1,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 2,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 4,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 5,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review-28",
+      "actual": 4,
+      "expected": 3,
+      "agreement": false,
+      "latencyMs": 892,
+      "checks": [
+        {
+          "id": 1,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 2,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        },
+        {
+          "id": 4,
+          "met": true,
+          "evidence": [
+            3
+          ]
+        },
+        {
+          "id": 5,
+          "met": true,
+          "evidence": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review-07",
+      "actual": 1,
+      "expected": 1,
+      "agreement": true,
+      "latencyMs": 818,
+      "checks": [
+        {
+          "id": 1,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 2,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 3,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 4,
+          "met": true,
+          "evidence": [
+            3
+          ]
+        },
+        {
+          "id": 5,
+          "met": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "review-05",
+      "actual": 0,
+      "expected": 0,
+      "agreement": true,
+      "latencyMs": 827,
+      "checks": [
+        {
+          "id": 1,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 2,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 3,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 4,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 5,
+          "met": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "review-02",
+      "actual": 1,
+      "expected": 1,
+      "agreement": true,
+      "latencyMs": 1135,
+      "checks": [
+        {
+          "id": 1,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 2,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        },
+        {
+          "id": 3,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 4,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 5,
+          "met": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "review-45",
+      "actual": 0,
+      "expected": 0,
+      "agreement": true,
+      "latencyMs": 807,
+      "checks": [
+        {
+          "id": 1,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 2,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 3,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 4,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 5,
+          "met": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "review-41",
+      "actual": 5,
+      "expected": 5,
+      "agreement": true,
+      "latencyMs": 857,
+      "checks": [
+        {
+          "id": 1,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 2,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        },
+        {
+          "id": 4,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 5,
+          "met": true,
+          "evidence": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review-25",
+      "actual": 0,
+      "expected": 0,
+      "agreement": true,
+      "latencyMs": 1065,
+      "checks": [
+        {
+          "id": 1,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 2,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 3,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 4,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 5,
+          "met": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "review-35",
+      "actual": 0,
+      "expected": 0,
+      "agreement": true,
+      "latencyMs": 906,
+      "checks": [
+        {
+          "id": 1,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 2,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 3,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 4,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 5,
+          "met": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "review-06",
+      "actual": 5,
+      "expected": 5,
+      "agreement": true,
+      "latencyMs": 964,
+      "checks": [
+        {
+          "id": 1,
+          "met": true,
+          "evidence": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "id": 2,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        },
+        {
+          "id": 4,
+          "met": true,
+          "evidence": [
+            3
+          ]
+        },
+        {
+          "id": 5,
+          "met": true,
+          "evidence": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review-36",
+      "actual": 5,
+      "expected": 5,
+      "agreement": true,
+      "latencyMs": 827,
+      "checks": [
+        {
+          "id": 1,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 2,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        },
+        {
+          "id": 3,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        },
+        {
+          "id": 4,
+          "met": true,
+          "evidence": [
+            3
+          ]
+        },
+        {
+          "id": 5,
+          "met": true,
+          "evidence": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review-12",
+      "actual": 2,
+      "expected": 3,
+      "agreement": false,
+      "latencyMs": 1296,
+      "checks": [
+        {
+          "id": 1,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 2,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 4,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 5,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review-11",
+      "actual": 5,
+      "expected": 5,
+      "agreement": true,
+      "latencyMs": 824,
+      "checks": [
+        {
+          "id": 1,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 2,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        },
+        {
+          "id": 4,
+          "met": true,
+          "evidence": [
+            3
+          ]
+        },
+        {
+          "id": 5,
+          "met": true,
+          "evidence": [
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review-32",
+      "actual": 3,
+      "expected": 2,
+      "agreement": false,
+      "latencyMs": 879,
+      "checks": [
+        {
+          "id": 1,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 2,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 4,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 5,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review-42",
+      "actual": 3,
+      "expected": 3,
+      "agreement": true,
+      "latencyMs": 899,
+      "checks": [
+        {
+          "id": 1,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 2,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        },
+        {
+          "id": 4,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 5,
+          "met": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "review-37",
+      "actual": 3,
+      "expected": 2,
+      "agreement": false,
+      "latencyMs": 957,
+      "checks": [
+        {
+          "id": 1,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 2,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 3,
+          "met": true,
+          "evidence": [
+            2
+          ]
+        },
+        {
+          "id": 4,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 5,
+          "met": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "review-49",
+      "actual": 3,
+      "expected": 3,
+      "agreement": true,
+      "latencyMs": 819,
+      "checks": [
+        {
+          "id": 1,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 2,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "met": true,
+          "evidence": [
+            1
+          ]
+        },
+        {
+          "id": 4,
+          "met": false,
+          "evidence": []
+        },
+        {
+          "id": 5,
+          "met": false,
+          "evidence": []
+        }
+      ]
+    }
+  ]
+}

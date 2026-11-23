@@ -1,0 +1,354 @@
+{
+  "createdAt": "2026-11-23T13:13:58.961Z",
+  "labelSource": "Owner-supplied scores; owner explicitly confirmed reviewing all 50 in conversation",
+  "reviewMetadata": {
+    "reviewer": "Francisco Cruzado",
+    "datasetSHA256": "42b1e79f2c696c5848d377738c5d36a15df8a7017358421fab942212dd6b994b",
+    "submittedCompletedAt": "2026-11-23T12:55:00.000Z"
+  },
+  "promptSHA256": "52e52f4a2ec10a7b1173d14216c7f56eb4594d2b268e1ab979465ef6b86e7861",
+  "models": [
+    {
+      "modelId": "arn:aws:bedrock:us-east-1:992680757326:application-inference-profile/3oog2y10vrgd",
+      "cases": [
+        {
+          "id": "review-20",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 1845
+        },
+        {
+          "id": "review-17",
+          "error": "Error",
+          "message": "Invalid rubric assessment",
+          "latencyMs": 1080
+        },
+        {
+          "id": "review-23",
+          "expected": 4,
+          "actual": 4,
+          "agreement": true,
+          "latencyMs": 1023
+        },
+        {
+          "id": "review-03",
+          "expected": 2,
+          "actual": 2,
+          "agreement": true,
+          "latencyMs": 1028
+        },
+        {
+          "id": "review-50",
+          "error": "SyntaxError",
+          "message": "Expected ',' or '}' after property value in JSON at position 186 (line 1 column 187)",
+          "latencyMs": 943
+        },
+        {
+          "id": "review-01",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 939
+        },
+        {
+          "id": "review-34",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 968
+        },
+        {
+          "id": "review-39",
+          "error": "SyntaxError",
+          "message": "Expected ',' or '}' after property value in JSON at position 186 (line 1 column 187)",
+          "latencyMs": 1002
+        },
+        {
+          "id": "review-29",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 1053
+        },
+        {
+          "id": "review-31",
+          "expected": 5,
+          "actual": 5,
+          "agreement": true,
+          "latencyMs": 969
+        },
+        {
+          "id": "review-43",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 1077
+        },
+        {
+          "id": "review-24",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 875
+        },
+        {
+          "id": "review-14",
+          "expected": 2,
+          "actual": 2,
+          "agreement": true,
+          "latencyMs": 1271
+        },
+        {
+          "id": "review-21",
+          "expected": 5,
+          "actual": 5,
+          "agreement": true,
+          "latencyMs": 1228
+        },
+        {
+          "id": "review-13",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 1025
+        },
+        {
+          "id": "review-27",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 817
+        },
+        {
+          "id": "review-47",
+          "error": "SyntaxError",
+          "message": "Expected ',' or '}' after property value in JSON at position 186 (line 1 column 187)",
+          "latencyMs": 1092
+        },
+        {
+          "id": "review-48",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 1038
+        },
+        {
+          "id": "review-44",
+          "expected": 2,
+          "actual": 4,
+          "agreement": false,
+          "latencyMs": 1115
+        },
+        {
+          "id": "review-33",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 821
+        },
+        {
+          "id": "review-19",
+          "expected": 1,
+          "actual": 2,
+          "agreement": false,
+          "latencyMs": 972
+        },
+        {
+          "id": "review-16",
+          "expected": 5,
+          "actual": 5,
+          "agreement": true,
+          "latencyMs": 1155
+        },
+        {
+          "id": "review-40",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 1078
+        },
+        {
+          "id": "review-09",
+          "expected": 4,
+          "actual": 5,
+          "agreement": false,
+          "latencyMs": 897
+        },
+        {
+          "id": "review-26",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 948
+        },
+        {
+          "id": "review-38",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 933
+        },
+        {
+          "id": "review-30",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 1183
+        },
+        {
+          "id": "review-22",
+          "expected": 3,
+          "actual": 4,
+          "agreement": false,
+          "latencyMs": 1939
+        },
+        {
+          "id": "review-15",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 1036
+        },
+        {
+          "id": "review-46",
+          "expected": 5,
+          "actual": 5,
+          "agreement": true,
+          "latencyMs": 1054
+        },
+        {
+          "id": "review-10",
+          "error": "Error",
+          "message": "Unsupported grading evidence",
+          "latencyMs": 967
+        },
+        {
+          "id": "review-04",
+          "expected": 2,
+          "actual": 2,
+          "agreement": true,
+          "latencyMs": 1078
+        },
+        {
+          "id": "review-08",
+          "expected": 2,
+          "actual": 2,
+          "agreement": true,
+          "latencyMs": 1970
+        },
+        {
+          "id": "review-18",
+          "expected": 3,
+          "actual": 4,
+          "agreement": false,
+          "latencyMs": 997
+        },
+        {
+          "id": "review-28",
+          "error": "SyntaxError",
+          "message": "Expected ',' or '}' after property value in JSON at position 188 (line 1 column 189)",
+          "latencyMs": 885
+        },
+        {
+          "id": "review-07",
+          "expected": 1,
+          "actual": 1,
+          "agreement": true,
+          "latencyMs": 1069
+        },
+        {
+          "id": "review-05",
+          "error": "SyntaxError",
+          "message": "Expected ',' or ']' after array element in JSON at position 49 (line 1 column 50)",
+          "latencyMs": 841
+        },
+        {
+          "id": "review-02",
+          "expected": 1,
+          "actual": 1,
+          "agreement": true,
+          "latencyMs": 855
+        },
+        {
+          "id": "review-45",
+          "expected": 0,
+          "actual": 4,
+          "agreement": false,
+          "latencyMs": 964
+        },
+        {
+          "id": "review-41",
+          "expected": 5,
+          "actual": 5,
+          "agreement": true,
+          "latencyMs": 1017
+        },
+        {
+          "id": "review-25",
+          "expected": 0,
+          "actual": 0,
+          "agreement": true,
+          "latencyMs": 2094
+        },
+        {
+          "id": "review-35",
+          "error": "SyntaxError",
+          "message": "Expected ',' or '}' after property value in JSON at position 186 (line 1 column 187)",
+          "latencyMs": 1139
+        },
+        {
+          "id": "review-06",
+          "expected": 5,
+          "actual": 4,
+          "agreement": false,
+          "latencyMs": 1070
+        },
+        {
+          "id": "review-36",
+          "expected": 5,
+          "actual": 5,
+          "agreement": true,
+          "latencyMs": 923
+        },
+        {
+          "id": "review-12",
+          "expected": 3,
+          "actual": 4,
+          "agreement": false,
+          "latencyMs": 842
+        },
+        {
+          "id": "review-11",
+          "error": "SyntaxError",
+          "message": "Expected ',' or ']' after array element in JSON at position 49 (line 1 column 50)",
+          "latencyMs": 948
+        },
+        {
+          "id": "review-32",
+          "expected": 2,
+          "actual": 2,
+          "agreement": true,
+          "latencyMs": 1077
+        },
+        {
+          "id": "review-42",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 993
+        },
+        {
+          "id": "review-37",
+          "error": "SyntaxError",
+          "message": "Expected ',' or '}' after property value in JSON at position 186 (line 1 column 187)",
+          "latencyMs": 807
+        },
+        {
+          "id": "review-49",
+          "expected": 3,
+          "actual": 3,
+          "agreement": true,
+          "latencyMs": 1292
+        }
+      ],
+      "inputTokens": 8726,
+      "outputTokens": 3434,
+      "exactAgreement": 0.48,
+      "p95LatencyMs": 1939,
+      "releaseThresholdPassed": false
+    }
+  ]
+}

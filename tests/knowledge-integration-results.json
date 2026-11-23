@@ -1,0 +1,23 @@
+{
+  "at": "2026-11-23T15:17:09.038Z",
+  "passed": true,
+  "checks": [
+    "Learner JWT cannot access the administrator API",
+    "Content administrator JWT can access the source library",
+    "Public documentation imported, extracted, hashed and chunked",
+    "Repeated URL is deduplicated",
+    "PDF uploaded with SHA-256 verification and extracted by the private Python worker",
+    "Real Bedrock generation and independent review automatically published validated questions",
+    "Publication preserved every existing question and withheld private source excerpts",
+    "Published quiz manifest available through the learner API",
+    "Pipeline pause prevents new generation requests and resumes safely",
+    "Live arXiv discovery runs independently of source submission",
+    "Authoritative database documentation and an operating-systems textbook chapter seeded"
+  ],
+  "sourceId": "5447a47212de42a72cbba78a6e2f56a24bb320498d1e1d5af243427ef2fceb29",
+  "pdfSourceId": "964d5d7a6b1806fe5fb936eca0ff9ec31f4687f52080ec49f3a30e3eade6876f",
+  "batchId": "8ae9be05-a60f-415d-bb89-de08373cbd17",
+  "published": 3,
+  "questionsBefore": 1115,
+  "questionsAfter": 1118
+}
