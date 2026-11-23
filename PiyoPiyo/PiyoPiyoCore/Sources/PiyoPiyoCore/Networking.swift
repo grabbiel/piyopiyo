@@ -170,7 +170,12 @@ final class AuthService: NSObject, ObservableObject, ASWebAuthenticationPresenta
     }
     refreshTask = task
     defer { if generation == identity { refreshTask = nil } }
-    return try await task.value
+    do {
+      return try await task.value
+    } catch let error as APIError where error.statusCode == 401 && generation == identity {
+      signOut()
+      throw error
+    }
   }
   func authorizeAppleDeletion(url: URL, expectedState: String) async throws {
     guard url.scheme == "https", url.host == "appleid.apple.com" else { throw APIError(message: "Invalid Apple authorization URL.") }

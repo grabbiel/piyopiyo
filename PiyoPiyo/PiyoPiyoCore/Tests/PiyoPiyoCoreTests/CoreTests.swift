@@ -366,6 +366,16 @@ final class ReleaseRegressionTests: XCTestCase {
     XCTAssertEqual(results.map(\.accessToken), ["new", "new"])
     XCTAssertEqual(auth.tokens?.refreshToken, "refresh+token")
   }
+  @MainActor func testRejectedRefreshClearsCredentials() async throws {
+    let id = "h." + Data("{\"sub\":\"learner\"}".utf8).base64URL + ".s"
+    let config = URLSessionConfiguration.ephemeral; config.protocolClasses = [StubProtocol.self]
+    StubProtocol.respond = { _ in (400, Data("{\"error\":\"invalid_grant\"}".utf8)) }
+    let auth = AuthService(urlSession: URLSession(configuration: config), storedTokens: AuthTokens(accessToken: "old", idToken: id, refreshToken: "r", expiresAt: .distantPast), useKeychain: false)
+    do { _ = try await auth.validTokens(); XCTFail("Rejected refresh succeeded") } catch {
+      XCTAssertEqual((error as? APIError)?.requiresSignIn, true)
+    }
+    XCTAssertNil(auth.tokens)
+  }
   @MainActor func testSignOutDuringRefreshCannotRestoreCredentials() async throws {
     let id = "h." + Data("{\"sub\":\"learner\"}".utf8).base64URL + ".s"
     let config = URLSessionConfiguration.ephemeral; config.protocolClasses = [StubProtocol.self]
