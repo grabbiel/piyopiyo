@@ -22,4 +22,11 @@ for name in sys.argv[1:]:
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(candidates[0], destination)
         destination.chmod(0o755)
+        if name == 'xcodegen':
+            # XcodeGen resolves presets in ../share/xcodegen relative to its binary.
+            # Without these resources it silently omits iOS SDK and product defaults.
+            presets = candidates[0].parent.parent / 'share' / 'xcodegen'
+            if not (presets / 'SettingPresets' / 'Platforms' / 'iOS.yml').is_file():
+                raise SystemExit('XcodeGen platform presets are missing')
+            shutil.copytree(presets, destination.parent.parent / 'share' / 'xcodegen', dirs_exist_ok=True)
         print(f'Installed verified {name}')
