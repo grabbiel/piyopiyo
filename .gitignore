@@ -118,3 +118,4 @@ artifacts/*
 !.env.example
 __pycache__/
 *.pyc
+cdk.*.out/

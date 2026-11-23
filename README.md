@@ -65,3 +65,7 @@ See [infrastructure operations](infra/README.md) and [release packaging](docs/re
 The cute yellow chick icon is original generated artwork inspired by the owner's reference. Its master and generation prompt are under `artifacts/branding/`; `swift scripts/make-icons.swift` regenerates platform sizes. The distinct Sources book icon and prompt are under `SourcesDesk/Branding/`; `swift scripts/make-sources-icons.swift` regenerates its Mac sizes. Only original audio, the Canvas mascot, and original icon artwork ship. Reference screenshots, source PDFs, and trailer excerpts remain outside the app. The provenance ledger records sources, references, and asset hashes.
 
 [Website](https://piyopiyo.grabbiel.com) · [Privacy policy](https://piyopiyo.grabbiel.com/privacy) · [Support](https://piyopiyo.grabbiel.com/support)
+
+## GitHub CI/CD
+
+Pull requests run backend, infrastructure, secret, and native checks. Passing `main` builds deliver the tested AWS function artifacts through app-scoped OIDC credentials. Infrastructure changes require the reviewed deployment procedure. The **Apple release** workflow creates signed iPhone/iPad packages and notarized Mac apps, with an explicit TestFlight upload option. See [CI/CD operations](docs/ci-cd.md).

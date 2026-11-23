@@ -1,0 +1,131 @@
+{
+  "Policies": [
+    {
+      "Policy": {
+        "Id": "IamPolicyAutopilot",
+        "Version": "2012-10-17",
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "cloudformation:CreateChangeSet",
+              "cloudformation:DeleteChangeSet",
+              "cloudformation:DescribeChangeSet",
+              "cloudformation:DescribeStacks",
+              "cloudformation:ExecuteChangeSet",
+              "cloudformation:GetTemplate",
+              "cloudformation:TagResource",
+              "cloudformation:UntagResource"
+            ],
+            "Resource": [
+              "arn:aws:cloudformation:us-east-1:992680757326:changeSet/*/*",
+              "arn:aws:cloudformation:us-east-1:992680757326:stack/*/*",
+              "arn:aws:cloudformation:us-east-1:992680757326:stackset/*:*"
+            ]
+          },
+          {
+            "Effect": "Allow",
+            "Action": [
+              "cloudformation:ListStacks"
+            ],
+            "Resource": [
+              "*"
+            ]
+          },
+          {
+            "Effect": "Allow",
+            "Action": [
+              "iam:PassRole"
+            ],
+            "Resource": [
+              "*"
+            ],
+            "Condition": {
+              "StringEquals": {
+                "iam:PassedToService": [
+                  "cloudformation.amazonaws.com"
+                ]
+              }
+            }
+          },
+          {
+            "Effect": "Allow",
+            "Action": [
+              "kms:GenerateDataKey"
+            ],
+            "Resource": [
+              "arn:aws:kms:us-east-1:992680757326:key/*"
+            ],
+            "Condition": {
+              "StringEquals": {
+                "kms:ViaService": [
+                  "s3.us-east-1.amazonaws.com"
+                ]
+              }
+            }
+          },
+          {
+            "Effect": "Allow",
+            "Action": [
+              "s3:PutObject",
+              "s3:PutObjectAcl",
+              "s3:PutObjectLegalHold",
+              "s3:PutObjectRetention",
+              "s3:PutObjectTagging"
+            ],
+            "Resource": [
+              "arn:aws:s3:::*/*",
+              "arn:aws:s3:us-east-1:992680757326:accesspoint/*/object/*"
+            ]
+          },
+          {
+            "Effect": "Allow",
+            "Action": [
+              "s3-object-lambda:PutObject"
+            ],
+            "Resource": [
+              "arn:aws:s3:::*/*",
+              "arn:aws:s3:us-east-1:992680757326:accesspoint/*/object/*"
+            ]
+          },
+          {
+            "Effect": "Allow",
+            "Action": [
+              "sts:GetCallerIdentity"
+            ],
+            "Resource": [
+              "*"
+            ]
+          }
+        ]
+      },
+      "PolicyType": "Identity"
+    }
+  ],
+  "Warnings": [
+    {
+      "WarningType": "WildcardResource",
+      "Location": {
+        "PolicyIndex": 0,
+        "StatementIndex": 1
+      },
+      "Message": "Statement could not be scoped to specific resources and uses Resource \"*\". Review whether broad resource access is intended."
+    },
+    {
+      "WarningType": "WildcardResource",
+      "Location": {
+        "PolicyIndex": 0,
+        "StatementIndex": 2
+      },
+      "Message": "Statement could not be scoped to specific resources and uses Resource \"*\". Review whether broad resource access is intended."
+    },
+    {
+      "WarningType": "WildcardResource",
+      "Location": {
+        "PolicyIndex": 0,
+        "StatementIndex": 6
+      },
+      "Message": "Statement could not be scoped to specific resources and uses Resource \"*\". Review whether broad resource access is intended."
+    }
+  ]
+}

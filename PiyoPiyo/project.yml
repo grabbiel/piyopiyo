@@ -1,4 +1,17 @@
 name: PiyoPiyo
+schemes:
+  PiyoPiyo-iOS:
+    build:
+      targets:
+        PiyoPiyo-iOS: all
+  PiyoPiyo-iPadOS:
+    build:
+      targets:
+        PiyoPiyo-iPadOS: all
+  PiyoPiyo-macOS:
+    build:
+      targets:
+        PiyoPiyo-macOS: all
 options:
   bundleIdPrefix: app.piyopiyo
   deploymentTarget:

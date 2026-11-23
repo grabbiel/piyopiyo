@@ -15,7 +15,7 @@ run('generate', ['xcodegen', 'generate', '--spec', 'PiyoPiyo/project.yml'])
 run('core-tests', ['swift', 'test', '--package-path', 'PiyoPiyo/PiyoPiyoCore', '--skip', 'SnapshotTests'])
 run('sources-build', ['swift', 'build', '--package-path', 'SourcesDesk', '-c', 'release'])
 run('mac-build', ['xcodebuild', '-project', 'PiyoPiyo/PiyoPiyo.xcodeproj', '-scheme', 'PiyoPiyo-macOS', '-configuration', 'Debug', '-destination', 'platform=macOS', '-derivedDataPath', 'DerivedData/ci-mac', 'CODE_SIGNING_ALLOWED=NO', 'build'])
-run('ios-build', ['xcodebuild', '-project', 'PiyoPiyo/PiyoPiyo.xcodeproj', '-scheme', 'PiyoPiyo-iOS', '-configuration', 'Debug', '-destination', 'generic/platform=iOS Simulator', '-derivedDataPath', 'DerivedData/ci-ios', 'CODE_SIGNING_ALLOWED=NO', 'build'])
+run('ios-build', ['xcodebuild', '-project', 'PiyoPiyo/PiyoPiyo.xcodeproj', '-scheme', 'PiyoPiyo-iOS', '-configuration', 'Debug', '-sdk', 'iphonesimulator', '-destination', 'generic/platform=iOS Simulator', '-derivedDataPath', 'DerivedData/ci-ios', 'CODE_SIGNING_ALLOWED=NO', 'build'])
 devices = json.loads(subprocess.check_output(['xcrun', 'simctl', 'list', 'devices', 'available', '--json']))['devices']
 ios = [(runtime, values) for runtime, values in devices.items() if '.iOS-' in runtime and values]
 if not ios:
