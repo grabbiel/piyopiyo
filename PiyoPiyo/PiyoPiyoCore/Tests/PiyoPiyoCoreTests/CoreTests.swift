@@ -51,6 +51,33 @@ final class CoreTests: XCTestCase {
     XCTAssertEqual(
       bank.first { $0.id == "architecture-3d" }?.game?.params?.roles?["Database"], "cylinder")
   }
+  func testScoringMatchesBackendParityFixture() throws {
+    let url = URL(fileURLWithPath: #filePath).deletingLastPathComponent()
+      .appending(path: "../../../../tests/fixtures/scoring-parity.json").standardized
+    let cases = try XCTUnwrap(
+      JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [[String: Any]])
+    XCTAssertFalse(cases.isEmpty)
+    for c in cases {
+      let name = c["name"] as! String
+      var fields: [String: Any] = [
+        "id": "parity", "topic": "Parity", "prompt": name, "options": [String](),
+        "explanation": "", "sourceId": "", "sourceURL": "", "difficulty": "easy",
+      ]
+      fields.merge(c["question"] as! [String: Any]) { $1 }
+      let q = try JSONDecoder().decode(
+        Question.self, from: JSONSerialization.data(withJSONObject: fields))
+      let answer = c["answer"] as! [String]
+      if c["invalid"] as? Bool == true {
+        XCTAssertThrowsError(try Scoring.evaluate(q, answer: answer), name)
+        continue
+      }
+      let result = try Scoring.evaluate(q, answer: answer)
+      XCTAssertEqual(result.score, c["score"] as! Double, name)
+      if let missing = c["missing"] as? [String] {
+        XCTAssertEqual(result.missingConcepts, missing, name)
+      }
+    }
+  }
   func testTimerResumeDoesNotResetOrGainTime() async throws {
     let q = try Question.bundled()[0]
     var state = SessionState(owner: "test", mode: .timed, questions: [q])

@@ -79,18 +79,22 @@
     "prompt": "Explain how Raft elects a leader and reduces split votes.",
     "options": [],
     "correct": [
-      "randomized|random",
+      "election timeout|times out|timeout",
+      "term",
+      "vote for itself|votes for itself|requestvote|request votes",
       "majority|quorum",
-      "term"
+      "randomized|random"
     ],
     "explanation": "Candidates increment their term and request votes. A majority elects a leader; randomized election timeouts reduce repeated split votes.",
     "sourceId": "raft",
     "sourceURL": "https://raft.github.io/raft.pdf",
     "difficulty": "hard",
     "criteria": [
-      "randomized|random",
+      "election timeout|times out|timeout",
+      "term",
+      "vote for itself|votes for itself|requestvote|request votes",
       "majority|quorum",
-      "term"
+      "randomized|random"
     ],
     "rubric": "Award exactly one point for each of the following five independently expressed facts. Do not infer unstated facts: 1. A follower starts an election after its election timeout. 2. The candidate increases its term. 3. The candidate votes for itself and requests votes. 4. A majority of votes elects the leader. 5. Randomized election timeouts reduce repeated split votes."
   },
@@ -885,18 +889,22 @@
     "prompt": "Explain how a mutex can prevent a lost update to a shared counter.",
     "options": [],
     "correct": [
-      "mutual exclusion|one thread",
-      "critical section|lock",
-      "read|update"
+      "same mutex|same lock|shared mutex|shared lock|one mutex|one lock",
+      "acquire|lock before",
+      "critical section",
+      "release|unlock",
+      "mutual exclusion|one thread at a time|only one thread"
     ],
     "explanation": "Protect the entire read-modify-write operation with the same mutex. Mutual exclusion prevents threads from interleaving the critical section.",
     "sourceId": "ostep",
     "sourceURL": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
     "difficulty": "medium",
     "criteria": [
-      "mutual exclusion|one thread",
-      "critical section|lock",
-      "read|update"
+      "same mutex|same lock|shared mutex|shared lock|one mutex|one lock",
+      "acquire|lock before",
+      "critical section",
+      "release|unlock",
+      "mutual exclusion|one thread at a time|only one thread"
     ],
     "rubric": "Award exactly one point for each of the following five independently expressed facts. Do not infer unstated facts: 1. All writers use the same mutex. 2. Acquire the mutex before reading the counter. 3. Keep the read-modify-write operation inside the critical section. 4. Release the mutex after writing. 5. Mutual exclusion prevents concurrent execution of the protected operation.",
     "dueAt": "2026-12-31T23:59:59Z"
@@ -910,7 +918,9 @@
     "correct": [
       "identifier|idempotency|serial",
       "store|cache|record",
-      "duplicate|retry"
+      "detect|duplicate|already seen|repeated",
+      "return",
+      "atomic|transaction|together with the effect"
     ],
     "explanation": "Give each request a stable identifier, record its result, and return that result when the same request is retried.",
     "sourceId": "raft",
@@ -919,7 +929,9 @@
     "criteria": [
       "identifier|idempotency|serial",
       "store|cache|record",
-      "duplicate|retry"
+      "detect|duplicate|already seen|repeated",
+      "return",
+      "atomic|transaction|together with the effect"
     ],
     "rubric": "Award exactly one point for each of the following five independently expressed facts. Do not infer unstated facts: 1. Use a stable unique request identifier. 2. Store the result associated with that identifier. 3. Detect repeated identifiers. 4. Return the stored result for a duplicate. 5. Atomically record the identifier with the effect to prevent races."
   },
@@ -1435,6 +1447,2352 @@
     "sourceId": "postgres",
     "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
     "difficulty": "medium"
+  },
+  {
+    "id": "np-certificate",
+    "format": "multiple_choice",
+    "topic": "Algorithms",
+    "prompt": "What characterizes a decision problem in NP?",
+    "options": [
+      "It requires exponential memory",
+      "Its yes answers have certificates checkable in polynomial time",
+      "No algorithm can ever solve it",
+      "Every instance is solvable in constant time"
+    ],
+    "correct": [
+      "Its yes answers have certificates checkable in polynomial time"
+    ],
+    "explanation": "NP means nondeterministic polynomial time: a proposed certificate for a yes answer can be checked in polynomial time.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "np-complete",
+    "format": "multiple_choice",
+    "topic": "Algorithms",
+    "prompt": "Which problems are NP-complete?",
+    "options": [
+      "Problems that are both in NP and NP-hard",
+      "Every problem in NP",
+      "Every NP-hard problem",
+      "Problems solvable in linear time"
+    ],
+    "correct": [
+      "Problems that are both in NP and NP-hard"
+    ],
+    "explanation": "NP-complete is the intersection of NP and NP-hard.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "np-hard",
+    "format": "multiple_choice",
+    "topic": "Algorithms",
+    "prompt": "What makes a problem NP-hard?",
+    "options": [
+      "It has a known polynomial-time algorithm",
+      "Its certificates are always short",
+      "It accepts only integer inputs",
+      "Any problem in NP reduces to it in polynomial time"
+    ],
+    "correct": [
+      "Any problem in NP reduces to it in polynomial time"
+    ],
+    "explanation": "An NP-hard problem can be used to solve any problem in NP with a polynomial-time reduction.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pseudopolynomial",
+    "format": "multiple_choice",
+    "topic": "Algorithms",
+    "prompt": "A pseudopolynomial running time is polynomial in what?",
+    "options": [
+      "The number of distinct outputs",
+      "The number of processors",
+      "The input size and the magnitude of the numbers in the input",
+      "The input size alone"
+    ],
+    "correct": [
+      "The input size and the magnitude of the numbers in the input"
+    ],
+    "explanation": "Pseudopolynomial bounds depend on both the input size and the size of the numbers in that input.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "las-vegas",
+    "format": "multiple_choice",
+    "topic": "Algorithms",
+    "prompt": "Which description fits a Las Vegas randomized algorithm?",
+    "options": [
+      "Always slow but correct",
+      "Always correct, probably fast",
+      "Always fast, probably correct",
+      "Never uses randomness"
+    ],
+    "correct": [
+      "Always correct, probably fast"
+    ],
+    "explanation": "A Las Vegas algorithm never returns a wrong answer; only its running time is random.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "monte-carlo",
+    "format": "multiple_choice",
+    "topic": "Algorithms",
+    "prompt": "Which description fits a Monte Carlo randomized algorithm?",
+    "options": [
+      "Always fast, probably correct",
+      "Always correct, probably fast",
+      "Always correct and always fast",
+      "Correct only on sorted input"
+    ],
+    "correct": [
+      "Always fast, probably correct"
+    ],
+    "explanation": "A Monte Carlo algorithm has a bounded running time but may return a wrong answer with small probability.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "stable-sort",
+    "format": "multiple_choice",
+    "topic": "Algorithms",
+    "prompt": "What does a stable sort preserve?",
+    "options": [
+      "The original position of every item",
+      "The largest item at the front",
+      "The memory address of each key",
+      "The relative order of items with equal keys"
+    ],
+    "correct": [
+      "The relative order of items with equal keys"
+    ],
+    "explanation": "Stability means items with equal keys keep the order they had in the input.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "in-place-sort",
+    "format": "multiple_choice",
+    "topic": "Algorithms",
+    "prompt": "What does an in-place sorting algorithm limit?",
+    "options": [
+      "Which keys may be compared",
+      "The number of equal keys",
+      "Extra space beyond the input array",
+      "The number of comparisons"
+    ],
+    "correct": [
+      "Extra space beyond the input array"
+    ],
+    "explanation": "An in-place sort rearranges items within the input and uses only a small amount of additional space.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "reduce-known",
+    "format": "multiple_choice",
+    "topic": "Algorithms",
+    "prompt": "What is a common first strategy for a new algorithms problem?",
+    "options": [
+      "Return a random output",
+      "Reduce it to a problem you already know how to solve",
+      "Always write an exhaustive search",
+      "Assume the input is sorted"
+    ],
+    "correct": [
+      "Reduce it to a problem you already know how to solve"
+    ],
+    "explanation": "Reducing to a solved problem, such as sorting or shortest paths, reuses an algorithm already known to be correct and efficient.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "connected-components",
+    "format": "multiple_choice",
+    "topic": "Algorithms",
+    "prompt": "Which problem partitions an undirected graph’s vertices into maximal mutually reachable groups?",
+    "options": [
+      "Connected components",
+      "Topological sort",
+      "Single-source shortest paths",
+      "Comparison sorting"
+    ],
+    "correct": [
+      "Connected components"
+    ],
+    "explanation": "Each connected component is a maximal set of vertices that can all reach one another.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "all-pairs",
+    "format": "multiple_choice",
+    "topic": "Algorithms",
+    "prompt": "Which problem asks for shortest-path distances between every pair of vertices?",
+    "options": [
+      "Single-source shortest paths",
+      "Reachability from one vertex",
+      "Topological sort",
+      "All-pairs shortest paths"
+    ],
+    "correct": [
+      "All-pairs shortest paths"
+    ],
+    "explanation": "All-pairs shortest paths computes a distance for each ordered pair of vertices.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "approximation",
+    "format": "multiple_choice",
+    "topic": "Algorithms",
+    "prompt": "What do approximation algorithms aim for on NP-hard optimization problems?",
+    "options": [
+      "Rejecting every hard input",
+      "Converting the problem into sorting",
+      "A provably near-optimal solution in polynomial time",
+      "The exact optimum in constant time"
+    ],
+    "correct": [
+      "A provably near-optimal solution in polynomial time"
+    ],
+    "explanation": "When exact optimization is NP-hard, an approximation algorithm trades optimality for a polynomial running time with a quality guarantee.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "union-find",
+    "format": "multiple_choice",
+    "topic": "Algorithms",
+    "prompt": "Which data structure maintains disjoint sets under union and find operations?",
+    "options": [
+      "Adjacency matrix",
+      "Union-find",
+      "Binary heap",
+      "Sorted array"
+    ],
+    "correct": [
+      "Union-find"
+    ],
+    "explanation": "Union-find merges sets and reports which set contains an element.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mst-define",
+    "format": "multiple_choice",
+    "topic": "Algorithms",
+    "prompt": "What does a minimum spanning tree of a connected weighted graph contain?",
+    "options": [
+      "Edges connecting every vertex with minimum total weight",
+      "The shortest path between two vertices",
+      "Only the edges of one cycle",
+      "Every edge of the graph"
+    ],
+    "correct": [
+      "Edges connecting every vertex with minimum total weight"
+    ],
+    "explanation": "A spanning tree reaches all vertices without cycles; a minimum one has the smallest total edge weight.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "greedy-step",
+    "format": "multiple_choice",
+    "topic": "Algorithms",
+    "prompt": "What does a greedy algorithm do at each step?",
+    "options": [
+      "Tries every possible combination",
+      "Solves and stores every subproblem",
+      "Makes a uniformly random choice",
+      "Commits to the locally best choice"
+    ],
+    "correct": [
+      "Commits to the locally best choice"
+    ],
+    "explanation": "A greedy algorithm builds a solution incrementally by committing to the best immediate option.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "comparison-model",
+    "format": "multiple_choice",
+    "topic": "Algorithms",
+    "prompt": "In the comparison model, how may a sorting algorithm learn about keys?",
+    "options": [
+      "By hashing each key",
+      "By inspecting key bits directly",
+      "Only by comparing pairs of keys",
+      "By using keys as array indices"
+    ],
+    "correct": [
+      "Only by comparing pairs of keys"
+    ],
+    "explanation": "Comparison sorts gain information only from the outcomes of pairwise comparisons.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "tcb",
+    "format": "multiple_choice",
+    "topic": "Operating systems",
+    "prompt": "Where is a thread’s register state saved when the OS switches to another thread?",
+    "options": [
+      "A file descriptor",
+      "A thread control block",
+      "The page table",
+      "The heap"
+    ],
+    "correct": [
+      "A thread control block"
+    ],
+    "explanation": "Each thread’s execution state is saved in its thread control block so it can resume later.",
+    "sourceId": "ostep",
+    "sourceURL": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "thread-switch-cost",
+    "format": "multiple_choice",
+    "topic": "Operating systems",
+    "prompt": "What usually stays the same when switching between threads of one process?",
+    "options": [
+      "The address space",
+      "The program counter",
+      "The register values",
+      "The stack pointer"
+    ],
+    "correct": [
+      "The address space"
+    ],
+    "explanation": "Threads of one process share an address space, so a thread switch does not need to change page tables.",
+    "sourceId": "ostep",
+    "sourceURL": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "thread-local",
+    "format": "multiple_choice",
+    "topic": "Operating systems",
+    "prompt": "Where are a thread’s local variables and return values normally stored?",
+    "options": [
+      "Only on the shared heap",
+      "In the page table",
+      "In the code segment",
+      "On that thread’s own stack"
+    ],
+    "correct": [
+      "On that thread’s own stack"
+    ],
+    "explanation": "Each thread has its own stack, sometimes called thread-local storage, for locals, parameters and return values.",
+    "sourceId": "ostep",
+    "sourceURL": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "race-define",
+    "format": "multiple_choice",
+    "topic": "Operating systems",
+    "prompt": "What is a race condition?",
+    "options": [
+      "A deadlock between two locks",
+      "A program without shared data",
+      "A result that depends on the timing of execution",
+      "A thread that runs faster than others"
+    ],
+    "correct": [
+      "A result that depends on the timing of execution"
+    ],
+    "explanation": "When unlucky interleavings change the result, the program has a race condition.",
+    "sourceId": "ostep",
+    "sourceURL": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "indeterminate",
+    "format": "multiple_choice",
+    "topic": "Operating systems",
+    "prompt": "A program whose output varies between runs because of thread timing is called what?",
+    "options": [
+      "Pure",
+      "Indeterminate",
+      "Deterministic",
+      "Idempotent"
+    ],
+    "correct": [
+      "Indeterminate"
+    ],
+    "explanation": "An indeterminate program can produce different results across runs depending on how threads interleave.",
+    "sourceId": "ostep",
+    "sourceURL": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mutual-exclusion",
+    "format": "multiple_choice",
+    "topic": "Operating systems",
+    "prompt": "Which property ensures that while one thread runs a critical section, others cannot?",
+    "options": [
+      "Mutual exclusion",
+      "Locality",
+      "Preemption",
+      "Thread-local storage"
+    ],
+    "correct": [
+      "Mutual exclusion"
+    ],
+    "explanation": "Mutual exclusion lets only one thread at a time execute code that accesses the shared state.",
+    "sourceId": "ostep",
+    "sourceURL": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "atomicity",
+    "format": "multiple_choice",
+    "topic": "Operating systems",
+    "prompt": "What does executing a series of actions atomically mean?",
+    "options": [
+      "They run on a single core",
+      "They never access memory",
+      "They run faster than other code",
+      "They appear to happen all at once or not at all"
+    ],
+    "correct": [
+      "They appear to happen all at once or not at all"
+    ],
+    "explanation": "An atomic action cannot be observed partway through: it either completes entirely or has no effect.",
+    "sourceId": "ostep",
+    "sourceURL": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pthread-join",
+    "format": "multiple_choice",
+    "topic": "Operating systems",
+    "prompt": "What does pthread_join() do?",
+    "options": [
+      "Releases a lock",
+      "Signals every thread",
+      "Waits for a particular thread to finish",
+      "Creates a new thread"
+    ],
+    "correct": [
+      "Waits for a particular thread to finish"
+    ],
+    "explanation": "pthread_join blocks the caller until the specified thread completes.",
+    "sourceId": "ostep",
+    "sourceURL": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pthread-order",
+    "format": "multiple_choice",
+    "topic": "Operating systems",
+    "prompt": "After pthread_create() returns, which thread runs next?",
+    "options": [
+      "The thread with the lowest ID",
+      "Whichever thread the scheduler chooses",
+      "Always the new thread",
+      "Always the creating thread"
+    ],
+    "correct": [
+      "Whichever thread the scheduler chooses"
+    ],
+    "explanation": "Creating a thread makes it runnable; the OS scheduler decides what actually runs next.",
+    "sourceId": "ostep",
+    "sourceURL": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "increment-instructions",
+    "format": "multiple_choice",
+    "topic": "Operating systems",
+    "prompt": "Why can counter = counter + 1 be unsafe when two threads run it?",
+    "options": [
+      "It executes as separate load, add and store instructions",
+      "It is always one atomic instruction",
+      "It allocates heap memory",
+      "It always causes a page fault"
+    ],
+    "correct": [
+      "It executes as separate load, add and store instructions"
+    ],
+    "explanation": "A context switch between the load and the store lets another thread work from the same old value.",
+    "sourceId": "ostep",
+    "sourceURL": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "threads-io",
+    "format": "multiple_choice",
+    "topic": "Operating systems",
+    "prompt": "Besides parallelism, why might a program use threads?",
+    "options": [
+      "To make every instruction atomic",
+      "To give each thread its own address space",
+      "To avoid all synchronization",
+      "To keep making progress while one activity waits for I/O"
+    ],
+    "correct": [
+      "To keep making progress while one activity waits for I/O"
+    ],
+    "explanation": "Threads let a program overlap I/O waits with other work instead of blocking entirely.",
+    "sourceId": "ostep",
+    "sourceURL": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "serializable-define",
+    "format": "multiple_choice",
+    "topic": "Databases",
+    "prompt": "What does the SQL standard require of concurrent Serializable transactions?",
+    "options": [
+      "They always commit",
+      "They may read uncommitted data",
+      "The same effect as running them one at a time in some order",
+      "They never wait for each other"
+    ],
+    "correct": [
+      "The same effect as running them one at a time in some order"
+    ],
+    "explanation": "Serializable execution must be equivalent to some serial order of the transactions.",
+    "sourceId": "postgres",
+    "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "difficulty": "medium"
+  },
+  {
+    "id": "serialization-anomaly",
+    "format": "multiple_choice",
+    "topic": "Databases",
+    "prompt": "What is a serialization anomaly?",
+    "options": [
+      "A deadlock between two sessions",
+      "A committed result inconsistent with every serial order of the transactions",
+      "A query syntax error",
+      "A dirty read"
+    ],
+    "correct": [
+      "A committed result inconsistent with every serial order of the transactions"
+    ],
+    "explanation": "The outcome of committed concurrent transactions matches no possible one-at-a-time ordering.",
+    "sourceId": "postgres",
+    "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "difficulty": "medium"
+  },
+  {
+    "id": "rr-snapshot",
+    "format": "multiple_choice",
+    "topic": "Databases",
+    "prompt": "At Repeatable Read in PostgreSQL, queries see a snapshot taken when?",
+    "options": [
+      "At the first non-transaction-control statement of the transaction",
+      "At the start of each statement",
+      "At the most recent commit anywhere",
+      "At the end of the transaction"
+    ],
+    "correct": [
+      "At the first non-transaction-control statement of the transaction"
+    ],
+    "explanation": "All statements in a Repeatable Read transaction see the same snapshot, so successive SELECTs agree.",
+    "sourceId": "postgres",
+    "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "difficulty": "medium"
+  },
+  {
+    "id": "rr-phantom",
+    "format": "multiple_choice",
+    "topic": "Databases",
+    "prompt": "Can phantom reads occur at Repeatable Read in PostgreSQL?",
+    "options": [
+      "Yes, always",
+      "Only on indexed columns",
+      "Only in read-only transactions",
+      "No, PostgreSQL prevents them at that level"
+    ],
+    "correct": [
+      "No, PostgreSQL prevents them at that level"
+    ],
+    "explanation": "The standard allows phantoms at Repeatable Read, but PostgreSQL’s implementation does not produce them.",
+    "sourceId": "postgres",
+    "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "difficulty": "medium"
+  },
+  {
+    "id": "rc-update-wait",
+    "format": "multiple_choice",
+    "topic": "Databases",
+    "prompt": "At Read Committed, an UPDATE finds its target row being updated by an in-progress transaction. What happens?",
+    "options": [
+      "It raises a syntax error",
+      "It skips every row",
+      "It waits for that transaction to commit or roll back",
+      "It overwrites the row immediately"
+    ],
+    "correct": [
+      "It waits for that transaction to commit or roll back"
+    ],
+    "explanation": "The second updater waits for the first; its next step depends on whether the first commits or rolls back.",
+    "sourceId": "postgres",
+    "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "difficulty": "medium"
+  },
+  {
+    "id": "rc-reevaluate",
+    "format": "multiple_choice",
+    "topic": "Databases",
+    "prompt": "After a concurrent updater commits, what does a waiting Read Committed UPDATE check?",
+    "options": [
+      "Whether the isolation level changed",
+      "Whether the updated row version still matches its WHERE clause",
+      "Whether the whole database snapshot changed",
+      "Whether every index is valid"
+    ],
+    "correct": [
+      "Whether the updated row version still matches its WHERE clause"
+    ],
+    "explanation": "The search condition is re-evaluated against the new row version before the update proceeds.",
+    "sourceId": "postgres",
+    "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "difficulty": "medium"
+  },
+  {
+    "id": "predicate-locks",
+    "format": "multiple_choice",
+    "topic": "Databases",
+    "prompt": "Do PostgreSQL’s SIRead predicate locks block other transactions?",
+    "options": [
+      "No, they only flag dependencies",
+      "Yes, they block all writes",
+      "Yes, they block all reads",
+      "They block only schema changes"
+    ],
+    "correct": [
+      "No, they only flag dependencies"
+    ],
+    "explanation": "Predicate locks track read/write dependencies without blocking, so they cannot cause deadlocks.",
+    "sourceId": "postgres",
+    "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "difficulty": "medium"
+  },
+  {
+    "id": "rr-error",
+    "format": "multiple_choice",
+    "topic": "Databases",
+    "prompt": "Which error can a Repeatable Read transaction get when it tries to update a row another transaction updated and committed?",
+    "options": [
+      "duplicate key value violates unique constraint",
+      "relation does not exist",
+      "division by zero",
+      "could not serialize access due to concurrent update"
+    ],
+    "correct": [
+      "could not serialize access due to concurrent update"
+    ],
+    "explanation": "Repeatable Read cannot modify rows changed after its snapshot, so it aborts with a serialization failure.",
+    "sourceId": "postgres",
+    "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "difficulty": "medium"
+  },
+  {
+    "id": "deferrable",
+    "format": "multiple_choice",
+    "topic": "Databases",
+    "prompt": "What does a SERIALIZABLE READ ONLY DEFERRABLE transaction wait for before reading?",
+    "options": [
+      "An exclusive table lock",
+      "The next checkpoint",
+      "A snapshot guaranteed free of serialization anomalies",
+      "Every other session to disconnect"
+    ],
+    "correct": [
+      "A snapshot guaranteed free of serialization anomalies"
+    ],
+    "explanation": "Once it has a safe snapshot, its reads are valid immediately and it cannot fail with a serialization error.",
+    "sourceId": "postgres",
+    "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "difficulty": "medium"
+  },
+  {
+    "id": "seqscan-lock",
+    "format": "multiple_choice",
+    "topic": "Databases",
+    "prompt": "Under Serializable isolation, which access always takes a relation-level predicate lock?",
+    "options": [
+      "Evaluating a constant expression",
+      "A sequential scan",
+      "An index lookup of one row",
+      "A COMMIT"
+    ],
+    "correct": [
+      "A sequential scan"
+    ],
+    "explanation": "A sequential scan reads the whole relation, so its predicate lock covers the whole relation and can raise failure rates.",
+    "sourceId": "postgres",
+    "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "difficulty": "medium"
+  },
+  {
+    "id": "rc-complex",
+    "format": "multiple_choice",
+    "topic": "Databases",
+    "prompt": "Why is Read Committed ill-suited to updates with complex search conditions?",
+    "options": [
+      "An updating command can see an inconsistent mix of row versions",
+      "It allows dirty reads",
+      "It blocks all concurrent readers",
+      "It disables indexes"
+    ],
+    "correct": [
+      "An updating command can see an inconsistent mix of row versions"
+    ],
+    "explanation": "A waiting updater sees concurrent changes to its target rows but not to other rows, which can mislead complex conditions.",
+    "sourceId": "postgres",
+    "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "difficulty": "medium"
+  },
+  {
+    "id": "serializable-monitor",
+    "format": "multiple_choice",
+    "topic": "Databases",
+    "prompt": "How does PostgreSQL’s Serializable level differ from its Repeatable Read?",
+    "options": [
+      "It allows dirty reads",
+      "It takes no snapshot",
+      "It never raises errors",
+      "It also monitors for dependencies that could produce serialization anomalies"
+    ],
+    "correct": [
+      "It also monitors for dependencies that could produce serialization anomalies"
+    ],
+    "explanation": "Serializable works like Repeatable Read plus monitoring that aborts transactions whose combination could not occur serially.",
+    "sourceId": "postgres",
+    "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "difficulty": "medium"
+  },
+  {
+    "id": "raft-roles",
+    "format": "multiple_choice",
+    "topic": "Distributed systems",
+    "prompt": "Which three states can a Raft server be in?",
+    "options": [
+      "Proposer, acceptor or learner",
+      "Client, server or proxy",
+      "Leader, follower or candidate",
+      "Primary, backup or witness"
+    ],
+    "correct": [
+      "Leader, follower or candidate"
+    ],
+    "explanation": "Raft servers are followers by default, become candidates to run elections and become leaders after winning.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "raft-log-flow",
+    "format": "multiple_choice",
+    "topic": "Distributed systems",
+    "prompt": "In which direction do log entries flow in Raft?",
+    "options": [
+      "From clients to every server equally",
+      "From the leader to the other servers",
+      "From any follower to the leader",
+      "Directly between followers"
+    ],
+    "correct": [
+      "From the leader to the other servers"
+    ],
+    "explanation": "Raft’s strong leader accepts entries from clients and replicates them to followers.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "raft-election-safety",
+    "format": "multiple_choice",
+    "topic": "Distributed systems",
+    "prompt": "What does Raft’s Election Safety property guarantee?",
+    "options": [
+      "At most one leader is elected in a given term",
+      "Every server leads once",
+      "Elections never time out",
+      "Leaders never fail"
+    ],
+    "correct": [
+      "At most one leader is elected in a given term"
+    ],
+    "explanation": "Each server votes at most once per term, and winning requires a majority, so two leaders cannot share a term.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "raft-append-only",
+    "format": "multiple_choice",
+    "topic": "Distributed systems",
+    "prompt": "What does Raft’s Leader Append-Only property state?",
+    "options": [
+      "Followers never receive entries",
+      "Logs only shrink",
+      "Clients append directly to followers",
+      "A leader never overwrites or deletes entries in its own log"
+    ],
+    "correct": [
+      "A leader never overwrites or deletes entries in its own log"
+    ],
+    "explanation": "A leader only appends new entries to its log.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "raft-log-matching",
+    "format": "multiple_choice",
+    "topic": "Distributed systems",
+    "prompt": "Two Raft logs contain an entry with the same index and term. What follows?",
+    "options": [
+      "The entries came from different leaders",
+      "The entry is uncommitted",
+      "The logs are identical in every entry up through that index",
+      "The logs are identical after that index"
+    ],
+    "correct": [
+      "The logs are identical in every entry up through that index"
+    ],
+    "explanation": "The Log Matching Property makes matching index and term imply identical preceding entries.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "raft-leader-completeness",
+    "format": "multiple_choice",
+    "topic": "Distributed systems",
+    "prompt": "What does Raft’s Leader Completeness property say about a committed entry?",
+    "options": [
+      "It is applied before it is stored",
+      "It appears in the logs of all leaders of later terms",
+      "It is removed after one term",
+      "Only its original leader stores it"
+    ],
+    "correct": [
+      "It appears in the logs of all leaders of later terms"
+    ],
+    "explanation": "The voting restriction ensures every future leader already holds every committed entry.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "raft-up-to-date",
+    "format": "multiple_choice",
+    "topic": "Distributed systems",
+    "prompt": "How does a Raft voter decide whether a candidate’s log is at least as up-to-date as its own?",
+    "options": [
+      "Compare the last entries’ terms, then log length if the terms are equal",
+      "Compare server IDs",
+      "Compare how many votes each has cast",
+      "Compare wall-clock times"
+    ],
+    "correct": [
+      "Compare the last entries’ terms, then log length if the terms are equal"
+    ],
+    "explanation": "A later last term wins; with equal last terms, the longer log is more up-to-date.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "raft-timing",
+    "format": "multiple_choice",
+    "topic": "Distributed systems",
+    "prompt": "Which timing requirement lets Raft keep a steady leader?",
+    "options": [
+      "electionTimeout ≪ broadcastTime",
+      "MTBF ≪ broadcastTime",
+      "All three must be equal",
+      "broadcastTime ≪ electionTimeout ≪ MTBF"
+    ],
+    "correct": [
+      "broadcastTime ≪ electionTimeout ≪ MTBF"
+    ],
+    "explanation": "Heartbeats must arrive well within the election timeout, and failures must be much rarer than timeouts.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "raft-timeout-range",
+    "format": "multiple_choice",
+    "topic": "Distributed systems",
+    "prompt": "Which election timeout range does the Raft paper give as an example?",
+    "options": [
+      "10–20 minutes",
+      "Exactly one second, never randomized",
+      "150–300 milliseconds",
+      "1–2 microseconds"
+    ],
+    "correct": [
+      "150–300 milliseconds"
+    ],
+    "explanation": "Timeouts are chosen randomly from a fixed interval such as 150–300 ms to spread out candidates.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "raft-snapshot",
+    "format": "multiple_choice",
+    "topic": "Distributed systems",
+    "prompt": "How does Raft keep the log from growing without bound?",
+    "options": [
+      "Electing a new leader every minute",
+      "Snapshotting state and discarding the log entries it covers",
+      "Deleting the newest entries",
+      "Restarting the cluster"
+    ],
+    "correct": [
+      "Snapshotting state and discarding the log entries it covers"
+    ],
+    "explanation": "A snapshot records the system state up to an index, so earlier entries can be discarded.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "raft-joint",
+    "format": "multiple_choice",
+    "topic": "Distributed systems",
+    "prompt": "How does Raft move safely between cluster configurations?",
+    "options": [
+      "Through a joint consensus that includes both the old and new configurations",
+      "By switching every server at the same instant",
+      "By stopping all clients permanently",
+      "By letting each server choose its own members"
+    ],
+    "correct": [
+      "Through a joint consensus that includes both the old and new configurations"
+    ],
+    "explanation": "During joint consensus, decisions need majorities from both configurations, so the two cannot decide independently.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "raft-noop",
+    "format": "multiple_choice",
+    "topic": "Distributed systems",
+    "prompt": "What does a new Raft leader commit at the start of its term so it learns which entries are committed?",
+    "options": [
+      "A snapshot from every follower",
+      "A membership change",
+      "Nothing until a client writes",
+      "A blank no-op entry"
+    ],
+    "correct": [
+      "A blank no-op entry"
+    ],
+    "explanation": "Committing an entry from its own term also commits all earlier entries in the leader’s log.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "raft-old-term",
+    "format": "multiple_choice",
+    "topic": "Distributed systems",
+    "prompt": "Why does a Raft leader not treat an earlier-term entry as committed just because a majority stores it?",
+    "options": [
+      "Majorities differ across terms",
+      "Followers reject earlier-term entries",
+      "A future leader could still overwrite it",
+      "Earlier-term entries are always invalid"
+    ],
+    "correct": [
+      "A future leader could still overwrite it"
+    ],
+    "explanation": "Only entries from the leader’s current term are committed by counting replicas; earlier entries commit indirectly.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "raft-persist",
+    "format": "multiple_choice",
+    "topic": "Distributed systems",
+    "prompt": "Which Raft state must be on stable storage before a server responds to RPCs?",
+    "options": [
+      "lastApplied alone",
+      "currentTerm, votedFor and the log",
+      "commitIndex alone",
+      "nextIndex for each follower"
+    ],
+    "correct": [
+      "currentTerm, votedFor and the log"
+    ],
+    "explanation": "Persisting the term, vote and log prevents a restarted server from voting twice or forgetting entries.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "python-extend",
+    "format": "multiple_choice",
+    "topic": "Programming",
+    "prompt": "How does list.extend(iterable) differ from list.append(x)?",
+    "options": [
+      "extend adds each item of the iterable; append adds x as one element",
+      "They are identical",
+      "append adds each item; extend adds one element",
+      "extend returns a new list"
+    ],
+    "correct": [
+      "extend adds each item of the iterable; append adds x as one element"
+    ],
+    "explanation": "extend appends every item from the iterable, while append adds its argument as a single element.",
+    "sourceId": "python",
+    "sourceURL": "https://docs.python.org/3/tutorial/datastructures.html",
+    "difficulty": "medium"
+  },
+  {
+    "id": "python-insert",
+    "format": "multiple_choice",
+    "topic": "Programming",
+    "prompt": "What does items.insert(0, x) do?",
+    "options": [
+      "Replaces the first element with x",
+      "Appends x at the end",
+      "Removes the element at index 0",
+      "Inserts x at the front of the list"
+    ],
+    "correct": [
+      "Inserts x at the front of the list"
+    ],
+    "explanation": "insert(i, x) places x before the element currently at index i.",
+    "sourceId": "python",
+    "sourceURL": "https://docs.python.org/3/tutorial/datastructures.html",
+    "difficulty": "medium"
+  },
+  {
+    "id": "python-remove",
+    "format": "multiple_choice",
+    "topic": "Programming",
+    "prompt": "What happens when list.remove(x) finds no item equal to x?",
+    "options": [
+      "It removes the last item",
+      "It returns -1",
+      "It raises ValueError",
+      "It returns None silently"
+    ],
+    "correct": [
+      "It raises ValueError"
+    ],
+    "explanation": "remove deletes the first matching item and raises ValueError when there is none.",
+    "sourceId": "python",
+    "sourceURL": "https://docs.python.org/3/tutorial/datastructures.html",
+    "difficulty": "medium"
+  },
+  {
+    "id": "python-singleton",
+    "format": "multiple_choice",
+    "topic": "Programming",
+    "prompt": "Which expression creates a one-element tuple?",
+    "options": [
+      "{1}",
+      "(1,)",
+      "(1)",
+      "[1]"
+    ],
+    "correct": [
+      "(1,)"
+    ],
+    "explanation": "The trailing comma makes a tuple; parentheses around a single value only group it.",
+    "sourceId": "python",
+    "sourceURL": "https://docs.python.org/3/tutorial/datastructures.html",
+    "difficulty": "medium"
+  },
+  {
+    "id": "python-del-slice",
+    "format": "multiple_choice",
+    "topic": "Programming",
+    "prompt": "After a = [1, 2, 3, 4] and del a[1:3], what is a?",
+    "options": [
+      "[1, 4]",
+      "[1, 2]",
+      "[3, 4]",
+      "[]"
+    ],
+    "correct": [
+      "[1, 4]"
+    ],
+    "explanation": "The slice 1:3 covers indices 1 and 2, so the values 2 and 3 are removed.",
+    "sourceId": "python",
+    "sourceURL": "https://docs.python.org/3/tutorial/datastructures.html",
+    "difficulty": "medium"
+  },
+  {
+    "id": "python-enumerate",
+    "format": "multiple_choice",
+    "topic": "Programming",
+    "prompt": "What does enumerate() provide when looping over a sequence?",
+    "options": [
+      "Only the values",
+      "Only the indices",
+      "The values in reverse order",
+      "Each position index together with its value"
+    ],
+    "correct": [
+      "Each position index together with its value"
+    ],
+    "explanation": "enumerate yields index-value pairs, so the loop receives both at once.",
+    "sourceId": "python",
+    "sourceURL": "https://docs.python.org/3/tutorial/datastructures.html",
+    "difficulty": "medium"
+  },
+  {
+    "id": "python-zip",
+    "format": "multiple_choice",
+    "topic": "Programming",
+    "prompt": "What does zip() do when looping over two sequences together?",
+    "options": [
+      "Sorts both",
+      "Removes duplicates",
+      "Pairs up their corresponding entries",
+      "Concatenates them"
+    ],
+    "correct": [
+      "Pairs up their corresponding entries"
+    ],
+    "explanation": "zip yields tuples containing the next item from each sequence.",
+    "sourceId": "python",
+    "sourceURL": "https://docs.python.org/3/tutorial/datastructures.html",
+    "difficulty": "medium"
+  },
+  {
+    "id": "python-items",
+    "format": "multiple_choice",
+    "topic": "Programming",
+    "prompt": "Which dictionary method retrieves each key and value together in a loop?",
+    "options": [
+      "get()",
+      "items()",
+      "keys()",
+      "values()"
+    ],
+    "correct": [
+      "items()"
+    ],
+    "explanation": "items() yields key-value pairs.",
+    "sourceId": "python",
+    "sourceURL": "https://docs.python.org/3/tutorial/datastructures.html",
+    "difficulty": "medium"
+  },
+  {
+    "id": "python-compare",
+    "format": "multiple_choice",
+    "topic": "Programming",
+    "prompt": "How does Python compare two sequences of the same type?",
+    "options": [
+      "Lexicographically, item by item",
+      "By length only",
+      "By memory address",
+      "By the sum of their elements"
+    ],
+    "correct": [
+      "Lexicographically, item by item"
+    ],
+    "explanation": "The first unequal pair of items decides the comparison; if one sequence is a prefix, the shorter is smaller.",
+    "sourceId": "python",
+    "sourceURL": "https://docs.python.org/3/tutorial/datastructures.html",
+    "difficulty": "medium"
+  },
+  {
+    "id": "python-count",
+    "format": "multiple_choice",
+    "topic": "Programming",
+    "prompt": "What does [1, 2, 2, 3].count(2) return?",
+    "options": [
+      "1",
+      "3",
+      "[2, 2]",
+      "2"
+    ],
+    "correct": [
+      "2"
+    ],
+    "explanation": "count returns how many times the value appears in the list.",
+    "sourceId": "python",
+    "sourceURL": "https://docs.python.org/3/tutorial/datastructures.html",
+    "difficulty": "medium"
+  },
+  {
+    "id": "tf-pg-dirty",
+    "format": "true_false",
+    "topic": "Databases",
+    "prompt": "PostgreSQL permits dirty reads when a transaction requests Read Uncommitted.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": [
+      "False"
+    ],
+    "explanation": "PostgreSQL treats Read Uncommitted like Read Committed, so a transaction never sees uncommitted data.",
+    "sourceId": "postgres",
+    "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "difficulty": "easy"
+  },
+  {
+    "id": "tf-raft-two-votes",
+    "format": "true_false",
+    "topic": "Distributed systems",
+    "prompt": "A Raft server may vote for two different candidates in the same term.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": [
+      "False"
+    ],
+    "explanation": "Each server grants at most one vote per term on a first-come-first-served basis.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "tf-shared-heap",
+    "format": "true_false",
+    "topic": "Operating systems",
+    "prompt": "Threads of the same process can read and write the same heap data.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": [
+      "True"
+    ],
+    "explanation": "Threads share their process’s address space, including the heap, which is why shared data needs synchronization.",
+    "sourceId": "ostep",
+    "sourceURL": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "difficulty": "easy"
+  },
+  {
+    "id": "tf-stable-sort",
+    "format": "true_false",
+    "topic": "Algorithms",
+    "prompt": "A stable sort keeps items with equal keys in their original relative order.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": [
+      "True"
+    ],
+    "explanation": "Stability is defined by preserving the input order among equal keys.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "easy"
+  },
+  {
+    "id": "tf-list-stack",
+    "format": "true_false",
+    "topic": "Programming",
+    "prompt": "A Python list can serve as a stack using append() and pop().",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": [
+      "True"
+    ],
+    "explanation": "append pushes onto the end and pop with no index removes from the end, giving last-in, first-out behavior.",
+    "sourceId": "python",
+    "sourceURL": "https://docs.python.org/3/tutorial/datastructures.html",
+    "difficulty": "easy"
+  },
+  {
+    "id": "tf-npc-hard",
+    "format": "true_false",
+    "topic": "Algorithms",
+    "prompt": "Every NP-complete problem is also NP-hard.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": [
+      "True"
+    ],
+    "explanation": "NP-complete problems are exactly those in both NP and NP-hard.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "tf-raft-passive",
+    "format": "true_false",
+    "topic": "Distributed systems",
+    "prompt": "Raft followers issue no requests of their own; they only respond to leaders and candidates.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": [
+      "True"
+    ],
+    "explanation": "Followers are passive. A follower that stops hearing from a leader becomes a candidate before it sends requests.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "tf-ssi-blocking",
+    "format": "true_false",
+    "topic": "Databases",
+    "prompt": "PostgreSQL’s Serializable monitoring adds blocking beyond what Repeatable Read already has.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": [
+      "False"
+    ],
+    "explanation": "The monitoring adds overhead and may abort transactions, but it introduces no additional blocking.",
+    "sourceId": "postgres",
+    "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ms-raft-persist",
+    "format": "multiple_select",
+    "topic": "Distributed systems",
+    "prompt": "Which state must every Raft server keep on stable storage?",
+    "options": [
+      "currentTerm",
+      "votedFor",
+      "log[]",
+      "commitIndex",
+      "nextIndex[]"
+    ],
+    "correct": [
+      "currentTerm",
+      "votedFor",
+      "log[]"
+    ],
+    "explanation": "The term, vote and log are persistent. commitIndex and nextIndex are volatile and rebuilt after a restart.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ms-rc-phenomena",
+    "format": "multiple_select",
+    "topic": "Databases",
+    "prompt": "Which phenomena can occur at Read Committed in PostgreSQL?",
+    "options": [
+      "Dirty read",
+      "Nonrepeatable read",
+      "Phantom read",
+      "Serialization anomaly"
+    ],
+    "correct": [
+      "Nonrepeatable read",
+      "Phantom read",
+      "Serialization anomaly"
+    ],
+    "explanation": "Read Committed prevents dirty reads but permits nonrepeatable reads, phantoms and serialization anomalies.",
+    "sourceId": "postgres",
+    "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ms-thread-private",
+    "format": "multiple_select",
+    "topic": "Operating systems",
+    "prompt": "Which does each thread have its own copy of?",
+    "options": [
+      "Program counter",
+      "Registers",
+      "Stack",
+      "Address space",
+      "Heap"
+    ],
+    "correct": [
+      "Program counter",
+      "Registers",
+      "Stack"
+    ],
+    "explanation": "Each thread has its own execution state and stack. The address space and heap are shared.",
+    "sourceId": "ostep",
+    "sourceURL": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ms-graph-problems",
+    "format": "multiple_select",
+    "topic": "Algorithms",
+    "prompt": "Which of these are graph problems?",
+    "options": [
+      "Topological sort",
+      "Cycle detection",
+      "Single-source shortest paths",
+      "Binary search",
+      "Merge sort"
+    ],
+    "correct": [
+      "Topological sort",
+      "Cycle detection",
+      "Single-source shortest paths"
+    ],
+    "explanation": "Binary search and merge sort operate on sequences; the others are defined on graphs.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ms-immutable",
+    "format": "multiple_select",
+    "topic": "Programming",
+    "prompt": "Which of these Python objects are immutable?",
+    "options": [
+      "A string",
+      "A tuple of numbers",
+      "A list",
+      "A dictionary",
+      "A set"
+    ],
+    "correct": [
+      "A string",
+      "A tuple of numbers"
+    ],
+    "explanation": "Strings and tuples cannot be changed in place. Lists, dictionaries and sets are mutable.",
+    "sourceId": "python",
+    "sourceURL": "https://docs.python.org/3/tutorial/datastructures.html",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ms-recursive-design",
+    "format": "multiple_select",
+    "topic": "Algorithms",
+    "prompt": "Which are approaches to designing a recursive algorithm?",
+    "options": [
+      "Divide and conquer",
+      "Dynamic programming",
+      "Brute force",
+      "Binary heap",
+      "Hash table"
+    ],
+    "correct": [
+      "Divide and conquer",
+      "Dynamic programming",
+      "Brute force"
+    ],
+    "explanation": "Brute force, divide and conquer and dynamic programming are design approaches. Heaps and hash tables are data structures.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fb-append-entries",
+    "format": "fill_blank",
+    "topic": "Distributed systems",
+    "prompt": "A Raft leader replicates log entries and sends heartbeats with the ____ RPC.",
+    "options": [],
+    "correct": [
+      "AppendEntries|append entries"
+    ],
+    "explanation": "AppendEntries carries new entries; an AppendEntries with no entries serves as a heartbeat.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "medium",
+    "labels": [
+      "RPC name"
+    ]
+  },
+  {
+    "id": "fb-request-vote",
+    "format": "fill_blank",
+    "topic": "Distributed systems",
+    "prompt": "A Raft candidate gathers votes with the ____ RPC.",
+    "options": [],
+    "correct": [
+      "RequestVote|request vote"
+    ],
+    "explanation": "Candidates send RequestVote to every other server after starting an election.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "medium",
+    "labels": [
+      "RPC name"
+    ]
+  },
+  {
+    "id": "fb-pg-default",
+    "format": "fill_blank",
+    "topic": "Databases",
+    "prompt": "PostgreSQL’s default isolation level is Read ____.",
+    "options": [],
+    "correct": [
+      "Committed"
+    ],
+    "explanation": "Unless a transaction requests another level, PostgreSQL runs it at Read Committed.",
+    "sourceId": "postgres",
+    "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "difficulty": "easy",
+    "labels": [
+      "Missing word"
+    ]
+  },
+  {
+    "id": "fb-tcb",
+    "format": "fill_blank",
+    "topic": "Operating systems",
+    "prompt": "The OS saves a thread’s registers in a thread ____ block.",
+    "options": [],
+    "correct": [
+      "control"
+    ],
+    "explanation": "A thread control block holds the saved execution state of a thread.",
+    "sourceId": "ostep",
+    "sourceURL": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "difficulty": "medium",
+    "labels": [
+      "Missing word"
+    ]
+  },
+  {
+    "id": "fb-deque",
+    "format": "fill_blank",
+    "topic": "Programming",
+    "prompt": "For an efficient first-in, first-out queue in Python, use collections.____.",
+    "options": [],
+    "correct": [
+      "deque"
+    ],
+    "explanation": "deque supports fast appends and pops at both ends; popping from the front of a list is slow.",
+    "sourceId": "python",
+    "sourceURL": "https://docs.python.org/3/tutorial/datastructures.html",
+    "difficulty": "easy",
+    "labels": [
+      "Type name"
+    ]
+  },
+  {
+    "id": "fb-critical",
+    "format": "fill_blank",
+    "topic": "Operating systems",
+    "prompt": "Code that accesses a shared variable and must not run concurrently is a ____ section.",
+    "options": [],
+    "correct": [
+      "critical"
+    ],
+    "explanation": "A critical section accesses shared state and needs mutual exclusion.",
+    "sourceId": "ostep",
+    "sourceURL": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "difficulty": "easy",
+    "labels": [
+      "Missing word"
+    ]
+  },
+  {
+    "id": "ord-raft-election",
+    "format": "ordering",
+    "topic": "Distributed systems",
+    "prompt": "Order a Raft follower’s steps when it starts an election and wins.",
+    "options": [
+      "Vote for itself",
+      "Send RequestVote RPCs",
+      "Election timeout elapses",
+      "Become leader after a majority of votes",
+      "Increment current term"
+    ],
+    "correct": [
+      "Election timeout elapses",
+      "Increment current term",
+      "Vote for itself",
+      "Send RequestVote RPCs",
+      "Become leader after a majority of votes"
+    ],
+    "explanation": "A follower that hears nothing before its timeout increments its term, votes for itself, requests votes and becomes leader with a majority.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ord-increment",
+    "format": "ordering",
+    "topic": "Operating systems",
+    "prompt": "Order the machine steps that implement counter = counter + 1.",
+    "options": [
+      "Store the register to counter",
+      "Load counter into a register",
+      "Add one to the register"
+    ],
+    "correct": [
+      "Load counter into a register",
+      "Add one to the register",
+      "Store the register to counter"
+    ],
+    "explanation": "The increment is a load, an add and a store. An interrupt between them can cause a lost update.",
+    "sourceId": "ostep",
+    "sourceURL": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ord-serialization-retry",
+    "format": "ordering",
+    "topic": "Databases",
+    "prompt": "Order an application’s response to a serialization failure.",
+    "options": [
+      "Begin a new transaction",
+      "Receive the serialization failure",
+      "Commit",
+      "Roll back the transaction",
+      "Re-run every statement from the start"
+    ],
+    "correct": [
+      "Receive the serialization failure",
+      "Roll back the transaction",
+      "Begin a new transaction",
+      "Re-run every statement from the start",
+      "Commit"
+    ],
+    "explanation": "The failed transaction is abandoned and the whole transaction is retried from the beginning.",
+    "sourceId": "postgres",
+    "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ord-growth",
+    "format": "ordering",
+    "topic": "Algorithms",
+    "prompt": "Order these running times from slowest-growing to fastest-growing.",
+    "options": [
+      "O(n)",
+      "O(n²)",
+      "O(1)",
+      "O(n log n)",
+      "O(log n)"
+    ],
+    "correct": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)",
+      "O(n²)"
+    ],
+    "explanation": "For large n, constant < logarithmic < linear < linearithmic < quadratic.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ord-raft-command",
+    "format": "ordering",
+    "topic": "Distributed systems",
+    "prompt": "Order how a Raft leader handles a client command.",
+    "options": [
+      "Mark the entry committed",
+      "Append the command to its log",
+      "Apply it and reply to the client",
+      "Send AppendEntries to followers",
+      "A majority stores the entry"
+    ],
+    "correct": [
+      "Append the command to its log",
+      "Send AppendEntries to followers",
+      "A majority stores the entry",
+      "Mark the entry committed",
+      "Apply it and reply to the client"
+    ],
+    "explanation": "The leader logs the command, replicates it, commits it once a majority stores it and then applies it and replies.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "match-isolation",
+    "format": "matching",
+    "topic": "Databases",
+    "prompt": "Match each PostgreSQL isolation level to its snapshot behavior.",
+    "options": [
+      "Snapshot plus anomaly monitoring",
+      "Snapshot per statement",
+      "Snapshot per transaction"
+    ],
+    "correct": [
+      "Snapshot per statement",
+      "Snapshot per transaction",
+      "Snapshot plus anomaly monitoring"
+    ],
+    "explanation": "Read Committed takes a snapshot per statement, Repeatable Read one per transaction, and Serializable adds dependency monitoring.",
+    "sourceId": "postgres",
+    "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "difficulty": "medium",
+    "labels": [
+      "Read Committed",
+      "Repeatable Read",
+      "Serializable"
+    ]
+  },
+  {
+    "id": "match-raft-properties",
+    "format": "matching",
+    "topic": "Distributed systems",
+    "prompt": "Match each Raft safety property to its guarantee.",
+    "options": [
+      "No two servers apply different commands at one index",
+      "At most one leader per term",
+      "A leader never overwrites its own log"
+    ],
+    "correct": [
+      "At most one leader per term",
+      "A leader never overwrites its own log",
+      "No two servers apply different commands at one index"
+    ],
+    "explanation": "These properties together keep replicated state machines consistent.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "hard",
+    "labels": [
+      "Election Safety",
+      "Leader Append-Only",
+      "State Machine Safety"
+    ]
+  },
+  {
+    "id": "match-list-methods",
+    "format": "matching",
+    "topic": "Programming",
+    "prompt": "Match each list method to what it does.",
+    "options": [
+      "Add every item from an iterable",
+      "Add one item at the end",
+      "Remove and return an item"
+    ],
+    "correct": [
+      "Add one item at the end",
+      "Remove and return an item",
+      "Add every item from an iterable"
+    ],
+    "explanation": "append adds one element, pop removes and returns one, and extend adds each element of an iterable.",
+    "sourceId": "python",
+    "sourceURL": "https://docs.python.org/3/tutorial/datastructures.html",
+    "difficulty": "easy",
+    "labels": [
+      "append",
+      "pop",
+      "extend"
+    ]
+  },
+  {
+    "id": "match-randomized",
+    "format": "matching",
+    "topic": "Algorithms",
+    "prompt": "Match each kind of randomized algorithm to its guarantee.",
+    "options": [
+      "Always fast, probably correct",
+      "Always correct, probably fast"
+    ],
+    "correct": [
+      "Always correct, probably fast",
+      "Always fast, probably correct"
+    ],
+    "explanation": "Las Vegas algorithms randomize running time; Monte Carlo algorithms randomize correctness.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "medium",
+    "labels": [
+      "Las Vegas",
+      "Monte Carlo"
+    ]
+  },
+  {
+    "id": "match-pthreads",
+    "format": "matching",
+    "topic": "Operating systems",
+    "prompt": "Match each POSIX thread call to its effect.",
+    "options": [
+      "Waits for a thread to finish",
+      "Starts a new thread"
+    ],
+    "correct": [
+      "Starts a new thread",
+      "Waits for a thread to finish"
+    ],
+    "explanation": "pthread_create starts a thread running a routine; pthread_join waits for a thread to complete.",
+    "sourceId": "ostep",
+    "sourceURL": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "difficulty": "easy",
+    "labels": [
+      "pthread_create",
+      "pthread_join"
+    ]
+  },
+  {
+    "id": "match-complexity",
+    "format": "matching",
+    "topic": "Algorithms",
+    "prompt": "Match each complexity class to its definition.",
+    "options": [
+      "Both in NP and NP-hard",
+      "Polynomially checkable certificates",
+      "Every NP problem reduces to it"
+    ],
+    "correct": [
+      "Polynomially checkable certificates",
+      "Every NP problem reduces to it",
+      "Both in NP and NP-hard"
+    ],
+    "explanation": "NP is defined by checkable certificates, NP-hard by reductions from all of NP, and NP-complete by both.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "hard",
+    "labels": [
+      "NP",
+      "NP-hard",
+      "NP-complete"
+    ]
+  },
+  {
+    "id": "cat-thread-state",
+    "format": "categorization",
+    "topic": "Operating systems",
+    "prompt": "Sort each item by whether threads of one process share it.",
+    "options": [
+      "Stack",
+      "Heap",
+      "Program counter",
+      "Code",
+      "Registers",
+      "Global variables"
+    ],
+    "correct": [
+      "Per thread",
+      "Shared",
+      "Per thread",
+      "Shared",
+      "Per thread",
+      "Shared"
+    ],
+    "explanation": "Each thread has its own stack and registers, including the program counter. Code, heap and globals live in the shared address space.",
+    "sourceId": "ostep",
+    "sourceURL": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "difficulty": "medium",
+    "groups": [
+      "Per thread",
+      "Shared"
+    ]
+  },
+  {
+    "id": "cat-raft-state",
+    "format": "categorization",
+    "topic": "Distributed systems",
+    "prompt": "Sort each piece of Raft server state by how it is kept.",
+    "options": [
+      "currentTerm",
+      "commitIndex",
+      "votedFor",
+      "lastApplied"
+    ],
+    "correct": [
+      "Persistent",
+      "Volatile",
+      "Persistent",
+      "Volatile"
+    ],
+    "explanation": "The term and vote must survive restarts. commitIndex and lastApplied are volatile and recovered from the log.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "hard",
+    "groups": [
+      "Persistent",
+      "Volatile"
+    ]
+  },
+  {
+    "id": "cat-mutability",
+    "format": "categorization",
+    "topic": "Programming",
+    "prompt": "Sort each Python type by whether its values can be changed in place.",
+    "options": [
+      "list",
+      "tuple",
+      "str",
+      "dict",
+      "set"
+    ],
+    "correct": [
+      "Mutable",
+      "Immutable",
+      "Immutable",
+      "Mutable",
+      "Mutable"
+    ],
+    "explanation": "Lists, dictionaries and sets are mutable. Tuples and strings are immutable.",
+    "sourceId": "python",
+    "sourceURL": "https://docs.python.org/3/tutorial/datastructures.html",
+    "difficulty": "easy",
+    "groups": [
+      "Mutable",
+      "Immutable"
+    ]
+  },
+  {
+    "id": "cat-problem-family",
+    "format": "categorization",
+    "topic": "Algorithms",
+    "prompt": "Sort each problem into its family.",
+    "options": [
+      "Binary search",
+      "Merge sort",
+      "Topological sort",
+      "Breadth-first search"
+    ],
+    "correct": [
+      "Search and sort",
+      "Search and sort",
+      "Graphs",
+      "Graphs"
+    ],
+    "explanation": "Despite its name, topological sort orders the vertices of a directed acyclic graph.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "medium",
+    "groups": [
+      "Search and sort",
+      "Graphs"
+    ]
+  },
+  {
+    "id": "num-raft-failures",
+    "format": "numeric",
+    "topic": "Distributed systems",
+    "prompt": "How many server failures can a five-server Raft cluster tolerate and still make progress?",
+    "options": [],
+    "correct": [
+      "2"
+    ],
+    "explanation": "Three of five servers still form a majority, so two may fail.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "medium",
+    "tolerance": 0
+  },
+  {
+    "id": "num-sql-levels",
+    "format": "numeric",
+    "topic": "Databases",
+    "prompt": "How many transaction isolation levels does the SQL standard define?",
+    "options": [],
+    "correct": [
+      "4"
+    ],
+    "explanation": "Read Uncommitted, Read Committed, Repeatable Read and Serializable.",
+    "sourceId": "postgres",
+    "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "difficulty": "easy",
+    "tolerance": 0
+  },
+  {
+    "id": "num-pg-distinct",
+    "format": "numeric",
+    "topic": "Databases",
+    "prompt": "How many distinct isolation levels does PostgreSQL actually implement?",
+    "options": [],
+    "correct": [
+      "3"
+    ],
+    "explanation": "PostgreSQL accepts four level names but implements Read Uncommitted as Read Committed.",
+    "sourceId": "postgres",
+    "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "difficulty": "medium",
+    "tolerance": 0
+  },
+  {
+    "id": "num-increment-steps",
+    "format": "numeric",
+    "topic": "Operating systems",
+    "prompt": "How many machine instructions does the typical x86 sequence for counter = counter + 1 use?",
+    "options": [],
+    "correct": [
+      "3"
+    ],
+    "explanation": "A mov loads the value, an add increments it and a second mov stores it back.",
+    "sourceId": "ostep",
+    "sourceURL": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "difficulty": "medium",
+    "tolerance": 0
+  },
+  {
+    "id": "dd-popleft",
+    "format": "dropdown",
+    "topic": "Programming",
+    "prompt": "Choose the deque method that removes an item from the left end.",
+    "options": [
+      "popleft",
+      "pop",
+      "remove",
+      "clear"
+    ],
+    "correct": [
+      "popleft"
+    ],
+    "explanation": "popleft removes and returns the leftmost item, which makes deque an efficient FIFO queue.",
+    "sourceId": "python",
+    "sourceURL": "https://docs.python.org/3/tutorial/datastructures.html",
+    "difficulty": "medium",
+    "context": "first = queue.____()"
+  },
+  {
+    "id": "dd-read-committed",
+    "format": "dropdown",
+    "topic": "Databases",
+    "prompt": "Choose the isolation level that takes a new snapshot for every statement.",
+    "options": [
+      "SERIALIZABLE",
+      "REPEATABLE READ",
+      "READ COMMITTED",
+      "READ ONLY"
+    ],
+    "correct": [
+      "READ COMMITTED"
+    ],
+    "explanation": "Read Committed sees data committed before each statement began.",
+    "sourceId": "postgres",
+    "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "difficulty": "medium",
+    "context": "SET TRANSACTION ISOLATION LEVEL ____;"
+  },
+  {
+    "id": "dd-pthread-join",
+    "format": "dropdown",
+    "topic": "Operating systems",
+    "prompt": "Choose the call that waits for a thread to finish.",
+    "options": [
+      "pthread_create",
+      "pthread_join",
+      "pthread_exit",
+      "pthread_self"
+    ],
+    "correct": [
+      "pthread_join"
+    ],
+    "explanation": "pthread_join blocks until the given thread completes.",
+    "sourceId": "ostep",
+    "sourceURL": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "difficulty": "easy",
+    "context": "____(p1, NULL);"
+  },
+  {
+    "id": "dnd-extend",
+    "format": "drag_drop",
+    "topic": "Programming",
+    "prompt": "Drop the method that adds every element of b to a.",
+    "options": [
+      "append",
+      "extend",
+      "insert",
+      "count"
+    ],
+    "correct": [
+      "extend"
+    ],
+    "explanation": "extend adds each item of the iterable; append would add b as one nested element.",
+    "sourceId": "python",
+    "sourceURL": "https://docs.python.org/3/tutorial/datastructures.html",
+    "difficulty": "medium",
+    "context": "a.____(b)",
+    "labels": [
+      "Method"
+    ]
+  },
+  {
+    "id": "dnd-request-vote",
+    "format": "drag_drop",
+    "topic": "Distributed systems",
+    "prompt": "Drop the RPC a candidate sends to gather votes.",
+    "options": [
+      "AppendEntries",
+      "RequestVote",
+      "InstallSnapshot",
+      "Heartbeat"
+    ],
+    "correct": [
+      "RequestVote"
+    ],
+    "explanation": "Candidates send RequestVote; leaders send AppendEntries and InstallSnapshot.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "medium",
+    "context": "send ____ to every other server",
+    "labels": [
+      "RPC"
+    ]
+  },
+  {
+    "id": "g2-binary-search",
+    "format": "game_2d",
+    "topic": "Algorithms",
+    "prompt": "Catch the block showing binary search’s worst-case time on a sorted array.",
+    "options": [
+      "O(n)",
+      "O(log n)",
+      "O(1)",
+      "O(n²)"
+    ],
+    "correct": [
+      "O(log n)"
+    ],
+    "explanation": "Each comparison halves the remaining range, so about log n comparisons suffice.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "easy"
+  },
+  {
+    "id": "g2-nine-quorum",
+    "format": "game_2d",
+    "topic": "Distributed systems",
+    "prompt": "Catch the quorum size for a nine-server Raft cluster.",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "9"
+    ],
+    "correct": [
+      "5"
+    ],
+    "explanation": "A strict majority of nine is five.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "easy"
+  },
+  {
+    "id": "live-serializable",
+    "format": "live",
+    "topic": "Databases",
+    "prompt": "Which isolation level aborts transactions to prevent serialization anomalies?",
+    "options": [
+      "Read Committed",
+      "Repeatable Read",
+      "Serializable",
+      "Read Uncommitted"
+    ],
+    "correct": [
+      "Serializable"
+    ],
+    "explanation": "Only Serializable monitors read/write dependencies and raises a failure when an anomaly could occur.",
+    "sourceId": "postgres",
+    "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "difficulty": "medium"
+  },
+  {
+    "id": "live-shared",
+    "format": "live",
+    "topic": "Operating systems",
+    "prompt": "Which resource do threads in one process share?",
+    "options": [
+      "Stack",
+      "Program counter",
+      "Address space",
+      "Registers"
+    ],
+    "correct": [
+      "Address space"
+    ],
+    "explanation": "Threads share the address space but each has its own stack and registers.",
+    "sourceId": "ostep",
+    "sourceURL": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "difficulty": "easy"
+  },
+  {
+    "id": "live-empty-set",
+    "format": "live",
+    "topic": "Programming",
+    "prompt": "Which expression creates an empty set?",
+    "options": [
+      "{}",
+      "set()",
+      "[]",
+      "()"
+    ],
+    "correct": [
+      "set()"
+    ],
+    "explanation": "{} creates an empty dictionary, so an empty set must be written set().",
+    "sourceId": "python",
+    "sourceURL": "https://docs.python.org/3/tutorial/datastructures.html",
+    "difficulty": "easy"
+  },
+  {
+    "id": "live-dijkstra",
+    "format": "live",
+    "topic": "Algorithms",
+    "prompt": "Which algorithm solves single-source shortest paths with nonnegative edge weights?",
+    "options": [
+      "Topological sort",
+      "Union-find",
+      "Dijkstra’s algorithm",
+      "Binary search"
+    ],
+    "correct": [
+      "Dijkstra’s algorithm"
+    ],
+    "explanation": "Dijkstra’s algorithm relies on nonnegative weights to settle the closest vertex greedily.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "medium"
+  },
+  {
+    "id": "raft-log-repair",
+    "format": "short_answer",
+    "topic": "Distributed systems",
+    "prompt": "Explain how Raft’s AppendEntries consistency check brings a follower’s log in line with the leader’s.",
+    "options": [],
+    "correct": [
+      "preceding|previous|prevlogindex",
+      "reject|refuse|fail",
+      "nextindex|decrement|back up|step back",
+      "delete|overwrite|replace|remove",
+      "match|consistent|identical"
+    ],
+    "explanation": "The consistency check finds the latest point where both logs agree; the leader then overwrites everything after it.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "hard",
+    "criteria": [
+      "preceding|previous|prevlogindex",
+      "reject|refuse|fail",
+      "nextindex|decrement|back up|step back",
+      "delete|overwrite|replace|remove",
+      "match|consistent|identical"
+    ],
+    "rubric": "Award exactly one point for each of the following five independently expressed facts. Do not infer unstated facts: 1. The leader includes the index and term of the entry immediately preceding the new entries. 2. A follower rejects the request if it has no entry at that index with that term. 3. After a rejection the leader decrements its nextIndex for that follower and retries. 4. Conflicting follower entries after the matching point are deleted and replaced with the leader’s entries. 5. When the check succeeds, the follower’s log matches the leader’s log through the new entries."
+  },
+  {
+    "id": "pg-serializable-use",
+    "format": "short_answer",
+    "topic": "Databases",
+    "prompt": "Explain how an application should use PostgreSQL’s Serializable isolation safely.",
+    "options": [],
+    "correct": [
+      "serialization failure|could not serialize",
+      "abort|roll back|rollback",
+      "retry|rerun|re-run",
+      "not trust|not rely|discard|invalid",
+      "read only|read-only"
+    ],
+    "explanation": "Serializable guarantees a serial-equivalent result only for committed transactions, so the application must be ready to retry.",
+    "sourceId": "postgres",
+    "sourceURL": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "difficulty": "medium",
+    "criteria": [
+      "serialization failure|could not serialize",
+      "abort|roll back|rollback",
+      "retry|rerun|re-run",
+      "not trust|not rely|discard|invalid",
+      "read only|read-only"
+    ],
+    "rubric": "Award exactly one point for each of the following five independently expressed facts. Do not infer unstated facts: 1. Serializable transactions can fail with a serialization failure. 2. The application should abort the failed transaction. 3. It should retry the entire transaction from the beginning. 4. Data read in a transaction that later aborts must not be relied on. 5. Declaring transactions READ ONLY when possible reduces overhead and failures."
+  },
+  {
+    "id": "race-homework",
+    "format": "homework",
+    "topic": "Operating systems",
+    "prompt": "Explain why two threads running counter = counter + 1 can produce a wrong total.",
+    "options": [],
+    "correct": [
+      "load|read",
+      "context switch|interrupt|preempt",
+      "same value|both read|old value",
+      "overwrite|lost update|lose",
+      "race|timing|indeterminate"
+    ],
+    "explanation": "Without mutual exclusion, an interrupt between the load and store lets both threads compute the same new value.",
+    "sourceId": "ostep",
+    "sourceURL": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+    "difficulty": "medium",
+    "criteria": [
+      "load|read",
+      "context switch|interrupt|preempt",
+      "same value|both read|old value",
+      "overwrite|lost update|lose",
+      "race|timing|indeterminate"
+    ],
+    "rubric": "Award exactly one point for each of the following five independently expressed facts. Do not infer unstated facts: 1. The increment is separate load, add and store instructions. 2. A context switch can occur between those instructions. 3. Both threads can load the same old value. 4. One thread’s store overwrites the other’s, losing an increment. 5. The result depends on timing, which is a race condition.",
+    "dueAt": "2026-12-31T23:59:59Z"
+  },
+  {
+    "id": "raft-commit-collab",
+    "format": "collaborative",
+    "topic": "Distributed systems",
+    "prompt": "Work together: when may a Raft leader consider a log entry committed?",
+    "options": [],
+    "correct": [
+      "appendentries|replicate",
+      "majority|quorum",
+      "preceding|earlier entries|previous entries|prior entries",
+      "current term",
+      "apply|state machine"
+    ],
+    "explanation": "Counting replicas commits only current-term entries; earlier entries become committed with them.",
+    "sourceId": "raft",
+    "sourceURL": "https://raft.github.io/raft.pdf",
+    "difficulty": "hard",
+    "criteria": [
+      "appendentries|replicate",
+      "majority|quorum",
+      "preceding|earlier entries|previous entries|prior entries",
+      "current term",
+      "apply|state machine"
+    ],
+    "rubric": "Award exactly one point for each of the following five independently expressed facts. Do not infer unstated facts: 1. The leader replicates the entry to followers with AppendEntries. 2. An entry from the current term is committed once a majority of servers store it. 3. Committing an entry also commits all preceding entries in the leader’s log. 4. The leader does not commit entries from earlier terms by counting replicas alone. 5. Servers apply committed entries to their state machines in log order."
+  },
+  {
+    "id": "algorithm-argument",
+    "format": "short_answer",
+    "topic": "Algorithms",
+    "prompt": "Describe what a complete solution to an algorithms problem must establish.",
+    "options": [],
+    "correct": [
+      "arbitrary|any size|non-constant|general input",
+      "correct",
+      "induction|inductive|recursion",
+      "asymptotic|big o|big-o",
+      "model of computation|computation model"
+    ],
+    "explanation": "A solution communicates an algorithm, why it is correct and why it is efficient under a stated model of computation.",
+    "sourceId": "mit-algorithms",
+    "sourceURL": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/aa4f264093faf990054cc4820553bb46_MIT6_006S20_lec20.pdf",
+    "difficulty": "medium",
+    "criteria": [
+      "arbitrary|any size|non-constant|general input",
+      "correct",
+      "induction|inductive|recursion",
+      "asymptotic|big o|big-o",
+      "model of computation|computation model"
+    ],
+    "rubric": "Award exactly one point for each of the following five independently expressed facts. Do not infer unstated facts: 1. The algorithm solves the problem for inputs of arbitrary size. 2. It argues that the algorithm is correct. 3. The correctness argument uses induction or the recursive structure. 4. It argues efficiency with asymptotic analysis. 5. It states the model of computation used to measure cost."
   },
   {
     "id": "quorum-3",

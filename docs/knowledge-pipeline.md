@@ -71,6 +71,15 @@ node scripts/deploy.mjs --execute
 
 Deploy with the authorized `admin` profile via `scripts/aws.sh`. For expired SSO credentials, use `aws sso login --profile admin`. Do not replace the published bank with the original local seed file; that would discard later cloud-generated additions.
 
+To publish authored questions, run `python3 scripts/build_questions.py` (it also refreshes the bundled `Resources/questions.json`), then merge into the live bank:
+
+```sh
+AWS_PROFILE=admin AWS_REGION=us-east-1 node scripts/publish-questions.mjs --dry-run
+AWS_PROFILE=admin AWS_REGION=us-east-1 node scripts/publish-questions.mjs
+```
+
+The script merges by question id. Authored rows replace their published copies, retired rows stay retired, and generated or other published-only rows are kept. The write is conditional on the ETag it read and retries if the pipeline published in the meantime. `--dry-run` prints the merge counts without writing.
+
 The knowledge table is `PiyoPiyoKnowledge`; the bucket is `piyopiyo-knowledge-992680757326`. Logs are `/aws/lambda/piyopiyo-knowledge-api`, `/aws/lambda/piyopiyo-knowledge-worker`, and `/aws/lambda/piyopiyo-knowledge-pdf`. The Scheduler group is `piyopiyo-knowledge`. The dead-letter alarm is visible in CloudWatch; errors also appear in the native Activity view. This alarm has no separate email subscription. Existing budget alerts remain unchanged.
 
 Use `scripts/knowledge-integration.mjs` for a live test with a disposable email-suppressed administrator. It removes the test identity afterwards while intentionally retaining useful imported sources and validated content. `--generation-pdf --seed` also checks the textbook and documentation seed imports. Never log tokens, signed upload URLs, or private key material. Originals are private reference material and are not included in learner downloads or app bundles.
