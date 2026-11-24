@@ -22,13 +22,13 @@ struct DeskView: View {
   @ObservedObject var auth: AuthService
   @State private var section = "Sources"
   @State private var showAdd = false
-  private let sections = [("Sources", "books.vertical"), ("Question batches", "square.stack.3d.up"), ("Activity", "clock.arrow.circlepath")]
+  private let sections = [("Sources", "books.vertical"), ("Question batches", "square.stack.3d.up"), ("Activity", "clock.arrow.circlepath"), ("Safety reports", "hand.raised")]
   var body: some View {
     HStack(spacing: 0) {
       VStack(alignment: .leading, spacing: 24) {
         HStack { Image(systemName: "bird.fill").font(.system(size: 30)).foregroundStyle(gold); VStack(alignment: .leading) { Text("PiyoPiyo").font(.title2.bold()); Text("SOURCES").font(.caption.weight(.semibold)).tracking(2).foregroundStyle(.secondary) } }
         Text("A little reading.\nA growing world of ideas.").font(.callout).foregroundStyle(.secondary).lineSpacing(4)
-        ForEach(sections, id: \.0) { item in Button { section = item.0 } label: { Label(item.0, systemImage: item.1).frame(maxWidth: .infinity, alignment: .leading).padding(12).background(section == item.0 ? gold.opacity(0.22) : .clear, in: RoundedRectangle(cornerRadius: 10)) }.buttonStyle(.plain) }
+        ForEach(sections, id: \.0) { item in Button { section = item.0; if section == "Safety reports" { Task { await model.loadReports() } } } label: { Label(item.0, systemImage: item.1).frame(maxWidth: .infinity, alignment: .leading).padding(12).background(section == item.0 ? gold.opacity(0.22) : .clear, in: RoundedRectangle(cornerRadius: 10)) }.buttonStyle(.plain) }
         Spacer()
         Label("Private source library", systemImage: "lock.shield").font(.caption).foregroundStyle(.secondary)
         if auth.tokens != nil { Button("Sign out") { model.signOut() }.disabled(model.busy) }
@@ -73,7 +73,28 @@ struct DeskView: View {
     }.padding(16).background(cream, in: RoundedRectangle(cornerRadius: 14))
   }
   @ViewBuilder private func content(_ data: Dashboard) -> some View {
-    if section == "Sources" {
+    if section == "Safety reports" {
+      VStack(alignment: .leading, spacing: 12) {
+        Text("Review reports daily and respond to harmful content within 24 hours. Restricting a participant prevents room access and removes their name from room listings. Reports expire after 30 days.").font(.callout).foregroundStyle(.secondary)
+        Button("Refresh reports") { Task { await model.loadReports() } }
+        if model.reportCursor != nil { Button("Load more reports") { Task { await model.loadReports(more: true) } } }
+        if model.reports.isEmpty { ContentUnavailableView("No reports", systemImage: "checkmark.shield") }
+        List(model.reports) { report in
+          VStack(alignment: .leading, spacing: 8) {
+            Text(report.targetName + " · " + report.status).font(.headline)
+            Text(report.reason.replacingOccurrences(of: "_", with: " ") + " · " + report.createdAt).font(.caption)
+            ForEach(Array(report.evidence.enumerated()), id: \.offset) { _, evidence in
+              if let answer = evidence.answer { Text(answer).font(.caption).textSelection(.enabled) }
+            }
+            HStack {
+              Button("Restrict room access", role: .destructive) { Task { await model.resolveReport(report, action: "restricted") } }
+              if report.status == "pending" { Button("Dismiss report") { Task { await model.resolveReport(report, action: "dismissed") } } }
+              if report.status == "restricted" { Button("Restore room access") { Task { await model.resolveReport(report, action: "restored") } } }
+            }.disabled(model.busy)
+          }.padding(.vertical, 8)
+        }
+      }
+    } else if section == "Sources" {
       if data.sources.isEmpty { ContentUnavailableView("Your next idea starts here", systemImage: "doc.badge.plus", description: Text("Add a link or drop a PDF into this window.")) }
       else { List(data.sources) { source in VStack(alignment: .leading, spacing: 8) {
         HStack(alignment: .top) { Image(systemName: source.kind == "pdf" ? "doc.richtext" : "link").foregroundStyle(gold); VStack(alignment: .leading, spacing: 5) { Text(source.title).fontWeight(.semibold); Text(source.topic + " · " + (source.active ? source.status.replacingOccurrences(of: "_", with: " ") : "paused")).font(.caption).foregroundStyle(.secondary) }; Spacer(); if let count = source.segmentCount { Text("\(count) passages").font(.caption).foregroundStyle(.secondary) } }

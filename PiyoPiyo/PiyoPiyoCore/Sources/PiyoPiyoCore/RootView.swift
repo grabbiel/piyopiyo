@@ -580,10 +580,14 @@ struct RoomContent: View {
   @State private var cursor = 0
   @State private var busy = false
   @State private var submitted = false
+  @State private var reportTarget: Participant?
+  @State private var blockTarget: Participant?
+  @State private var safetyNotice: String?
   var body: some View {
     PageLayout(
       title: "Better together", subtitle: "A small study room. A shared sense of discovery."
     ) {
+      if let safetyNotice { Text(safetyNotice).font(.callout).foregroundStyle(T.primary) }
       if auth.tokens == nil {
         VStack(alignment: .leading, spacing: T.md) {
           Label("Sign in to create or join a room", systemImage: "person.crop.circle").font(
@@ -614,6 +618,13 @@ struct RoomContent: View {
             Label(p.name, systemImage: "person.crop.circle")
             Spacer()
             Text("\(p.score) pts").font(.headline.monospacedDigit())
+            if p.id != auth.tokens?.subject {
+              Menu {
+                Button("Report participant") { reportTarget = p }
+                Button("Block and leave room", role: .destructive) { blockTarget = p }
+              } label: { Image(systemName: "ellipsis.circle").padding(6) }
+                .accessibilityLabel("Safety options for " + p.name)
+            }
           }.padding(T.md).background(T.softGreen, in: RoundedRectangle(cornerRadius: T.button))
         }
         if cursor < room.questionIds.count,
@@ -646,6 +657,8 @@ struct RoomContent: View {
           }
         }
       } else {
+        Text("Keep rooms respectful. No harassment, sexual content, spam, or personal information. Use a participant’s safety menu to report or block them.").font(.callout).foregroundStyle(T.muted)
+        Link("Community rules and support", destination: URL(string: "https://piyopiyo.grabbiel.com/support")!)
         TextField("Your display name", text: $name).textFieldStyle(.roundedBorder)
         HStack {
           Button("Create live quiz") {
@@ -667,6 +680,29 @@ struct RoomContent: View {
         }.piyoCard()
         Text("Up to 12 learners · rooms expire after two hours").font(.caption).foregroundStyle(
           T.muted)
+      }
+    }
+    .confirmationDialog("Report participant", isPresented: Binding(get: { reportTarget != nil }, set: { if !$0 { reportTarget = nil } }), titleVisibility: .visible) {
+      ForEach([("Harassment", "harassment"), ("Inappropriate content", "inappropriate_content"), ("Spam", "spam"), ("Other concern", "other")], id: \.1) { reason in
+        Button(reason.0) {
+          guard let target = reportTarget else { return }
+          reportTarget = nil
+          perform {
+            try await live.report(participantId: target.id, reason: reason.1, auth: auth)
+            safetyNotice = "Report received. PiyoPiyo’s administrator can review this participant and their shared contributions. You can also block and leave the room."
+          }
+        }
+      }
+    } message: { Text("The participant’s name and recent shared contributions will be sent to PiyoPiyo’s administrator. Your report is not shown to the participant.") }
+    .confirmationDialog("Block this participant?", isPresented: Binding(get: { blockTarget != nil }, set: { if !$0 { blockTarget = nil } }), titleVisibility: .visible) {
+      Button("Block and leave room", role: .destructive) {
+        guard let target = blockTarget else { return }
+        blockTarget = nil
+        perform {
+          try await live.block(participantId: target.id, auth: auth)
+          cursor = 0; answer = []; submitted = false
+          safetyNotice = "Participant blocked. You have left the room. Neither account can join a room containing the other."
+        }
       }
     }
   }

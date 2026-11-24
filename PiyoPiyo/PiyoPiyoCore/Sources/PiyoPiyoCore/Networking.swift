@@ -432,6 +432,21 @@ struct LiveRoom: Decodable, Identifiable {
       ], token: t.idToken)
     try await refresh(auth: auth)
   }
+  func report(participantId: String, reason: String, auth: AuthService) async throws {
+    guard let room else { return }
+    let tokens = try await auth.validTokens()
+    _ = try await operation(
+      "mutation($room:ID!,$participant:ID!,$reason:String!){reportParticipant(roomId:$room,participantId:$participant,reason:$reason)}",
+      variables: ["room": room.id, "participant": participantId, "reason": reason], token: tokens.idToken)
+  }
+  func block(participantId: String, auth: AuthService) async throws {
+    guard let room else { return }
+    let tokens = try await auth.validTokens()
+    _ = try await operation(
+      "mutation($room:ID!,$participant:ID!){blockParticipant(roomId:$room,participantId:$participant)}",
+      variables: ["room": room.id, "participant": participantId], token: tokens.idToken)
+    close()
+  }
   func close() {
     listener?.cancel()
     listener = nil
