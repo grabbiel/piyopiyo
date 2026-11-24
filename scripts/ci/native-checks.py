@@ -3,6 +3,7 @@ Rendering snapshots remain on their documented macOS/iOS 27 reference runtimes.
 """
 import json, pathlib, subprocess, sys
 from apple_toolchain import verify_toolchain
+from native_simulators import select_ios_targets
 verify_toolchain()
 logs = pathlib.Path('.agent/ci-logs'); logs.mkdir(parents=True, exist_ok=True)
 def run(name, args):
@@ -19,13 +20,10 @@ run('sources-build', ['swift', 'build', '--package-path', 'SourcesDesk', '-c', '
 run('mac-build', ['xcodebuild', '-project', 'PiyoPiyo/PiyoPiyo.xcodeproj', '-scheme', 'PiyoPiyo-macOS', '-configuration', 'Debug', '-destination', 'platform=macOS', '-derivedDataPath', 'DerivedData/ci-mac', 'CODE_SIGNING_ALLOWED=NO', 'build'])
 run('ios-build', ['xcodebuild', '-project', 'PiyoPiyo/PiyoPiyo.xcodeproj', '-scheme', 'PiyoPiyo-iOS', '-configuration', 'Debug', '-sdk', 'iphonesimulator', '-destination', 'generic/platform=iOS Simulator', '-derivedDataPath', 'DerivedData/ci-ios', 'CODE_SIGNING_ALLOWED=NO', 'build'])
 devices = json.loads(subprocess.check_output(['xcrun', 'simctl', 'list', 'devices', 'available', '--json']))['devices']
-ios = [(runtime, values) for runtime, values in devices.items() if '.iOS-' in runtime and values]
-if not ios:
-    raise SystemExit('No iOS simulator runtime is installed')
-runtime, available = sorted(ios, key=lambda row: tuple(int(x) for x in row[0].split('.iOS-')[1].split('-')), reverse=True)[0]
+runtimes = json.loads(subprocess.check_output(['xcrun', 'simctl', 'list', 'runtimes', '--json']))['runtimes']
+runtime, targets = select_ios_targets(devices, runtimes)
+print(f'Testing iPhone and iPad on {runtime}', flush=True)
 for family, scheme in [('iPhone', 'PiyoPiyo-iPhoneTests'), ('iPad', 'PiyoPiyo-iPadTests')]:
-    candidates = [d for d in available if d['name'].startswith(family)]
-    if not candidates: raise SystemExit(f'No {family} simulator in {runtime}')
-    target = candidates[0]['udid']
+    target = targets[family]
     run(f'{family}-tests', ['xcodebuild', '-project', 'PiyoPiyo/PiyoPiyo.xcodeproj', '-scheme', scheme, '-destination', f'platform=iOS Simulator,id={target}', '-derivedDataPath', 'DerivedData/ci-tests', '-resultBundlePath', f'artifacts/ci/{family}.xcresult', f'-skip-testing:{scheme}/SnapshotTests', 'CODE_SIGNING_ALLOWED=NO', 'test'])
     subprocess.run(['xcrun', 'simctl', 'shutdown', target], check=False, capture_output=True)
