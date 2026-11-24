@@ -1,7 +1,9 @@
-"""Portable functional tests and unsigned builds on GitHub's macOS 26 runner.
+"""Portable functional tests and unsigned builds on GitHub's Xcode 27 runner.
 Rendering snapshots remain on their documented macOS/iOS 27 reference runtimes.
 """
 import json, pathlib, subprocess, sys
+from apple_toolchain import verify_toolchain
+verify_toolchain()
 logs = pathlib.Path('.agent/ci-logs'); logs.mkdir(parents=True, exist_ok=True)
 def run(name, args):
     print(f'Running {name}', flush=True)

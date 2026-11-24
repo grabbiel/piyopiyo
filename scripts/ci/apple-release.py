@@ -1,12 +1,14 @@
 """Build signed iOS and notarized Mac artifacts in an ephemeral CI keychain."""
 import base64, datetime, hashlib, json, os, pathlib, plistlib, re, secrets, shlex, shutil, subprocess, tempfile
+from apple_toolchain import require_upload_sdk, verify_toolchain
+verified_toolchain = verify_toolchain()
 root=pathlib.Path.cwd()
 version=os.environ['RELEASE_VERSION']
 if not re.fullmatch(r'[0-9]+\.[0-9]+\.[0-9]+',version): raise SystemExit('Use a three-component numeric release version')
 build=str(100+int(os.environ['GITHUB_RUN_NUMBER']))
 output=root/'artifacts/apple-release';output.mkdir(parents=True,exist_ok=True)
 logs=root/'.agent/apple-logs';logs.mkdir(parents=True,exist_ok=True)
-proof={'version':version,'build':build,'commit':os.environ['GITHUB_SHA'],'artifacts':[],'notarization':{}}
+proof={'version':version,'build':build,'commit':os.environ['GITHUB_SHA'],'toolchain':verified_toolchain,'artifacts':[],'notarization':{}}
 def quiet(args, **kwargs):
     result=subprocess.run(args,capture_output=True,text=True,**kwargs)
     if result.returncode: raise RuntimeError(f'{args[0]} credential/signing operation failed (exit {result.returncode}); no secrets logged')
@@ -60,6 +62,9 @@ with tempfile.TemporaryDirectory(prefix='piyopiyo-signing-',dir=os.environ.get('
         logged('ios-export',['xcodebuild','-exportArchive','-archivePath',str(archive),'-exportPath',str(output/'ios'),'-exportOptionsPlist',str(export_path)])
         archived_app=next((archive/'Products/Applications').glob('*.app'))
         app_info=plistlib.loads((archived_app/'Info.plist').read_bytes())
+        require_upload_sdk(app_info.get('DTSDKName', ''), 'Archived app SDK')
+        proof['toolchain']['archiveSDK'] = app_info['DTSDKName']
+        proof['toolchain']['archiveXcodeBuild'] = app_info.get('DTXcodeBuild')
         assert app_info['CFBundleIdentifier']=='app.piyopiyo.iphone'
         assert app_info['CFBundleShortVersionString']==version and app_info['CFBundleVersion']==build
         assert app_info['UIDeviceFamily']==[1,2] and len(app_info['UISupportedInterfaceOrientations'])==4

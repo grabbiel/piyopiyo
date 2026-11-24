@@ -6,6 +6,8 @@ import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {setTimeout as delay} from 'node:timers/promises';
 const path='artifacts/apple-release/manifest.json',proof=JSON.parse(await readFile(path,'utf8'));
+const archiveSDK=/^iphoneos(\d+)(?:\.\d+)*$/.exec(proof.toolchain?.archiveSDK||'');
+if(!archiveSDK||Number(archiveSDK[1])<27)throw Error('Release manifest must prove the archived app uses iOS SDK 27 or later');
 const artifact=proof.artifacts.find(a=>a.path===proof.ipaPath);
 if(!artifact||createHash('sha256').update(await readFile(artifact.path)).digest('hex')!==artifact.sha256)throw Error('Signed IPA integrity check failed');
 const b64=x=>Buffer.from(JSON.stringify(x)).toString('base64url');
