@@ -3,6 +3,8 @@ type Room { id: ID!, hostId: ID!, questionIds: [ID!]!, mode: String!, participan
 type AnswerEvent { roomId: ID!, participantId: ID!, questionId: ID!, score: Int!, total: Int!, answer: String }
 type Query { room(id: ID!): Room }
 type Mutation {
+ reportParticipant(roomId: ID!, participantId: ID!, reason: String!): Boolean!
+ blockParticipant(roomId: ID!, participantId: ID!): Boolean!
  createRoom(mode: String!, name: String): Room!
  joinRoom(id: ID!, name: String!): Room!
  submitAnswer(roomId: ID!, questionId: ID!, answer: String!, attemptId: ID!): AnswerEvent!

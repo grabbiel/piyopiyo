@@ -1,5 +1,6 @@
 'use strict';
 const publicDocuments=require('./public-documents.json');
+const moderation=require('./moderation.cjs');
 const {randomUUID,randomBytes,randomInt,createPrivateKey,createPublicKey,sign,verify}=require('node:crypto');
 const {SecretsManagerClient,GetSecretValueCommand}=require('@aws-sdk/client-secrets-manager');
 const {DynamoDBClient}=require('@aws-sdk/client-dynamodb');
@@ -215,7 +216,9 @@ async function recordAttempt(sub,sessionId,body){
 async function roomFor(id,sub,requireMember=true){
  checkId(id,'roomId');const room=await get({PK:`ROOM#${id}`,SK:'META'});
  if(!room||room.expiresAt<Math.floor(Date.now()/1000))fail(404,'Room not found or expired');
- if(requireMember&&!room.participants.some(p=>p.id===sub))fail(403,'Join this room first');return room;
+ if(requireMember&&!room.participants.some(p=>p.id===sub))fail(403,'Join this room first');
+ room.participants=(await Promise.all(room.participants.map(async p=>await get(key(p.id,'ROOM_RESTRICTION'))?null:p))).filter(Boolean);
+ return room;
 }
 function sample(items,count){
  const copy=[...items];
@@ -224,17 +227,39 @@ function sample(items,count){
 }
 async function live(event,sub){
  const a=event.arguments,field=event.info.fieldName;
+ if(await get(key(sub,'ROOM_RESTRICTION')))fail(403,'Room access is restricted. Contact support at fcruzado22@gmail.com.');
  if(field==='createRoom'){
   if(!['live','collaborative'].includes(a.mode))fail(400,'Unsupported room mode');
-  const name=a.name?.trim()?checkString(a.name.trim(),'name',30):'Host';
+  let name;try{name=moderation.displayName(a.name);}catch(e){fail(400,e.message);}
   const id=randomUUID();const room={PK:`ROOM#${id}`,SK:'META',id,hostId:sub,mode:a.mode,participants:[{id:sub,name,score:0}],expiresAt:Math.floor(Date.now()/1000)+7200,questionIds:sample((await bank()).filter(q=>q.format==='multiple_choice'&&!q.retired),10).map(q=>q.id),version:1};
   await putFor(sub,{TableName,Item:room,ConditionExpression:'attribute_not_exists(PK)'});return room;
  }
  if(field==='joinRoom'){
   const room=await roomFor(a.id,sub,false);if(room.participants.some(p=>p.id===sub))return room;
-  if(room.participants.length>=12)fail(409,'Room is full');checkString(a.name,'name',30);
-  room.participants.push({id:sub,name:a.name,score:0});
+  if(room.participants.length>=12)fail(409,'Room is full');
+  for(const p of room.participants)if(await get(key(sub,'BLOCK#'+p.id))||await get(key(p.id,'BLOCK#'+sub)))fail(403,'You cannot join this room because of a block.');
+  let name;try{name=moderation.displayName(a.name);}catch(e){fail(400,e.message);}
+  room.participants.push({id:sub,name,score:0});
   await putFor(sub,{TableName,Item:{...room,version:room.version+1},ConditionExpression:'version = :version',ExpressionAttributeValues:{':version':room.version}});return room;
+ }
+ if(field==='reportParticipant'||field==='blockParticipant'){
+  const room=await roomFor(a.roomId,sub);checkId(a.participantId,'participant');
+  const target=room.participants.find(p=>p.id===a.participantId);
+  if(!target||target.id===sub)fail(400,'Choose another participant in this room.');
+  if(field==='blockParticipant'){
+   const participants=room.participants.filter(p=>p.id!==sub);
+   await transact(sub,[{Put:{TableName,Item:{...key(sub,'BLOCK#'+target.id),targetId:target.id,createdAt:new Date().toISOString()}}},{Put:{TableName,Item:{...room,participants,hostId:room.hostId===sub?participants[0].id:room.hostId,version:room.version+1},ConditionExpression:'version = :version',ExpressionAttributeValues:{':version':room.version}}}]);
+   return true;
+  }
+  if(!moderation.reasons.has(a.reason))fail(400,'Choose a report reason.');
+  const id=moderation.reportId(sub,room.id,target.id),reportKey={PK:'MODERATION',SK:id};
+  if(await get(reportKey))return true;
+  const day=new Date().toISOString().slice(0,10),quota=key(sub,'REPORTS#'+day);
+  const attempts=await db.send(new QueryCommand({TableName,KeyConditionExpression:'PK = :pk AND begins_with(SK,:prefix)',ExpressionAttributeValues:{':pk':room.PK,':prefix':'ATTEMPT#'+target.id+'#'},Limit:10,ConsistentRead:true}));
+  const now=new Date().toISOString(),expiresAt=Math.floor(Date.now()/1000)+30*86400;
+  try{await transact(sub,[{Update:{TableName,Key:quota,UpdateExpression:'SET expiresAt = :expires ADD #count :one',ConditionExpression:'attribute_not_exists(#count) OR #count < :limit',ExpressionAttributeNames:{'#count':'count'},ExpressionAttributeValues:{':expires':expiresAt,':one':1,':limit':10}}},{Put:{TableName,Item:{...reportKey,id,roomId:room.id,targetId:target.id,targetName:target.name,reporterId:sub,reason:a.reason,status:'pending',createdAt:now,expiresAt,evidence:(attempts.Items||[]).map(x=>({questionId:x.result?.questionId,answer:x.result?.answer}))},ConditionExpression:'attribute_not_exists(PK)'}}]);}
+  catch(e){if(e.name==='TransactionCanceledException'){if(await get(reportKey))return true;fail(429,'The daily report limit has been reached. Contact support for urgent issues.');}throw e;}
+  return true;
  }
  if(field==='room')return roomFor(a.id,sub);
  if(field==='onAnswer'){await roomFor(a.roomId,sub);return null;}
@@ -242,7 +267,8 @@ async function live(event,sub){
   const room=await roomFor(a.roomId,sub);if(!room.questionIds.includes(a.questionId))fail(400,'Question is outside this room');
   checkString(a.answer,'answer',6000);checkString(a.attemptId,'attemptId');
   const attemptKey={PK:`ROOM#${room.id}`,SK:`ATTEMPT#${sub}#${a.questionId}`};const prior=await get(attemptKey);if(prior)return prior.result;
-  const q=(await bank()).find(q=>q.id===a.questionId),points=score(q,JSON.parse(a.answer));
+  const q=(await bank()).find(q=>q.id===a.questionId);let answer;try{answer=moderation.roomAnswer(q,a.answer);}catch(e){fail(400,e.message);}
+  const points=score(q,answer);
   const participant=room.participants.find(p=>p.id===sub);participant.score+=points;
   const result={roomId:room.id,participantId:sub,questionId:q.id,score:points,total:participant.score,answer:room.mode==='collaborative'?a.answer:null};
   await transact(sub,[{Put:{TableName,Item:{...attemptKey,result,expiresAt:room.expiresAt},ConditionExpression:'attribute_not_exists(PK)'}},{Put:{TableName,Item:{...room,version:room.version+1},ConditionExpression:'version = :version',ExpressionAttributeValues:{':version':room.version}}}]);return result;
@@ -263,6 +289,25 @@ exports.handler=async event=>{
   if(event.body&&Buffer.byteLength(event.body)>20000)fail(413,'Request too large');
   let body;try{body=event.body?JSON.parse(event.body):{};}catch{fail(400,'Invalid JSON');}
   const path=event.rawPath,method=event.requestContext.http.method;
+  if(path==='/moderation/reports'||path?.startsWith('/moderation/reports/')){
+   const groups=Array.isArray(claims['cognito:groups'])?claims['cognito:groups']:String(claims['cognito:groups']||'').replace(/[\[\]"']/g,'').split(/[,\s]+/);
+   if(!groups.includes('content-admins'))fail(403,'Administrator access required.');
+   if(method==='GET'&&path==='/moderation/reports'){
+    let cursor;if(event.queryStringParameters?.cursor){try{cursor=JSON.parse(Buffer.from(event.queryStringParameters.cursor,'base64url').toString());}catch{fail(400,'Invalid cursor');}if(cursor.PK!=='MODERATION'||typeof cursor.SK!=='string'||!/^[a-f0-9]{40}$/.test(cursor.SK))fail(400,'Invalid cursor');}
+    const result=await db.send(new QueryCommand({TableName,KeyConditionExpression:'PK = :pk',ExpressionAttributeValues:{':pk':'MODERATION'},Limit:100,ConsistentRead:true,ExclusiveStartKey:cursor}));
+    return json(200,{reports:(result.Items||[]).filter(r=>r.expiresAt>Date.now()/1000),nextCursor:result.LastEvaluatedKey?Buffer.from(JSON.stringify(result.LastEvaluatedKey)).toString('base64url'):null});
+   }
+   if(method==='POST'){
+    const id=path.split('/').pop();checkId(id,'report');
+    const report=await get({PK:'MODERATION',SK:id});if(!report)fail(404,'Report not found.');
+    if(!['dismissed','restricted','restored'].includes(body.action))fail(400,'Invalid moderation action.');
+    const actions=[{Put:{TableName,Item:{...report,status:body.action,resolvedAt:new Date().toISOString(),resolvedBy:sub}}}];
+    if(body.action==='restricted')actions.push({Put:{TableName,Item:{...key(report.targetId,'ROOM_RESTRICTION'),reportId:id,createdAt:new Date().toISOString()}}});
+    if(body.action==='restored'){const restriction=await get(key(report.targetId,'ROOM_RESTRICTION'));if(restriction&&restriction.reportId!==id)fail(409,'A different report controls this restriction. Resolve that report first.');actions.push({Delete:{TableName,Key:key(report.targetId,'ROOM_RESTRICTION'),ConditionExpression:'attribute_not_exists(reportId) OR reportId = :id',ExpressionAttributeValues:{':id':id}}});}
+    await transact(sub,actions);return json(200,{status:body.action});
+   }
+  }
+
   if(method==='GET'&&path==='/questions')return json(200,(await bank()).filter(q=>!q.retired));
   if(method==='GET'&&path==='/quizzes'){try{const result=await s3.send(new GetObjectCommand({Bucket:process.env.QUESTION_BUCKET,Key:'published/quizzes.json'}));return json(200,JSON.parse(await result.Body.transformToString()));}catch(e){if(e.name==='NoSuchKey')return json(200,[]);throw e;}}
   if(method==='GET'&&path==='/progress'){

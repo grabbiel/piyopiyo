@@ -34,8 +34,15 @@ struct BatchDetail: Decodable {
   let sourceTitle: String
   let questions: [Question]
 }
+struct SafetyReport: Decodable, Identifiable {
+  let id, roomId, targetId, targetName, reason, status, createdAt: String
+  struct Evidence: Decodable { let questionId: String?; let answer: String? }
+  let evidence: [Evidence]
+}
 @MainActor final class DeskModel: ObservableObject {
   let auth = AuthService()
+  @Published var reports: [SafetyReport] = []
+  @Published var reportCursor: String?
   @Published var dashboard: Dashboard?
   @Published var busy = false
   @Published var error: String?
@@ -43,10 +50,27 @@ struct BatchDetail: Decodable {
   @Published var batchDetail: BatchDetail?
   @Published var incomingFile: URL?
   private let config = AppConfiguration.current
+  func loadReports(more: Bool = false) async {
+    do {
+      struct Response: Decodable { let reports: [SafetyReport]; let nextCursor: String? }
+      let path = "moderation/reports" + (more ? reportCursor.map { "?cursor=" + $0 } ?? "" : "")
+      let result = try JSONDecoder().decode(Response.self, from: await request(path))
+      reports = ((more ? reports : []) + result.reports).sorted { $0.createdAt > $1.createdAt }
+      reportCursor = result.nextCursor
+    } catch { self.error = error.localizedDescription }
+  }
+  func resolveReport(_ report: SafetyReport, action: String) async {
+    busy = true; defer { busy = false }
+    do {
+      _ = try await request("moderation/reports/" + report.id, method: "POST", body: ["action": action])
+      await loadReports()
+      notice = action == "restricted" ? "Participant restricted from study rooms; their name is removed from room listings." : "Report updated."
+    } catch { self.error = error.localizedDescription }
+  }
   func request(_ path: String, method: String = "GET", body: [String: Any]? = nil) async throws -> Data {
     let identity = auth.tokens?.subject
     let tokens = try await auth.validTokens()
-    var request = URLRequest(url: URL(string: config.ApiUrl + "/knowledge/" + path)!)
+    var request = URLRequest(url: URL(string: config.ApiUrl + (path.hasPrefix("moderation/") ? "/" : "/knowledge/") + path)!)
     request.httpMethod = method; request.timeoutInterval = 35
     request.setValue("Bearer " + tokens.accessToken, forHTTPHeaderField: "Authorization")
     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -69,7 +93,7 @@ struct BatchDetail: Decodable {
     dashboard = value
   }
   func signIn() async { await perform { try await auth.signIn(); try await refresh() } }
-  func signOut() { auth.signOut(); dashboard = nil; batchDetail = nil; error = nil; notice = nil }
+  func signOut() { auth.signOut(); reports = []; reportCursor = nil; dashboard = nil; batchDetail = nil; error = nil; notice = nil }
   func add(title: String, topic: String, url: String, file: URL?, openLicense: Bool) async {
     await perform {
       var body: [String: Any] = ["title": title, "topic": topic, "consent": true, "rights": openLicense ? "open_license" : "private_reference"]
