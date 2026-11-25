@@ -20,14 +20,14 @@ jobs:
   release:
     name: Signed Apple packages
     if: github.ref == 'refs/heads/main'
-    runs-on: macos-26
+    runs-on: xcode-27
     timeout-minutes: 55
     environment: apple-release
     permissions:
       contents: read
       checks: read
     env:
-      DEVELOPER_DIR: /Applications/Xcode_26.6.app/Contents/Developer
+      DEVELOPER_DIR: /Applications/Xcode_27.2.app/Contents/Developer
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:

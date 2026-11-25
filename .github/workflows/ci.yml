@@ -42,6 +42,7 @@ jobs:
       - run: cfn-lint cdk.out/PiyoPiyoDev.template.json
       - run: npm test
       - run: python -m unittest discover -s backend/pdf -p 'test_*.py'
+      - run: python -m unittest discover -s tests -p 'test_ci_*.py'
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: backend-${{ github.sha }}
@@ -56,13 +57,13 @@ jobs:
             artifacts/knowledge/manifest.json
   native:
     name: Native
-    runs-on: macos-26
+    runs-on: xcode-27
     timeout-minutes: 40
     concurrency:
       group: native-${{ github.ref }}
       cancel-in-progress: true
     env:
-      DEVELOPER_DIR: /Applications/Xcode_26.6.app/Contents/Developer
+      DEVELOPER_DIR: /Applications/Xcode_27.2.app/Contents/Developer
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
